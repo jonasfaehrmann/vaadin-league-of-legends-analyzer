@@ -1,4 +1,4 @@
-package de.leuphana.leuphanytics;
+package de.leuphana.leuphanytics.view;
 
 
 import javax.annotation.PostConstruct;

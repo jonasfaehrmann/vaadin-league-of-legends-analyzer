@@ -1,4 +1,4 @@
-package de.leuphana.leuphanytics;
+package de.leuphana.leuphanytics.view;
 
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;

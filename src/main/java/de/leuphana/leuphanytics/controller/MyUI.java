@@ -1,4 +1,4 @@
-package de.leuphana.leuphanytics;
+package de.leuphana.leuphanytics.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,6 +16,9 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
+
+import de.leuphana.leuphanytics.view.UIScopedView;
+import de.leuphana.leuphanytics.view.ViewScopedView;
 
 @Theme("valo")
 @SpringUI
