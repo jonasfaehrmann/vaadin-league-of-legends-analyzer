@@ -1,4 +1,4 @@
-package de.leuphana.leuphanytics;
+package de.leuphana.leuphalytics;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LeuphanyticsApplicationTests {
+public class LeuphalyticsApplicationTests {
 
 	@Test
 	public void contextLoads() {

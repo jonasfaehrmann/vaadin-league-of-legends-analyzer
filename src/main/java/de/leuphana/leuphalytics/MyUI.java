@@ -1,4 +1,4 @@
-package de.leuphana.leuphanytics;
+package de.leuphana.leuphalytics;
 
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
