@@ -2,19 +2,17 @@ package de.leuphana.leuphalytics.model.widget;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonFormat.Value;
-
 import de.leuphana.leuphalytics.model.match.Match;
 
-public abstract class MatchList {
+public class MatchList {
 	
-	private Value matches; 
+	private List<Match> matches; 
 	
-	public Value getMatches() {
+	public List<Match> getMatches() {
 		return matches;
 	}
 
-	public void setMatches(Value matches) {
+	public void setMatches(List<Match> matches) {
 		this.matches = matches;
 	}
 
