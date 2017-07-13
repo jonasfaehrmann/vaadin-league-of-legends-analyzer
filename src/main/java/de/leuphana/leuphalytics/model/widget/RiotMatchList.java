@@ -4,5 +4,7 @@ public class RiotMatchList extends MatchList {
 	
 	public RiotMatchList() {
 	}
+	
+	
 
 }
