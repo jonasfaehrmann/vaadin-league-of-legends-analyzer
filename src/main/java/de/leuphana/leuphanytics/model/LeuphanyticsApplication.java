@@ -30,7 +30,7 @@ public class LeuphanyticsApplication {
 		return args -> {
 			Game game = restTemplate.getForObject(
 					"http://gturnquist-quoters.cfapps.io/api/random", Game.class);
-			log.info(game.toString());
+			System.out.println(game.getType());
 		};
 	}
 }
