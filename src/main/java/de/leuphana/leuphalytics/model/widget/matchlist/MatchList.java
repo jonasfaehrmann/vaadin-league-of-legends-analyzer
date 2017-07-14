@@ -1,4 +1,4 @@
-package de.leuphana.leuphalytics.model.widget;
+package de.leuphana.leuphalytics.model.widget.matchlist;
 
 import java.util.List;
 

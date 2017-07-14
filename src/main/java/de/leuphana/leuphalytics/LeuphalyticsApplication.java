@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import de.leuphana.leuphalytics.model.Dashboard;
 import de.leuphana.leuphalytics.model.user.ExternalAccountEnum;
 import de.leuphana.leuphalytics.model.user.User;
-import de.leuphana.leuphalytics.model.widget.RiotMatchList;
+import de.leuphana.leuphalytics.model.widget.matchlist.RiotMatchList;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { "de.leuphana.leuphalytics", "de.leuphana.leuphalytics.model",
