@@ -4,9 +4,10 @@ public class RiotMatch extends Match {
 
 	private RegionEnum region;
 	private String platformId;
-	private long championId;
-	private QueueEnum queue;
-	private String season;
+	private int champion;
+//	private QueueEnum queue;
+	private int queue;
+	private int season;
 	private long timestamp;
 	private LaneEnum lane;
 	private MatchRoleEnum matchRole;
@@ -24,22 +25,22 @@ public class RiotMatch extends Match {
 	public void setPlatformId(String platformId) {
 		this.platformId = platformId;
 	}
-	public long getChampionId() {
-		return championId;
+	public int getChampion() {
+		return champion;
 	}
-	public void setChampionId(long championId) {
-		this.championId = championId;
+	public void setChampion(int champion) {
+		this.champion = champion;
 	}
-	public QueueEnum getQueue() {
+	public int getQueue() {
 		return queue;
 	}
-	public void setQueue(QueueEnum queue) {
+	public void setQueue(int queue) {
 		this.queue = queue;
 	}
-	public String getSeason() {
+	public int getSeason() {
 		return season;
 	}
-	public void setSeason(String season) {
+	public void setSeason(int season) {
 		this.season = season;
 	}
 	public long getTimestamp() {
