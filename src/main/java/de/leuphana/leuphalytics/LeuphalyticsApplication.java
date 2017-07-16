@@ -43,7 +43,7 @@ public class LeuphalyticsApplication {
 		return args -> {
 
 			RiotMatchList riotMatchList = restTemplate.getForObject(
-					"https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/35211455?api_key=RGAPI-fac0c7a0-fe86-409a-9b5e-1682b6da3107",
+					"https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/35211455?api_key=RGAPI-899b2da9-9068-4166-905e-c607072cbc38",
 					RiotMatchList.class);
 
 			log.info(riotMatchList.toString());

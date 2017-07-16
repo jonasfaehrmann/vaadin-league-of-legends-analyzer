@@ -2,9 +2,13 @@ package de.leuphana.leuphalytics.model.widget.matchlist;
 
 import java.util.List;
 
-import de.leuphana.leuphalytics.model.match.Match;
+import com.vaadin.spring.annotation.SpringComponent;
+import com.vaadin.spring.annotation.UIScope;
+
 import de.leuphana.leuphalytics.model.match.RiotMatch;
 
+@SpringComponent
+@UIScope
 public class RiotMatchList extends MatchList {
 	
 	private List<RiotMatch> matches; 
