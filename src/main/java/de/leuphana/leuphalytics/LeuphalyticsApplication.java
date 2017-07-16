@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -27,28 +28,6 @@ public class LeuphalyticsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeuphalyticsApplication.class);
-	}
-
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
-
-	@Bean
-	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
-
-		// get account type...
-		ExternalAccountEnum accountType = ExternalAccountEnum.RIOT;
-
-		return args -> {
-
-			RiotMatchList riotMatchList = restTemplate.getForObject(
-					"https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/35211455?api_key=RGAPI-899b2da9-9068-4166-905e-c607072cbc38",
-					RiotMatchList.class);
-
-			log.info(riotMatchList.toString());
-		};
-
 	}
 
 }

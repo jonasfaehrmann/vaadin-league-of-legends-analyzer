@@ -1,28 +1,30 @@
 package de.leuphana.leuphalytics;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.vaadin.annotations.Theme;
+import com.vaadin.annotations.Title;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
-import de.leuphana.leuphalytics.model.RiotDashboard;
+import de.leuphana.leuphalytics.rest.RiotClient;
 
+@Title("Leuphalytics")
 @SpringUI
 @Theme("valo")
 public class LeuphalyticsUI extends UI {
 
 	private VerticalLayout layout;
 	
-	@Autowired
-	RiotDashboard dashboard;
+	private final RiotClient riotClient;
 	
-	
+	public LeuphalyticsUI(RiotClient riotClient) {
+		this.riotClient = riotClient;
+	}
 
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
@@ -35,7 +37,9 @@ public class LeuphalyticsUI extends UI {
 	}
 
 	private void addDashboard() {
-		layout.addComponent(dashboard);
+		//layout.addComponent(dashboard);
+		TextField text = new TextField(riotClient.getMatchListForUser().toString());
+		layout.addComponent(text);
 
 	}
 
