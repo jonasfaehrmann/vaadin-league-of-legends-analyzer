@@ -18,6 +18,11 @@ public class RiotMatchList extends MatchList {
 	}
 	
 
+	public List<RiotMatch> getMatches() {
+		return matches;
+	}
+
+
 	@Override
 	public String toString() {
 
