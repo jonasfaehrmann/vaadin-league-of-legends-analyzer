@@ -22,7 +22,7 @@ public class RiotClient {
 
 	public RiotMatchList getMatchListForUser() {
 		RiotMatchList riotMatchList = restTemplate.getForObject(
-				"https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/35211455?api_key=RGAPI-899b2da9-9068-4166-905e-c607072cbc38",
+				"https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/35211455?api_key=RGAPI-ce068453-5555-4c73-8769-c90864e19902",
 				RiotMatchList.class);
 		
 		log.info(riotMatchList.toString());
