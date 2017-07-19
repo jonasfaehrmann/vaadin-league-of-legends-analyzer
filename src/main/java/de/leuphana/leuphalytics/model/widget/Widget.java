@@ -4,8 +4,12 @@ public class Widget {
 
 	private int widgetId;
 	private String widgetName;
-
 	
+	public Widget(int id, String name) {
+		this.widgetId = id;
+		this.widgetName = name;
+	}
+
 	public int getWidgetId() {
 		return widgetId;
 	}

@@ -5,31 +5,40 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.vaadin.data.Binder;
 import com.vaadin.spring.annotation.SpringComponent;
+import com.vaadin.ui.Grid;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-import de.leuphana.leuphalytics.connector.dbconnector.template.WidgetJDBCTemplate;
+import de.leuphana.leuphalytics.connector.dbconnector.WidgetService;
 import de.leuphana.leuphalytics.model.widget.Widget;
 
 @SpringComponent
 public class DashboardLayout extends VerticalLayout {
 	
-	public ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-
 	@Autowired
-	WidgetJDBCTemplate widgetJDBCTemplate;
+	WidgetService service;
 
+	private Widget widget;
+	
+	private Binder<Widget> binder = new Binder<>(Widget.class);
+	
+	private Grid<Widget> grid = new Grid(Widget.class);
+	private TextField id = new TextField("ID");
+    private TextField name = new TextField("NAME");
+//    private Button save = new Button("Save", e -> saveWidget());
+
+	
 	@PostConstruct
 	void init() { 
-		setWidgets(widgetJDBCTemplate.listWidgets());
+		setWidgets(service.findAll());
 	}
 
 	private void setWidgets(List<Widget> widgets) {
 		removeAllComponents();
-		
+		widgets.forEach(widget -> addComponent(new WidgetLayout(widget)));
 	}
 
 }

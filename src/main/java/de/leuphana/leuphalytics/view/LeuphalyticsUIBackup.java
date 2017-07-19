@@ -20,16 +20,16 @@ import de.leuphana.leuphalytics.model.match.RiotMatch;
 @Title("Leuphalytics")
 @SpringUI
 @Theme("valo")
-public class LeuphalyticsUI extends UI {
+public class LeuphalyticsUIBackup extends UI {
 
-	private VerticalLayout root;
+	private VerticalLayout layout;
 	
 	@Autowired 
 	DashboardLayout dashboardLayout;
 
 	private final RiotClient riotClient;
 
-	public LeuphalyticsUI(RiotClient riotClient) {
+	public LeuphalyticsUIBackup(RiotClient riotClient) {
 		this.riotClient = riotClient;
 	}
 
@@ -56,20 +56,20 @@ public class LeuphalyticsUI extends UI {
 		grid.addColumn(RiotMatch::getTimestamp).setCaption("Timestamp");
 		grid.addColumn(RiotMatch::getLane).setCaption("Lane");
 		grid.setSizeFull();
-		root.addComponent(grid);
-		root.setExpandRatio(grid, 1); // Expand to fill
+		layout.addComponent(grid);
+		layout.setExpandRatio(grid, 1); // Expand to fill
 
 	}
 
 	private void addHeader() {
 		Label header = new Label("Leuphalytics");
 		header.addStyleName(ValoTheme.LABEL_H1);
-		root.addComponent(header);
+		layout.addComponent(header);
 	}
 
 	private void setupLayout() {
-		root = new VerticalLayout();
-		root.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
-		setContent(root);
+		layout = new VerticalLayout();
+		layout.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
+		setContent(layout);
 	}
 }
