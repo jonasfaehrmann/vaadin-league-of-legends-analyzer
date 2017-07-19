@@ -11,7 +11,7 @@
 		to configure as beans -->
 	<context:component-scan base-package="de.leuphana.leuphalytics" />
 
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
 		<property name="url" value="${jdbc.url}" />
@@ -22,7 +22,7 @@
 	<context:property-placeholder location="jdbc.properties" />
 
 	<!-- Definition for studentJDBCTemplate bean -->
-	<bean id="JDBCTemplate" class="de.leuphana.leuphalytics.connector.dbconnector.WidgetRepository">
+	<bean id="WidgetJDBCTemplate" class="de.leuphana.leuphalytics.connector.dbconnector.template.WidgetJDBCTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 

@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>de.leuphana</groupId>
-	<artifactId>leuphanytics</artifactId>
+	<artifactId>leuphalytics</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>leuphanytics</name>
+	<name>leuphalytics</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -37,6 +37,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/org.springframework.jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			
+		</dependency>
+
 
 	</dependencies>
 
