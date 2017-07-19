@@ -1,4 +1,4 @@
-package de.leuphana.leuphalytics.rest;
+package de.leuphana.leuphalytics.connector.restconnector;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

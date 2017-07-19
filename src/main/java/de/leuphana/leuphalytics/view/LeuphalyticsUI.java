@@ -1,4 +1,4 @@
-package de.leuphana.leuphalytics;
+package de.leuphana.leuphalytics.view;
 
 import java.util.Collection;
 
@@ -15,8 +15,8 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
+import de.leuphana.leuphalytics.connector.restconnector.RiotClient;
 import de.leuphana.leuphalytics.model.match.RiotMatch;
-import de.leuphana.leuphalytics.rest.RiotClient;
 
 @Title("Leuphalytics")
 @SpringUI

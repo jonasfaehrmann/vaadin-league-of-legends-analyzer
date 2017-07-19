@@ -12,6 +12,15 @@ import de.leuphana.leuphalytics.model.widget.Widget;
 @UIScope
 public abstract class Dashboard extends VerticalLayout {
 	
-	private List<Widget> widgetList;
+	private List<Widget> widgets;
+
+	public List<Widget> getWidgets() {
+		return widgets;
+	}
+
+	public void setWidgets(List<Widget> widgets) {
+		this.widgets = widgets;
+	}
+	
 	
 }
