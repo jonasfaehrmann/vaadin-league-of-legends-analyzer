@@ -19,21 +19,21 @@ import de.leuphana.leuphalytics.model.widget.Widget;
 public class DashboardLayout extends VerticalLayout {
 	
 	@Autowired
-	WidgetService service;
+	WidgetService widgetService;
 
-	private Widget widget;
-	
-	private Binder<Widget> binder = new Binder<>(Widget.class);
-	
-	private Grid<Widget> grid = new Grid(Widget.class);
-	private TextField id = new TextField("ID");
-    private TextField name = new TextField("NAME");
+	// private Widget widget;
+	//
+	// private Binder<Widget> binder = new Binder<>(Widget.class);
+	//
+	// private Grid<Widget> grid = new Grid(Widget.class);
+	// private TextField id = new TextField("ID");
+	// private TextField name = new TextField("NAME");
 //    private Button save = new Button("Save", e -> saveWidget());
 
 	
 	@PostConstruct
 	void init() { 
-		setWidgets(service.findAll());
+		setWidgets(widgetService.findAll());
 	}
 
 	private void setWidgets(List<Widget> widgets) {

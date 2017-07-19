@@ -23,8 +23,8 @@ import de.leuphana.leuphalytics.model.match.RiotMatch;
 public class LeuphalyticsUI extends UI {
 
 	private VerticalLayout root;
-	
-	@Autowired 
+
+	@Autowired
 	DashboardLayout dashboardLayout;
 
 	private final RiotClient riotClient;
@@ -44,20 +44,22 @@ public class LeuphalyticsUI extends UI {
 	}
 
 	private void addDashboard() {
-		// layout.addComponent(dashboard);
-		// Add some component
-	
-		Grid<RiotMatch> grid = new Grid<>();
-		grid.setCaption("Your matches: ");
-		grid.setItems(riotClient.getMatchListForUser().getMatches());
-		grid.addColumn(RiotMatch::getChampion).setCaption("Champion");
-		grid.addColumn(RiotMatch::getSeason).setCaption("Season");
-		grid.addColumn(RiotMatch::getQueue).setCaption("Queue");
-		grid.addColumn(RiotMatch::getTimestamp).setCaption("Timestamp");
-		grid.addColumn(RiotMatch::getLane).setCaption("Lane");
-		grid.setSizeFull();
-		root.addComponent(grid);
-		root.setExpandRatio(grid, 1); // Expand to fill
+
+		// match list example
+		// Grid<RiotMatch> grid = new Grid<>();
+		// grid.setCaption("Your matches: ");
+		// grid.setItems(riotClient.getMatchListForUser().getMatches());
+		// grid.addColumn(RiotMatch::getChampion).setCaption("Champion");
+		// grid.addColumn(RiotMatch::getSeason).setCaption("Season");
+		// grid.addColumn(RiotMatch::getQueue).setCaption("Queue");
+		// grid.addColumn(RiotMatch::getTimestamp).setCaption("Timestamp");
+		// grid.addColumn(RiotMatch::getLane).setCaption("Lane");
+		// grid.setSizeFull();
+		// root.addComponent(grid);
+		// root.setExpandRatio(grid, 1); // Expand to fill
+
+		
+		root.addComponent(dashboardLayout);
 
 	}
 
@@ -72,4 +74,5 @@ public class LeuphalyticsUI extends UI {
 		root.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 		setContent(root);
 	}
+
 }
