@@ -1,9 +1,6 @@
 
-package de.leuphana.leuphalytics.model.champion;
+package de.leuphana.leuphalytics.model.champion.entities;
 
-import de.leuphana.leuphalytics.model.champion.entities.Fiddlesticks;
-import de.leuphana.leuphalytics.model.champion.entities.Jax;
-import de.leuphana.leuphalytics.model.champion.entities.MonkeyKing;
 
 public class ChampionData {
 
