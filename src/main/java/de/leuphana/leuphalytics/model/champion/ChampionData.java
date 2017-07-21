@@ -1,9 +1,18 @@
 
 package de.leuphana.leuphalytics.model.champion;
 
+import de.leuphana.leuphalytics.model.champion.entities.*;
 import de.leuphana.leuphalytics.model.champion.entities.Fiddlesticks;
 import de.leuphana.leuphalytics.model.champion.entities.Jax;
+import de.leuphana.leuphalytics.model.champion.entities.Kled;
 import de.leuphana.leuphalytics.model.champion.entities.MonkeyKing;
+import de.leuphana.leuphalytics.model.champion.entities.Nidalee;
+import de.leuphana.leuphalytics.model.champion.entities.Rammus;
+import de.leuphana.leuphalytics.model.champion.entities.Shaco;
+import de.leuphana.leuphalytics.model.champion.entities.Warwick;
+import de.leuphana.leuphalytics.model.champion.entities.Xayah;
+import de.leuphana.leuphalytics.model.champion.entities.Zyra;
+import de.leuphana.leuphalytics.model.match.RiotMatch;
 
 public class ChampionData {
 
@@ -1240,5 +1249,16 @@ public class ChampionData {
     public void setEzreal(Ezreal ezreal) {
         this.ezreal = ezreal;
     }
-
+    
+    @Override
+    public String toString(){
+    	
+    	String lore = " ";
+    	
+    	lore += jax.getName();
+    	
+		return lore;
+    	
+    }
+    
 }

@@ -3,6 +3,11 @@ package de.leuphana.leuphalytics.model.champion.entities;
 
 import java.util.List;
 
+import de.leuphana.leuphalytics.model.champion.Passive;
+import de.leuphana.leuphalytics.model.champion.Recommended;
+import de.leuphana.leuphalytics.model.champion.Spell;
+import de.leuphana.leuphalytics.model.champion.Stats;
+
 public class Jax {
 
     private String lore;

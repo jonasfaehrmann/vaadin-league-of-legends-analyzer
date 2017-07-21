@@ -46,17 +46,17 @@ public class LeuphalyticsUI extends UI {
 	private void addDashboard() {
 
 		// match list example
-		// Grid<RiotMatch> grid = new Grid<>();
-		// grid.setCaption("Your matches: ");
-		// grid.setItems(riotClient.getMatchListForUser().getMatches());
-		// grid.addColumn(RiotMatch::getChampion).setCaption("Champion");
-		// grid.addColumn(RiotMatch::getSeason).setCaption("Season");
-		// grid.addColumn(RiotMatch::getQueue).setCaption("Queue");
-		// grid.addColumn(RiotMatch::getTimestamp).setCaption("Timestamp");
-		// grid.addColumn(RiotMatch::getLane).setCaption("Lane");
-		// grid.setSizeFull();
-		// root.addComponent(grid);
-		// root.setExpandRatio(grid, 1); // Expand to fill
+		 Grid<RiotMatch> grid = new Grid<>();
+		 grid.setCaption("Your matches: ");
+		 grid.setItems(riotClient.getMatchListForUser().getMatches());
+		 grid.addColumn(RiotMatch::getChampion).setCaption("Champion");
+		 grid.addColumn(RiotMatch::getSeason).setCaption("Season");
+		 grid.addColumn(RiotMatch::getQueue).setCaption("Queue");
+		 grid.addColumn(RiotMatch::getTimestamp).setCaption("Timestamp");
+		 grid.addColumn(RiotMatch::getLane).setCaption("Lane");
+		 grid.setSizeFull();
+		 root.addComponent(grid);
+		 root.setExpandRatio(grid, 1); // Expand to fill
 
 		
 		root.addComponent(dashboardLayout);

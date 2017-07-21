@@ -15,7 +15,7 @@ public class WidgetLayout extends VerticalLayout {
 		widgetId = new TextField(String.valueOf(widget.getWidgetId()));
 		widgetName = new TextField(widget.getWidgetName());
 		
-		addComponents(widgetId, widgetName);
+		//addComponents(widgetId, widgetName);
 		
 //		Binder<Widget> binder = new Binder<>(Widget.class);
 //		
