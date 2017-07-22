@@ -16,6 +16,12 @@ import com.vaadin.ui.themes.ValoTheme;
 import de.leuphana.leuphalytics.connector.dbconnector.WidgetService;
 import de.leuphana.leuphalytics.connector.restconnector.RiotClient;
 import de.leuphana.leuphalytics.model.match.RiotMatch;
+import net.rithms.riot.api.RiotApi;
+import net.rithms.riot.api.RiotApiException;
+import net.rithms.riot.dto.MatchList.MatchList;
+import net.rithms.riot.dto.MatchList.MatchReference;
+import net.rithms.riot.dto.Static.Champion;
+import net.rithms.riot.dto.Summoner.Summoner;
 
 @Title("Leuphalytics")
 @SpringUI
@@ -28,6 +34,7 @@ public class LeuphalyticsUI extends UI {
 	DashboardLayout dashboardLayout;
 
 	private final RiotClient riotClient;
+	private RiotApi api;
 
 	public LeuphalyticsUI(RiotClient riotClient) {
 		this.riotClient = riotClient;
@@ -40,23 +47,38 @@ public class LeuphalyticsUI extends UI {
 		 */
 		setupLayout();
 		addHeader();
-		addDashboard();
+		try {
+			addDashboard();
+		} catch (RiotApiException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	private void addDashboard() {
-
-		// match list example
-		 Grid<RiotMatch> grid = new Grid<>();
-		 grid.setCaption("Your matches: ");
-		 grid.setItems(riotClient.getMatchListForUser().getMatches());
-		 grid.addColumn(RiotMatch::getChampion).setCaption("Champion");
-		 grid.addColumn(RiotMatch::getSeason).setCaption("Season");
-		 grid.addColumn(RiotMatch::getQueue).setCaption("Queue");
-		 grid.addColumn(RiotMatch::getTimestamp).setCaption("Timestamp");
-		 grid.addColumn(RiotMatch::getLane).setCaption("Lane");
-		 grid.setSizeFull();
-		 root.addComponent(grid);
-		 root.setExpandRatio(grid, 1); // Expand to fill
+	private void addDashboard() throws RiotApiException {
+			
+		
+		
+//		 match list example
+//		 Grid<RiotMatch> grid = new Grid<>();
+//		 grid.setCaption("Your matches: ");
+//		 grid.setItems(riotClient.getMatchListForUser().getMatches());
+//		 grid.addColumn(RiotMatch::getChampion).setCaption("Champion");
+//		 grid.addColumn(RiotMatch::getSeason).setCaption("Season");
+//		 grid.addColumn(RiotMatch::getQueue).setCaption("Queue");
+//		 grid.addColumn(RiotMatch::getTimestamp).setCaption("Timestamp");
+//		 grid.addColumn(RiotMatch::getLane).setCaption("Lane");
+//		 grid.setSizeFull();
+//		 root.addComponent(grid);
+//		 root.setExpandRatio(grid, 1); // Expand to fill
+		 
+		 Grid<Champion> championGrid = new Grid<>();
+		 championGrid.setCaption("Static champions: ");
+		 championGrid.setItems(riotClient.getChampions().values());
+		 championGrid.addColumn(Champion::getName).setCaption("Name");
+		 championGrid.addColumn(Champion::getTitle).setCaption("Title");
+		 championGrid.setSizeFull();
+		 root.addComponent(championGrid);
 
 		
 		root.addComponent(dashboardLayout);
