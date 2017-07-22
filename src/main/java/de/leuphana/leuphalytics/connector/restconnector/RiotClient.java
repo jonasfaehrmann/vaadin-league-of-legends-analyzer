@@ -1,5 +1,6 @@
 package de.leuphana.leuphalytics.connector.restconnector;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.catalina.core.ApplicationFilterConfig;
@@ -12,8 +13,11 @@ import org.springframework.web.client.RestTemplate;
 import net.rithms.riot.*;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
+import net.rithms.riot.dto.MatchList.MatchList;
+import net.rithms.riot.dto.MatchList.MatchReference;
 import net.rithms.riot.dto.Static.Champion;
 import net.rithms.riot.dto.Static.ChampionList;
+import net.rithms.riot.dto.Summoner.Summoner;
 import de.leuphana.leuphalytics.LeuphalyticsApplication;
 import de.leuphana.leuphalytics.model.champion.ChampionData;
 import de.leuphana.leuphalytics.model.widget.matchlist.RiotMatchList;
@@ -25,20 +29,19 @@ public class RiotClient {
 
 	private final RestTemplate restTemplate;
 	private static RiotApi api;
+	private Region region;
 
 	public RiotClient(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
 	}
 
-	public RiotMatchList getMatchListForUser() {
-		return null;
-//		RiotMatchList riotMatchList = restTemplate.getForObject(
-//				"https://euw1.api.riotgames.com/lol/match/v3/matchlists/by-account/35211455?api_key=RGAPI-aae74153-972e-407d-bce1-53aa42632b5b",
-//				RiotMatchList.class);
-//		
-//		log.info(riotMatchList.toString());
-//		
-//		return riotMatchList;
+	public List<MatchReference> getMatchListForUser() throws RiotApiException {
+		api = new RiotApi();
+		api.setKey("RGAPI-8f505b0b-40ea-43d3-96c0-1ea8bae539b5");
+		
+		MatchList matchList = api.getMatchList(35211455);
+		List<MatchReference> userMatchList = matchList.getMatches();
+		return userMatchList;
 	}
 
 	public  Map<String, Champion> getChampions() throws RiotApiException {
@@ -51,14 +54,15 @@ public class RiotClient {
 		return championMap;
 	}
 	
-//	public static void main(String[] args) throws RiotApiException {
-//		api = new RiotApi();
-//		api.setKey("RGAPI-8f505b0b-40ea-43d3-96c0-1ea8bae539b5");
-//		
-//		ChampionList championList = api.getDataChampionList();
-//		Map<String, Champion> championMap = championList.getData();
-//		for (Champion champion : championMap.values()) {
-//			System.out.println(champion.getName()+ ":" + champion.getTitle());
-//		}
-//	}
+	public static void main(String[] args) throws RiotApiException {
+		api = new RiotApi();
+		api.setKey("RGAPI-8f505b0b-40ea-43d3-96c0-1ea8bae539b5");
+		
+		Summoner summoner = api.getSummonerByName(Region.NA, "faker");
+		MatchList matchList = api.getMatchList(summoner.getId());
+		List<MatchReference> userMatchList = matchList.getMatches();
+		for (MatchReference matchReference : userMatchList) {
+			System.out.println(matchReference.getMatchId()+"***"+matchReference.getTimestamp()+"***"+matchReference.getChampion());
+		}
+	}
 }
