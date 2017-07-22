@@ -56,31 +56,39 @@ public class LeuphalyticsUI extends UI {
 	}
 
 	private void addDashboard() throws RiotApiException {
-			
-		
-		
-//		 match list example
-//		 Grid<RiotMatch> grid = new Grid<>();
-//		 grid.setCaption("Your matches: ");
-//		 grid.setItems(riotClient.getMatchListForUser().getMatches());
-//		 grid.addColumn(RiotMatch::getChampion).setCaption("Champion");
-//		 grid.addColumn(RiotMatch::getSeason).setCaption("Season");
-//		 grid.addColumn(RiotMatch::getQueue).setCaption("Queue");
-//		 grid.addColumn(RiotMatch::getTimestamp).setCaption("Timestamp");
-//		 grid.addColumn(RiotMatch::getLane).setCaption("Lane");
-//		 grid.setSizeFull();
-//		 root.addComponent(grid);
-//		 root.setExpandRatio(grid, 1); // Expand to fill
-		 
-		 Grid<Champion> championGrid = new Grid<>();
-		 championGrid.setCaption("Static champions: ");
-		 championGrid.setItems(riotClient.getChampions().values());
-		 championGrid.addColumn(Champion::getName).setCaption("Name");
-		 championGrid.addColumn(Champion::getTitle).setCaption("Title");
-		 championGrid.setSizeFull();
-		 root.addComponent(championGrid);
 
-		
+		// match list example
+		// Grid<RiotMatch> grid = new Grid<>();
+		// grid.setCaption("Your matches: ");
+		// grid.setItems(riotClient.getMatchListForUser().getMatches());
+		// grid.addColumn(RiotMatch::getChampion).setCaption("Champion");
+		// grid.addColumn(RiotMatch::getSeason).setCaption("Season");
+		// grid.addColumn(RiotMatch::getQueue).setCaption("Queue");
+		// grid.addColumn(RiotMatch::getTimestamp).setCaption("Timestamp");
+		// grid.addColumn(RiotMatch::getLane).setCaption("Lane");
+		// grid.setSizeFull();
+		// root.addComponent(grid);
+		// root.setExpandRatio(grid, 1); // Expand to fill
+
+		// matchList with RiotApi.jar
+
+		Grid<MatchReference> matchListGrid = new Grid<>();
+		matchListGrid.setItems(riotClient.getMatchListForUser());
+		matchListGrid.setCaption("Matchlist:");
+		matchListGrid.addColumn(MatchReference::getChampion).setCaption("Champion");
+		matchListGrid.addColumn(MatchReference::getSeason).setCaption("Season");
+		matchListGrid.addColumn(MatchReference::getLane).setCaption("Lane");
+
+		Grid<Champion> championGrid = new Grid<>();
+		championGrid.setCaption("Static champions: ");
+		championGrid.setItems(riotClient.getChampions().values());
+		championGrid.addColumn(Champion::getName).setCaption("Name");
+		championGrid.addColumn(Champion::getTitle).setCaption("Title");
+		championGrid.addColumn(Champion::getStats).setCaption("Stats");
+		championGrid.setSizeFull();
+		root.addComponent(championGrid);
+		root.addComponent(matchListGrid);
+
 		root.addComponent(dashboardLayout);
 
 	}
