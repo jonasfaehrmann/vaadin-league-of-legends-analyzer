@@ -19,6 +19,7 @@ import com.vaadin.addon.charts.Chart;
 import com.vaadin.addon.charts.model.ChartType;
 import com.vaadin.addon.charts.model.Configuration;
 import com.vaadin.addon.charts.model.DataSeries;
+import com.vaadin.addon.charts.model.DataSeriesItem;
 import com.vaadin.addon.charts.model.Labels;
 import com.vaadin.addon.charts.model.ListSeries;
 import com.vaadin.addon.charts.model.Marker;
@@ -27,9 +28,16 @@ import com.vaadin.addon.charts.model.PlotOptionsLine;
 import com.vaadin.addon.charts.model.YAxis;
 import com.vaadin.board.Row;
 import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
 import de.leuphana.backend.data.DashboardData;
+import de.leuphana.backend.data.DeliveryStats;
+import de.leuphana.backend.data.entity.Order;
+import de.leuphana.backend.data.entity.Product;
+import de.leuphana.backend.service.OrderService;
+import de.leuphana.ui.components.OrdersGrid;
 import de.leuphana.ui.navigation.NavigationManager;
+import de.leuphana.ui.view.orderedit.OrderEditView;
 
 /**
  * The dashboard view showing statistics about sales and deliveries.
@@ -46,6 +54,7 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private static final String BOARD_ROW_PANELS = "board-row-panels";
 
 	private final NavigationManager navigationManager;
+	private final OrderService orderService;
 
 	private final BoardLabel todayLabel = new BoardLabel("Today", "3/7", "today");
 	private final BoardLabel notAvailableLabel = new BoardLabel("N/A", "1", "na");
@@ -57,6 +66,7 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final Chart deliveriesThisYearGraph = new Chart(ChartType.COLUMN);
 	private final Chart yearlySalesGraph = new Chart(ChartType.AREA);
 	private final Chart monthlyProductSplit = new Chart(ChartType.PIE);
+	private final OrdersGrid dueGrid;
 
 	private ListSeries deliveriesThisMonthSeries;
 	private ListSeries deliveriesThisYearSeries;
@@ -65,8 +75,10 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private DataSeries deliveriesPerProductSeries;
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager) {
+	public DashboardView(NavigationManager navigationManager, OrderService orderService, OrdersGrid dueGrid) {
 		this.navigationManager = navigationManager;
+		this.orderService = orderService;
+		this.dueGrid = dueGrid;
 	}
 
 	@PostConstruct
@@ -83,11 +95,17 @@ public class DashboardView extends DashboardViewDesign implements View {
 		row = board.addRow(new BoardBox(yearlySalesGraph));
 		row.addStyleName(BOARD_ROW_PANELS);
 
+		row = board.addRow(new BoardBox(monthlyProductSplit), new BoardBox(dueGrid, "due-grid"));
 		row.addStyleName(BOARD_ROW_PANELS);
 
 		initDeliveriesGraphs();
 		initProductSplitMonthlyGraph();
 		initYearlySalesGraph();
+
+		dueGrid.setId("dueGrid");
+		dueGrid.setSizeFull();
+
+		dueGrid.addSelectionListener(e -> selectedOrder(e.getFirstSelectedItem().get()));
 	}
 
 	private void initYearlySalesGraph() {
@@ -184,11 +202,36 @@ public class DashboardView extends DashboardViewDesign implements View {
 				.toArray(size -> new String[size]);
 	}
 
+	@Override
+	public void enter(ViewChangeEvent event) {
+		DashboardData data = fetchData();
+		updateLabels(data.getDeliveryStats());
+		updateGraphs(data);
+	}
 
+	private DashboardData fetchData() {
+		return orderService.getDashboardData(MonthDay.now().getMonthValue(), Year.now().getValue());
+	}
 
 	private void updateGraphs(DashboardData data) {
+		deliveriesThisMonthSeries.setData(data.getDeliveriesThisMonth());
+		deliveriesThisYearSeries.setData(data.getDeliveriesThisYear());
 
-		
+		for (int i = 0; i < 3; i++) {
+			salesPerYear[i].setData(data.getSalesPerMonth(i));
+		}
+
+		for (Entry<Product, Integer> entry : data.getProductDeliveries().entrySet()) {
+			deliveriesPerProductSeries.add(new DataSeriesItem(entry.getKey().getName(), entry.getValue()));
+		}
+	}
+
+	private void updateLabels(DeliveryStats deliveryStats) {
+		todayLabel.setContent(deliveryStats.getDeliveredToday() + "/" + deliveryStats.getDueToday());
+		notAvailableLabel.setContent(Integer.toString(deliveryStats.getNotAvailableToday()));
+		notAvailableBox.setNeedsAttention(deliveryStats.getNotAvailableToday() > 0);
+		newLabel.setContent(Integer.toString(deliveryStats.getNewOrders()));
+		tomorrowLabel.setContent(Integer.toString(deliveryStats.getDueTomorrow()));
 	}
 
 	/**
@@ -203,6 +246,10 @@ public class DashboardView extends DashboardViewDesign implements View {
 		public PlotOptionsLineWithZIndex(Number zIndex) {
 			this.zIndex = zIndex;
 		};
+	}
+
+	public void selectedOrder(Order order) {
+		navigationManager.navigateTo(OrderEditView.class, order.getId());
 	}
 
 }

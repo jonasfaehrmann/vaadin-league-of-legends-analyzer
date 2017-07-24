@@ -7,8 +7,14 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import de.leuphana.backend.data.entity.user.ExternalAccount;
+
 @Entity
 public class User extends AbstractEntity {
+
+	@NotNull
+	@Size(min = 1, max = 255)
+	private int id;
 
 	@NotNull
 	@Size(min = 1, max = 255)
