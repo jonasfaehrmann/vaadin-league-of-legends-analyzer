@@ -17,9 +17,9 @@ public class ApplicationConfiguration {
 		return new BCryptPasswordEncoder();
 	}
 
+	// checks whether the user can access specific views
 	@Bean
-	SecuredViewAccessControl securedViewAccessControl()
-	{
+	SecuredViewAccessControl securedViewAccessControl() {
 		return new SecuredViewAccessControl();
 	}
 }

@@ -7,8 +7,14 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import de.leuphana.backend.data.entity.user.ExternalAccount;
+
 @Entity
 public class User extends AbstractEntity {
+
+	@NotNull
+	@Size(min = 1, max = 255)
+	private int id;
 
 	@NotNull
 	@Size(min = 1, max = 255)
@@ -27,6 +33,9 @@ public class User extends AbstractEntity {
 	@Size(min = 1, max = 255)
 	private String role;
 
+	@Size(min = 1, max = 255)
+	private ExternalAccount externalAccount;
+
 	private boolean locked = false;
 
 	public User() {
@@ -43,6 +52,15 @@ public class User extends AbstractEntity {
 		this.name = name;
 		this.password = password;
 		this.role = role;
+		this.externalAccount = null;
+	}
+
+	public ExternalAccount getExternalAccount() {
+		return externalAccount;
+	}
+
+	public void setExternalAccount(ExternalAccount externalAccount) {
+		this.externalAccount = externalAccount;
 	}
 
 	public String getPassword() {
