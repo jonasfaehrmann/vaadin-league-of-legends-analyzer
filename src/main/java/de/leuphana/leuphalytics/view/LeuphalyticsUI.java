@@ -92,7 +92,10 @@ public class LeuphalyticsUI extends UI {
 		root.addComponent(dashboardLayout);
 
 	}
-
+	public void getChampionNamebyId() {
+		
+	}
+	
 	private void addHeader() {
 		Label header = new Label("Leuphalytics");
 		header.addStyleName(ValoTheme.LABEL_H1);
