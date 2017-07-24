@@ -3,25 +3,21 @@ package de.leuphana.leuphalytics.connector.restconnector;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.catalina.core.ApplicationFilterConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import net.rithms.riot.*;
+import de.leuphana.leuphalytics.LeuphalyticsApplication;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
+import net.rithms.riot.constant.Region;
 import net.rithms.riot.dto.MatchList.MatchList;
 import net.rithms.riot.dto.MatchList.MatchReference;
 import net.rithms.riot.dto.Static.Champion;
 import net.rithms.riot.dto.Static.ChampionList;
 import net.rithms.riot.dto.Summoner.Summoner;
-import de.leuphana.leuphalytics.LeuphalyticsApplication;
-import de.leuphana.leuphalytics.model.champion.ChampionData;
-import de.leuphana.leuphalytics.model.widget.matchlist.RiotMatchList;
-import net.rithms.riot.constant.Region;
 
 @Service
 public class RiotClient {
