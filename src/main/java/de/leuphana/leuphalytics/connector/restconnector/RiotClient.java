@@ -30,31 +30,31 @@ public class RiotClient {
 
 	private final RestTemplate restTemplate;
 	private static RiotApi api;
-	
+	private Region region;
 
-//	public RiotClient(RestTemplateBuilder restTemplateBuilder) {
-//		//this.restTemplate = restTemplateBuilder.build();
-	//}
+	public RiotClient(RestTemplateBuilder restTemplateBuilder) {
+		this.restTemplate = restTemplateBuilder.build();
+	}
 
-	//public List<MatchReference> getMatchListForUser() throws RiotApiException {
-//		api = new RiotApi();
-//		api.setKey("RGAPI-0249e022-6362-4b4a-94ba-6648331e2b30");
-//
-//		Summoner summoner = api.getSummonerByName(Region.NA, "faker");
-//		MatchList matchList = api.getMatchList(summoner.getId());
-//		List<MatchReference> matchListForUser = matchList.getMatches();
-//		return matchListForUser;
-	//}
+	public List<MatchReference> getMatchListForUser() throws RiotApiException {
+		api = new RiotApi();
+		api.setKey("RGAPI-0249e022-6362-4b4a-94ba-6648331e2b30");
 
-//	public Map<String, Champion> getChampions() throws RiotApiException {
-//		api = new RiotApi();
-//		api.setKey("RGAPI-0249e022-6362-4b4a-94ba-6648331e2b30");
-//
-//		ChampionList championList = api.getDataChampionList();
-//		Map<String, Champion> championMap = championList.getData();
-//
-//		return championMap;
-//	}
+		Summoner summoner = api.getSummonerByName(Region.NA, "faker");
+		MatchList matchList = api.getMatchList(summoner.getId());
+		List<MatchReference> matchListForUser = matchList.getMatches();
+		return matchListForUser;
+	}
+
+	public Map<String, Champion> getChampions() throws RiotApiException {
+		api = new RiotApi();
+		api.setKey("RGAPI-0249e022-6362-4b4a-94ba-6648331e2b30");
+
+		ChampionList championList = api.getDataChampionList();
+		Map<String, Champion> championMap = championList.getData();
+
+		return championMap;
+	}
 
 	// for testing
 	// public static void main(String[] args) throws RiotApiException {
