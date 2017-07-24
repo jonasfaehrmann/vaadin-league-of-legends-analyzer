@@ -33,8 +33,8 @@ public class User extends AbstractEntity {
 	@Size(min = 1, max = 255)
 	private String role;
 
-	@Size(min = 1, max = 255)
-	private ExternalAccount externalAccount;
+	// @Size(min = 1, max = 255)
+	// private ExternalAccount externalAccount;
 
 	private boolean locked = false;
 
@@ -52,16 +52,15 @@ public class User extends AbstractEntity {
 		this.name = name;
 		this.password = password;
 		this.role = role;
-		this.externalAccount = null;
 	}
 
-	public ExternalAccount getExternalAccount() {
-		return externalAccount;
-	}
-
-	public void setExternalAccount(ExternalAccount externalAccount) {
-		this.externalAccount = externalAccount;
-	}
+	// public ExternalAccount getExternalAccount() {
+	// return externalAccount;
+	// }
+	//
+	// public void setExternalAccount(ExternalAccount externalAccount) {
+	// this.externalAccount = externalAccount;
+	// }
 
 	public String getPassword() {
 		return password;
