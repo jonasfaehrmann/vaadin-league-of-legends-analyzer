@@ -26,7 +26,7 @@ import net.rithms.riot.dto.Summoner.Summoner;
 @Title("Leuphalytics")
 @SpringUI
 @Theme("valo")
-public class LeuphalyticsUI extends UI {
+public class LeuphalyticsUI_alt extends UI {
 
 	private VerticalLayout root;
 
@@ -36,7 +36,7 @@ public class LeuphalyticsUI extends UI {
 	private final RiotClient riotClient;
 	private RiotApi api;
 
-	public LeuphalyticsUI(RiotClient riotClient) {
+	public LeuphalyticsUI_alt(RiotClient riotClient) {
 		this.riotClient = riotClient;
 	}
 
