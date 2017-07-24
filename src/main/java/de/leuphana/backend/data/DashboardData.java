@@ -3,67 +3,20 @@ package de.leuphana.backend.data;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import de.leuphana.backend.data.entity.Product;
+import de.leuphana.backend.data.entity.widget.Widget;
 
 public class DashboardData {
 
-	private DeliveryStats deliveryStats;
-	private List<Number> deliveriesThisMonth;
-	private List<Number> deliveriesThisYear;
-	private Object salesLastYears;
-	private Number[][] salesPerMonth;
-	private LinkedHashMap<Product, Integer> productDeliveries;
+	private List<Widget> widgets;
 
-	public DeliveryStats getDeliveryStats() {
-		return deliveryStats;
+	public List<Widget> getWidgets() {
+		return widgets;
 	}
 
-	public void setDeliveryStats(DeliveryStats deliveryStats) {
-		this.deliveryStats = deliveryStats;
+	public void setWidgets(List<Widget> widgets) {
+		this.widgets = widgets;
 	}
 
-	public List<Number> getDeliveriesThisMonth() {
-		return deliveriesThisMonth;
-	}
 
-	public void setDeliveriesThisMonth(List<Number> deliveriesThisMonth) {
-		this.deliveriesThisMonth = deliveriesThisMonth;
-	}
-
-	public List<Number> getDeliveriesThisYear() {
-		return deliveriesThisYear;
-	}
-
-	public void setDeliveriesThisYear(List<Number> deliveriesThisYear) {
-		this.deliveriesThisYear = deliveriesThisYear;
-	}
-
-	public Object getSalesLastYears() {
-		return salesLastYears;
-	}
-
-	public void setSalesLastYears(Object salesLastYears) {
-		this.salesLastYears = salesLastYears;
-	}
-
-	public Number[][] getSalesPerMonth() {
-		return salesPerMonth;
-	}
-
-	public void setSalesPerMonth(Number[][] salesPerMonth) {
-		this.salesPerMonth = salesPerMonth;
-	}
-
-	public Number[] getSalesPerMonth(int i) {
-		return salesPerMonth[i];
-	}
-
-	public LinkedHashMap<Product, Integer> getProductDeliveries() {
-		return productDeliveries;
-	}
-
-	public void setProductDeliveries(LinkedHashMap<Product, Integer> productDeliveries) {
-		this.productDeliveries = productDeliveries;
-	}
 
 }

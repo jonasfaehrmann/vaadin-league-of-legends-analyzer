@@ -5,20 +5,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.vaadin.spring.events.annotation.EnableEventBus;
 
 import de.leuphana.app.security.SecurityConfig;
-import de.leuphana.backend.OrderRepository;
-import de.leuphana.backend.data.entity.Order;
 import de.leuphana.backend.service.UserService;
 import de.leuphana.backend.util.LocalDateJpaConverter;
 import de.leuphana.ui.AppUI;
 
 @SpringBootApplication(scanBasePackageClasses = { AppUI.class, Application.class, UserService.class,
 		SecurityConfig.class })
-@EnableJpaRepositories(basePackageClasses = { OrderRepository.class })
-@EntityScan(basePackageClasses = { Order.class, LocalDateJpaConverter.class })
+@EntityScan(basePackageClasses = { LocalDateJpaConverter.class })
 @EnableEventBus
 public class Application extends SpringBootServletInitializer {
 
