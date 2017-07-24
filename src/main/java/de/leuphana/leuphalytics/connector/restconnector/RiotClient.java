@@ -38,7 +38,7 @@ public class RiotClient {
 
 	public List<MatchReference> getMatchListForUser() throws RiotApiException {
 		api = new RiotApi();
-		api.setKey("RGAPI-8f505b0b-40ea-43d3-96c0-1ea8bae539b5");
+		api.setKey("RGAPI-0249e022-6362-4b4a-94ba-6648331e2b30");
 
 		Summoner summoner = api.getSummonerByName(Region.NA, "faker");
 		MatchList matchList = api.getMatchList(summoner.getId());
@@ -48,7 +48,7 @@ public class RiotClient {
 
 	public Map<String, Champion> getChampions() throws RiotApiException {
 		api = new RiotApi();
-		api.setKey("RGAPI-8f505b0b-40ea-43d3-96c0-1ea8bae539b5");
+		api.setKey("RGAPI-0249e022-6362-4b4a-94ba-6648331e2b30");
 
 		ChampionList championList = api.getDataChampionList();
 		Map<String, Champion> championMap = championList.getData();
