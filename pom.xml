@@ -268,6 +268,24 @@
 						<artifactId>xml-apis</artifactId>
 						<version>1.4.01</version>
 					</dependency>
+					<dependency>
+						<groupId>com.oracle</groupId>
+						<artifactId>ojdbc8</artifactId>
+						<version>12.2.0.1.0</version>
+					</dependency>
+
+					<dependency>
+						<groupId>com.github.rithms</groupId>
+						<artifactId>riot-api-java</artifactId>
+						<version>4.0.0</version>
+					</dependency>
+
+					<!-- Gson: Java to Json conversion -->
+					<dependency>
+						<groupId>com.google.code.gson</groupId>
+						<artifactId>gson</artifactId>
+						<version>2.8.1</version>
+					</dependency>
 				</dependencies>
 				<configuration>
 					<extraJvmArgs>-Xmx2G</extraJvmArgs>
