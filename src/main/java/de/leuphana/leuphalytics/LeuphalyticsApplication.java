@@ -18,7 +18,6 @@ public class LeuphalyticsApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(LeuphalyticsApplication.class);
 
-
 	User user;
 	Dashboard dashboard;
 

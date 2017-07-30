@@ -19,9 +19,7 @@ import de.leuphana.leuphalytics.model.match.RiotMatch;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 
-@Title("Leuphalytics")
-@SpringUI
-@Theme("valo")
+
 public class LeuphalyticsUI_alt extends UI {
 
 	private VerticalLayout root;
