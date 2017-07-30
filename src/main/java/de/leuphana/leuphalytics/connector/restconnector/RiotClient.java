@@ -1,5 +1,6 @@
 package de.leuphana.leuphalytics.connector.restconnector;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -10,8 +11,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import de.leuphana.leuphalytics.LeuphalyticsApplication;
+import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
+import net.rithms.riot.api.endpoints.champion.dto.Champion;
+import net.rithms.riot.api.endpoints.champion.dto.ChampionList;
+import net.rithms.riot.api.endpoints.match.dto.MatchList;
+import net.rithms.riot.api.endpoints.match.dto.MatchReference;
+import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
+import net.rithms.riot.constant.Platform;
 
 @Service
 public class RiotClient {
@@ -21,9 +29,28 @@ public class RiotClient {
 	private final RestTemplate restTemplate;
 	private static RiotApi api;
 
-
 	public RiotClient(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
+	}
+
+	public List<MatchReference> getMatchListForUser() throws RiotApiException {
+		ApiConfig config = new ApiConfig().setKey("RGAPI-e6b84cf4-c564-4afe-a2ef-c0ea20be5474");
+		RiotApi api = new RiotApi(config);
+
+		Summoner summoner = api.getSummonerByName(Platform.NA, "faker");
+		MatchList matchList = api.getMatchListByAccountId(Platform.NA, summoner.getAccountId());
+		List<MatchReference> matchListForUser = matchList.getMatches();
+		return matchListForUser;
+	}
+
+	public List<Champion> getChampions() throws RiotApiException {
+		ApiConfig config = new ApiConfig().setKey("RGAPI-e6b84cf4-c564-4afe-a2ef-c0ea20be5474");
+		RiotApi api = new RiotApi(config);
+
+		ChampionList championList = api.getChampions(Platform.NA);
+		List<Champion> championMap = championList.getChampions();
+
+		return championMap;
 	}
 
 	// for testing
