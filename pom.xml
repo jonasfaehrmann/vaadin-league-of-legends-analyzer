@@ -58,7 +58,7 @@
 		<dependency>
 			<groupId>com.github.rithms</groupId>
 			<artifactId>riot-api-java</artifactId>
-			<version>3.9.0</version>
+			<version>4.0.0</version>
 		</dependency>
 
 		<!-- Gson: Java to Json conversion -->

@@ -18,10 +18,6 @@ import de.leuphana.leuphalytics.connector.restconnector.RiotClient;
 import de.leuphana.leuphalytics.model.match.RiotMatch;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
-import net.rithms.riot.dto.MatchList.MatchList;
-import net.rithms.riot.dto.MatchList.MatchReference;
-import net.rithms.riot.dto.Static.Champion;
-import net.rithms.riot.dto.Summoner.Summoner;
 
 @Title("Leuphalytics")
 @SpringUI
@@ -72,22 +68,8 @@ public class LeuphalyticsUI_alt extends UI {
 
 		// matchList with RiotApi.jar
 
-		Grid<MatchReference> matchListGrid = new Grid<>();
-		matchListGrid.setItems(riotClient.getMatchListForUser());
-		matchListGrid.setCaption("Matchlist:");
-		matchListGrid.addColumn(MatchReference::getChampion).setCaption("Champion");
-		matchListGrid.addColumn(MatchReference::getSeason).setCaption("Season");
-		matchListGrid.addColumn(MatchReference::getLane).setCaption("Lane");
+		
 
-		Grid<Champion> championGrid = new Grid<>();
-		championGrid.setCaption("Static champions: ");
-		championGrid.setItems(riotClient.getChampions().values());
-		championGrid.addColumn(Champion::getName).setCaption("Name");
-		championGrid.addColumn(Champion::getTitle).setCaption("Title");
-		championGrid.addColumn(Champion::getStats).setCaption("Stats");
-		championGrid.setSizeFull();
-		root.addComponent(championGrid);
-		root.addComponent(matchListGrid);
 
 		root.addComponent(dashboardLayout);
 
