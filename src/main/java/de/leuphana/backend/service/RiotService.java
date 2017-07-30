@@ -15,6 +15,7 @@ import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.champion.dto.Champion;
 import net.rithms.riot.api.endpoints.champion.dto.ChampionList;
+import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchList;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
@@ -37,6 +38,7 @@ public class RiotService {
 		Summoner summoner = api.getSummonerByName(Platform.NA, "faker");
 		MatchList matchList = api.getMatchListByAccountId(Platform.NA, summoner.getAccountId());
 		List<MatchReference> matchListForUser = matchList.getMatches();
+		
 		return matchListForUser;
 	}
 

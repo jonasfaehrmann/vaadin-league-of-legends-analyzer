@@ -30,14 +30,20 @@ import com.vaadin.board.Row;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
+import com.vaadin.ui.Grid;
+
 import de.leuphana.backend.data.DashboardData;
 import de.leuphana.backend.data.DeliveryStats;
 import de.leuphana.backend.data.entity.Order;
 import de.leuphana.backend.data.entity.Product;
 import de.leuphana.backend.service.OrderService;
+import de.leuphana.backend.service.RiotService;
 import de.leuphana.ui.components.OrdersGrid;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.orderedit.OrderEditView;
+import net.rithms.riot.api.RiotApiException;
+import net.rithms.riot.api.endpoints.match.dto.Match;
+import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 /**
  * The dashboard view showing statistics about sales and deliveries.
@@ -68,21 +74,27 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final Chart monthlyProductSplit = new Chart(ChartType.PIE);
 	private final OrdersGrid dueGrid;
 
+	private final Grid<MatchReference> matchListForUser = new Grid<>();
+
 	private ListSeries deliveriesThisMonthSeries;
 	private ListSeries deliveriesThisYearSeries;
 	private ListSeries[] salesPerYear;
 
 	private DataSeries deliveriesPerProductSeries;
 
+	private RiotService riotService;
+
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, OrderService orderService, OrdersGrid dueGrid) {
+	public DashboardView(NavigationManager navigationManager, OrderService orderService, OrdersGrid dueGrid,
+			RiotService riotService) {
 		this.navigationManager = navigationManager;
 		this.orderService = orderService;
 		this.dueGrid = dueGrid;
+		this.riotService = riotService;
 	}
 
 	@PostConstruct
-	public void init() {
+	public void init() throws RiotApiException {
 		setResponsive(true);
 
 		Row row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
@@ -95,9 +107,13 @@ public class DashboardView extends DashboardViewDesign implements View {
 		row = board.addRow(new BoardBox(yearlySalesGraph));
 		row.addStyleName(BOARD_ROW_PANELS);
 
+		row = board.addRow(new BoardBox(matchListForUser));
+		row.addStyleName(BOARD_ROW_PANELS);
+
 		row = board.addRow(new BoardBox(monthlyProductSplit), new BoardBox(dueGrid, "due-grid"));
 		row.addStyleName(BOARD_ROW_PANELS);
 
+		initMatchListForUser();
 		initDeliveriesGraphs();
 		initProductSplitMonthlyGraph();
 		initYearlySalesGraph();
@@ -106,6 +122,19 @@ public class DashboardView extends DashboardViewDesign implements View {
 		dueGrid.setSizeFull();
 
 		dueGrid.addSelectionListener(e -> selectedOrder(e.getFirstSelectedItem().get()));
+	}
+
+	private void initMatchListForUser() throws RiotApiException {
+		matchListForUser.setId("matchListForUser");
+		matchListForUser.setSizeFull();
+
+		Match riotMatch = new Match();
+		
+		matchListForUser.setCaption("Your matches: ");
+		matchListForUser.setItems(riotService.getMatchListForUser());
+		matchListForUser.addColumn(MatchReference::getLane).setCaption("Lane");
+		matchListForUser.addColumn(MatchReference::getQueue).setCaption("Queue");
+
 	}
 
 	private void initYearlySalesGraph() {

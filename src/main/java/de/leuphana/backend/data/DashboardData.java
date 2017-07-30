@@ -4,9 +4,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import de.leuphana.backend.data.entity.Product;
+import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 public class DashboardData {
 
+	private List<MatchReference> matchListForUser;
 	private DeliveryStats deliveryStats;
 	private List<Number> deliveriesThisMonth;
 	private List<Number> deliveriesThisYear;
@@ -14,6 +16,14 @@ public class DashboardData {
 	private Number[][] salesPerMonth;
 	private LinkedHashMap<Product, Integer> productDeliveries;
 
+	public List<MatchReference> getMatchListForUser() {
+		return matchListForUser;
+	}
+
+	public void setMatchListForUser(List<MatchReference> matchListForUser) {
+		this.matchListForUser = matchListForUser;
+	}
+	
 	public DeliveryStats getDeliveryStats() {
 		return deliveryStats;
 	}
