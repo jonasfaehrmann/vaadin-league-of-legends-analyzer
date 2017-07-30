@@ -1,23 +1,13 @@
 package de.leuphana.ui.view.dashboard;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.time.MonthDay;
 import java.time.Year;
-import java.time.YearMonth;
-import java.time.format.TextStyle;
-import java.util.Locale;
 import java.util.Map.Entry;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.vaadin.addon.charts.Chart;
-import com.vaadin.addon.charts.model.ChartType;
-import com.vaadin.addon.charts.model.Configuration;
 import com.vaadin.addon.charts.model.DataSeries;
 import com.vaadin.addon.charts.model.DataSeriesItem;
 import com.vaadin.addon.charts.model.Labels;
@@ -38,11 +28,10 @@ import de.leuphana.backend.data.entity.Order;
 import de.leuphana.backend.data.entity.Product;
 import de.leuphana.backend.service.OrderService;
 import de.leuphana.backend.service.RiotService;
-import de.leuphana.ui.components.OrdersGrid;
+import de.leuphana.ui.components.CurrentMatchGrid;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.orderedit.OrderEditView;
 import net.rithms.riot.api.RiotApiException;
-import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 /**
@@ -55,8 +44,6 @@ import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 @SpringView
 public class DashboardView extends DashboardViewDesign implements View {
 
-	private static final String DELIVERIES = "Deliveries";
-
 	private static final String BOARD_ROW_PANELS = "board-row-panels";
 
 	private final NavigationManager navigationManager;
@@ -68,11 +55,7 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final BoardLabel newLabel = new BoardLabel("New", "2", "new");
 	private final BoardLabel tomorrowLabel = new BoardLabel("Tomorrow", "4", "tomorrow");
 
-	private final Chart deliveriesThisMonthGraph = new Chart(ChartType.COLUMN);
-	private final Chart deliveriesThisYearGraph = new Chart(ChartType.COLUMN);
-	private final Chart yearlySalesGraph = new Chart(ChartType.AREA);
-	private final Chart monthlyProductSplit = new Chart(ChartType.PIE);
-	private final OrdersGrid dueGrid;
+	private final CurrentMatchGrid dueGrid;
 
 	private final Grid<MatchReference> matchListForUser = new Grid<>();
 
@@ -85,7 +68,7 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private RiotService riotService;
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, OrderService orderService, OrdersGrid dueGrid,
+	public DashboardView(NavigationManager navigationManager, OrderService orderService, CurrentMatchGrid dueGrid,
 			RiotService riotService) {
 		this.navigationManager = navigationManager;
 		this.orderService = orderService;
@@ -101,22 +84,10 @@ public class DashboardView extends DashboardViewDesign implements View {
 				new BoardBox(tomorrowLabel));
 		row.addStyleName("board-row-group");
 
-		row = board.addRow(new BoardBox(deliveriesThisMonthGraph), new BoardBox(deliveriesThisYearGraph));
-		row.addStyleName(BOARD_ROW_PANELS);
-
-		row = board.addRow(new BoardBox(yearlySalesGraph));
-		row.addStyleName(BOARD_ROW_PANELS);
-
 		row = board.addRow(new BoardBox(matchListForUser));
 		row.addStyleName(BOARD_ROW_PANELS);
 
-		row = board.addRow(new BoardBox(monthlyProductSplit), new BoardBox(dueGrid, "due-grid"));
-		row.addStyleName(BOARD_ROW_PANELS);
-
 		initMatchListForUser();
-		initDeliveriesGraphs();
-		initProductSplitMonthlyGraph();
-		initYearlySalesGraph();
 
 		dueGrid.setId("dueGrid");
 		dueGrid.setSizeFull();
@@ -128,90 +99,11 @@ public class DashboardView extends DashboardViewDesign implements View {
 		matchListForUser.setId("matchListForUser");
 		matchListForUser.setSizeFull();
 
-		Match riotMatch = new Match();
-		
 		matchListForUser.setCaption("Your matches: ");
 		matchListForUser.setItems(riotService.getMatchListForUser());
 		matchListForUser.addColumn(MatchReference::getLane).setCaption("Lane");
 		matchListForUser.addColumn(MatchReference::getQueue).setCaption("Queue");
 
-	}
-
-	private void initYearlySalesGraph() {
-		yearlySalesGraph.setId("yearlySales");
-		yearlySalesGraph.setSizeFull();
-		int year = Year.now().getValue();
-
-		Configuration conf = yearlySalesGraph.getConfiguration();
-		conf.setTitle("Sales last years");
-		conf.getxAxis().setCategories(getMonthNames());
-		conf.getChart().setMarginBottom(6);
-
-		PlotOptionsLine options = new PlotOptionsLine();
-		options.setMarker(new Marker(false));
-		options.setShadow(true);
-		conf.setPlotOptions(options);
-
-		salesPerYear = new ListSeries[3];
-		for (int i = 0; i < salesPerYear.length; i++) {
-			salesPerYear[i] = new ListSeries(Integer.toString(year - i));
-			salesPerYear[i].setPlotOptions(new PlotOptionsLineWithZIndex(year - i));
-			conf.addSeries(salesPerYear[i]);
-		}
-		conf.getyAxis().setTitle("");
-
-	}
-
-	private void initProductSplitMonthlyGraph() {
-		monthlyProductSplit.setId("monthlyProductSplit");
-		monthlyProductSplit.setSizeFull();
-
-		LocalDate today = LocalDate.now();
-
-		Configuration conf = monthlyProductSplit.getConfiguration();
-		String thisMonth = today.getMonth().getDisplayName(TextStyle.FULL, Locale.US);
-		conf.setTitle("Products delivered in " + thisMonth);
-		deliveriesPerProductSeries = new DataSeries(DELIVERIES);
-		conf.addSeries(deliveriesPerProductSeries);
-
-		conf.getyAxis().setTitle("");
-
-	}
-
-	private void initDeliveriesGraphs() {
-		LocalDate today = LocalDate.now();
-
-		deliveriesThisMonthGraph.setId("deliveriesThisMonth");
-		deliveriesThisMonthGraph.setSizeFull();
-
-		deliveriesThisYearGraph.setId("deliveriesThisYear");
-		deliveriesThisYearGraph.setSizeFull();
-
-		Configuration yearConf = deliveriesThisYearGraph.getConfiguration();
-
-		yearConf.setTitle("Deliveries in " + today.getYear());
-		yearConf.getChart().setMarginBottom(6);
-		yearConf.getxAxis().setCategories(getMonthNames());
-		yearConf.getxAxis().setLabels(new Labels(null));
-		yearConf.getLegend().setEnabled(false);
-		deliveriesThisYearSeries = new ListSeries(DELIVERIES);
-		yearConf.addSeries(deliveriesThisYearSeries);
-		configureColumnSeries(deliveriesThisYearSeries);
-
-		Configuration monthConf = deliveriesThisMonthGraph.getConfiguration();
-		String thisMonth = today.getMonth().getDisplayName(TextStyle.FULL, Locale.US);
-		monthConf.setTitle("Deliveries in " + thisMonth);
-		monthConf.getChart().setMarginBottom(6);
-		monthConf.getLegend().setEnabled(false);
-		deliveriesThisMonthSeries = new ListSeries(DELIVERIES);
-		monthConf.addSeries(deliveriesThisMonthSeries);
-		configureColumnSeries(deliveriesThisMonthSeries);
-
-		int daysInMonth = YearMonth.of(today.getYear(), today.getMonthValue()).lengthOfMonth();
-		String[] categories = IntStream.rangeClosed(1, daysInMonth).mapToObj(Integer::toString)
-				.toArray(size -> new String[size]);
-		monthConf.getxAxis().setCategories(categories);
-		monthConf.getxAxis().setLabels(new Labels(false));
 	}
 
 	protected void configureColumnSeries(ListSeries series) {
@@ -224,11 +116,6 @@ public class DashboardView extends DashboardViewDesign implements View {
 		yaxis.setGridLineWidth(0);
 		yaxis.setLabels(new Labels(false));
 		yaxis.setTitle("");
-	}
-
-	private String[] getMonthNames() {
-		return Stream.of(Month.values()).map(month -> month.getDisplayName(TextStyle.SHORT, Locale.US))
-				.toArray(size -> new String[size]);
 	}
 
 	@Override

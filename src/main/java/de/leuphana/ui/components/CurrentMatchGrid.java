@@ -21,18 +21,18 @@ import com.vaadin.ui.renderers.HtmlRenderer;
 
 @SpringComponent
 @PrototypeScope
-public class OrdersGrid extends Grid<Order> {
+public class CurrentMatchGrid extends Grid<Order> {
 
 	@Autowired
 	private OrdersDataProvider dataProvider;
 
-	public OrdersGrid() {
+	public CurrentMatchGrid() {
 		addStyleName("orders-grid");
 		setSizeFull();
 		removeHeaderRow(0);
 
 		// Add stylenames to rows
-		setStyleGenerator(OrdersGrid::getRowStyle);
+		setStyleGenerator(CurrentMatchGrid::getRowStyle);
 
 		// Due column
 		Column<Order, String> dueColumn = addColumn(
