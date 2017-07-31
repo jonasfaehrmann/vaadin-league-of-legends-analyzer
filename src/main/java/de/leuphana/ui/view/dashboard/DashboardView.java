@@ -55,8 +55,6 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final BoardLabel newLabel = new BoardLabel("New", "2", "new");
 	private final BoardLabel tomorrowLabel = new BoardLabel("Tomorrow", "4", "tomorrow");
 
-	private final CurrentMatchGrid dueGrid;
-
 	private final Grid<MatchReference> matchListForUser = new Grid<>();
 
 	private ListSeries deliveriesThisMonthSeries;
@@ -67,12 +65,14 @@ public class DashboardView extends DashboardViewDesign implements View {
 
 	private RiotService riotService;
 
+	private final CurrentMatchGrid matchGrid;
+
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, OrderService orderService, CurrentMatchGrid dueGrid,
+	public DashboardView(NavigationManager navigationManager, OrderService orderService, CurrentMatchGrid matchGrid,
 			RiotService riotService) {
 		this.navigationManager = navigationManager;
 		this.orderService = orderService;
-		this.dueGrid = dueGrid;
+		this.matchGrid = matchGrid;
 		this.riotService = riotService;
 	}
 
@@ -89,10 +89,6 @@ public class DashboardView extends DashboardViewDesign implements View {
 
 		initMatchListForUser();
 
-		dueGrid.setId("dueGrid");
-		dueGrid.setSizeFull();
-
-		dueGrid.addSelectionListener(e -> selectedOrder(e.getFirstSelectedItem().get()));
 	}
 
 	private void initMatchListForUser() throws RiotApiException {

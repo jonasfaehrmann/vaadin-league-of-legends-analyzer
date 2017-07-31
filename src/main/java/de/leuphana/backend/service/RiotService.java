@@ -1,11 +1,6 @@
 package de.leuphana.backend.service;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -15,7 +10,6 @@ import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.champion.dto.Champion;
 import net.rithms.riot.api.endpoints.champion.dto.ChampionList;
-import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchList;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;

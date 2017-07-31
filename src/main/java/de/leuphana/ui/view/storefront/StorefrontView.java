@@ -52,7 +52,7 @@ public class StorefrontView extends StorefrontViewDesign implements View {
 	 */
 	@PostConstruct
 	public void init() {
-		list.addSelectionListener(e -> selectedOrder(e.getFirstSelectedItem().get()));
+		//list.addSelectionListener(e -> selectedOrder(e.getFirstSelectedItem().get()));
 		newOrder.addClickListener(e -> newOrder());
 		searchButton.addClickListener(e -> search(searchField.getValue(), includePast.getValue()));
 
@@ -94,7 +94,7 @@ public class StorefrontView extends StorefrontViewDesign implements View {
 	}
 
 	public void filterGrid(String searchTerm, boolean includePast) {
-		list.filterGrid(searchTerm, includePast);
+		//list.filterGrid(searchTerm, includePast);
 		searchField.setValue(searchTerm);
 		this.includePast.setValue(includePast);
 	}
