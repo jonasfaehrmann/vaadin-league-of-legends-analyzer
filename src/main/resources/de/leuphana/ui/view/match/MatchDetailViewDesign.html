@@ -4,8 +4,44 @@
   <meta charset="UTF-8">
   <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;apptheme&quot;}">
   <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="de_leuphana_ui_view_match:de.leuphana.ui.view.match">
  </head>
  <body>
-  <vaadin-absolute-layout></vaadin-absolute-layout>
+  <vaadin-vertical-layout size-full>
+   <vaadin-label plain-text _id="gameId">
+     gameId 
+   </vaadin-label>
+   <vaadin-grid height-full data-item-type="net.rithms.riot.api.endpoints.match.dto.Participant" _id="matchParticipantGrid" :expand>
+    <table>
+     <colgroup>
+      <col column-id="championId" sortable>
+      <col column-id="highestAchievedSeasonTier" sortable>
+      <col column-id="masteries" sortable>
+      <col column-id="participantId" sortable>
+      <col column-id="runes" sortable>
+      <col column-id="spell1Id" sortable>
+      <col column-id="spell2Id" sortable>
+      <col column-id="stats" sortable>
+      <col column-id="teamId" sortable>
+      <col column-id="timeline" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="championId">ChampionId</th>
+       <th plain-text column-ids="highestAchievedSeasonTier">HighestAchievedSeasonTier</th>
+       <th plain-text column-ids="masteries">Masteries</th>
+       <th plain-text column-ids="participantId">ParticipantId</th>
+       <th plain-text column-ids="runes">Runes</th>
+       <th plain-text column-ids="spell1Id">Spell1Id</th>
+       <th plain-text column-ids="spell2Id">Spell2Id</th>
+       <th plain-text column-ids="stats">Stats</th>
+       <th plain-text column-ids="teamId">TeamId</th>
+       <th plain-text column-ids="timeline">Timeline</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+  </vaadin-vertical-layout>
  </body>
 </html>
