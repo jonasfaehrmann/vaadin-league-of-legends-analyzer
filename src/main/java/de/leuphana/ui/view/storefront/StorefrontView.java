@@ -12,7 +12,6 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.spring.annotation.ViewScope;
-import de.leuphana.backend.data.entity.Order;
 import de.leuphana.ui.navigation.NavigationManager;
 import com.vaadin.ui.Button.ClickShortcut;
 

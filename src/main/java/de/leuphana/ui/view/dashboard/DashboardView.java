@@ -28,7 +28,9 @@ import de.leuphana.backend.data.entity.Product;
 import de.leuphana.backend.service.RiotService;
 import de.leuphana.ui.components.CurrentMatchGrid;
 import de.leuphana.ui.navigation.NavigationManager;
+import de.leuphana.ui.view.match.MatchDetailView;
 import net.rithms.riot.api.RiotApiException;
+import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 /**
@@ -52,12 +54,6 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final BoardLabel tomorrowLabel = new BoardLabel("Tomorrow", "4", "tomorrow");
 
 	private final Grid<MatchReference> matchListForUser = new Grid<>();
-
-	private ListSeries deliveriesThisMonthSeries;
-	private ListSeries deliveriesThisYearSeries;
-	private ListSeries[] salesPerYear;
-
-	private DataSeries deliveriesPerProductSeries;
 
 	private RiotService riotService;
 
@@ -103,10 +99,5 @@ public class DashboardView extends DashboardViewDesign implements View {
 		//updateLabels(data.getDeliveryStats());
 		//updateGraphs(data);
 	}
-
-
-//	public void selectedOrder(Order order) {
-//		navigationManager.navigateTo(OrderEditView.class, order.getId());
-//	}
 
 }
