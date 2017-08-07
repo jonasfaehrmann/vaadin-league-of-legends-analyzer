@@ -1,6 +1,8 @@
 package de.leuphana.backend.service;
 
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -8,10 +10,10 @@ import org.springframework.web.client.RestTemplate;
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
-import net.rithms.riot.api.endpoints.champion.dto.Champion;
-import net.rithms.riot.api.endpoints.champion.dto.ChampionList;
 import net.rithms.riot.api.endpoints.match.dto.MatchList;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
+import net.rithms.riot.api.endpoints.static_data.dto.Champion;
+import net.rithms.riot.api.endpoints.static_data.dto.ChampionList;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.Platform;
 
@@ -20,15 +22,14 @@ public class RiotService {
 
 	private final RestTemplate restTemplate;
 	private static RiotApi api;
+	private static ApiConfig config = new ApiConfig().setKey("RGAPI-54ccbc81-76e5-4950-b2da-7f576933e5ee");
 
 	public RiotService(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
+		this.api = new RiotApi(config);
 	}
 
 	public List<MatchReference> getMatchListForUser() throws RiotApiException {
-		ApiConfig config = new ApiConfig().setKey("RGAPI-e6b84cf4-c564-4afe-a2ef-c0ea20be5474");
-		RiotApi api = new RiotApi(config);
-
 		Summoner summoner = api.getSummonerByName(Platform.NA, "faker");
 		MatchList matchList = api.getMatchListByAccountId(Platform.NA, summoner.getAccountId());
 		List<MatchReference> matchListForUser = matchList.getMatches();
@@ -36,16 +37,13 @@ public class RiotService {
 		return matchListForUser;
 	}
 
-	public List<Champion> getChampions() throws RiotApiException {
-		ApiConfig config = new ApiConfig().setKey("RGAPI-e6b84cf4-c564-4afe-a2ef-c0ea20be5474");
-		RiotApi api = new RiotApi(config);
-
-		ChampionList championList = api.getChampions(Platform.NA);
-		List<Champion> championMap = championList.getChampions();
+	public Map<String, Champion> getDataChampionList() throws RiotApiException {
+		ChampionList championList = api.getDataChampionList(Platform.NA);
+		Map<String, Champion> championMap = championList.getData();
 
 		return championMap;
 	}
-
+	
 	// for testing
 	// public static void main(String[] args) throws RiotApiException {
 	// api = new RiotApi();

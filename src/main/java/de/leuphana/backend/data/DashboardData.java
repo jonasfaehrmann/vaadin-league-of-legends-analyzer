@@ -2,12 +2,17 @@ package de.leuphana.backend.data;
 
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import de.leuphana.backend.data.entity.Product;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
+import net.rithms.riot.api.endpoints.static_data.dto.Champion;
+import net.rithms.riot.api.endpoints.static_data.dto.Item;
 
 public class DashboardData {
-
+	
+	private Map<String, Champion> dataChampionList;
+	private List<Item> itemList;
 	private List<MatchReference> matchListForUser;
 	private DeliveryStats deliveryStats;
 	private List<Number> deliveriesThisMonth;
@@ -74,6 +79,22 @@ public class DashboardData {
 
 	public void setProductDeliveries(LinkedHashMap<Product, Integer> productDeliveries) {
 		this.productDeliveries = productDeliveries;
+	}
+
+	public List<Item> getItemList() {
+		return itemList;
+	}
+
+	public void setItemList(List<Item> itemList) {
+		this.itemList = itemList;
+	}
+
+	public Map<String, Champion> getDataChampionList() {
+		return dataChampionList;
+	}
+
+	public void setDataChampionList(Map<String, Champion> dataChampionList) {
+		this.dataChampionList = dataChampionList;
 	}
 
 }

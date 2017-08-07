@@ -1,4 +1,4 @@
-package de.leuphana.ui.view.orderedit;
+/*package de.leuphana.ui.view.orderedit;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -92,9 +92,9 @@ public class OrderEditPresenter implements Serializable, HasLogger {
 		this.view = view;
 	}
 
-	/**
+	*//**
 	 * Called when the user enters the view.
-	 */
+	 *//*
 	public void enterView(Long id) {
 		Order order;
 		if (id == null) {
@@ -247,3 +247,4 @@ public class OrderEditPresenter implements Serializable, HasLogger {
 		updateTotalSum();
 	}
 }
+*/

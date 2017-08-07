@@ -14,7 +14,6 @@ import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.spring.annotation.ViewScope;
 import de.leuphana.backend.data.entity.Order;
 import de.leuphana.ui.navigation.NavigationManager;
-import de.leuphana.ui.view.orderedit.OrderEditView;
 import com.vaadin.ui.Button.ClickShortcut;
 
 /**
@@ -53,20 +52,20 @@ public class StorefrontView extends StorefrontViewDesign implements View {
 	@PostConstruct
 	public void init() {
 		//list.addSelectionListener(e -> selectedOrder(e.getFirstSelectedItem().get()));
-		newOrder.addClickListener(e -> newOrder());
+		//newOrder.addClickListener(e -> newOrder());
 		searchButton.addClickListener(e -> search(searchField.getValue(), includePast.getValue()));
 
 		// We don't want a global shortcut for enter, scope it to the panel
 		searchPanel.addAction(new ClickShortcut(searchButton, KeyCode.ENTER, null));
 	}
 
-	public void selectedOrder(Order order) {
-		navigationManager.navigateTo(OrderEditView.class, order.getId());
-	}
-
-	public void newOrder() {
-		navigationManager.navigateTo(OrderEditView.class);
-	}
+//	public void selectedOrder(Order order) {
+//		navigationManager.navigateTo(OrderEditView.class, order.getId());
+//	}
+//
+//	public void newOrder() {
+//		navigationManager.navigateTo(OrderEditView.class);
+//	}
 
 	public void search(String searchTerm, boolean includePast) {
 		filterGrid(searchTerm, includePast);

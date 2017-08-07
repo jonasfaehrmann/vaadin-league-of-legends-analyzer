@@ -35,6 +35,4 @@ public class CurrentMatchGrid extends Grid<MatchReference>{
 		addColumn(MatchReference::getQueue).setCaption("Queue");
 	}
 
-	
-
 }

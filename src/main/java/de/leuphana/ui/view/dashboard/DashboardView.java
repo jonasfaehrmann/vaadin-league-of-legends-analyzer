@@ -22,15 +22,12 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Grid;
 
-import de.leuphana.backend.data.DashboardData;
 import de.leuphana.backend.data.DeliveryStats;
 import de.leuphana.backend.data.entity.Order;
 import de.leuphana.backend.data.entity.Product;
-import de.leuphana.backend.service.OrderService;
 import de.leuphana.backend.service.RiotService;
 import de.leuphana.ui.components.CurrentMatchGrid;
 import de.leuphana.ui.navigation.NavigationManager;
-import de.leuphana.ui.view.orderedit.OrderEditView;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
@@ -47,7 +44,6 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private static final String BOARD_ROW_PANELS = "board-row-panels";
 
 	private final NavigationManager navigationManager;
-	private final OrderService orderService;
 
 	private final BoardLabel todayLabel = new BoardLabel("Today", "3/7", "today");
 	private final BoardLabel notAvailableLabel = new BoardLabel("N/A", "1", "na");
@@ -68,10 +64,9 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final CurrentMatchGrid matchGrid;
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, OrderService orderService, CurrentMatchGrid matchGrid,
+	public DashboardView(NavigationManager navigationManager, CurrentMatchGrid matchGrid,
 			RiotService riotService) {
 		this.navigationManager = navigationManager;
-		this.orderService = orderService;
 		this.matchGrid = matchGrid;
 		this.riotService = riotService;
 	}
@@ -102,66 +97,16 @@ public class DashboardView extends DashboardViewDesign implements View {
 
 	}
 
-	protected void configureColumnSeries(ListSeries series) {
-		PlotOptionsColumn options = new PlotOptionsColumn();
-		options.setBorderWidth(1);
-		options.setGroupPadding(0);
-		series.setPlotOptions(options);
-
-		YAxis yaxis = series.getConfiguration().getyAxis();
-		yaxis.setGridLineWidth(0);
-		yaxis.setLabels(new Labels(false));
-		yaxis.setTitle("");
-	}
-
 	@Override
-	public void enter(ViewChangeEvent event) {
-		DashboardData data = fetchData();
-		updateLabels(data.getDeliveryStats());
-		updateGraphs(data);
+	public void enter(ViewChangeEvent event){
+		
+		//updateLabels(data.getDeliveryStats());
+		//updateGraphs(data);
 	}
 
-	private DashboardData fetchData() {
-		return orderService.getDashboardData(MonthDay.now().getMonthValue(), Year.now().getValue());
-	}
 
-	private void updateGraphs(DashboardData data) {
-		deliveriesThisMonthSeries.setData(data.getDeliveriesThisMonth());
-		deliveriesThisYearSeries.setData(data.getDeliveriesThisYear());
-
-		for (int i = 0; i < 3; i++) {
-			salesPerYear[i].setData(data.getSalesPerMonth(i));
-		}
-
-		for (Entry<Product, Integer> entry : data.getProductDeliveries().entrySet()) {
-			deliveriesPerProductSeries.add(new DataSeriesItem(entry.getKey().getName(), entry.getValue()));
-		}
-	}
-
-	private void updateLabels(DeliveryStats deliveryStats) {
-		todayLabel.setContent(deliveryStats.getDeliveredToday() + "/" + deliveryStats.getDueToday());
-		notAvailableLabel.setContent(Integer.toString(deliveryStats.getNotAvailableToday()));
-		notAvailableBox.setNeedsAttention(deliveryStats.getNotAvailableToday() > 0);
-		newLabel.setContent(Integer.toString(deliveryStats.getNewOrders()));
-		tomorrowLabel.setContent(Integer.toString(deliveryStats.getDueTomorrow()));
-	}
-
-	/**
-	 * Extends {@link PlotOptionsLine} to support zIndex. Omits getter/setter,
-	 * since they are not needed in our case.
-	 *
-	 */
-	private static class PlotOptionsLineWithZIndex extends PlotOptionsLine {
-		@SuppressWarnings("unused")
-		private Number zIndex;
-
-		public PlotOptionsLineWithZIndex(Number zIndex) {
-			this.zIndex = zIndex;
-		};
-	}
-
-	public void selectedOrder(Order order) {
-		navigationManager.navigateTo(OrderEditView.class, order.getId());
-	}
+//	public void selectedOrder(Order order) {
+//		navigationManager.navigateTo(OrderEditView.class, order.getId());
+//	}
 
 }
