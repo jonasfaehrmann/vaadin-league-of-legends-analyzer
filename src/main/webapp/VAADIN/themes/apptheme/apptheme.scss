@@ -28,11 +28,11 @@
 // Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
 
 // The "App Shell" template colors are based off v-focus-color
-$v-focus-color: #4b4b65;
+$v-focus-color: #333;
 
 // Background gradient and image used for the menu, false disables
-$app-background-gradient: unquote("linear-gradient(145deg, #484962 30%, #d06b41 100%)");
-$app-background-image: url('bg.jpg');
+$app-background-gradient: false;
+$app-background-image: false;
 
 @import '../valo/valo.scss';
 @import 'ordersgrid';
@@ -49,7 +49,7 @@ $app-background-image: url('bg.jpg');
 
   .v-errorindicator {
     // Only show validation errors using field styles
-    display: none; 
+    display: none;
   }
   .Vaadin-Icons {
     // Make Vaadin Icons behave exactly like FontAwesome
