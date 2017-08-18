@@ -20,6 +20,7 @@ import com.vaadin.board.Row;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Grid;
 
 import de.leuphana.backend.data.DeliveryStats;
@@ -58,6 +59,8 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private RiotService riotService;
 
 	private final CurrentMatchGrid matchGrid;
+	
+	private final Button button = new Button("Hello");
 
 	@Autowired
 	public DashboardView(NavigationManager navigationManager, CurrentMatchGrid matchGrid,
@@ -77,6 +80,10 @@ public class DashboardView extends DashboardViewDesign implements View {
 
 		row = board.addRow(new BoardBox(matchListForUser));
 		row.addStyleName(BOARD_ROW_PANELS);
+		
+		//link to different view dummy
+		row = board.addRow(new BoardBox(button));
+		button.addClickListener(e -> navigationManager.navigateTo(MatchDetailView.class, 1));
 
 		initMatchListForUser();
 
@@ -90,7 +97,6 @@ public class DashboardView extends DashboardViewDesign implements View {
 		matchListForUser.setItems(riotService.getMatchListForUser());
 		matchListForUser.addColumn(MatchReference::getLane).setCaption("Lane");
 		matchListForUser.addColumn(MatchReference::getQueue).setCaption("Queue");
-
 	}
 
 	@Override
