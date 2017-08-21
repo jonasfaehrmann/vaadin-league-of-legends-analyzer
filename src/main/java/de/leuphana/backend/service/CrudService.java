@@ -4,23 +4,24 @@ import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Persistable;
 import org.springframework.data.repository.CrudRepository;
 
 import de.leuphana.backend.data.entity.AbstractEntity;
 
-public abstract class CrudService<T extends AbstractEntity> {
+public abstract class CrudService<T> {
 
-	protected abstract CrudRepository<T, Long> getRepository();
+	protected abstract CrudRepository<T, Integer> getRepository();
 
 	public T save(T entity) {
 		return getRepository().save(entity);
 	}
 
-	public void delete(long id) {
+	public void delete(Integer id) {
 		getRepository().delete(id);
 	}
 
-	public T load(long id) {
+	public T load(Integer id) {
 		return getRepository().findOne(id);
 	}
 

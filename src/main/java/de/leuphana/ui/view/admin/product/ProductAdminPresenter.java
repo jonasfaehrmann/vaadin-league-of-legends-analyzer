@@ -1,4 +1,4 @@
-package de.leuphana.ui.view.admin.product;
+/*package de.leuphana.ui.view.admin.product;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,3 +20,4 @@ public class ProductAdminPresenter extends AbstractCrudPresenter<Product, Produc
 		super(navigationManager, service, Product.class, productAdminDataProvider, beanFactory);
 	}
 }
+*/

@@ -1,4 +1,4 @@
-package de.leuphana.ui.view.orderedit;
+/*package de.leuphana.ui.view.orderedit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.spring.annotation.PrototypeScope;
@@ -21,3 +21,4 @@ public class ProductComboBox extends ComboBox<Product> {
 	}
 
 }
+*/

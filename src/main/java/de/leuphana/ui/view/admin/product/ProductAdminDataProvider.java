@@ -1,4 +1,4 @@
-package de.leuphana.ui.view.admin.product;
+/*package de.leuphana.ui.view.admin.product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,4 +44,4 @@ public class ProductAdminDataProvider extends FilterablePageableDataProvider<Pro
 		return sortOrders;
 	}
 
-}
+}*/

@@ -1,4 +1,4 @@
-package de.leuphana.backend.service;
+/*package de.leuphana.backend.service;
 
 import java.util.Optional;
 
@@ -46,3 +46,4 @@ public class ProductService extends CrudService<Product> {
 	}
 
 }
+*/

@@ -9,8 +9,8 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import de.leuphana.backend.data.entity.User;
-import de.leuphana.backend.service.UserService;
+import de.leuphana.backend.data.entity.neww.Account;
+import de.leuphana.backend.service.AccountService;
 
 /**
  * SecurityUtils takes care of all such static operations that have to do with
@@ -24,48 +24,48 @@ public class SecurityUtils {
 	}
 
 	/**
-	 * Gets the user name of the currently signed in user.
+	 * Gets the account name of the currently signed in account.
 	 *
-	 * @return the user name of the current user or <code>null</code> if the
-	 *         user has not signed in
+	 * @return the account name of the current account or <code>null</code> if the
+	 *         account has not signed in
 	 */
-	public static String getUsername() {
+	public static String getAccountname() {
 		SecurityContext context = SecurityContextHolder.getContext();
-		UserDetails userDetails = (UserDetails) context.getAuthentication().getPrincipal();
-		return userDetails.getUsername();
+		UserDetails accountDetails = (UserDetails) context.getAuthentication().getPrincipal();
+		return accountDetails.getUsername();
 	}
 
 	/**
-	 * Check if currently signed-in user is in the role with the given role
+	 * Check if currently signed-in account is in the role with the given role
 	 * name.
 	 *
 	 * @param role
 	 *            the role to check for
-	 * @return <code>true</code> if user is in the role, <code>false</code>
+	 * @return <code>true</code> if account is in the role, <code>false</code>
 	 *         otherwise
 	 */
-	public static boolean isCurrentUserInRole(String role) {
-		return getUserRoles().stream().filter(roleName -> roleName.equals(Objects.requireNonNull(role))).findAny()
+	public static boolean isCurrentAccountInRole(String role) {
+		return getAccountRoles().stream().filter(roleName -> roleName.equals(Objects.requireNonNull(role))).findAny()
 				.isPresent();
 	}
 
 	/**
-	 * Gets the roles the currently signed-in user belongs to.
+	 * Gets the roles the currently signed-in account belongs to.
 	 *
-	 * @return a set of all roles the currently signed-in user belongs to.
+	 * @return a set of all roles the currently signed-in account belongs to.
 	 */
-	public static Set<String> getUserRoles() {
+	public static Set<String> getAccountRoles() {
 		SecurityContext context = SecurityContextHolder.getContext();
 		return context.getAuthentication().getAuthorities().stream().map(GrantedAuthority::getAuthority)
 				.collect(Collectors.toSet());
 	}
 
 	/**
-	 * Gets the user object for the current user.
+	 * Gets the account object for the current account.
 	 *
-	 * @return the user object
+	 * @return the account object
 	 */
-	public static User getCurrentUser(UserService userService) {
-		return userService.findByEmail(SecurityUtils.getUsername());
+	public static Account getCurrentAccount(AccountService accountService) {
+		return accountService.findByEmail(SecurityUtils.getAccountname());
 	}
 }

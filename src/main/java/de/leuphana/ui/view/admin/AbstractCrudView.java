@@ -101,7 +101,7 @@ public abstract class AbstractCrudView<T extends AbstractEntity> implements Seri
 			}
 
 			if (e.getFirstSelectedItem().isPresent()) {
-				getPresenter().editRequest(e.getFirstSelectedItem().get());
+				//getPresenter().editRequest(e.getFirstSelectedItem().get());
 			} else {
 				throw new IllegalStateException("This should never happen as deselection is not allowed");
 			}

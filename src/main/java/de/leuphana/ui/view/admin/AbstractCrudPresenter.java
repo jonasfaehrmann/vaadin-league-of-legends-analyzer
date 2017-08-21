@@ -87,7 +87,7 @@ public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends 
 		dataProvider.setFilter(filter);
 	}
 
-	protected T loadEntity(long id) {
+	protected T loadEntity(Integer id) {
 		return service.load(id);
 	}
 
@@ -124,9 +124,9 @@ public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends 
 	}
 
 	public void editRequest(String parameters) {
-		long id;
+		Integer id;
 		try {
-			id = Long.parseLong(parameters);
+			id = Integer.parseInt(parameters);
 		} catch (NumberFormatException e) {
 			id = -1;
 		}

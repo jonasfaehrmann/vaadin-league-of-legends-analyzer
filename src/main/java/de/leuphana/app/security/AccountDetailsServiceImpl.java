@@ -10,26 +10,27 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import de.leuphana.backend.data.entity.User;
-import de.leuphana.backend.service.UserService;
+import de.leuphana.backend.data.entity.neww.Account;
+import de.leuphana.backend.service.AccountService;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService {
+public class AccountDetailsServiceImpl implements UserDetailsService {
 
-	private final UserService userService;
+	private final AccountService accountService;
 
 	@Autowired
-	public UserDetailsServiceImpl(UserService userService) {
-		this.userService = userService;
+	public AccountDetailsServiceImpl(AccountService accountService) {
+		this.accountService = accountService;
 	}
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userService.findByEmail(username);
-		if (null == user) {
+		Account account = accountService.findByEmail(username);
+		if (null == account) {
 			throw new UsernameNotFoundException("No user present with username: " + username);
 		} else {
-			return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
-					Collections.singletonList(new SimpleGrantedAuthority(user.getRole())));
+			return new org.springframework.security.core.userdetails.User(account.getEmail(), account.getPassword(),
+					Collections.singletonList(new SimpleGrantedAuthority(String.valueOf(account.getRoleId()))));
 		}
 	}
 }

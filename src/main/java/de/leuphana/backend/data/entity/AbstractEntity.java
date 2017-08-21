@@ -11,8 +11,7 @@ import javax.persistence.Version;
 public class AbstractEntity implements Serializable {
 
 	@Id
-	@GeneratedValue
-	private Long id;
+	private Integer id;
 
 	@Version
 	private int version;
@@ -21,7 +20,7 @@ public class AbstractEntity implements Serializable {
 		return id == null;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 

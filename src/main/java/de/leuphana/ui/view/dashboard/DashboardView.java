@@ -2,6 +2,7 @@ package de.leuphana.ui.view.dashboard;
 
 import java.time.MonthDay;
 import java.time.Year;
+import java.util.List;
 import java.util.Map.Entry;
 
 import javax.annotation.PostConstruct;
@@ -26,7 +27,9 @@ import com.vaadin.ui.Grid;
 import de.leuphana.backend.data.DeliveryStats;
 import de.leuphana.backend.data.entity.Order;
 import de.leuphana.backend.data.entity.Product;
+import de.leuphana.backend.data.entity.widget.Widget;
 import de.leuphana.backend.service.RiotService;
+import de.leuphana.backend.service.WidgetService;
 import de.leuphana.ui.components.CurrentMatchGrid;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.match.MatchDetailView;
@@ -35,8 +38,6 @@ import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 /**
- * The dashboard view showing statistics about sales and deliveries.
- * <p>
  * Created as a single View class because the logic is so simple that using a
  * pattern like MVP would add much overhead for little gain. If more complexity
  * is added to the class, you should consider splitting out a presenter.
@@ -78,13 +79,18 @@ public class DashboardView extends DashboardViewDesign implements View {
 				new BoardBox(tomorrowLabel));
 		row.addStyleName("board-row-group");
 
-		row = board.addRow(new BoardBox(matchListForUser));
+		row = board.addRow(new BoardBox(matchListForUser), new BoardBox(button));
 		row.addStyleName(BOARD_ROW_PANELS);
 		
 		//link to different view dummy
-		row = board.addRow(new BoardBox(button));
 		button.addClickListener(e -> navigationManager.navigateTo(MatchDetailView.class, 1));
 
+		WidgetService service = new WidgetService();
+		List<Widget> list  = service.findAll();
+		for (Widget widget : list) {
+			System.out.println(widget.getWidgetName());
+		}
+		
 		initMatchListForUser();
 
 	}

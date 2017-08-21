@@ -1,4 +1,4 @@
-package de.leuphana.ui.view.orderedit;
+/*package de.leuphana.ui.view.orderedit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,3 +43,4 @@ public class ProductComboBoxDataProvider extends PageableDataProvider<Product, S
 	}
 
 }
+*/

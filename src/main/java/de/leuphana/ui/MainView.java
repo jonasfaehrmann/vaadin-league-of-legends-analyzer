@@ -14,8 +14,7 @@ import com.vaadin.navigator.ViewLeaveAction;
 import com.vaadin.spring.annotation.SpringViewDisplay;
 import com.vaadin.spring.annotation.UIScope;
 import de.leuphana.ui.navigation.NavigationManager;
-import de.leuphana.ui.view.admin.product.ProductAdminView;
-import de.leuphana.ui.view.admin.user.UserAdminView;
+import de.leuphana.ui.view.admin.user.AccountAdminView;
 import de.leuphana.ui.view.dashboard.DashboardView;
 import de.leuphana.ui.view.storefront.StorefrontView;
 import com.vaadin.ui.Button;
@@ -47,8 +46,7 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 	public void init() {
 		attachNavigation(storefront, StorefrontView.class);
 		attachNavigation(dashboard, DashboardView.class);
-		attachNavigation(users, UserAdminView.class);
-		attachNavigation(products, ProductAdminView.class);
+		attachNavigation(users, AccountAdminView.class);
 
 		logout.addClickListener(e -> logout());
 	}

@@ -240,6 +240,13 @@
 			<version>2.8.1</version>
 			<scope>provided</scope>
 		</dependency>
+
+		<!-- Holds JDBC connection properties -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.6.2</version>
+		</dependency>
 	</dependencies>
 	<repositories>
 		<repository>

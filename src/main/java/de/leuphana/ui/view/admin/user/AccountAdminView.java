@@ -11,6 +11,7 @@ import com.vaadin.data.ValueContext;
 import com.vaadin.data.validator.BeanValidator;
 import com.vaadin.spring.annotation.SpringView;
 import de.leuphana.backend.data.entity.User;
+import de.leuphana.backend.data.entity.neww.Account;
 import de.leuphana.ui.view.admin.AbstractCrudView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
@@ -19,11 +20,11 @@ import com.vaadin.ui.Grid;
 import com.vaadin.ui.TextField;
 
 @SpringView
-public class UserAdminView extends AbstractCrudView<User> {
+public class AccountAdminView extends AbstractCrudView<Account> {
 
-	private final UserAdminPresenter presenter;
+	private final AccountAdminPresenter presenter;
 
-	private final UserAdminViewDesign userAdminViewDesign;
+	private final AccountAdminViewDesign accountAdminViewDesign;
 
 	private boolean passwordRequired;
 
@@ -34,7 +35,7 @@ public class UserAdminView extends AbstractCrudView<User> {
 	 */
 	private Validator<String> passwordValidator = new Validator<String>() {
 
-		BeanValidator passwordBeanValidator = new BeanValidator(User.class, "password");
+		BeanValidator passwordBeanValidator = new BeanValidator(Account.class, "password");
 
 		@Override
 		public ValidationResult apply(String value, ValueContext context) {
@@ -50,9 +51,9 @@ public class UserAdminView extends AbstractCrudView<User> {
 	};
 
 	@Autowired
-	public UserAdminView(UserAdminPresenter presenter) {
+	public AccountAdminView(AccountAdminPresenter presenter) {
 		this.presenter = presenter;
-		userAdminViewDesign = new UserAdminViewDesign();
+		accountAdminViewDesign = new AccountAdminViewDesign();
 	}
 
 	@PostConstruct
@@ -62,7 +63,7 @@ public class UserAdminView extends AbstractCrudView<User> {
 	}
 
 	@Override
-	public void bindFormFields(BeanValidationBinder<User> binder) {
+	public void bindFormFields(BeanValidationBinder<Account> binder) {
 		binder.forField(getViewComponent().password).withValidator(passwordValidator).bind(bean -> "",
 				(bean, value) -> {
 					if (value.isEmpty()) {
@@ -81,22 +82,22 @@ public class UserAdminView extends AbstractCrudView<User> {
 	}
 
 	@Override
-	public UserAdminViewDesign getViewComponent() {
-		return userAdminViewDesign;
+	public AccountAdminViewDesign getViewComponent() {
+		return accountAdminViewDesign;
 	}
 
 	@Override
-	protected UserAdminPresenter getPresenter() {
+	protected AccountAdminPresenter getPresenter() {
 		return presenter;
 	}
 
 	@Override
-	protected Grid<User> getGrid() {
+	protected Grid<Account> getGrid() {
 		return getViewComponent().list;
 	}
 
 	@Override
-	protected void setGrid(Grid<User> grid) {
+	protected void setGrid(Grid<Account> grid) {
 		getViewComponent().list = grid;
 	}
 
