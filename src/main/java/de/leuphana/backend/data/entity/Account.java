@@ -27,7 +27,7 @@ public class Account extends AbstractEntity {
 
 	@NotNull
 	@Size(min = 1, max = 255)
-	private Integer role_Id;
+	private Long role_Id;
 
 	@Transient
 	private boolean locked = false;
@@ -76,11 +76,11 @@ public class Account extends AbstractEntity {
 		this.email = email;
 	}
 	
-	public void setRole_Id(Integer role_Id) {
+	public void setRole_Id(Long role_Id) {
 		this.role_Id = role_Id;
 	}
 	
-	public Integer getRole_Id() {
+	public Long getRole_Id() {
 		return role_Id;
 	}
 	

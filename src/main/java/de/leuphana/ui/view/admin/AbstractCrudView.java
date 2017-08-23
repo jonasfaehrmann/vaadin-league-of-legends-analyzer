@@ -13,7 +13,6 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewBeforeLeaveEvent;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import de.leuphana.app.HasLogger;
-import de.leuphana.backend.data.Role;
 import de.leuphana.backend.data.entity.AbstractEntity;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
@@ -53,7 +52,7 @@ import com.vaadin.ui.components.grid.SingleSelectionModel;
  * @param <T>
  *            the type of entity which can be edited in the view
  */
-@Secured(Role.ADMIN)
+@Secured("admin")
 public abstract class AbstractCrudView<T extends AbstractEntity> implements Serializable, View, HasLogger {
 
 	public static final String CAPTION_DISCARD = "Discard";

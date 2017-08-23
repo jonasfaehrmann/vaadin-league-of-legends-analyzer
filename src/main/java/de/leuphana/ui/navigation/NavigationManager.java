@@ -9,7 +9,6 @@ import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.spring.internal.Conventions;
 import com.vaadin.spring.navigator.SpringNavigator;
 import de.leuphana.app.security.SecurityUtils;
-import de.leuphana.backend.data.Role;
 import de.leuphana.ui.view.dashboard.DashboardView;
 import de.leuphana.ui.view.storefront.StorefrontView;
 
@@ -61,7 +60,7 @@ public class NavigationManager extends SpringNavigator {
 			return;
 		}
 
-		navigateTo(SecurityUtils.isCurrentUserInRole(Role.ADMIN) ? DashboardView.class : StorefrontView.class);
+		navigateTo(SecurityUtils.isCurrentUserInRole("admin") ? DashboardView.class : StorefrontView.class);
 	}
 
 	/**
