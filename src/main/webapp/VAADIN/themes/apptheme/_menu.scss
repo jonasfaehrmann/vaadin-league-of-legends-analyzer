@@ -1,9 +1,13 @@
 @mixin menu {
   .app-shell {
     .logo {
-      // our logo text is white
-      color: #fff;
-      word-wrap: break-word;
+      // Color of App-Name on Top-Left corner
+      //font-size:25px;
+      //font-weight: 900;
+      //color: #e67e22;
+      //word-wrap: break-word;
+      background-image: url("VAADIN/themes/apptheme/League-Of-Legends-Logo.png");
+      
     }
     .v-caption-logo {
       // this is the (font)icon
@@ -12,13 +16,14 @@
     }
   
     .navigation-bar {
-      color: lighten($v-focus-color,40%);
+      color: #676262;
       background-size: cover;
       background-position: top;
   
       .v-button {
         border-radius: 0;
       }
+      
       .selected {
         background: rgba(0,0,0,.2);
         color: lighten($v-focus-color,60%);

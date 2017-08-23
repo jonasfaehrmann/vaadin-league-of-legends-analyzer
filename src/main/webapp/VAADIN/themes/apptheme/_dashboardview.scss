@@ -8,6 +8,7 @@
 	
 	vaadin-board {
 		padding: $padding;
+		//background: url(VAADIN/themes/apptheme/bg.jpg);
 
 		vaadin-board-row:nth-child(2) > .board-box {
 			height: calc(20vh - $first-row-compensation) !important;
