@@ -1,5 +1,7 @@
 package de.leuphana.app.security;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -12,7 +14,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import de.leuphana.app.Application;
-import de.leuphana.backend.data.Role;
+import de.leuphana.backend.data.entity.Account_Role;
+import de.leuphana.backend.service.AccountRoleService;
 
 @EnableWebSecurity
 @Configuration
@@ -23,13 +26,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private final PasswordEncoder passwordEncoder;
 
 	private final RedirectAuthenticationSuccessHandler successHandler;
+	
+	private final AccountRoleService accountRoleService;
 
 	@Autowired
 	public SecurityConfig(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder,
-			RedirectAuthenticationSuccessHandler successHandler) {
+			RedirectAuthenticationSuccessHandler successHandler, AccountRoleService accountRoleService) {
 		this.userDetailsService = userDetailsService;
 		this.passwordEncoder = passwordEncoder;
 		this.successHandler = successHandler;
+		this.accountRoleService = accountRoleService;
 	}
 
 	@Override
@@ -52,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		//Allow access to static resources ("/LEUPHALYTICS/**")
 		reg = reg.antMatchers("/LEUPHALYTICS/**").permitAll();
 		// Require authentication for all URLS ("/**")
-		reg = reg.antMatchers("/**").hasAnyAuthority(Role.getAllRoles());
+		reg = reg.antMatchers("/**").hasAnyAuthority(accountRoleService.findAllAsStringArray());
 		HttpSecurity sec = reg.and();
 
 		// Allow access to login page without login

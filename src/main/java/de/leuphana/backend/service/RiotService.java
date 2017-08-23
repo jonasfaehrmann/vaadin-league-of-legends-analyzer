@@ -50,17 +50,5 @@ public class RiotService {
 		
 		return match;
 	}
-	
-	// for testing
-	// public static void main(String[] args) throws RiotApiException {
-	// api = new RiotApi();
-	// api.setKey("RGAPI-8f505b0b-40ea-43d3-96c0-1ea8bae539b5");
-	//
-	// Summoner summoner = api.getSummonerByName(Region.NA, "faker");
-	// MatchList matchList = api.getMatchList(summoner.getId());
-	// List<MatchReference> userMatchList = matchList.getMatches();
-	// for (MatchReference matchReference : userMatchList) {
-	// System.out.println(matchReference.getMatchId()+"***"+matchReference.getTimestamp()+"***"+matchReference.getChampion());
-	// }
-	// }
+
 }

@@ -2,8 +2,8 @@
 <html>
  <head>
   <meta charset="UTF-8">
-  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;orderstheme&quot;}">
-  <meta name="vaadin-version" content="8.0.2">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;apptheme&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
   <meta name="package-mapping" content="com_vaadin_template_orders_ui_view_admin:de.leuphana.ui.view.admin">
  </head>
  <body>
@@ -18,7 +18,29 @@
    </vaadin-horizontal-layout>
    <vaadin-css-layout style-name="content" size-full :expand>
     <vaadin-css-layout style-name="list" size-full>
-     <vaadin-grid id="list" size-full data-item-type="de.leuphana.backend.data.entity.User" _id="list"></vaadin-grid>
+     <vaadin-grid id="list" size-full data-item-type="de.leuphana.backend.data.entity.Account" _id="list">
+      <table>
+       <colgroup>
+        <col column-id="password" sortable>
+        <col column-id="name" sortable>
+        <col column-id="email" sortable>
+        <col column-id="role_Id" sortable>
+        <col column-id="role" sortable>
+        <col column-id="locked" sortable>
+       </colgroup>
+       <thead>
+        <tr default>
+         <th plain-text column-ids="password">Password</th>
+         <th plain-text column-ids="name">Name</th>
+         <th plain-text column-ids="email">Email</th>
+         <th plain-text column-ids="role_Id">Role_Id</th>
+         <th plain-text column-ids="role">Role</th>
+         <th plain-text column-ids="locked">Locked</th>
+        </tr>
+       </thead>
+       <tbody></tbody>
+      </table>
+     </vaadin-grid>
     </vaadin-css-layout>
     <vaadin-vertical-layout enabled="false" style-name="inspect" spacing="false" id="form" size-full margin="false" _id="form">
      <vaadin-css-layout style-name="edit" size-full :expand>
