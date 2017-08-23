@@ -2,38 +2,45 @@ package de.leuphana.backend.data.entity;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Entity
-public class User extends AbstractEntity {
 
+@Entity
+@Table(name = "account")
+public class Account extends AbstractEntity {
+	
 	@NotNull
-	@Size(min = 1, max = 255)
-	@Column(unique = true)
+	@Size(min = 0, max = 100)
 	private String email;
 
 	@NotNull
-	@Size(min = 4, max = 255)
+	@Size(min = 0, max = 300)
 	private String password;
 
 	@NotNull
-	@Size(min = 1, max = 255)
+	@Size(min = 0, max = 255)
 	private String name;
 
 	@NotNull
 	@Size(min = 1, max = 255)
+	private Integer role_Id;
+
+	@Transient
+	private boolean locked = false;
+	
+	//Ignores this variable, because not in database
+	@Transient
 	private String role;
 
-	private boolean locked = false;
-
-	public User() {
+	public Account() {
 		// An empty constructor is needed for all beans
 	}
 
-	public User(String email, String name, String password, String role) {
+	public Account(String email, String name, String password, String role) {
 		Objects.requireNonNull(email);
 		Objects.requireNonNull(name);
 		Objects.requireNonNull(password);
@@ -61,20 +68,28 @@ public class User extends AbstractEntity {
 		this.name = name;
 	}
 
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public void setRole_Id(Integer role_Id) {
+		this.role_Id = role_Id;
+	}
+	
+	public Integer getRole_Id() {
+		return role_Id;
+	}
+	
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	public String getRole() {
+		return role;
 	}
 
 	public boolean isLocked() {

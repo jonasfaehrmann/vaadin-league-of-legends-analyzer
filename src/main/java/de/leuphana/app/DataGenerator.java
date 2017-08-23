@@ -1,4 +1,5 @@
-package de.leuphana.app;
+//TODO: Delete
+/*package de.leuphana.app;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -326,3 +327,4 @@ public class DataGenerator implements HasLogger {
 		userRepository.save(user);
 	}
 }
+*/

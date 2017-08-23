@@ -25,7 +25,7 @@ import de.leuphana.backend.data.OrderState;
 import de.leuphana.backend.data.entity.HistoryItem;
 import de.leuphana.backend.data.entity.Order;
 import de.leuphana.backend.data.entity.Product;
-import de.leuphana.backend.data.entity.User;
+import de.leuphana.backend.data.entity.Account;
 
 @Service
 public class OrderService {
@@ -50,7 +50,7 @@ public class OrderService {
 		return orderRepository.findOne(id);
 	}
 
-	public Order changeState(Order order, OrderState state, User user) {
+	public Order changeState(Order order, OrderState state, Account user) {
 		if (order.getState() == state) {
 			throw new IllegalArgumentException("Order state is already " + state);
 		}
@@ -60,7 +60,7 @@ public class OrderService {
 		return orderRepository.save(order);
 	}
 
-	private void addHistoryItem(Order order, OrderState newState, User user) {
+	private void addHistoryItem(Order order, OrderState newState, Account user) {
 		String comment = "Order " + newState.getDisplayName();
 
 		HistoryItem item = new HistoryItem(user, comment);
@@ -72,7 +72,7 @@ public class OrderService {
 	}
 
 	@Transactional(rollbackOn = Exception.class)
-	public Order saveOrder(Order order, User user) {
+	public Order saveOrder(Order order, Account user) {
 		if (order.getHistory() == null) {
 			String comment = "Order placed";
 			order.setHistory(new ArrayList<>());
@@ -84,7 +84,7 @@ public class OrderService {
 		return orderRepository.save(order);
 	}
 
-	public Order addHistoryItem(Order order, String comment, User user) {
+	public Order addHistoryItem(Order order, String comment, Account user) {
 		HistoryItem item = new HistoryItem(user, comment);
 
 		if (order.getHistory() == null) {

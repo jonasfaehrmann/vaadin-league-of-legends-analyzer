@@ -1,4 +1,5 @@
-package de.leuphana.ui.view.admin.product;
+//TODO: DELETE
+/*package de.leuphana.ui.view.admin.product;
 
 import javax.annotation.PostConstruct;
 
@@ -108,4 +109,4 @@ public class ProductAdminView extends AbstractCrudView<Product> {
 		return getViewComponent().name;
 	}
 
-}
+}*/

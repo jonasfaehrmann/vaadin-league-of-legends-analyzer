@@ -22,13 +22,13 @@ public class HistoryItem extends AbstractEntity {
 	private LocalDateTime timestamp;
 	@NotNull
 	@OneToOne
-	private User createdBy;
+	private Account createdBy;
 
 	protected HistoryItem() {
 		// Empty constructor is needed by Spring Data / JPA
 	}
 
-	public HistoryItem(User createdBy, String message) {
+	public HistoryItem(Account createdBy, String message) {
 		this.createdBy = createdBy;
 		this.message = message;
 		timestamp = LocalDateTime.now();
@@ -58,11 +58,11 @@ public class HistoryItem extends AbstractEntity {
 		this.timestamp = timestamp;
 	}
 
-	public User getCreatedBy() {
+	public Account getCreatedBy() {
 		return createdBy;
 	}
 
-	public void setCreatedBy(User createdBy) {
+	public void setCreatedBy(Account createdBy) {
 		this.createdBy = createdBy;
 	}
 

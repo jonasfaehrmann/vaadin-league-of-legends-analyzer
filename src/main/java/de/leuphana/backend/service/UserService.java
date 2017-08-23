@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.leuphana.backend.UserRepository;
-import de.leuphana.backend.data.entity.User;
+import de.leuphana.backend.data.entity.Account;
 
 @Service
-public class UserService extends CrudService<User> {
+public class UserService extends CrudService<Account> {
 
 	private static final String MODIFY_LOCKED_USER_NOT_PERMITTED = "User has been locked and cannot be modified or deleted";
 	private final PasswordEncoder passwordEncoder;
@@ -25,12 +25,12 @@ public class UserService extends CrudService<User> {
 		this.passwordEncoder = passwordEncoder;
 	}
 
-	public User findByEmail(String email) {
+	public Account findByEmail(String email) {
 		return getRepository().findByEmail(email);
 	}
 
 	@Override
-	public Page<User> findAnyMatching(Optional<String> filter, Pageable pageable) {
+	public Page<Account> findAnyMatching(Optional<String> filter, Pageable pageable) {
 		if (filter.isPresent()) {
 			String repositoryFilter = "%" + filter.get() + "%";
 			return getRepository().findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrRoleLikeIgnoreCase(repositoryFilter,
@@ -61,7 +61,7 @@ public class UserService extends CrudService<User> {
 
 	@Override
 	@Transactional
-	public User save(User entity) {
+	public Account save(Account entity) {
 		throwIfUserLocked(entity.getId());
 		return super.save(entity);
 	}
@@ -78,7 +78,7 @@ public class UserService extends CrudService<User> {
 			return;
 		}
 
-		User dbUser = getRepository().findOne(userId);
+		Account dbUser = getRepository().findOne(userId);
 		if (dbUser.isLocked()) {
 			throw new UserFriendlyDataException(MODIFY_LOCKED_USER_NOT_PERMITTED);
 		}

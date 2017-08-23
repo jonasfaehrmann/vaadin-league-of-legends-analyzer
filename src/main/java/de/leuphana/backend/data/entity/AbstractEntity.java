@@ -11,11 +11,7 @@ import javax.persistence.Version;
 public class AbstractEntity implements Serializable {
 
 	@Id
-	@GeneratedValue
 	private Long id;
-
-	@Version
-	private int version;
 
 	public boolean isNew() {
 		return id == null;
@@ -23,10 +19,6 @@ public class AbstractEntity implements Serializable {
 
 	public Long getId() {
 		return id;
-	}
-
-	public int getVersion() {
-		return version;
 	}
 
 	@Override

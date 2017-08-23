@@ -1,4 +1,5 @@
-package de.leuphana.ui.view.orderedit;
+//TODO: DELETE
+/*package de.leuphana.ui.view.orderedit;
 
 import javax.annotation.PostConstruct;
 
@@ -30,3 +31,4 @@ public class PickupLocationComboBox extends ComboBox<PickupLocation> {
 	}
 
 }
+*/

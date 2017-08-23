@@ -10,15 +10,17 @@ import org.vaadin.spring.events.annotation.EnableEventBus;
 
 import de.leuphana.app.security.SecurityConfig;
 import de.leuphana.backend.OrderRepository;
+import de.leuphana.backend.UserRepository;
 import de.leuphana.backend.data.entity.Order;
+import de.leuphana.backend.data.entity.Account;
 import de.leuphana.backend.service.UserService;
 import de.leuphana.backend.util.LocalDateJpaConverter;
 import de.leuphana.ui.AppUI;
 
 @SpringBootApplication(scanBasePackageClasses = { AppUI.class, Application.class, UserService.class,
 		SecurityConfig.class })
-@EnableJpaRepositories(basePackageClasses = { OrderRepository.class })
-@EntityScan(basePackageClasses = { Order.class, LocalDateJpaConverter.class })
+@EnableJpaRepositories(basePackageClasses = { UserRepository.class })
+@EntityScan(basePackageClasses = { Account.class })
 @EnableEventBus
 public class Application extends SpringBootServletInitializer {
 

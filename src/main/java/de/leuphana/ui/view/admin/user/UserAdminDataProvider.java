@@ -13,12 +13,12 @@ import com.vaadin.data.provider.Query;
 import com.vaadin.data.provider.QuerySortOrder;
 import com.vaadin.shared.data.sort.SortDirection;
 import com.vaadin.spring.annotation.SpringComponent;
-import de.leuphana.backend.data.entity.User;
+import de.leuphana.backend.data.entity.Account;
 import de.leuphana.backend.service.UserService;
 
 @SpringComponent
 @PrototypeScope
-public class UserAdminDataProvider extends FilterablePageableDataProvider<User, Object> {
+public class UserAdminDataProvider extends FilterablePageableDataProvider<Account, Object> {
 
 	private final UserService userService;
 
@@ -28,12 +28,12 @@ public class UserAdminDataProvider extends FilterablePageableDataProvider<User, 
 	}
 
 	@Override
-	protected Page<User> fetchFromBackEnd(Query<User, Object> query, Pageable pageable) {
+	protected Page<Account> fetchFromBackEnd(Query<Account, Object> query, Pageable pageable) {
 		return userService.findAnyMatching(getOptionalFilter(), pageable);
 	}
 
 	@Override
-	protected int sizeInBackEnd(Query<User, Object> query) {
+	protected int sizeInBackEnd(Query<Account, Object> query) {
 		return (int) userService.countAnyMatching(getOptionalFilter());
 	}
 

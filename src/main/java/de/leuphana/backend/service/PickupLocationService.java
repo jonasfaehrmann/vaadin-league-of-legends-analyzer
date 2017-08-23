@@ -1,4 +1,4 @@
-package de.leuphana.backend.service;
+/*package de.leuphana.backend.service;
 
 import java.util.Optional;
 
@@ -43,4 +43,4 @@ public class PickupLocationService {
 		return findAnyMatching(Optional.empty(), new PageRequest(0, 1)).iterator().next();
 	}
 
-}
+}*/

@@ -23,7 +23,7 @@ import de.leuphana.ui.view.admin.RoleSelect;
 public class UserAdminViewDesign extends VerticalLayout {
 	protected TextField search;
 	protected Button add;
-	protected Grid<de.leuphana.backend.data.entity.User> list;
+	protected Grid<de.leuphana.backend.data.entity.Account> list;
 	protected VerticalLayout form;
 	protected TextField email;
 	protected TextField name;
