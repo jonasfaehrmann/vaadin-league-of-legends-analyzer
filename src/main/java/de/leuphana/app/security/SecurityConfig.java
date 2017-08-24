@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import de.leuphana.app.Application;
-import de.leuphana.backend.data.entity.Account_Role;
+import de.leuphana.backend.data.entity.AccountRole;
 import de.leuphana.backend.service.AccountRoleService;
 
 @EnableWebSecurity

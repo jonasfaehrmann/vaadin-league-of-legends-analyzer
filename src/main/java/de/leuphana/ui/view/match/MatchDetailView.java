@@ -21,7 +21,6 @@ import net.rithms.riot.api.endpoints.match.dto.ParticipantStats;
 public class MatchDetailView extends MatchDetailViewDesign implements View {
 
 	private MatchDetailView view;
-	private BeanValidationBinder<Match> binder;
 
 	@Autowired
 	private RiotService riotService;

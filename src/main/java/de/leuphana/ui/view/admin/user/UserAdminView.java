@@ -63,7 +63,7 @@ public class UserAdminView extends AbstractCrudView<Account> {
 
 	@Override
 	public void bindFormFields(BeanValidationBinder<Account> binder) {
-		binder.forField(getViewComponent().password).withValidator(passwordValidator).bind(bean -> "",
+		binder.forField(getViewComponent().accountPasswordField).withValidator(passwordValidator).bind(bean -> "",
 				(bean, value) -> {
 					if (value.isEmpty()) {
 						// If nothing is entered in the password field, do
@@ -77,7 +77,7 @@ public class UserAdminView extends AbstractCrudView<Account> {
 
 	public void setPasswordRequired(boolean passwordRequired) {
 		this.passwordRequired = passwordRequired;
-		getViewComponent().password.setRequiredIndicatorVisible(passwordRequired);
+		getViewComponent().accountPasswordField.setRequiredIndicatorVisible(passwordRequired);
 	}
 
 	@Override
@@ -92,12 +92,12 @@ public class UserAdminView extends AbstractCrudView<Account> {
 
 	@Override
 	protected Grid<Account> getGrid() {
-		return getViewComponent().list;
+		return getViewComponent().accountGrid;
 	}
 
 	@Override
 	protected void setGrid(Grid<Account> grid) {
-		getViewComponent().list = grid;
+		getViewComponent().accountGrid = grid;
 	}
 
 	@Override
@@ -132,7 +132,7 @@ public class UserAdminView extends AbstractCrudView<Account> {
 
 	@Override
 	protected Focusable getFirstFormField() {
-		return getViewComponent().email;
+		return getViewComponent().accountEmailField;
 	}
 
 }

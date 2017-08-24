@@ -3,6 +3,8 @@ package de.leuphana.backend.data.entity;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
@@ -25,22 +27,19 @@ public class Account extends AbstractEntity {
 	@Size(min = 0, max = 255)
 	private String name;
 
-	@NotNull
-	@Size(min = 1, max = 255)
-	private Long role_Id;
-
 	@Transient
 	private boolean locked = false;
 	
-	//Ignores this variable, because not in database
-	@Transient
-	private String role;
+	@NotNull
+	@OneToOne
+	@JoinColumn(name = "role_id")
+	private AccountRole role;
 
 	public Account() {
 		// An empty constructor is needed for all beans
 	}
 
-	public Account(String email, String name, String password, String role) {
+	public Account(String email, String name, String password, AccountRole role) {
 		Objects.requireNonNull(email);
 		Objects.requireNonNull(name);
 		Objects.requireNonNull(password);
@@ -76,19 +75,11 @@ public class Account extends AbstractEntity {
 		this.email = email;
 	}
 	
-	public void setRole_Id(Long role_Id) {
-		this.role_Id = role_Id;
-	}
-	
-	public Long getRole_Id() {
-		return role_Id;
-	}
-	
-	public void setRole(String role) {
+	public void setRole(AccountRole role) {
 		this.role = role;
 	}
 	
-	public String getRole() {
+	public AccountRole getRole() {
 		return role;
 	}
 

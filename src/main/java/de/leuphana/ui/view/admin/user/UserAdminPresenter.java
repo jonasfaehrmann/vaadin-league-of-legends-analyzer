@@ -8,18 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.ViewScope;
 import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.service.UserService;
+import de.leuphana.backend.service.AccountService;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.admin.AbstractCrudPresenter;
 
 @SpringComponent
 @ViewScope
-public class UserAdminPresenter extends AbstractCrudPresenter<Account, UserService, UserAdminView>
+public class UserAdminPresenter extends AbstractCrudPresenter<Account, AccountService, UserAdminView>
 		implements Serializable {
 
 	@Autowired
 	public UserAdminPresenter(UserAdminDataProvider userAdminDataProvider, NavigationManager navigationManager,
-			UserService service, BeanFactory beanFactory) {
+			AccountService service, BeanFactory beanFactory) {
 		super(navigationManager, service, Account.class, userAdminDataProvider, beanFactory);
 	}
 

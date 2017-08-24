@@ -33,7 +33,6 @@ public class OrderEditViewDesign extends VerticalLayout {
 	protected OrderStateSelect state;
 	protected DateField dueDate;
 	protected ComboBox<java.time.LocalTime> dueTime;
-	//protected PickupLocationComboBox pickupLocation;
 	@PropertyId("customer.fullName")
 	protected TextField fullName;
 	@PropertyId("customer.phoneNumber")

@@ -9,18 +9,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import de.leuphana.backend.UserRepository;
+import de.leuphana.backend.AccountRepository;
 import de.leuphana.backend.data.entity.Account;
 
 @Service
-public class UserService extends CrudService<Account> {
+public class AccountService extends CrudService<Account> {
 
 	private static final String MODIFY_LOCKED_USER_NOT_PERMITTED = "User has been locked and cannot be modified or deleted";
 	private final PasswordEncoder passwordEncoder;
-	private final UserRepository userRepository;
+	private final AccountRepository userRepository;
 
 	@Autowired
-	public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+	public AccountService(AccountRepository userRepository, PasswordEncoder passwordEncoder) {
 		this.userRepository = userRepository;
 		this.passwordEncoder = passwordEncoder;
 	}
@@ -51,7 +51,7 @@ public class UserService extends CrudService<Account> {
 	}
 
 	@Override
-	protected UserRepository getRepository() {
+	protected AccountRepository getRepository() {
 		return userRepository;
 	}
 
@@ -80,7 +80,7 @@ public class UserService extends CrudService<Account> {
 
 		Account dbUser = getRepository().findOne(userId);
 		if (dbUser.isLocked()) {
-			throw new UserFriendlyDataException(MODIFY_LOCKED_USER_NOT_PERMITTED);
+			throw new AccountFriendlyDataException(MODIFY_LOCKED_USER_NOT_PERMITTED);
 		}
 	}
 

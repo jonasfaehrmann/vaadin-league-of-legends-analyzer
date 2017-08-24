@@ -10,7 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.service.UserService;
+import de.leuphana.backend.service.AccountService;
 
 /**
  * SecurityUtils takes care of all such static operations that have to do with
@@ -65,7 +65,7 @@ public class SecurityUtils {
 	 *
 	 * @return the user object
 	 */
-	public static Account getCurrentUser(UserService userService) {
+	public static Account getCurrentUser(AccountService userService) {
 		return userService.findByEmail(SecurityUtils.getUsername());
 	}
 }

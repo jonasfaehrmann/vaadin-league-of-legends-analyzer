@@ -15,7 +15,7 @@ import de.leuphana.app.security.SecurityUtils;
 import de.leuphana.backend.data.entity.HistoryItem;
 import de.leuphana.backend.data.entity.Order;
 import de.leuphana.backend.service.OrderService;
-import de.leuphana.backend.service.UserService;
+import de.leuphana.backend.service.AccountService;
 import de.leuphana.ui.util.DateTimeFormatter;
 import com.vaadin.ui.Button.ClickShortcut;
 import com.vaadin.ui.Label;
@@ -40,11 +40,11 @@ public class OrderHistory extends OrderHistoryDesign {
 
 	private final OrderService orderService;
 
-	private final UserService userService;
+	private final AccountService userService;
 
 	@Autowired
 	public OrderHistory(DateTimeFormatter dateTimeFormatter, ViewEventBus eventBus, OrderService orderService,
-			UserService userService) {
+			AccountService userService) {
 		this.dateTimeFormatter = dateTimeFormatter;
 		this.eventBus = eventBus;
 		this.orderService = orderService;

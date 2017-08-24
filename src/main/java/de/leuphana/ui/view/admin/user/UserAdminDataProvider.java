@@ -14,16 +14,16 @@ import com.vaadin.data.provider.QuerySortOrder;
 import com.vaadin.shared.data.sort.SortDirection;
 import com.vaadin.spring.annotation.SpringComponent;
 import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.service.UserService;
+import de.leuphana.backend.service.AccountService;
 
 @SpringComponent
 @PrototypeScope
 public class UserAdminDataProvider extends FilterablePageableDataProvider<Account, Object> {
 
-	private final UserService userService;
+	private final AccountService userService;
 
 	@Autowired
-	public UserAdminDataProvider(UserService userService) {
+	public UserAdminDataProvider(AccountService userService) {
 		this.userService = userService;
 	}
 

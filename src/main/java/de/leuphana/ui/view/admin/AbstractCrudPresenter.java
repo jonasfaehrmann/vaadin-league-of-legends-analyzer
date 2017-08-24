@@ -19,7 +19,7 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import de.leuphana.app.HasLogger;
 import de.leuphana.backend.data.entity.AbstractEntity;
 import de.leuphana.backend.service.CrudService;
-import de.leuphana.backend.service.UserFriendlyDataException;
+import de.leuphana.backend.service.AccountFriendlyDataException;
 import de.leuphana.ui.components.ConfirmPopup;
 import de.leuphana.ui.navigation.NavigationManager;
 import com.vaadin.ui.Grid;
@@ -235,6 +235,7 @@ public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends 
 		boolean isNew = editItem.isNew();
 		T entity;
 		try {
+			System.out.println(editItem);
 			entity = service.save(editItem);
 		} catch (OptimisticLockingFailureException e) {
 			// Somebody else probably edited the data at the same time
@@ -243,7 +244,7 @@ public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends 
 			getLogger().debug("Optimistic locking error while saving entity of type " + editItem.getClass().getName(),
 					e);
 			return;
-		} catch (UserFriendlyDataException e) {
+		} catch (AccountFriendlyDataException e) {
 			Notification.show(e.getMessage(), Type.ERROR_MESSAGE);
 			getLogger().debug("Unable to update entity of type " + editItem.getClass().getName(), e);
 			return;
@@ -283,7 +284,7 @@ public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends 
 	public void deleteClicked() {
 		try {
 			deleteEntity(editItem);
-		} catch (UserFriendlyDataException e) {
+		} catch (AccountFriendlyDataException e) {
 			Notification.show(e.getMessage(), Type.ERROR_MESSAGE);
 			getLogger().debug("Unable to delete entity of type " + editItem.getClass().getName(), e);
 			return;

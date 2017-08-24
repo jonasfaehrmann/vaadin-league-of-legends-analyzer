@@ -11,6 +11,7 @@ import javax.persistence.Version;
 public class AbstractEntity implements Serializable {
 
 	@Id
+	@GeneratedValue
 	private Long id;
 
 	public boolean isNew() {

@@ -22,7 +22,6 @@ import com.vaadin.ui.declarative.Design;
 @SuppressWarnings("serial")
 public class ProductInfoDesign extends CssLayout {
 	protected Button delete;
-	//protected ProductComboBox product;
 	protected TextField quantity;
 	protected Label price;
 	protected TextArea comment;

@@ -7,16 +7,16 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "ACCOUNT_ROLE")
-public class Account_Role extends AbstractEntity {
+public class AccountRole extends AbstractEntity {
 
 	@NotNull
 	private String name;
 	
-	public Account_Role(){
+	public AccountRole(){
 		
 	}
 	
-	public Account_Role(String name){
+	public AccountRole(String name){
 		
 	}
 	
