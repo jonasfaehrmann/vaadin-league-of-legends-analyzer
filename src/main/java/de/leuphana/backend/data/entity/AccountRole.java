@@ -1,5 +1,6 @@
 package de.leuphana.backend.data.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -10,17 +11,16 @@ import javax.validation.constraints.Size;
 public class AccountRole extends AbstractEntity {
 
 	@NotNull
+	@Column(name = "NAME")
 	private String name;
 	
 	public AccountRole(){
 		
 	}
 	
-	public AccountRole(String name){
-		
-	}
-	
-	public String getName() {
+	//getRoleName because Grid in UserAdminView would not work 
+	//https://github.com/vaadin/framework/issues/9609
+	public String getRoleName() {
 		return name;
 	}
 

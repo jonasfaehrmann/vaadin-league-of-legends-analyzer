@@ -25,10 +25,10 @@ public class UserAdminViewDesign extends VerticalLayout {
 	protected Button add;
 	protected Grid<de.leuphana.backend.data.entity.Account> accountGrid;
 	protected VerticalLayout form;
-	protected TextField accountEmailField;
-	protected TextField accountNameField;
-	protected TextField accountPasswordField;
-	protected RoleComboBox roleComboBox;
+	protected TextField email;
+	protected TextField name;
+	protected TextField password;
+	protected RoleComboBox role;
 	protected Button update;
 	protected Button cancel;
 	protected Button delete;

@@ -17,7 +17,7 @@ public class RoleComboBox extends ComboBox<AccountRole> {
 		this.dataProvider = dataProvider;
 		setCaption("Role");
 		setEmptySelectionAllowed(false);
-		setItemCaptionGenerator(AccountRole::getName);
+		setItemCaptionGenerator(AccountRole::getRoleName);
 		setDataProvider(dataProvider);
 		setTextInputAllowed(false);
 	}

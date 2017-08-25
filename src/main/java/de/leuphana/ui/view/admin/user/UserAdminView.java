@@ -26,7 +26,7 @@ public class UserAdminView extends AbstractCrudView<Account> {
 	private final UserAdminViewDesign userAdminViewDesign;
 
 	private boolean passwordRequired;
-
+	
 	/**
 	 * Custom validator to be able to decide dynamically whether the password
 	 * field is required or not (empty value when updating the user is
@@ -58,12 +58,12 @@ public class UserAdminView extends AbstractCrudView<Account> {
 	@PostConstruct
 	private void init() {
 		presenter.init(this);
-		getGrid().setColumns("email", "name", "role");
+		getGrid().setColumns("email", "name", "role.roleName");
 	}
 
 	@Override
 	public void bindFormFields(BeanValidationBinder<Account> binder) {
-		binder.forField(getViewComponent().accountPasswordField).withValidator(passwordValidator).bind(bean -> "",
+		binder.forField(getViewComponent().password).withValidator(passwordValidator).bind(bean -> "",
 				(bean, value) -> {
 					if (value.isEmpty()) {
 						// If nothing is entered in the password field, do
@@ -77,7 +77,7 @@ public class UserAdminView extends AbstractCrudView<Account> {
 
 	public void setPasswordRequired(boolean passwordRequired) {
 		this.passwordRequired = passwordRequired;
-		getViewComponent().accountPasswordField.setRequiredIndicatorVisible(passwordRequired);
+		getViewComponent().password.setRequiredIndicatorVisible(passwordRequired);
 	}
 
 	@Override
@@ -132,7 +132,7 @@ public class UserAdminView extends AbstractCrudView<Account> {
 
 	@Override
 	protected Focusable getFirstFormField() {
-		return getViewComponent().accountEmailField;
+		return getViewComponent().email;
 	}
 
 }

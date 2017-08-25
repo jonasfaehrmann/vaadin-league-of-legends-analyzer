@@ -29,9 +29,9 @@ public class AccountDetailsServiceImpl implements UserDetailsService {
 		if (null == account) {
 			throw new UsernameNotFoundException("No user present with accountname: " + accountname);
 		} else {
-			System.out.println(account.getRole().getName());
+			System.out.println(account.getRole().getRoleName());
 			return new org.springframework.security.core.userdetails.User(account.getEmail(), account.getPassword(),
-					Collections.singletonList(new SimpleGrantedAuthority(account.getRole().getName())));
+					Collections.singletonList(new SimpleGrantedAuthority(account.getRole().getRoleName())));
 		}
 	}
 }

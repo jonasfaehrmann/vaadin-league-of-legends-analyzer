@@ -9,10 +9,11 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import de.leuphana.backend.AccountRoleRepository;
+import de.leuphana.backend.data.entity.Account;
 import de.leuphana.backend.data.entity.AccountRole;
 
 @Service
-public class AccountRoleService {
+public class AccountRoleService extends CrudService<AccountRole> {
 
 	private final AccountRoleRepository accountRoleRepository;
 
@@ -35,7 +36,7 @@ public class AccountRoleService {
 		String[] accountRolesStringArray = new String[accountRoleList.size()];
 		int index = 0;
 		for (AccountRole accountRole : accountRoleList) {
-			accountRolesStringArray[index] = accountRole.getName();
+			accountRolesStringArray[index] = accountRole.getRoleName();
 			index++;
 		}
 		
