@@ -2,12 +2,17 @@ package de.leuphana.backend.data.entity;
 
 import java.util.Objects;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "account")
@@ -25,25 +30,27 @@ public class Account extends AbstractEntity {
 	@Size(min = 0, max = 100)
 	private String name;
 
+	@Transient
 	private boolean locked = false;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private AccountRole accountRole;
+	@OneToOne
+	@JoinColumn(name = "role_Id")
+	private AccountRole role;
 
 	public Account() {
 		// An empty constructor is needed for all beans
 	}
 
-	public Account(String email, String name, String password, AccountRole accountRole) {
+	public Account(String email, String name, String password, AccountRole role) {
 		Objects.requireNonNull(email);
 		Objects.requireNonNull(name);
 		Objects.requireNonNull(password);
-		Objects.requireNonNull(accountRole);
+		Objects.requireNonNull(role);
 
 		this.email = email;
 		this.name = name;
 		this.password = password;
-		this.accountRole = accountRole;
+		this.role = role;
 	}
 
 	public String getPassword() {
@@ -70,12 +77,12 @@ public class Account extends AbstractEntity {
 		this.email = email;
 	}
 	
-	public void setAccountRole(AccountRole accountRole) {
-		this.accountRole = accountRole;
+	public void setRole(AccountRole role) {
+		this.role = role;
 	}
 	
-	public AccountRole getAccountRole() {
-		return accountRole;
+	public AccountRole getRole() {
+		return role;
 	}
 
 	public boolean isLocked() {
@@ -85,4 +92,5 @@ public class Account extends AbstractEntity {
 	public void setLocked(boolean locked) {
 		this.locked = locked;
 	}
+	
 }

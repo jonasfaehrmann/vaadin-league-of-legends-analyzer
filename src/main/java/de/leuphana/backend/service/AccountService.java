@@ -33,7 +33,7 @@ public class AccountService extends CrudService<Account> {
 	public Page<Account> findAnyMatching(Optional<String> filter, Pageable pageable) {
 		if (filter.isPresent()) {
 			String repositoryFilter = "%" + filter.get() + "%";
-			return getRepository().findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrAccountRoleLikeIgnoreCase(repositoryFilter,
+			return getRepository().findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrRoleLikeIgnoreCase(repositoryFilter,
 					repositoryFilter, repositoryFilter, pageable);
 		} else {
 			return getRepository().findAll(pageable);

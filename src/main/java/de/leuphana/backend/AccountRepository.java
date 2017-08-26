@@ -11,7 +11,7 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
 	
 	Account findByEmail(String email);
 
-	Page<Account> findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrAccountRoleLikeIgnoreCase(String emailLike, String nameLike,
+	Page<Account> findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrRoleLikeIgnoreCase(String emailLike, String nameLike,
 			String roleLike, Pageable pageable);
 
 	long countByEmailLikeIgnoreCaseOrNameLikeIgnoreCase(String emailLike, String nameLike);

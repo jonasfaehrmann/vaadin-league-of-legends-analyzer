@@ -30,7 +30,7 @@ public class AccountDetailsServiceImpl implements UserDetailsService {
 			throw new UsernameNotFoundException("No user present with accountname: " + accountname);
 		} else {
 			return new org.springframework.security.core.userdetails.User(account.getEmail(), account.getPassword(),
-					Collections.singletonList(new SimpleGrantedAuthority(account.getAccountRole().getRoleName())));
+					Collections.singletonList(new SimpleGrantedAuthority(account.getRole().getRoleName())));
 		}
 	}
 }

@@ -2,19 +2,18 @@ package de.leuphana.backend.data.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.SequenceGenerator;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @MappedSuperclass
 public class AbstractEntity implements Serializable {
 
 	@Id
-	@SequenceGenerator(name = "seq", sequenceName="SEQ", allocationSize=1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+	@GenericGenerator(name = "accountIdGenerator", strategy = "de.leuphana.backend.util.AccountIdGenerator")
+	@GeneratedValue(generator = "accountIdGenerator")  
 	private Long id;
 
 	public boolean isNew() {
