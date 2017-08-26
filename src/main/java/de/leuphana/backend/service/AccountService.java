@@ -33,7 +33,7 @@ public class AccountService extends CrudService<Account> {
 	public Page<Account> findAnyMatching(Optional<String> filter, Pageable pageable) {
 		if (filter.isPresent()) {
 			String repositoryFilter = "%" + filter.get() + "%";
-			return getRepository().findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrRoleLikeIgnoreCase(repositoryFilter,
+			return getRepository().findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrAccountRoleLikeIgnoreCase(repositoryFilter,
 					repositoryFilter, repositoryFilter, pageable);
 		} else {
 			return getRepository().findAll(pageable);
@@ -62,6 +62,9 @@ public class AccountService extends CrudService<Account> {
 	@Override
 	@Transactional
 	public Account save(Account entity) {
+		System.out.println("**************************");
+		System.out.println("Account id" + entity.getId());
+		System.out.println("**************************");
 		throwIfUserLocked(entity.getId());
 		return super.save(entity);
 	}

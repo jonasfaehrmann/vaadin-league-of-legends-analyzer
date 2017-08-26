@@ -22,7 +22,7 @@ public class AccountRoleService extends CrudService<AccountRole> {
 		this.accountRoleRepository = accountRoleRepository;
 	}
 
-	public AccountRole findAccountRoleById(Long id) {
+	public AccountRole findAccountRoleByName(Long id) {
 		return accountRoleRepository.findOne(id);
 	}
 

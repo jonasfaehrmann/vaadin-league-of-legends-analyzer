@@ -2,16 +2,19 @@ package de.leuphana.backend.data.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Version;
+import javax.persistence.SequenceGenerator;
 
 @MappedSuperclass
 public class AbstractEntity implements Serializable {
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "seq", sequenceName="SEQ", allocationSize=1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 	private Long id;
 
 	public boolean isNew() {
@@ -20,6 +23,10 @@ public class AbstractEntity implements Serializable {
 
 	public Long getId() {
 		return id;
+	}
+	
+	public void setId(Long id){
+		this.id = id;
 	}
 
 	@Override

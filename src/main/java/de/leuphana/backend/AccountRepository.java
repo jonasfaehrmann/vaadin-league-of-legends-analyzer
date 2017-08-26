@@ -8,12 +8,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import de.leuphana.backend.data.entity.Account;
 
 public interface AccountRepository extends JpaRepository<Account, Long> {
-
+	
 	Account findByEmail(String email);
 
-	Page<Account> findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrRoleLikeIgnoreCase(String emailLike, String nameLike,
+	Page<Account> findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrAccountRoleLikeIgnoreCase(String emailLike, String nameLike,
 			String roleLike, Pageable pageable);
 
 	long countByEmailLikeIgnoreCaseOrNameLikeIgnoreCase(String emailLike, String nameLike);
-
 }
