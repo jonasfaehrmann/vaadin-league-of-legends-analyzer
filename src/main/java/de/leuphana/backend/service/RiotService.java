@@ -23,7 +23,7 @@ public class RiotService {
 
 	private final RestTemplate restTemplate;
 	private static RiotApi api;
-	private static ApiConfig config = new ApiConfig().setKey("RGAPI-8143b311-5dab-4519-bffe-fe34c633bdab");
+	private static ApiConfig config = new ApiConfig().setKey("RGAPI-01742e2e-d9fc-4e23-be04-969f200a775e");
 
 	public RiotService(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
