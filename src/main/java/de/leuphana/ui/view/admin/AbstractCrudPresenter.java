@@ -67,7 +67,7 @@ public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends 
 
 	public void beforeLeavingView(ViewBeforeLeaveEvent event) {
 		runWithConfirmation(event::navigate, () -> {
-			// Nothing special needs to be done if user aborts the navigation
+			// Nothing special needs to be done if account aborts the navigation
 		});
 	}
 

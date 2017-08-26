@@ -14,8 +14,13 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.GenericGenerator;
 
+/**
+ * 
+ * @author Jonas Fährmann
+ *
+ */
 @Entity
-@Table(name = "account")
+@Table(name = "ACCOUNT")
 public class Account extends AbstractEntity {
 	
 	@NotNull

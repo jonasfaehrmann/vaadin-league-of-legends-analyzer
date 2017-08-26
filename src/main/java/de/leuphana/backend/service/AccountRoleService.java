@@ -12,6 +12,11 @@ import de.leuphana.backend.AccountRoleRepository;
 import de.leuphana.backend.data.entity.Account;
 import de.leuphana.backend.data.entity.AccountRole;
 
+/**
+ * 
+ * @author Jonas Fährmann
+ *
+ */
 @Service
 public class AccountRoleService extends CrudService<AccountRole> {
 

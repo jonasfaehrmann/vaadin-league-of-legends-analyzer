@@ -1,4 +1,4 @@
-package de.leuphana.ui.view.admin.user;
+package de.leuphana.ui.view.admin.account;
 
 import java.io.Serializable;
 
@@ -14,13 +14,13 @@ import de.leuphana.ui.view.admin.AbstractCrudPresenter;
 
 @SpringComponent
 @ViewScope
-public class UserAdminPresenter extends AbstractCrudPresenter<Account, AccountService, UserAdminView>
+public class AccountAdminPresenter extends AbstractCrudPresenter<Account, AccountService, AccountAdminView>
 		implements Serializable {
 
 	@Autowired
-	public UserAdminPresenter(UserAdminDataProvider userAdminDataProvider, NavigationManager navigationManager,
+	public AccountAdminPresenter(AccountAdminDataProvider accountAdminDataProvider, NavigationManager navigationManager,
 			AccountService service, BeanFactory beanFactory) {
-		super(navigationManager, service, Account.class, userAdminDataProvider, beanFactory);
+		super(navigationManager, service, Account.class, accountAdminDataProvider, beanFactory);
 	}
 
 	public String encodePassword(String value) {

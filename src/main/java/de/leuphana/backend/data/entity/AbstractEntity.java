@@ -8,12 +8,19 @@ import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.GenericGenerator;
 
+/**
+ * 
+ * @author Jonas Fährmann
+ *
+ */
 @MappedSuperclass
 public class AbstractEntity implements Serializable {
 
+	// Use custom generator
+	// Students dont have priviledge to create sequence on Leuphana database
 	@Id
-	@GenericGenerator(name = "accountIdGenerator", strategy = "de.leuphana.backend.util.AccountIdGenerator")
-	@GeneratedValue(generator = "accountIdGenerator")  
+	@GenericGenerator(name = "idGenerator", strategy = "de.leuphana.backend.util.IdGenerator")
+	@GeneratedValue(generator = "idGenerator")  
 	private Long id;
 
 	public boolean isNew() {

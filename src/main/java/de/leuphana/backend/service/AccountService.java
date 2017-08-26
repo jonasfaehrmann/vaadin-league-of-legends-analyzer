@@ -12,16 +12,21 @@ import org.springframework.transaction.annotation.Transactional;
 import de.leuphana.backend.AccountRepository;
 import de.leuphana.backend.data.entity.Account;
 
+/**
+ * 
+ * @author Jonas Fährmann
+ *
+ */
 @Service
 public class AccountService extends CrudService<Account> {
 
-	private static final String MODIFY_LOCKED_USER_NOT_PERMITTED = "User has been locked and cannot be modified or deleted";
+	private static final String MODIFY_LOCKED_ACCOUNT_NOT_PERMITTED = "User has been locked and cannot be modified or deleted";
 	private final PasswordEncoder passwordEncoder;
-	private final AccountRepository userRepository;
+	private final AccountRepository accountRepository;
 
 	@Autowired
-	public AccountService(AccountRepository userRepository, PasswordEncoder passwordEncoder) {
-		this.userRepository = userRepository;
+	public AccountService(AccountRepository accountRepository, PasswordEncoder passwordEncoder) {
+		this.accountRepository = accountRepository;
 		this.passwordEncoder = passwordEncoder;
 	}
 
@@ -33,8 +38,8 @@ public class AccountService extends CrudService<Account> {
 	public Page<Account> findAnyMatching(Optional<String> filter, Pageable pageable) {
 		if (filter.isPresent()) {
 			String repositoryFilter = "%" + filter.get() + "%";
-			return getRepository().findByEmailLikeIgnoreCaseOrNameLikeIgnoreCaseOrRoleLikeIgnoreCase(repositoryFilter,
-					repositoryFilter, repositoryFilter, pageable);
+			return getRepository().findByEmailLikeIgnoreCaseOrNameLikeIgnoreCase(repositoryFilter,
+					repositoryFilter, pageable);
 		} else {
 			return getRepository().findAll(pageable);
 		}
@@ -52,7 +57,7 @@ public class AccountService extends CrudService<Account> {
 
 	@Override
 	protected AccountRepository getRepository() {
-		return userRepository;
+		return accountRepository;
 	}
 
 	public String encodePassword(String value) {
@@ -62,9 +67,6 @@ public class AccountService extends CrudService<Account> {
 	@Override
 	@Transactional
 	public Account save(Account entity) {
-		System.out.println("**************************");
-		System.out.println("Account id" + entity.getId());
-		System.out.println("**************************");
 		throwIfUserLocked(entity.getId());
 		return super.save(entity);
 	}
@@ -83,7 +85,7 @@ public class AccountService extends CrudService<Account> {
 
 		Account dbUser = getRepository().findOne(userId);
 		if (dbUser.isLocked()) {
-			throw new AccountFriendlyDataException(MODIFY_LOCKED_USER_NOT_PERMITTED);
+			throw new AccountFriendlyDataException(MODIFY_LOCKED_ACCOUNT_NOT_PERMITTED);
 		}
 	}
 

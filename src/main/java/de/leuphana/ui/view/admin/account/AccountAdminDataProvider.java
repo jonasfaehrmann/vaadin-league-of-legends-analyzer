@@ -1,4 +1,4 @@
-package de.leuphana.ui.view.admin.user;
+package de.leuphana.ui.view.admin.account;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,23 +18,23 @@ import de.leuphana.backend.service.AccountService;
 
 @SpringComponent
 @PrototypeScope
-public class UserAdminDataProvider extends FilterablePageableDataProvider<Account, Object> {
+public class AccountAdminDataProvider extends FilterablePageableDataProvider<Account, Object> {
 
-	private final AccountService userService;
+	private final AccountService accountService;
 
 	@Autowired
-	public UserAdminDataProvider(AccountService userService) {
-		this.userService = userService;
+	public AccountAdminDataProvider(AccountService accountService) {
+		this.accountService = accountService;
 	}
 
 	@Override
 	protected Page<Account> fetchFromBackEnd(Query<Account, Object> query, Pageable pageable) {
-		return userService.findAnyMatching(getOptionalFilter(), pageable);
+		return accountService.findAnyMatching(getOptionalFilter(), pageable);
 	}
 
 	@Override
 	protected int sizeInBackEnd(Query<Account, Object> query) {
-		return (int) userService.countAnyMatching(getOptionalFilter());
+		return (int) accountService.countAnyMatching(getOptionalFilter());
 	}
 
 	@Override

@@ -6,6 +6,12 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+/**
+ * 
+ * @author Jonas Fährmann
+ *
+ */
+
 @Entity
 @Table(name = "ACCOUNT_ROLE")
 public class AccountRole extends AbstractEntity {

@@ -1,4 +1,4 @@
-package de.leuphana.ui.view.admin.user;
+package de.leuphana.ui.view.admin.account;
 
 import javax.annotation.PostConstruct;
 
@@ -19,17 +19,17 @@ import com.vaadin.ui.Grid;
 import com.vaadin.ui.TextField;
 
 @SpringView
-public class UserAdminView extends AbstractCrudView<Account> {
+public class AccountAdminView extends AbstractCrudView<Account> {
 
-	private final UserAdminPresenter presenter;
+	private final AccountAdminPresenter presenter;
 
-	private final UserAdminViewDesign userAdminViewDesign;
+	private final AccountAdminViewDesign accountAdminViewDesign;
 
 	private boolean passwordRequired;
 	
 	/**
 	 * Custom validator to be able to decide dynamically whether the password
-	 * field is required or not (empty value when updating the user is
+	 * field is required or not (empty value when updating the account is
 	 * interpreted as 'do not change the password').
 	 */
 	private Validator<String> passwordValidator = new Validator<String>() {
@@ -50,9 +50,9 @@ public class UserAdminView extends AbstractCrudView<Account> {
 	};
 
 	@Autowired
-	public UserAdminView(UserAdminPresenter presenter) {
+	public AccountAdminView(AccountAdminPresenter presenter) {
 		this.presenter = presenter;
-		userAdminViewDesign = new UserAdminViewDesign();
+		accountAdminViewDesign = new AccountAdminViewDesign();
 	}
 
 	@PostConstruct
@@ -81,12 +81,12 @@ public class UserAdminView extends AbstractCrudView<Account> {
 	}
 
 	@Override
-	public UserAdminViewDesign getViewComponent() {
-		return userAdminViewDesign;
+	public AccountAdminViewDesign getViewComponent() {
+		return accountAdminViewDesign;
 	}
 
 	@Override
-	protected UserAdminPresenter getPresenter() {
+	protected AccountAdminPresenter getPresenter() {
 		return presenter;
 	}
 
