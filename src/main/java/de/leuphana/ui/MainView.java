@@ -15,6 +15,7 @@ import com.vaadin.spring.annotation.SpringViewDisplay;
 import com.vaadin.spring.annotation.UIScope;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.admin.account.AccountAdminView;
+import de.leuphana.ui.view.championMastery.ChampionMasteryView;
 import de.leuphana.ui.view.dashboard.DashboardView;
 import de.leuphana.ui.view.matchHistory.MatchHistoryView;
 import de.leuphana.ui.view.storefront.StorefrontView;
@@ -50,6 +51,7 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 		attachNavigation(accounts, AccountAdminView.class);
 		attachNavigation(matchHistoryGrid, MatchHistoryView.class);
 		//attachNavigation(products, ProductAdminView.class);
+		attachNavigation(championMasteryGrid, ChampionMasteryView.class);
 
 		logout.addClickListener(e -> logout());
 	}

@@ -287,7 +287,7 @@
 					<execution>
 						<goals>
 							<goal>update-theme</goal>
-							<goal>update-widgetset</goal>
+							
 							<goal>compile</goal>
 							<goal>compile-theme</goal>
 						</goals>
