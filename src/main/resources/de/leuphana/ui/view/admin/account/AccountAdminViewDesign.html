@@ -26,6 +26,7 @@
         <col column-id="email" sortable>
         <col column-id="role" sortable>
         <col column-id="locked" sortable>
+        <col column-id="widgets" sortable>
        </colgroup>
        <thead>
         <tr default>
@@ -34,6 +35,7 @@
          <th plain-text column-ids="email">Email</th>
          <th plain-text column-ids="role">Role</th>
          <th plain-text column-ids="locked">Locked</th>
+         <th plain-text column-ids="widgets">Widgets</th>
         </tr>
        </thead>
        <tbody></tbody>
@@ -53,6 +55,9 @@
       </vaadin-css-layout>
       <vaadin-css-layout style-name="section half" width-full>
        <com_vaadin_template_orders_ui_view_admin-role-combo-box id="role" width-full _id="role"></com_vaadin_template_orders_ui_view_admin-role-combo-box>
+      </vaadin-css-layout>
+      <vaadin-css-layout style-name="section half" width-full>
+       <com_vaadin_template_orders_ui_view_admin-widget-list-select width-full></com_vaadin_template_orders_ui_view_admin-widget-list-select>
       </vaadin-css-layout>
      </vaadin-css-layout>
      <vaadin-horizontal-layout style-name="buttons border-top" width-full height="50px">

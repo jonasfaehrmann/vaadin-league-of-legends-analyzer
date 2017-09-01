@@ -1,11 +1,16 @@
 package de.leuphana.backend.data.entity;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -38,9 +43,13 @@ public class Account extends AbstractEntity {
 	@Transient
 	private boolean locked = false;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "role_Id")
 	private AccountRole role;
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "account_has_widget", joinColumns = { @JoinColumn(name = "account_id") }, inverseJoinColumns = { @JoinColumn(name = "widget_id") })
+    private Set<Widget> widgets = new HashSet<Widget>();
 
 	public Account() {
 		// An empty constructor is needed for all beans
@@ -92,6 +101,14 @@ public class Account extends AbstractEntity {
 
 	public boolean isLocked() {
 		return locked;
+	}
+	
+	public Set<Widget> getWidgets() {
+		return widgets;
+	}
+
+	public void setWidgets(Set<Widget> widgets) {
+		this.widgets = widgets;
 	}
 
 	public void setLocked(boolean locked) {

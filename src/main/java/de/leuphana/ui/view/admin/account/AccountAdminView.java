@@ -11,6 +11,7 @@ import com.vaadin.data.ValueContext;
 import com.vaadin.data.validator.BeanValidator;
 import com.vaadin.spring.annotation.SpringView;
 import de.leuphana.backend.data.entity.Account;
+import de.leuphana.ui.util.WidgetSetToCommaSeparatedStringConverter;
 import de.leuphana.ui.view.admin.AbstractCrudView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
@@ -24,8 +25,17 @@ public class AccountAdminView extends AbstractCrudView<Account> {
 	private final AccountAdminPresenter presenter;
 
 	private final AccountAdminViewDesign accountAdminViewDesign;
-
+	
+	private final WidgetSetToCommaSeparatedStringConverter widgetsToCommaSeparatedStringConverter;
+	
 	private boolean passwordRequired;
+	
+	@Autowired
+	public AccountAdminView(AccountAdminPresenter presenter, WidgetSetToCommaSeparatedStringConverter setToCommaSeparatedStringConverter) {
+		this.presenter = presenter;
+		this.widgetsToCommaSeparatedStringConverter = setToCommaSeparatedStringConverter;
+		accountAdminViewDesign = new AccountAdminViewDesign();
+	} 
 	
 	/**
 	 * Custom validator to be able to decide dynamically whether the password
@@ -34,7 +44,7 @@ public class AccountAdminView extends AbstractCrudView<Account> {
 	 */
 	private Validator<String> passwordValidator = new Validator<String>() {
 
-		BeanValidator passwordBeanValidator = new BeanValidator(Account.class, "password");
+ 		BeanValidator passwordBeanValidator = new BeanValidator(Account.class, "password");
 
 		@Override
 		public ValidationResult apply(String value, ValueContext context) {
@@ -49,16 +59,11 @@ public class AccountAdminView extends AbstractCrudView<Account> {
 		}
 	};
 
-	@Autowired
-	public AccountAdminView(AccountAdminPresenter presenter) {
-		this.presenter = presenter;
-		accountAdminViewDesign = new AccountAdminViewDesign();
-	}
-
 	@PostConstruct
 	private void init() {
 		presenter.init(this);
 		getGrid().setColumns("email", "name", "role.roleName");
+		getGrid().addColumn(account -> widgetsToCommaSeparatedStringConverter.convertToPresentation(account.getWidgets())).setCaption("Widgets");
 	}
 
 	@Override
