@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -17,13 +18,11 @@ import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.renderers.HtmlRenderer;
 
-import de.leuphana.backend.service.RiotService;
 import net.rithms.riot.api.endpoints.match.dto.Match;
-import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 @SpringComponent
 @PrototypeScope
-public class MatchHistoryGrid extends Grid<MatchReference> {
+public class MatchHistoryGrid extends Grid<Match> {
 
 	@Autowired
 	private MatchHistoryDataProvider dataProvider;
@@ -37,14 +36,13 @@ public class MatchHistoryGrid extends Grid<MatchReference> {
 		setStyleGenerator(MatchHistoryGrid::getRowStyle);
 
 		// Due column
-		Column<MatchReference, String> dateColumn = addColumn(
-				matchReference -> twoRowCell(getTimeHeader(new Timestamp(matchReference.getTimestamp())), String.valueOf(matchReference.getTimestamp())),
+		Column<Match, String> dateColumn = addColumn(
+				match -> twoRowCell(getTimeHeader(new Timestamp(match.getGameCreation())), String.valueOf(TimeUnit.SECONDS.toMinutes(match.getGameDuration()))),
 				new HtmlRenderer());
 		dateColumn.setStyleGenerator(matchReference -> "due");
 
 		// Summary column
-		Column<MatchReference, String> summaryColumn = addColumn(matchReference -> {
-			Match match = dataProvider.fetchMatchById(matchReference.getGameId());
+		Column<Match, String> summaryColumn = addColumn(match -> {
 			return twoRowCell(match.getGameMode(), getMatchSummary(match));
 		}, new HtmlRenderer()).setExpandRatio(1).setSortProperty("matchReference.id").setMinimumWidthFromContent(false);
 		summaryColumn.setStyleGenerator(matchReference -> "summary");
@@ -82,26 +80,29 @@ public class MatchHistoryGrid extends Grid<MatchReference> {
 		}
 	}
 
-	private static String getRowStyle(MatchReference matchReference) {
-		String style = matchReference.getRole().toLowerCase();
+	private static String getRowStyle(Match match) {
+		String style = match.getGameMode();
 
 		// Avaiable roles
 		// DUO, NONE, SOLO, DUO_CARRY, DUO_SUPPORT
 
 		switch (style) {
-		case "duo":
+		case "classic":
 			style += " today";
 			break;
-		case "none":
+		case "odin":
 			style += " today";
 			break;
-		case "solo":
+		case "aram":
 			style += " today";
 			break;
-		case "duo_carry":
+		case "tutorial":
 			style += " today";
 			break;
-		case "duo_support":
+		case "one_forall":
+			style += " today";
+			break;
+		case "ascension":
 			style += " today";
 			break;
 		default:

@@ -59,7 +59,7 @@ public class NavigationManager extends SpringNavigator {
 		if (!getState().isEmpty()) {
 			return;
 		}
-
+		
 		navigateTo(SecurityUtils.isCurrentUserInRole("admin") ? DashboardView.class : StorefrontView.class);
 	}
 

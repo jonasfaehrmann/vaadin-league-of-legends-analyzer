@@ -1,38 +1,21 @@
 package de.leuphana.ui.view.dashboard;
 
-import java.time.MonthDay;
-import java.time.Year;
-import java.util.Map.Entry;
 
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.vaadin.addon.charts.model.DataSeries;
-import com.vaadin.addon.charts.model.DataSeriesItem;
-import com.vaadin.addon.charts.model.Labels;
-import com.vaadin.addon.charts.model.ListSeries;
-import com.vaadin.addon.charts.model.Marker;
-import com.vaadin.addon.charts.model.PlotOptionsColumn;
-import com.vaadin.addon.charts.model.PlotOptionsLine;
-import com.vaadin.addon.charts.model.YAxis;
+
 import com.vaadin.board.Row;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.Grid;
 
-import de.leuphana.backend.data.DeliveryStats;
-import de.leuphana.backend.data.entity.Order;
-import de.leuphana.backend.data.entity.Product;
 import de.leuphana.backend.service.RiotService;
-import de.leuphana.ui.components.CurrentMatchGrid;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.match.MatchDetailView;
 import net.rithms.riot.api.RiotApiException;
-import net.rithms.riot.api.endpoints.match.dto.Match;
-import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 /**
  * The dashboard view showing statistics about sales and deliveries.
@@ -53,21 +36,13 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final BoardBox notAvailableBox = new BoardBox(notAvailableLabel);
 	private final BoardLabel newLabel = new BoardLabel("New", "2", "new");
 	private final BoardLabel tomorrowLabel = new BoardLabel("Tomorrow", "4", "tomorrow");
-
-	private final Grid<MatchReference> matchListForUser = new Grid<>();
-
-	private RiotService riotService;
-
-	private final CurrentMatchGrid matchGrid;
 	
 	private final Button button = new Button("Hello");
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, CurrentMatchGrid matchGrid,
+	public DashboardView(NavigationManager navigationManager,
 			RiotService riotService) {
 		this.navigationManager = navigationManager;
-		this.matchGrid = matchGrid;
-		this.riotService = riotService;
 	}
 
 	@PostConstruct
@@ -77,26 +52,11 @@ public class DashboardView extends DashboardViewDesign implements View {
 		Row row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
 				new BoardBox(tomorrowLabel));
 		row.addStyleName("board-row-group");
-
-		row = board.addRow(new BoardBox(matchListForUser));
-		row.addStyleName(BOARD_ROW_PANELS);
 		
 		//link to different view dummy
 		row = board.addRow(new BoardBox(button));
 		button.addClickListener(e -> navigationManager.navigateTo(MatchDetailView.class, 1));
 
-		initMatchListForUser();
-
-	}
-
-	private void initMatchListForUser() throws RiotApiException {
-		matchListForUser.setId("matchListForUser");
-		matchListForUser.setSizeFull();
-
-		matchListForUser.setCaption("Your matches: ");
-		matchListForUser.setItems(riotService.getMatchListForUser());
-		matchListForUser.addColumn(MatchReference::getLane).setCaption("Lane");
-		matchListForUser.addColumn(MatchReference::getQueue).setCaption("Queue");
 	}
 
 	@Override

@@ -16,6 +16,7 @@ import com.vaadin.ui.Button.ClickShortcut;
 
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.match.MatchDetailView;
+import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 /**
@@ -53,15 +54,15 @@ public class MatchHistoryView extends MatchHistoryViewDesign implements View {
 	 */
 	@PostConstruct
 	public void init() {
-		matchHistoryGrid.addSelectionListener(e -> selectedMatchReference(e.getFirstSelectedItem().get()));
+		matchHistoryGrid.addSelectionListener(e -> selectedMatch(e.getFirstSelectedItem().get()));
 		searchButton.addClickListener(e -> search(searchField.getValue(), includePast.getValue()));
 
 		// We don't want a global shortcut for enter, scope it to the panel
 		searchPanel.addAction(new ClickShortcut(searchButton, KeyCode.ENTER, null));
 	}
 
-	public void selectedMatchReference(MatchReference matchReference) {
-		navigationManager.navigateTo(MatchDetailView.class, matchReference.getGameId());
+	public void selectedMatch(Match match) {
+		navigationManager.navigateTo(MatchDetailView.class, match.getGameId());
 	}
 
 	public void newOrder() {

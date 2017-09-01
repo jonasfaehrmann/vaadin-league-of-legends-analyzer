@@ -1,5 +1,7 @@
 package de.leuphana.app;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import org.springframework.boot.CommandLineRunner;
@@ -21,6 +23,8 @@ import de.leuphana.backend.data.entity.AccountRole;
 
 @SpringComponent
 public class DataGenerator implements HasLogger {
+	
+	private final List<AccountRole> accountRoles = new ArrayList<>();
 
 	@Bean
 	public CommandLineRunner loadData(AccountRepository accountRepository,
@@ -33,7 +37,7 @@ public class DataGenerator implements HasLogger {
 
 			getLogger().info("Generating demo data");
 			getLogger().info("... generating accountRoles");
-			createAccountRole(accountRoleRepository);
+			createAccountRoles(accountRoleRepository);
 			getLogger().info("... generating accounts");
 			createUsers(accountRepository, passwordEncoder);
 	
@@ -45,16 +49,20 @@ public class DataGenerator implements HasLogger {
 		return accountRepository.count() != 0L;
 	}
 
-	private void createAccountRole(AccountRoleRepository accountRoleRepository){
-		accountRoleRepository.save(new AccountRole("admin"));
-		accountRoleRepository.save(new AccountRole("user"));
+	private void createAccountRoles(AccountRoleRepository accountRoleRepository){
+		AccountRole admin = new AccountRole();
+		admin.setName("admin");
+		accountRoles.add(accountRoleRepository.save(admin));
+		AccountRole user = new AccountRole();
+		user.setName("user");
+		accountRoles.add(accountRoleRepository.save(user));
 	}
 	
 
 	private void createUsers(AccountRepository accountRepository, PasswordEncoder passwordEncoder) {
-		Account admin = new Account("admin@vaadin.com", "admin", passwordEncoder.encode("admin"), new AccountRole("admin"));
-		Account user = new Account("user@vaadin.com", "Malin", passwordEncoder.encode("user"), new AccountRole("user"));
+		Account admin = new Account("admin@vaadin.com","admin", passwordEncoder.encode("admin"), accountRoles.get(0));
 		accountRepository.save(admin);
+		Account user = new Account("user@vaadin.com", "user", passwordEncoder.encode("user"), accountRoles.get(1));
 		accountRepository.save(user);
 	}
 }

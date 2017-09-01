@@ -17,7 +17,7 @@ import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 @SpringComponent
 @PrototypeScope
-public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<MatchReference, Object>{
+public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match, Object>{
 
 	private final MatchHistoryService matchHistoryService;
 
@@ -27,9 +27,9 @@ public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<MatchR
 	}
 
 	@Override
-	protected Stream<MatchReference> fetchFromBackEnd(Query<MatchReference, Object> query) {
+	protected Stream<Match> fetchFromBackEnd(Query<Match, Object> query) {
 		try{
-			return matchHistoryService.findAll();
+			return matchHistoryService.findAllBySummonerName("SkullD3mon");
 		}catch(RiotApiException e){
 			e.printStackTrace();
 		}
@@ -37,7 +37,7 @@ public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<MatchR
 	}
 
 	@Override
-	protected int sizeInBackEnd(Query<MatchReference, Object> query) {
+	protected int sizeInBackEnd(Query<Match, Object> query) {
 		try{
 			return matchHistoryService.countAll();
 		}catch(RiotApiException e){
@@ -48,7 +48,7 @@ public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<MatchR
 	
 	public Match fetchMatchById(Long matchId){
 		try{
-			return matchHistoryService.findMatchById(matchId);
+			return matchHistoryService.findOneBySummonerName(matchId, "SkullD3mon");
 		}catch(RiotApiException e){
 			e.printStackTrace();
 		}

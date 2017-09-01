@@ -11,6 +11,7 @@ import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+import de.leuphana.backend.service.MatchHistoryService;
 import de.leuphana.backend.service.RiotService;
 import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
@@ -23,7 +24,7 @@ public class MatchDetailView extends MatchDetailViewDesign implements View {
 	private MatchDetailView view;
 
 	@Autowired
-	private RiotService riotService;
+	private MatchHistoryService matchHistoryService;
 
 	@Autowired
 	public MatchDetailView() {
@@ -42,7 +43,7 @@ public class MatchDetailView extends MatchDetailViewDesign implements View {
 		} else {
 			Match match;
 			try {
-				match = riotService.getMatchById(Long.valueOf(matchId));
+				match = matchHistoryService.findOneBySummonerName(Long.valueOf(matchId), "SkullD3mon");
 			} catch (Exception e) {
 				view.showNotFound();
 				return;
