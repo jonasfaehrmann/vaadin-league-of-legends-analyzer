@@ -15,6 +15,11 @@ import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
+/**
+ * 
+ * @author Jonas Fährmann
+ *
+ */
 @SpringComponent
 @PrototypeScope
 public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match, Object>{
@@ -49,6 +54,15 @@ public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match,
 	public Match fetchMatchById(Long matchId){
 		try{
 			return matchHistoryService.findOneBySummonerName(matchId, "SkullD3mon");
+		}catch(RiotApiException e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public Match fetchMostRecentMatch(){
+		try{
+			return matchHistoryService.findMostRecentMatch("SkullD3mon");
 		}catch(RiotApiException e){
 			e.printStackTrace();
 		}

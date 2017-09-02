@@ -113,7 +113,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>
-			<artifactId>vaadin-client-compiled</artifactId>
+			<artifactId>vaadin-client</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.vaadin</groupId>

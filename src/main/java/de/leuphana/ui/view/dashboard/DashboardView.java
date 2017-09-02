@@ -1,10 +1,8 @@
 package de.leuphana.ui.view.dashboard;
 
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 
 import com.vaadin.board.Row;
 import com.vaadin.navigator.View;
@@ -12,7 +10,8 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 
-import de.leuphana.backend.service.RiotService;
+import de.leuphana.ui.components.widgets.MatchHistoryGridWidget;
+import de.leuphana.ui.components.widgets.WidgetContainer;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.match.MatchDetailView;
 import net.rithms.riot.api.RiotApiException;
@@ -36,34 +35,41 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final BoardBox notAvailableBox = new BoardBox(notAvailableLabel);
 	private final BoardLabel newLabel = new BoardLabel("New", "2", "new");
 	private final BoardLabel tomorrowLabel = new BoardLabel("Tomorrow", "4", "tomorrow");
-	
+
 	private final Button button = new Button("Hello");
+	
+	private final MatchHistoryGridWidget matchHistoryGridWidget;
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager,
-			RiotService riotService) {
+	public DashboardView(NavigationManager navigationManager, MatchHistoryGridWidget matchHistoryGridWidget) {
 		this.navigationManager = navigationManager;
+		this.matchHistoryGridWidget = matchHistoryGridWidget;
+		
 	}
 
 	@PostConstruct
-	public void init() throws RiotApiException {
+	public void init() throws RiotApiException{
 		setResponsive(true);
-
+		
+		WidgetContainer widgets = new WidgetContainer();
+		widgets.addWidget(matchHistoryGridWidget);
+		
 		Row row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
 				new BoardBox(tomorrowLabel));
 		row.addStyleName("board-row-group");
-		
-		//link to different view dummy
+
+		// link to different view dummy
 		row = board.addRow(new BoardBox(button));
 		button.addClickListener(e -> navigationManager.navigateTo(MatchDetailView.class, 1));
-
+		
+		row = board.addRow(new BoardBox(widgets.getWidgetByWidgetId(1)));
+		row.addStyleName("board-row-group");
 	}
 
 	@Override
 	public void enter(ViewChangeEvent event){
-		
-		//updateLabels(data.getDeliveryStats());
-		//updateGraphs(data);
+		// updateLabels(data.getDeliveryStats());
+		// updateGraphs(data);
 	}
 
 }

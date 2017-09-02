@@ -17,6 +17,11 @@ import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.Platform;
 
+/**
+ * 
+ * @author Jonas Fährmann
+ *
+ */
 @Service
 public class MatchHistoryService extends RiotService<Match> {
 
@@ -73,5 +78,14 @@ public class MatchHistoryService extends RiotService<Match> {
 		Match match = api.getMatch(platform, id, summoner.getAccountId());
 		return match;
 	}
+	
+	public Match findMostRecentMatch(String name) throws RiotApiException{
+		logger.info("Accessing MatchHistory findMostRecentBySummonerName with params: " + name);
+		Summoner summoner = api.getSummonerByName(platform, name);
+		Long gameId = api.getMatchListByAccountId(platform, summoner.getAccountId()).getMatches().get(0).getGameId();
+		
+		return api.getMatch(platform, gameId);
+	}
+	
 
 }

@@ -11,11 +11,16 @@ import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.constant.Platform;
 
+/**
+ * 
+ * @author Jonas Fährmann
+ *
+ */
 public abstract class RiotService<T> {
 
 	protected RestTemplate restTemplate;
 	protected RiotApi api;
-	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-b67d872c-8207-4eea-84f9-e09c7cdb5782");
+	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-2a0d8b1f-08a7-48df-bbce-43a36cb9477d");
 	protected final Platform platform = Platform.EUW;
 	
 	public abstract Stream<Match> findAllBySummonerName(String name) throws RiotApiException;
