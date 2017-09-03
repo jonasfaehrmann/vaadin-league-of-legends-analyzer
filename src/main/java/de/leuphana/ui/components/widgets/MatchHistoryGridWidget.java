@@ -38,6 +38,7 @@ public class MatchHistoryGridWidget extends Grid<Match> implements WidgetCompone
 	@PostConstruct
 	protected void init() {
 		setDataProvider(dataProvider);
+		setItems(dataProvider.fetchMostRecentMatch());
 	}
 	
 	@Override

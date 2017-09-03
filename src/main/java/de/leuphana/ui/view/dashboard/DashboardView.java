@@ -46,6 +46,7 @@ public class DashboardView extends DashboardViewDesign implements View {
 
 	private final Button button = new Button("Hello");
 	private WidgetContainer widgets = new WidgetContainer();
+	private Row row;
 	
 	private final MatchHistoryGridWidget matchHistoryGridWidget;
 	private final AccountService accountService;
@@ -64,7 +65,7 @@ public class DashboardView extends DashboardViewDesign implements View {
 		//manually add all widgets to list
 		widgets.addWidget(matchHistoryGridWidget);
 
-		Row row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
+		row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
 				new BoardBox(tomorrowLabel));
 		row.addStyleName("board-row-group");
 
@@ -80,7 +81,8 @@ public class DashboardView extends DashboardViewDesign implements View {
 		
 		for (WidgetComponent widget : widgets.getWidgets()) {
 				if(accountWidgets.stream().anyMatch(accountWidget -> accountWidget.getId() == widget.getWidgetId())){
-					widgets.getWidgetByWidgetId(widget.getWidgetId());
+					System.out.println("Added widget with Id " + widget.getWidgetId());
+					row = board.addRow(new BoardBox(widgets.getWidgetByWidgetId(widget.getWidgetId())));
 				}
 		}
 	}
