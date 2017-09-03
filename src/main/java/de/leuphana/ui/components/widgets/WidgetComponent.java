@@ -7,7 +7,7 @@ import com.vaadin.ui.Component;
  * @author Jonas Fährmann
  *
  */
-public interface Widget extends Component{
+public interface WidgetComponent extends Component{
 
-	public Integer getWidgetId();
+	public Long getWidgetId();
 }

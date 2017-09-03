@@ -18,9 +18,9 @@ import net.rithms.riot.api.endpoints.match.dto.Match;
  */
 @SpringComponent
 @PrototypeScope
-public class MatchHistoryGridWidget extends Grid<Match> implements Widget {
+public class MatchHistoryGridWidget extends Grid<Match> implements WidgetComponent {
 
-	private Integer id = 1;
+	private Long id = 1l;
 	
 	@Autowired
 	private MatchHistoryDataProvider dataProvider;
@@ -41,7 +41,7 @@ public class MatchHistoryGridWidget extends Grid<Match> implements Widget {
 	}
 	
 	@Override
-	public Integer getWidgetId(){
+	public Long getWidgetId(){
 		return this.id;
 	}
 

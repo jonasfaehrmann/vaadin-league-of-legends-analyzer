@@ -38,7 +38,7 @@ public class MatchHistoryService extends RiotService<Match> {
 		MatchList matchList = api.getMatchListByAccountId(Platform.EUW, summoner.getAccountId());
 
 //		Limit the amount of rest calls
-		return 3;
+		return matchList.getTotalGames();
 	}
 
 	public Stream<Match> findAllBySummonerName(String name) throws RiotApiException {

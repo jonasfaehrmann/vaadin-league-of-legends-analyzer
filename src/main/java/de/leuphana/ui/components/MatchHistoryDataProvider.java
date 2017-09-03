@@ -22,7 +22,7 @@ import net.rithms.riot.api.endpoints.match.dto.MatchReference;
  */
 @SpringComponent
 @PrototypeScope
-public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match, Object>{
+public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match, Object> {
 
 	private final MatchHistoryService matchHistoryService;
 
@@ -33,9 +33,9 @@ public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match,
 
 	@Override
 	protected Stream<Match> fetchFromBackEnd(Query<Match, Object> query) {
-		try{
+		try {
 			return matchHistoryService.findAllBySummonerName("SkullD3mon");
-		}catch(RiotApiException e){
+		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
 		return null;
@@ -43,32 +43,28 @@ public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match,
 
 	@Override
 	protected int sizeInBackEnd(Query<Match, Object> query) {
-		try{
-			return matchHistoryService.countAll();
-		}catch(RiotApiException e){
-			e.printStackTrace();
-		}
-		return 0;
+		// limit the amount of rest calls @MatchHistoryService
+		// return matchHistoryService.countAll();
+		return 3;
+
 	}
-	
-	public Match fetchMatchById(Long matchId){
-		try{
+
+	public Match fetchMatchById(Long matchId) {
+		try {
 			return matchHistoryService.findOneBySummonerName(matchId, "SkullD3mon");
-		}catch(RiotApiException e){
+		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
-	public Match fetchMostRecentMatch(){
-		try{
+
+	public Match fetchMostRecentMatch() {
+		try {
 			return matchHistoryService.findMostRecentMatch("SkullD3mon");
-		}catch(RiotApiException e){
+		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-	
-	
 
 }

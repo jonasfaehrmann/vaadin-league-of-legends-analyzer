@@ -1,5 +1,8 @@
 package de.leuphana.ui.view.dashboard;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +13,12 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
 
+import de.leuphana.app.security.SecurityUtils;
+import de.leuphana.backend.data.entity.Account;
+import de.leuphana.backend.data.entity.Widget;
+import de.leuphana.backend.service.AccountService;
 import de.leuphana.ui.components.widgets.MatchHistoryGridWidget;
+import de.leuphana.ui.components.widgets.WidgetComponent;
 import de.leuphana.ui.components.widgets.WidgetContainer;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.match.MatchDetailView;
@@ -37,23 +45,25 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final BoardLabel tomorrowLabel = new BoardLabel("Tomorrow", "4", "tomorrow");
 
 	private final Button button = new Button("Hello");
+	private WidgetContainer widgets = new WidgetContainer();
 	
 	private final MatchHistoryGridWidget matchHistoryGridWidget;
+	private final AccountService accountService;
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, MatchHistoryGridWidget matchHistoryGridWidget) {
+	public DashboardView(NavigationManager navigationManager, MatchHistoryGridWidget matchHistoryGridWidget, AccountService accountService) {
 		this.navigationManager = navigationManager;
 		this.matchHistoryGridWidget = matchHistoryGridWidget;
-		
+		this.accountService = accountService;
 	}
 
 	@PostConstruct
-	public void init() throws RiotApiException{
+	public void init() throws RiotApiException {
 		setResponsive(true);
-		
-		WidgetContainer widgets = new WidgetContainer();
+
+		//manually add all widgets to list
 		widgets.addWidget(matchHistoryGridWidget);
-		
+
 		Row row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
 				new BoardBox(tomorrowLabel));
 		row.addStyleName("board-row-group");
@@ -61,13 +71,22 @@ public class DashboardView extends DashboardViewDesign implements View {
 		// link to different view dummy
 		row = board.addRow(new BoardBox(button));
 		button.addClickListener(e -> navigationManager.navigateTo(MatchDetailView.class, 1));
+
+		Account currentAccount = SecurityUtils.getCurrentUser(accountService);
+		initCurrentAccountWidgets(currentAccount.getWidgets());
+	}
+
+	private void initCurrentAccountWidgets(Set<Widget> accountWidgets) {
 		
-		row = board.addRow(new BoardBox(widgets.getWidgetByWidgetId(1)));
-		row.addStyleName("board-row-group");
+		for (WidgetComponent widget : widgets.getWidgets()) {
+				if(accountWidgets.stream().anyMatch(accountWidget -> accountWidget.getId() == widget.getWidgetId())){
+					widgets.getWidgetByWidgetId(widget.getWidgetId());
+				}
+		}
 	}
 
 	@Override
-	public void enter(ViewChangeEvent event){
+	public void enter(ViewChangeEvent event) {
 		// updateLabels(data.getDeliveryStats());
 		// updateGraphs(data);
 	}

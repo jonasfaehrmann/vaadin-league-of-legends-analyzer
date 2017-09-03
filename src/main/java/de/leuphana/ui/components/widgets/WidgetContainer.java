@@ -10,14 +10,14 @@ import java.util.List;
  */
 public class WidgetContainer{
 
-	List<Widget> widgets = new ArrayList<Widget>();
+	List<WidgetComponent> widgets = new ArrayList<WidgetComponent>();
 	
-	public void addWidget(Widget c){
+	public void addWidget(WidgetComponent c){
 		this.widgets.add(c);
 	}
 	
-	public void addWidgets(Widget... widgets){
-		for (Widget widget : widgets) {
+	public void addWidgets(WidgetComponent... widgets){
+		for (WidgetComponent widget : widgets) {
 			addWidget(widget);
 		}
 	}
@@ -26,16 +26,20 @@ public class WidgetContainer{
 		this.widgets.remove(i);
 	}
 	
-	public Widget getWidget(int i){
+	public WidgetComponent getWidget(int i){
 		return widgets.get(i);
 	}
 	
-	public Widget getWidgetByWidgetId(int id){
-		for (Widget widget : widgets) {
-				if(id == widget.getWidgetId()){
+	public WidgetComponent getWidgetByWidgetId(Long widgetId){
+		for (WidgetComponent widget : widgets) {
+				if(widgetId == widget.getWidgetId()){
 					return widget;
 				}
 		}
 		return null;
+	}
+	
+	public List<WidgetComponent> getWidgets(){
+		return this.widgets;
 	}
 }

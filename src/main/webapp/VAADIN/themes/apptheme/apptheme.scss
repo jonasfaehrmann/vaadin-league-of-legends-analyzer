@@ -3,15 +3,16 @@
 // Defines the plaintext font size, weight and family. Font size affects general component sizing.
 //$v-font-size: 16px;
 //$v-font-weight: 300;
-//$v-font-family: "Helvetica Neue", sans-serif;
+//$v-font-family: "Open Sans", sans-serif;
 
 // Defines the border used by all components.
 //$v-border: 1px solid (v-shade 0.7);
 //$v-border-radius: 4px;
 
 // Affects the color of some component elements, e.g Button, Panel title, etc
-//$v-background-color: hsl(0, 0%, 41%);
+//$v-background-color: hsl(210, 0%, 98%);
 // Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
 
 // Affects the visual appearance of all components
 //$v-gradient: v-linear 8%;
@@ -27,33 +28,12 @@
 // Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
 
 // The "App Shell" template colors are based off v-focus-color
-//NavBar color
-$v-app-loading-text: "Welcome to Leuphalytics";
-$v-focus-color: #aaa;
-$v-font-size: 15px;
-$v-background-color: #000000;
-$v-app-background-color:$v-background-color;
-$v-layout-margin: 50px;
-$v-font-weight: 300;
-$v-unit-size: 30px;
-$v-bevel: inset 0 2px 0 v-tint;
-$v-gradient: v-linear 30%;
-$v-textfield-bevel: false;
-$v-textfield-shadow: false;
-$v-border-radius: 1px;
-$v-border: 2px solid v-tone;
-$v-overlay-shadow: 0 0 0 2px (v-tint 10);
-$v-focus-style: $v-focus-color;
-$v-font-family: "Lato", sans-serif;
-$v-font-weight--header: 600;
-$v-table-background-color:hsl(0, 0%, 66%);
-$v-table-margin:10px;
+$v-focus-color: #4b4b65;
 
 // Background gradient and image used for the menu, false disables
-$app-background-gradient:false;
-$app-background-image:false;
+$app-background-gradient: unquote("linear-gradient(145deg, #484962 30%, #d06b41 100%)");
+$app-background-image: url('bg.jpg');
 
-@import "../valo/valo";
 @import '../valo/valo.scss';
 @import 'ordersgrid';
 @import 'ordersview';
@@ -69,9 +49,8 @@ $app-background-image:false;
 
   .v-errorindicator {
     // Only show validation errors using field styles
-    display: none;
+    display: none; 
   }
-
   .Vaadin-Icons {
     // Make Vaadin Icons behave exactly like FontAwesome
     font-style: normal;
@@ -82,4 +61,3 @@ $app-background-image:false;
     text-align: center;
   }
 }
-

@@ -20,6 +20,11 @@ import com.vaadin.ui.renderers.HtmlRenderer;
 
 import net.rithms.riot.api.endpoints.match.dto.Match;
 
+/**
+ * 
+ * @author Jonas Fährmann
+ *
+ */
 @SpringComponent
 @PrototypeScope
 public class MatchHistoryGrid extends Grid<Match> {
