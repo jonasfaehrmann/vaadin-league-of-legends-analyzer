@@ -36,6 +36,7 @@ public class MatchHistoryService extends RiotService<Match> {
 		return 3;
 	}
 
+	@Override
 	public Stream<Match> findAllBySummonerName(String name) throws RiotApiException {
 		logger.info("Accessing MatchHistory findAllBySummonerName with params: " + name);
 		Summoner summoner = api.getSummonerByName(platform, name);

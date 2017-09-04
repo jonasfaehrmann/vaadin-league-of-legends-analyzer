@@ -40,8 +40,7 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final Button button = new Button("Hello");
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager,
-			RiotService riotService) {
+	public DashboardView(NavigationManager navigationManager) {
 		this.navigationManager = navigationManager;
 	}
 

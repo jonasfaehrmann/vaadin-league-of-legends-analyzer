@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;apptheme&quot;}">
   <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="de_leuphana_ui_components:de.leuphana.ui.components">
  </head>
  <body>
   <vaadin-horizontal-layout style-name="app-shell" spacing="false" responsive size-full>
@@ -28,8 +29,11 @@
       <vaadin-button icon="fonticon://Vaadin-Icons/e747" style-name="borderless" id="accounts" width-full plain-text _id="accounts">
         Accounts 
       </vaadin-button>
-      <vaadin-button icon="fonticon://Vaadin-Icons/e629" style-name="borderless" id="matchHistoryGrid" width-full height="80px" plain-text _id="matchHistoryGrid">
+      <vaadin-button icon="fonticon://Vaadin-Icons/e629" style-name="borderless" id="matchHistoryGrid" width-full plain-text _id="matchHistoryGrid">
         Match History 
+      </vaadin-button>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e68b" style-name="borderless" id="championsGrid" width-full plain-text _id="champions">
+        Champions 
       </vaadin-button>
       <vaadin-button icon="fonticon://Vaadin-Icons/e957" style-name="borderless" id="products" width-full plain-text _id="products">
         Products 
@@ -40,7 +44,7 @@
      </vaadin-css-layout>
     </vaadin-css-layout>
    </vaadin-css-layout>
-   <vaadin-vertical-layout style-name="content-container v-scrollable" id="content" size-full margin="false" _id="content" :expand></vaadin-vertical-layout>
+   <vaadin-vertical-layout style-name="content-container v-scrollable" id="champions" size-full margin="false" _id="content" :expand></vaadin-vertical-layout>
   </vaadin-horizontal-layout>
  </body>
 </html>
