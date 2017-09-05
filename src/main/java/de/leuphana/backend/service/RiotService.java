@@ -15,7 +15,7 @@ public abstract class RiotService<T> {
 
 	protected RestTemplate restTemplate;
 	protected RiotApi api;
-	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-a6970c05-2620-4585-aa3d-6c6351489ab7");
+	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-b29e1db0-221d-41c5-b594-9638384478a4");
 	protected final Platform platform = Platform.EUW;
 	
 	public abstract Stream<Match> findAllBySummonerName(String name) throws RiotApiException;

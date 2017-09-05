@@ -8,7 +8,6 @@ import org.vaadin.spring.annotation.PrototypeScope;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.renderers.HtmlRenderer;
-
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 
 
@@ -23,15 +22,21 @@ public class ChampionGrid extends Grid<Champion> {
 	protected void init(){
 		setDataProvider(champDataProvider);
 	}
+	
+	
 	public ChampionGrid() {
 		addStyleName("championGrid");
 		setSizeFull();
+		setCaption("Champions");
 		
 
 		Column<Champion, String> nameColumn = addColumn(Champion::getName, new HtmlRenderer())
 				.setCaption("Name")
-				.setWidth(100)
 				;
 		
+		Column<Champion, String> loreColumn = addColumn(Champion::getLore, new HtmlRenderer())
+				.setCaption("Lore")
+				;
 	}
+
 }
