@@ -72,6 +72,10 @@ $app-background-image:false;
     display: none;
   }
 
+	.v-grid-cell{
+	height: 150px;		
+}
+
   .Vaadin-Icons {
     // Make Vaadin Icons behave exactly like FontAwesome
     font-style: normal;

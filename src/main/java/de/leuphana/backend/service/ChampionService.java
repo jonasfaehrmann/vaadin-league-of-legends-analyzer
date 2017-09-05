@@ -68,21 +68,20 @@ public class ChampionService extends RiotService<Champion> {
 	}
 	
 	// doesnt work yet
-	public Image getChampionImgById(int id) throws RiotApiException, IOException{
+	public String getChampionImgById(int id) throws RiotApiException, IOException{
 		Image foundImage = new Image();
 		String foundImageName = null;
 		ChampionList champList = api.getDataChampionList(Platform.EUW, Locale.DE_DE, null, false, ChampionListTags.IMAGE);
-		List<Image> championImgListById = new ArrayList<Image>();
 		Map<String, Champion> champImgListData = champList.getData();
 		for (Champion champion : champImgListData.values()) {
 			if (id == champion.getId()) {
 				foundImageName = champion.getImage().getFull();
 				
-				foundImage.setSource(new ExternalResource("http://ddragon.leagueoflegends.com/cdn/7.17.2/img/champion/"+foundImageName));
+				//foundImage.setSource(new ExternalResource("http://ddragon.leagueoflegends.com/cdn/7.17.2/img/champion/"+foundImageName));
 			}
 
 		}
-		return foundImage; 
+		return foundImageName; 
 	}
 	
 	

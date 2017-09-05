@@ -1,14 +1,20 @@
 package de.leuphana.ui.components;
 
+import java.io.IOException;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.spring.annotation.PrototypeScope;
 
+import com.vaadin.server.ExternalResource;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.renderers.HtmlRenderer;
+import com.vaadin.ui.renderers.ImageRenderer;
+
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
+import net.rithms.riot.api.endpoints.static_data.dto.Image;
 
 
 @SpringComponent
@@ -24,11 +30,17 @@ public class ChampionGrid extends Grid<Champion> {
 	}
 	
 	
-	public ChampionGrid() {
+	public ChampionGrid() throws IOException {
 		addStyleName("championGrid");
 		setSizeFull();
 		setCaption("Champions");
 		
+		
+		Column<Champion, ExternalResource> imageColumn = addColumn(
+				p -> new ExternalResource("http://ddragon.leagueoflegends.com/cdn/7.17.2/img/champion/Annie.png"),
+				new ImageRenderer())
+				.setCaption("Picture");
+				;
 
 		Column<Champion, String> nameColumn = addColumn(Champion::getName, new HtmlRenderer())
 				.setCaption("Name")
@@ -37,6 +49,8 @@ public class ChampionGrid extends Grid<Champion> {
 		Column<Champion, String> loreColumn = addColumn(Champion::getLore, new HtmlRenderer())
 				.setCaption("Lore")
 				;
+		
+		
 	}
 
 }

@@ -16235,6 +16235,10 @@ div.v-layout.v-horizontal.v-widget {
 	display: none;
 }
 
+.apptheme .v-grid-cell {
+	height: 150px;
+}
+
 .apptheme .Vaadin-Icons {
 	font-style: normal;
 	font-weight: normal;
