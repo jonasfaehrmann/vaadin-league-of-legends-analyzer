@@ -51,6 +51,7 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 		attachNavigation(accounts, AccountAdminView.class);
 		attachNavigation(matchHistoryGrid, MatchHistoryView.class);
 		attachNavigation(champions, ChampionView.class);
+		
 		//attachNavigation(products, ProductAdminView.class);
 
 		logout.addClickListener(e -> logout());

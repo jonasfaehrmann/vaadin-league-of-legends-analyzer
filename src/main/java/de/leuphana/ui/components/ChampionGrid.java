@@ -13,6 +13,7 @@ import com.vaadin.ui.Grid;
 import com.vaadin.ui.renderers.HtmlRenderer;
 import com.vaadin.ui.renderers.ImageRenderer;
 
+import de.leuphana.ui.util.DDragonUrlFormatter;
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 import net.rithms.riot.api.endpoints.static_data.dto.Image;
 
@@ -22,11 +23,12 @@ import net.rithms.riot.api.endpoints.static_data.dto.Image;
 public class ChampionGrid extends Grid<Champion> {
 
 	@Autowired
-	private ChampionDataProvider champDataProvider;
+	private ChampionDataProvider championDataProvider;
 	
+	private DDragonUrlFormatter dDragonUrlFormatter;
 	@PostConstruct
 	protected void init(){
-		setDataProvider(champDataProvider);
+		setDataProvider(championDataProvider);
 	}
 	
 	
@@ -34,12 +36,12 @@ public class ChampionGrid extends Grid<Champion> {
 		addStyleName("championGrid");
 		setSizeFull();
 		setCaption("Champions");
-		
+		dDragonUrlFormatter = new DDragonUrlFormatter();
 		
 		Column<Champion, ExternalResource> imageColumn = addColumn(
-				p -> new ExternalResource("http://ddragon.leagueoflegends.com/cdn/7.17.2/img/champion/Annie.png"),
-				new ImageRenderer())
-				.setCaption("Picture");
+				champion ->  new ExternalResource(dDragonUrlFormatter.getUrlByChampionImageName(champion.getImage().getFull())),
+				    new ImageRenderer())
+				.setCaption("Picture")
 				;
 
 		Column<Champion, String> nameColumn = addColumn(Champion::getName, new HtmlRenderer())

@@ -40,7 +40,8 @@ public class ChampionService extends RiotService<Champion> {
 		logger.info("Accessing ChampionService countAll");
 		Map<String, Champion> champlistData = champList.getData();
 		// limit the amount of rest calls
-		return champlistData.size();
+		//return champlistData.size();
+		return 10;
 	}
 	
 	public Stream<Champion> getChampions() throws RiotApiException {
@@ -67,22 +68,18 @@ public class ChampionService extends RiotService<Champion> {
 		return championListById.stream();
 	}
 	
-	// doesnt work yet
-	public String getChampionImgById(int id) throws RiotApiException, IOException{
-		Image foundImage = new Image();
+	
+	public String getChampionImgName() throws RiotApiException, IOException{
 		String foundImageName = null;
-		ChampionList champList = api.getDataChampionList(Platform.EUW, Locale.DE_DE, null, false, ChampionListTags.IMAGE);
 		Map<String, Champion> champImgListData = champList.getData();
 		for (Champion champion : champImgListData.values()) {
-			if (id == champion.getId()) {
 				foundImageName = champion.getImage().getFull();
 				
 				//foundImage.setSource(new ExternalResource("http://ddragon.leagueoflegends.com/cdn/7.17.2/img/champion/"+foundImageName));
 			}
-
-		}
-		return foundImageName; 
+		return foundImageName;
 	}
+		
 	
 	
 

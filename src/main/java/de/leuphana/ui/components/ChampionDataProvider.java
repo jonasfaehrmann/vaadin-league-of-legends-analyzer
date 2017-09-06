@@ -38,9 +38,9 @@ public class ChampionDataProvider extends AbstractBackEndDataProvider<Champion, 
 		return null;
 	}
 
-	public Image fetchChampionImageById(int id) throws IOException{
+	public Image fetchChampionImageName() throws IOException{
 		try {
-			championService.getChampionImgById(id);
+			championService.getChampionImgName();
 		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
