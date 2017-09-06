@@ -47,7 +47,7 @@ public class ItemService extends RiotService<ItemList> {
 		return itemlistData.size();
 	}
 	
-	public Stream<Item> getIteams() throws RiotApiException {
+	public Stream<Item> getItems() throws RiotApiException {
 		logger.info("Accessing ItemService -> getItems");
 		List<Item> itemMapList = new ArrayList<Item>();
 		Map<String, Item> itemlistData = itemList.getData();
