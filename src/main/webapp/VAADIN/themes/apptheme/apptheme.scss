@@ -28,26 +28,31 @@
 
 // The "App Shell" template colors are based off v-focus-color
 //NavBar color
-$v-app-loading-text: "Welcome to Leuphalytics";
-$v-focus-color: #aaa;
+$v-app-loading-text: "WELCOME!";
+
+$v-background-color: #383838;
+$v-focus-color: #262626;
+$v-selection-color:#d2d2d2;
+
+//Font
 $v-font-size: 15px;
-$v-background-color: #000000;
-$v-app-background-color:$v-background-color;
-$v-layout-margin: 50px;
-$v-font-weight: 300;
-$v-unit-size: 30px;
-$v-bevel: inset 0 2px 0 v-tint;
-$v-gradient: v-linear 30%;
-$v-textfield-bevel: false;
-$v-textfield-shadow: false;
-$v-border-radius: 1px;
-$v-border: 2px solid v-tone;
-$v-overlay-shadow: 0 0 0 2px (v-tint 10);
-$v-focus-style: $v-focus-color;
-$v-font-family: "Lato", sans-serif;
+$v-font-weight: 600;
+$v-font-family: "Lora", sans-serif;
 $v-font-weight--header: 600;
-$v-table-background-color:hsl(0, 0%, 66%);
-$v-table-margin:10px;
+
+// Component Features
+$v-border: 1px solid #D3D3D3;
+$v-border-radius: 8px;
+$v-gradient: v-linear(20%);
+$v-layout-margin-top:20px;
+$v-focus-style: 0 0 0 1px (v-tint 10);
+$v-unit-size: 40px;
+$v-bevel:  inset 0 2px 2px 0px (v-tint 2);
+$v-bevel-depth: 60%;
+$v-shadow: 0 2px 2px 0px (v-tint 2);
+$v-overlay-shadow: 0 0 0 2px (v-tint 10);
+
+
 
 // Background gradient and image used for the menu, false disables
 $app-background-gradient:false;
@@ -55,35 +60,49 @@ $app-background-image:false;
 
 @import "../valo/valo";
 @import '../valo/valo.scss';
-@import 'ordersgrid';
-@import 'ordersview';
 @import 'dashboardview';
 @import 'menu';
+@import 'accountadminview';
+
+
+// remove components from theming
+//$v-include-components: remove($v-included-components, grid);
+
+ // @include font-face('Kingdom-Font', '../../../../apptheme/fonts/rise-of-kingdom', 400, normal)
 
 @mixin apptheme {
   @include valo;
-  @include ordersgrid;
-  @include ordersview;
   @include dashboardview;
   @include menu;
+  @include accountadminview;
+	
+//$v-background-color:#000;
+//@include valo-grid();
 
-  .v-errorindicator {
-    // Only show validation errors using field styles
-    display: none;
-  }
+	.v-grid-tablewrapper{
+	border:none;	
+	}
+	.v-grid-column-default-header-content{
+		font-size:25px;
+		}
 
-	.v-grid-cell{
-	height: 150px;		
-}
+	.v-grid-header th.v-grid-cell.sortable{	
+		background: transparentize(#EB433A, 0.2);
+		}
+	.v-errorindicator {
+	    // Only show validation errors using field styles
+	    display: none;
+	  
+	}
 
-  .Vaadin-Icons {
-    // Make Vaadin Icons behave exactly like FontAwesome
-    font-style: normal;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline-block;
-    text-align: center;
-  }
+    .Vaadin-Icons {
+	    // Make Vaadin Icons behave exactly like FontAwesome
+	    font-style: normal;
+	    font-weight: normal;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    display: inline-block;
+	    text-align: center;
+  	}
 }
 
