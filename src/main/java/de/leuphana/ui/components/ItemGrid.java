@@ -12,34 +12,40 @@ import com.vaadin.ui.Grid.Column;
 import com.vaadin.ui.renderers.HtmlRenderer;
 import com.vaadin.ui.renderers.ImageRenderer;
 
+import de.leuphana.ui.util.DDragonUrlFormatter;
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 import net.rithms.riot.api.endpoints.static_data.dto.Item;
 
 @SpringComponent
 @PrototypeScope
 public class ItemGrid extends Grid<Item>{
-
 	@Autowired
 	private ItemDataProvider itemDataProvider;
 	
+	private DDragonUrlFormatter dDragonUrlFormatter;
 	@PostConstruct
 	protected void init(){
 		setDataProvider(itemDataProvider);
 	}
 	
 	
+	
 	public ItemGrid() {
 		
 		addStyleName("ItemGrid");
 		setSizeFull();
-		setCaption("Item");
+		setCaption("Items");
+		dDragonUrlFormatter = new DDragonUrlFormatter();
 		
-		Column<Item, ExternalResource> imageColumn = addColumn( 
-			    p -> new ExternalResource("http://ddragon.leagueoflegends.com/cdn/7.17.2/img/champion/Annie.png"),
-			    new ImageRenderer()) 
-				.setCaption("Image")
+
 		
+		
+		Column<Champion, ExternalResource> imageColumn = addColumn(
+				item ->  new ExternalResource(dDragonUrlFormatter.getUrlbyItemImageName(item.getImage().getFull())),
+				    new ImageRenderer())
+				.setCaption("Picture")
 				;
+		
 		
 		Column<Item, String> nameColumn = addColumn(Item::getName, new HtmlRenderer())
 				.setCaption("Name")
