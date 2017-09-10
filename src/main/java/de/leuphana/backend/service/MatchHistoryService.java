@@ -20,7 +20,7 @@ public class MatchHistoryService {
 	
 	private final RestTemplate restTemplate;
 	private static RiotApi api;
-	private static ApiConfig config = new ApiConfig().setKey("RGAPI-22fa0ec5-17db-4749-9d4e-bae5f61d96be");
+	private static ApiConfig config = new ApiConfig().setKey("RGAPI-46ada99f-b112-486b-9490-ac72c4b5973f");
 
 	public MatchHistoryService(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();

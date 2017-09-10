@@ -16,6 +16,7 @@ import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.spring.annotation.ViewScope;
 import com.vaadin.ui.Button.ClickShortcut;
 
+import de.leuphana.ui.components.ChampionMasteryGrid;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.match.MatchDetailView;
 import net.rithms.riot.api.endpoints.champion_mastery.dto.ChampionMastery;
@@ -36,6 +37,9 @@ public class ChampionMasteryView extends ChampionMasteryViewDesign implements Vi
 	private static final String PARAMETER_INCLUDE_PAST = "includePast";
 
 	private final NavigationManager navigationManager;
+	
+	@Autowired
+	private ChampionMasteryGrid championMasteryGrid;
 
 	@Autowired
 	public ChampionMasteryView(NavigationManager navigationManager) {
@@ -56,8 +60,8 @@ public class ChampionMasteryView extends ChampionMasteryViewDesign implements Vi
 	 */
 	@PostConstruct
 	public void init() {
-		Chart chart = new Chart();
-		chart.getConfiguration().addSeries( new ListSeries( 1, 2, 3 ) );
+		Chart chart = (Chart) championMasteryGrid.getChart();
+//		chart.getConfiguration().addSeries( new ListSeries( 1, 2, 3 ) );
 		addComponent(chart);
 	}
 
