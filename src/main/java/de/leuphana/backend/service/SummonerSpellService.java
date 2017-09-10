@@ -60,6 +60,7 @@ public class SummonerSpellService extends RiotService<SummonerSpellList> {
 			return sumSpellMapList.stream();
 		}
 		
+		
 			public String getSumSpellImgName() throws RiotApiException, IOException{
 				String foundImageName = null;
 				Map<String, SummonerSpell> sumSpellListData = sumSpellList.getData();

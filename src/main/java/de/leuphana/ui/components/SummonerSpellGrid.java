@@ -42,7 +42,7 @@ public class SummonerSpellGrid  extends Grid<SummonerSpell>{
 			
 			
 			Column<SummonerSpell, ExternalResource> imageColumn = addColumn(
-					spell->  new ExternalResource(dDragonUrlFormatter.getUrlbyItemImageName(spell.getImage().getFull())),
+					spell->  new ExternalResource(dDragonUrlFormatter.getUrlbySumSpellImageName(spell.getImage().getFull())),
 					    new ImageRenderer())
 					.setCaption("Picture")
 					;
