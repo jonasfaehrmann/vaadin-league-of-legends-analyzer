@@ -1,6 +1,8 @@
 package de.leuphana.ui.components;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,6 @@ import com.vaadin.spring.annotation.SpringComponent;
 
 
 import de.leuphana.backend.service.ItemService;
-import de.leuphana.backend.service.MatchHistoryService;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.static_data.dto.Item;
 
@@ -33,13 +34,15 @@ public class ItemDataProvider extends AbstractBackEndDataProvider<Item, Object> 
 	
 	@Override
 	protected Stream<Item> fetchFromBackEnd(Query<Item, Object> query) {
+		
+		List<Item> itemList = new ArrayList<Item>();
 		try{
 			return itemService.getItems();
 		}
 		catch(RiotApiException e){
 			e.printStackTrace();
 		}
-		return null;
+		return itemList.stream();
 	}
 
 	@Override

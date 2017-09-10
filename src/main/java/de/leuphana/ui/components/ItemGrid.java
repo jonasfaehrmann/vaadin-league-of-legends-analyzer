@@ -13,7 +13,6 @@ import com.vaadin.ui.renderers.HtmlRenderer;
 import com.vaadin.ui.renderers.ImageRenderer;
 
 import de.leuphana.ui.util.DDragonUrlFormatter;
-import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 import net.rithms.riot.api.endpoints.static_data.dto.Item;
 
 @SpringComponent
@@ -40,7 +39,7 @@ public class ItemGrid extends Grid<Item>{
 
 		
 		
-		Column<Champion, ExternalResource> imageColumn = addColumn(
+		Column<Item, ExternalResource> imageColumn = addColumn(
 				item ->  new ExternalResource(dDragonUrlFormatter.getUrlbyItemImageName(item.getImage().getFull())),
 				    new ImageRenderer())
 				.setCaption("Picture")

@@ -18,10 +18,8 @@ import com.vaadin.ui.Image;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.Match;
-import net.rithms.riot.api.endpoints.static_data.constant.ChampionListTags;
 import net.rithms.riot.api.endpoints.static_data.constant.ItemListTags;
 import net.rithms.riot.api.endpoints.static_data.constant.Locale;
-import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 import net.rithms.riot.api.endpoints.static_data.dto.Item;
 import net.rithms.riot.api.endpoints.static_data.dto.ItemList;
 import net.rithms.riot.constant.Platform;
@@ -37,18 +35,15 @@ public class ItemService extends RiotService<ItemList> {
 		this.restTemplate = restTemplateBuilder.build();
 		this.api = new RiotApi(config);
 		itemList = api.getDataItemList(platform.EUW, Locale.DE_DE, null, ItemListTags.ALL);
-		System.out.println(1);
 		
 		
 		
 	}
 	
 	public int countAll() throws RiotApiException{
-		System.out.println(2);
 		logger.info("Accessing ItemService countAll");
 		Map<String, Item> itemlistData = itemList.getData();
 		// limit the amount of rest calls
-		System.out.println(3);
 		return itemlistData.size();
 	}
 	
@@ -62,16 +57,12 @@ public class ItemService extends RiotService<ItemList> {
 		return itemMapList.stream();
 	}
 	
-	
-	
-	
 		public String getItemImgName() throws RiotApiException, IOException{
 			String foundImageName = null;
 			Map<String, Item> itemImgListData = itemList.getData();
 			for (Item item : itemImgListData.values()) {
 					foundImageName = item.getImage().getFull();
 					
-					//foundImage.setSource(new ExternalResource("http://ddragon.leagueoflegends.com/cdn/7.17.2/img/champion/"+foundImageName));
 				}
 			return foundImageName;
 		}

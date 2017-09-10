@@ -8,6 +8,10 @@ public class DDragonUrlFormatter {
 		return baseUrl+"item/"+imgName;
 	}
 	
+	public String getUrlbySumSpellImageName(String imgName) {
+		return baseUrl+"spell/"+imgName;
+	}
+	
 	
 	
 	public String getUrlByChampionImageName(String imgName){
