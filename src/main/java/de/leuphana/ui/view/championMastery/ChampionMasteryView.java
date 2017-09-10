@@ -6,6 +6,8 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.vaadin.addon.charts.Chart;
+import com.vaadin.addon.charts.model.ListSeries;
 import com.vaadin.event.ShortcutAction.KeyCode;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
@@ -16,6 +18,7 @@ import com.vaadin.ui.Button.ClickShortcut;
 
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.match.MatchDetailView;
+import net.rithms.riot.api.endpoints.champion_mastery.dto.ChampionMastery;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 /**
@@ -53,7 +56,9 @@ public class ChampionMasteryView extends ChampionMasteryViewDesign implements Vi
 	 */
 	@PostConstruct
 	public void init() {
-		
+		Chart chart = new Chart();
+		chart.getConfiguration().addSeries( new ListSeries( 1, 2, 3 ) );
+		addComponent(chart);
 	}
 
 

@@ -22,7 +22,7 @@ public class ChampionMasteryService {
 	
 	private final RestTemplate restTemplate;
 	private static RiotApi api;
-	private static ApiConfig config = new ApiConfig().setKey("RGAPI-01742e2e-d9fc-4e23-be04-969f200a775e");
+	private static ApiConfig config = new ApiConfig().setKey("RGAPI-22fa0ec5-17db-4749-9d4e-bae5f61d96be");
 
 	public ChampionMasteryService(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
