@@ -14,7 +14,7 @@ public class ChartsTheme extends Theme {
 	private static final SolidColor COLOR3 = new SolidColor("#fb991c");
 
 	public ChartsTheme() {
-		setColors(COLOR1, COLOR2, COLOR3);
+//		setColors(COLOR1, COLOR2, COLOR3);
 		getTitle().setColor(COLOR1);
 		getTitle().setFontSize("inherit"); // inherit from CSS
 	}

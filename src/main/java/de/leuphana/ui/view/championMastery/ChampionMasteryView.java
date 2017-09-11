@@ -19,6 +19,7 @@ import com.vaadin.ui.Button.ClickShortcut;
 import de.leuphana.ui.components.ChampionMasteryGrid;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.match.MatchDetailView;
+import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.champion_mastery.dto.ChampionMastery;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
@@ -57,11 +58,13 @@ public class ChampionMasteryView extends ChampionMasteryViewDesign implements Vi
 	 * <p>
 	 * Here we set up listeners and attach data providers and otherwise
 	 * configure the components for the parts which only need to be done once.
+	 * @throws RiotApiException 
 	 */
 	@PostConstruct
-	public void init() {
+	public void init() throws RiotApiException {
 		Chart chart = (Chart) championMasteryGrid.getChart();
 //		chart.getConfiguration().addSeries( new ListSeries( 1, 2, 3 ) );
+		chart.setSizeFull();
 		addComponent(chart);
 	}
 

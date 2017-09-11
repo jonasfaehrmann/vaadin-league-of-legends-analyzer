@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
 
+import org.apache.xerces.impl.dtd.models.CMLeaf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.util.HtmlUtils;
 import org.vaadin.spring.annotation.PrototypeScope;
@@ -20,18 +21,23 @@ import com.vaadin.ui.Grid;
 import com.vaadin.ui.renderers.HtmlRenderer;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.vaadin.addon.charts.Chart;
 import com.vaadin.addon.charts.model.AxisTitle;
+import com.vaadin.addon.charts.model.AxisType;
 import com.vaadin.addon.charts.model.ChartType;
 import com.vaadin.addon.charts.model.Configuration;
 import com.vaadin.addon.charts.model.DataLabels;
+import com.vaadin.addon.charts.model.DataSeries;
+import com.vaadin.addon.charts.model.DataSeriesItem;
 import com.vaadin.addon.charts.model.HorizontalAlign;
 import com.vaadin.addon.charts.model.LayoutDirection;
 import com.vaadin.addon.charts.model.Legend;
 import com.vaadin.addon.charts.model.ListSeries;
 import com.vaadin.addon.charts.model.PlotOptionsBar;
+import com.vaadin.addon.charts.model.PlotOptionsColumn;
 import com.vaadin.addon.charts.model.Series;
 import com.vaadin.addon.charts.model.Tooltip;
 import com.vaadin.addon.charts.model.VerticalAlign;
@@ -40,7 +46,9 @@ import com.vaadin.addon.charts.model.YAxis;
 import com.vaadin.addon.charts.model.style.SolidColor;
 import com.vaadin.ui.Component;
 
+import de.leuphana.backend.service.ChampionMasteryService;
 import de.leuphana.backend.service.RiotService;
+import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.champion_mastery.dto.ChampionMastery;
 import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
@@ -52,6 +60,9 @@ public class ChampionMasteryGrid extends Grid<ChampionMastery> {
 	@Autowired
 	private ChampionMasteryDataProvider dataProvider;
 
+	@Autowired
+	private ChampionMasteryService championMasterService;
+
 	public ChampionMasteryGrid() {
 		addStyleName("orders-grid");
 		setSizeFull();
@@ -60,63 +71,66 @@ public class ChampionMasteryGrid extends Grid<ChampionMastery> {
 	@PostConstruct
 	protected void init() {
 		setDataProvider(dataProvider);
-		setChampions(dataProvider.fetchChampions());
 	}
 
-	private void setChampions(Stream<ChampionMastery> stream) {
-		setItems(stream);
-		addColumn(ChampionMastery::getChampionId).setCaption("Champion id");
-		addColumn(ChampionMastery::getChampionLevel).setCaption("Champion level");
-		addColumn(ChampionMastery::getLastPlayTime).setCaption("Played last date");
-	}
+	// private void setChampions(Stream<ChampionMastery> stream) {
+	// setItems(stream);
+	// addColumn(ChampionMastery::getChampionId).setCaption("Champion id");
+	// addColumn(ChampionMastery::getChampionLevel).setCaption("Champion level");
+	// addColumn(ChampionMastery::getLastPlayTime).setCaption("Played last date");
+	// }
 
-	public Component getChart() {
-		Chart chart = new Chart(ChartType.BAR);
+	public Component getChart() throws RiotApiException {
 
+		// top 50 champions
+		List<ChampionMastery> championMasteryList = championMasterService.findAll().subList(0, 20);
+
+		Chart chart = new Chart(ChartType.COLUMN);
 		Configuration conf = chart.getConfiguration();
 
-		conf.setTitle("Historic World Population by Region");
-		conf.setSubTitle("Source: Wikipedia.org");
+		conf.setTitle("Champion mastery level overview");
+		conf.setSubTitle("for your top 20 champions");
 
 		XAxis x = new XAxis();
-		x.setCategories("Africa", "America", "Asia", "Europe", "Oceania");
-		x.setTitle((String) null);
+		for (ChampionMastery championMasteryItem : championMasteryList) {
+			x.addCategory(String
+					.valueOf(championMasterService.findChampionById(championMasteryItem.getChampionId()).getName()));
+		}
 		conf.addxAxis(x);
 
 		YAxis y = new YAxis();
 		y.setMin(0);
-		AxisTitle title = new AxisTitle("Population (millions)");
-		title.setAlign(VerticalAlign.MIDDLE);
-		y.setTitle(title);
+		y.setTitle("Champion level");
 		conf.addyAxis(y);
 
+		// Legend legend = new Legend();
+		// legend.setLayout(LayoutDirection.VERTICAL);
+		// legend.setBackgroundColor(new SolidColor("#FFFFFF"));
+		// legend.setAlign(HorizontalAlign.LEFT);
+		// legend.setVerticalAlign(VerticalAlign.TOP);
+		// legend.setX(100);
+		// legend.setY(70);
+		// legend.setFloating(true);
+		// legend.setShadow(true);
+		// conf.setLegend(legend);
+
 		Tooltip tooltip = new Tooltip();
-		tooltip.setFormatter("this.series.name +': '+ this.y +' millions'");
+		tooltip.setFormatter("'Level for '+this.x +': '+ this.y");
 		conf.setTooltip(tooltip);
 
-		PlotOptionsBar plot = new PlotOptionsBar();
-		plot.setDataLabels(new DataLabels(true));
-		conf.setPlotOptions(plot);
+		PlotOptionsColumn plot = new PlotOptionsColumn();
+		plot.setPointPadding(0.2);
+		plot.setBorderWidth(0);
 
-		Legend legend = new Legend();
-		legend.setLayout(LayoutDirection.VERTICAL);
-		legend.setAlign(HorizontalAlign.RIGHT);
-		legend.setVerticalAlign(VerticalAlign.TOP);
-		legend.setX(-100);
-		legend.setY(100);
-		legend.setFloating(true);
-		legend.setBorderWidth(1);
-		legend.setBackgroundColor(new SolidColor("#FFFFFF"));
-		legend.setShadow(true);
-		conf.setLegend(legend);
+		// data configuration
+		ListSeries series = new ListSeries();
+		// series.setName(String.valueOf(championMasteryItem.getChampionId()));
+		series.setName("Champion mastery");
 
-		conf.disableCredits();
-
-		List<Series> series = new ArrayList<Series>();
-		series.add(new ListSeries("Year 1800", 107, 31, 635, 203, 2));
-		series.add(new ListSeries("Year 1900", 133, 156, 947, 408, 6));
-		series.add(new ListSeries("Year 2008", 973, 914, 4054, 732, 34));
-		conf.setSeries(series);
+		for (ChampionMastery championMasteryItem : championMasteryList) {
+			series.addData(championMasteryItem.getChampionLevel());
+		}
+		conf.addSeries(series);
 
 		chart.drawChart(conf);
 
