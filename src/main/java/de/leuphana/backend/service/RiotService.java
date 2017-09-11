@@ -1,54 +1,24 @@
 package de.leuphana.backend.service;
 
 import java.util.List;
-import java.util.Map;
+import java.util.stream.Stream;
 
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.Match;
-import net.rithms.riot.api.endpoints.match.dto.MatchList;
-import net.rithms.riot.api.endpoints.match.dto.MatchReference;
-import net.rithms.riot.api.endpoints.static_data.dto.Champion;
-import net.rithms.riot.api.endpoints.static_data.dto.ChampionList;
-import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.Platform;
 
-@Service
-public class RiotService {
+public abstract class RiotService<T> {
 
-	private final RestTemplate restTemplate;
-	private static RiotApi api;
-	private static ApiConfig config = new ApiConfig().setKey("RGAPI-46ada99f-b112-486b-9490-ac72c4b5973f");
-
-	public RiotService(RestTemplateBuilder restTemplateBuilder) {
-		this.restTemplate = restTemplateBuilder.build();
-		this.api = new RiotApi(config);
-	}
-
-	public List<MatchReference> getMatchListForUser() throws RiotApiException {
-		Summoner summoner = api.getSummonerByName(Platform.NA, "faker");
-		MatchList matchList = api.getMatchListByAccountId(Platform.NA, summoner.getAccountId());
-		List<MatchReference> matchListForUser = matchList.getMatches();
-		
-		return matchListForUser;
-	}
-
-	public Map<String, Champion> getDataChampionList() throws RiotApiException {
-		ChampionList championList = api.getDataChampionList(Platform.NA);
-		Map<String, Champion> championMap = championList.getData();
-
-		return championMap;
-	}
+	protected RestTemplate restTemplate;
+	protected RiotApi api;
+	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-e5e37ae5-0340-431c-9e08-94c5ebfc304c");
+	protected final Platform platform = Platform.EUW;
 	
-	public Match getMatchById(long matchId) throws RiotApiException{
-		Match match = api.getMatch(Platform.NA, matchId);
-		
-		return match;
-	}
+	public abstract List<Match> findAllBySummonerName(String name) throws RiotApiException;
 
+	public abstract T findOneBySummonerName(Long id, String name) throws RiotApiException;
 }

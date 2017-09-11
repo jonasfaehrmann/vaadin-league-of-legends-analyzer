@@ -18,22 +18,12 @@ import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.Platform;
 
 @Service
-public class ChampionMasteryService {
+public class ChampionMasteryService extends RiotService<ChampionMastery> {
 	
-	private final RestTemplate restTemplate;
-	private static RiotApi api;
-	private static ApiConfig config = new ApiConfig().setKey("RGAPI-46ada99f-b112-486b-9490-ac72c4b5973f");
-
 	public ChampionMasteryService(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
 		this.api = new RiotApi(config);
 	}
-	
-//	public Match findMatchById(long matchId) throws RiotApiException{
-//		Match match = api.getMatch(Platform.NA, matchId);
-//		
-//		return match;
-//	}
 	
 	public int countAll() throws RiotApiException{
 		Summoner summoner = api.getSummonerByName(Platform.NA, "faker");
@@ -42,7 +32,7 @@ public class ChampionMasteryService {
 		return championMastery.size();
 	}
 	
-	public Stream<ChampionMastery> findAll() throws RiotApiException{
+	public List<ChampionMastery> findAll() throws RiotApiException{
 		Summoner summoner = api.getSummonerByName(Platform.NA, "faker");
 		List<ChampionMastery> championMastery = api.getChampionMasteriesBySummoner(Platform.NA, summoner.getId());
 		
@@ -50,7 +40,17 @@ public class ChampionMasteryService {
 //		needs to be limited because riot limits amount of requests
 //		20 requests every 1 seconds 
 //		100 requests every 2 minutes
-		return championMastery.stream();
+		return championMastery;
+	}
+
+	@Override
+	public List<Match> findAllBySummonerName(String name) throws RiotApiException {
+		return null;
+	}
+
+	@Override
+	public ChampionMastery findOneBySummonerName(Long id, String name) throws RiotApiException {
+		return null;
 	}
 	
 }

@@ -31,7 +31,7 @@ public class ChampionMasteryDataProvider extends AbstractBackEndDataProvider<Cha
 	@Override
 	protected Stream<ChampionMastery> fetchFromBackEnd(Query<ChampionMastery, Object> query) {
 		try{
-			return championMasteryService.findAll();
+			return championMasteryService.findAll().stream();
 		}catch(RiotApiException e){
 			e.printStackTrace();
 		}
@@ -50,7 +50,7 @@ public class ChampionMasteryDataProvider extends AbstractBackEndDataProvider<Cha
 	
 	public Stream<ChampionMastery> fetchChampions(){
 		try{
-			return championMasteryService.findAll();
+			return championMasteryService.findAll().stream();
 		}catch(RiotApiException e){
 			e.printStackTrace();
 		}

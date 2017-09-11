@@ -1,6 +1,7 @@
 package de.leuphana.ui.components;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 @SpringComponent
 @PrototypeScope
-public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<MatchReference, Object>{
+public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match, Object> {
 
 	private final MatchHistoryService matchHistoryService;
 
@@ -27,34 +28,34 @@ public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<MatchR
 	}
 
 	@Override
-	protected Stream<MatchReference> fetchFromBackEnd(Query<MatchReference, Object> query) {
-		try{
-			return matchHistoryService.findAll();
-		}catch(RiotApiException e){
+	protected Stream<Match> fetchFromBackEnd(Query<Match, Object> query) {
+		List<Match> matchList = null;
+		try {
+			matchList = matchHistoryService.findAllBySummonerName("SkullD3mon");
+		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return matchList.stream();
 	}
 
 	@Override
-	protected int sizeInBackEnd(Query<MatchReference, Object> query) {
-		try{
+	protected int sizeInBackEnd(Query<Match, Object> query) {
+		try {
 			return matchHistoryService.countAll();
-		}catch(RiotApiException e){
+		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
 		return 0;
 	}
-	
-	public Match fetchMatchById(Long matchId){
-		try{
-			return matchHistoryService.findMatchById(matchId);
-		}catch(RiotApiException e){
+
+	public Match fetchMatchById(Long matchId) {
+		Match match = null;
+		try {
+			match = matchHistoryService.findOneBySummonerName(matchId, "SkullD3mon");
+		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return match;
 	}
-	
-	
 
 }
