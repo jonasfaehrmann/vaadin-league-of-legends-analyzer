@@ -13,11 +13,14 @@ import com.vaadin.navigator.ViewDisplay;
 import com.vaadin.navigator.ViewLeaveAction;
 import com.vaadin.spring.annotation.SpringViewDisplay;
 import com.vaadin.spring.annotation.UIScope;
+
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.admin.account.AccountAdminView;
 import de.leuphana.ui.view.dashboard.DashboardView;
 import de.leuphana.ui.view.matchHistory.MatchHistoryView;
 import de.leuphana.ui.view.storefront.StorefrontView;
+import de.leuphana.ui.view.user.widget.UserWidgetView;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 
@@ -48,7 +51,8 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 		attachNavigation(storefront, StorefrontView.class);
 		attachNavigation(dashboard, DashboardView.class);
 		attachNavigation(accounts, AccountAdminView.class);
-		attachNavigation(matchHistoryGrid, MatchHistoryView.class);
+		attachNavigation(matchHistory, MatchHistoryView.class);
+		attachNavigation(widgets, UserWidgetView.class);
 		//attachNavigation(products, ProductAdminView.class);
 
 		logout.addClickListener(e -> logout());
@@ -61,7 +65,7 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 	 * If the user does not have access to the view, hides the button.
 	 *
 	 * @param navigationButton
-	 *            the button to use for navigatio
+	 *            the button to use for navigation
 	 * @param targetView
 	 *            the view to navigate to when the user clicks the button
 	 */

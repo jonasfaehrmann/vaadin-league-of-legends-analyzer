@@ -16,16 +16,16 @@ import com.vaadin.data.ValidationException;
 import com.vaadin.data.ValidationResult;
 import com.vaadin.navigator.ViewBeforeLeaveEvent;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
-import de.leuphana.app.HasLogger;
-import de.leuphana.backend.data.entity.AbstractEntity;
-import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.service.CrudService;
-import de.leuphana.backend.service.AccountFriendlyDataException;
-import de.leuphana.ui.components.ConfirmPopup;
-import de.leuphana.ui.navigation.NavigationManager;
 import com.vaadin.ui.Grid;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;
+
+import de.leuphana.app.HasLogger;
+import de.leuphana.backend.data.entity.AbstractEntity;
+import de.leuphana.backend.service.CrudService;
+import de.leuphana.backend.service.UserFriendlyDataException;
+import de.leuphana.ui.components.ConfirmPopup;
+import de.leuphana.ui.navigation.NavigationManager;
 
 public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends CrudService<T>, V extends AbstractCrudView<T>>
 		implements HasLogger, Serializable {
@@ -67,7 +67,7 @@ public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends 
 
 	public void beforeLeavingView(ViewBeforeLeaveEvent event) {
 		runWithConfirmation(event::navigate, () -> {
-			// Nothing special needs to be done if account aborts the navigation
+			// Nothing special needs to be done if user aborts the navigation
 		});
 	}
 
@@ -244,7 +244,7 @@ public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends 
 			getLogger().debug("Optimistic locking error while saving entity of type " + editItem.getClass().getName(),
 					e);
 			return;
-		} catch (AccountFriendlyDataException e) {
+		} catch (UserFriendlyDataException e) {
 			Notification.show(e.getMessage(), Type.ERROR_MESSAGE);
 			getLogger().debug("Unable to update entity of type " + editItem.getClass().getName(), e);
 			return;
@@ -284,7 +284,7 @@ public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends 
 	public void deleteClicked() {
 		try {
 			deleteEntity(editItem);
-		} catch (AccountFriendlyDataException e) {
+		} catch (UserFriendlyDataException e) {
 			Notification.show(e.getMessage(), Type.ERROR_MESSAGE);
 			getLogger().debug("Unable to delete entity of type " + editItem.getClass().getName(), e);
 			return;

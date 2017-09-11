@@ -1,6 +1,8 @@
 package de.leuphana.backend.service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -10,7 +12,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.leuphana.backend.AccountRepository;
+import de.leuphana.backend.data.OrderState;
 import de.leuphana.backend.data.entity.Account;
+import de.leuphana.backend.data.entity.Order;
+import de.leuphana.backend.data.entity.Widget;
 
 /**
  * 
@@ -87,6 +92,12 @@ public class AccountService extends CrudService<Account> {
 		if (dbUser.isLocked()) {
 			throw new AccountFriendlyDataException(MODIFY_LOCKED_ACCOUNT_NOT_PERMITTED);
 		}
+	}
+	
+	public Account changeWidgets(Account account, Set<Widget> widgets) {
+		account.setWidgets(widgets);
+
+		return accountRepository.save(account);
 	}
 
 }
