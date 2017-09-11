@@ -1,6 +1,7 @@
 package de.leuphana.ui.components;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,11 @@ import com.vaadin.data.provider.AbstractBackEndDataProvider;
 import com.vaadin.data.provider.Query;
 import com.vaadin.spring.annotation.SpringComponent;
 
+import de.leuphana.app.security.SecurityUtils;
+import de.leuphana.backend.service.AccountService;
 import de.leuphana.backend.service.MatchHistoryService;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.Match;
-import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 
 /**
  * 
@@ -25,20 +27,27 @@ import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match, Object> {
 
 	private final MatchHistoryService matchHistoryService;
+	private final AccountService accountService;
+	private String summonerName;
 
 	@Autowired
-	public MatchHistoryDataProvider(MatchHistoryService matchHistoryService) {
+	public MatchHistoryDataProvider(MatchHistoryService matchHistoryService, AccountService accountService) {
 		this.matchHistoryService = matchHistoryService;
+		this.accountService = accountService;
+		summonerName = SecurityUtils.getCurrentUser(accountService).getSummonerName();
 	}
 
 	@Override
 	protected Stream<Match> fetchFromBackEnd(Query<Match, Object> query) {
+		
+		List<Match> matchList = new ArrayList<Match>();
+		
 		try {
-			return matchHistoryService.findAllBySummonerName("SkullD3mon");
+			matchList = matchHistoryService.findAllBySummonerName(summonerName);
 		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return matchList.stream();
 	}
 
 	@Override
@@ -50,21 +59,28 @@ public class MatchHistoryDataProvider extends AbstractBackEndDataProvider<Match,
 	}
 
 	public Match fetchMatchById(Long matchId) {
+		
+		Match match = new Match();
+		
 		try {
-			return matchHistoryService.findOneBySummonerName(matchId, "SkullD3mon");
+			match = matchHistoryService.findOneBySummonerName(matchId, summonerName);
 		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
-		return null;
+		
+		return match;
 	}
 
 	public Match fetchMostRecentMatch() {
+		
+		Match match = new Match();
+		
 		try {
-			return matchHistoryService.findMostRecentMatch("SkullD3mon");
+			match =  matchHistoryService.findMostRecentMatchBySummonerName(summonerName);
 		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return match;
 	}
 
 }

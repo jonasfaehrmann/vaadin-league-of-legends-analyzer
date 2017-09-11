@@ -3,6 +3,7 @@ package de.leuphana.backend.service;
 import java.util.List;
 import java.util.stream.Stream;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 
 import net.rithms.riot.api.ApiConfig;
@@ -17,13 +18,13 @@ import net.rithms.riot.constant.Platform;
  *
  */
 public abstract class RiotService<T> {
-
+	
 	protected RestTemplate restTemplate;
 	protected RiotApi api;
-	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-2a0d8b1f-08a7-48df-bbce-43a36cb9477d");
+	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-e5e37ae5-0340-431c-9e08-94c5ebfc304c");
 	protected final Platform platform = Platform.EUW;
 	
-	public abstract Stream<Match> findAllBySummonerName(String name) throws RiotApiException;
+	public abstract List<Match> findAllBySummonerName(String name) throws RiotApiException;
 
 	public abstract T findOneBySummonerName(Long id, String name) throws RiotApiException;
 }

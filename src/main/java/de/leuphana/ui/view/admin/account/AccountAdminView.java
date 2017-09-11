@@ -62,7 +62,7 @@ public class AccountAdminView extends AbstractCrudView<Account> {
 	@PostConstruct
 	private void init() {
 		presenter.init(this);
-		getGrid().setColumns("email", "name", "role.roleName");
+		getGrid().setColumns("email", "name", "role.roleName", "summonerName");
 		getGrid().addColumn(account -> widgetsToCommaSeparatedStringConverter.convertToPresentation(account.getWidgets())).setCaption("Widgets");
 	}
 

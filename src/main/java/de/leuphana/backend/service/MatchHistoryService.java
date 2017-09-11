@@ -6,9 +6,11 @@ import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 
+import de.leuphana.app.security.SecurityUtils;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.Match;
@@ -24,7 +26,7 @@ import net.rithms.riot.constant.Platform;
  */
 @Service
 public class MatchHistoryService extends RiotService<Match> {
-
+	
 	private static final Logger logger = LoggerFactory.getLogger(MatchHistoryService.class);
 
 	public MatchHistoryService(RestTemplateBuilder restTemplateBuilder) {
@@ -41,7 +43,7 @@ public class MatchHistoryService extends RiotService<Match> {
 		return matchList.getTotalGames();
 	}
 
-	public Stream<Match> findAllBySummonerName(String name) throws RiotApiException {
+	public List<Match> findAllBySummonerName(String name) throws RiotApiException {
 		logger.info("Accessing MatchHistory findAllBySummonerName with params: " + name);
 		Summoner summoner = api.getSummonerByName(platform, name);
 		MatchList matchReferenceList = api.getMatchListByAccountId(platform, summoner.getAccountId());
@@ -68,7 +70,7 @@ public class MatchHistoryService extends RiotService<Match> {
 			limit++;
 		}
 
-		return matchList.stream();
+		return matchList;
 	}
 
 	@Override
@@ -79,7 +81,7 @@ public class MatchHistoryService extends RiotService<Match> {
 		return match;
 	}
 	
-	public Match findMostRecentMatch(String name) throws RiotApiException{
+	public Match findMostRecentMatchBySummonerName(String name) throws RiotApiException{
 		logger.info("Accessing MatchHistory findMostRecentBySummonerName with params: " + name);
 		Summoner summoner = api.getSummonerByName(platform, name);
 		Long gameId = api.getMatchListByAccountId(platform, summoner.getAccountId()).getMatches().get(0).getGameId();

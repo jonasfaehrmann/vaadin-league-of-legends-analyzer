@@ -40,6 +40,10 @@ public class Account extends AbstractEntity {
 	@NotNull
 	@Size(min = 0, max = 100)
 	private String name;
+	
+	@NotNull
+	@Size(min = 0, max = 256)
+	private String summonerName;
 
 	@Transient
 	private boolean locked = false;
@@ -114,6 +118,14 @@ public class Account extends AbstractEntity {
 
 	public void setLocked(boolean locked) {
 		this.locked = locked;
+	}
+	
+	public String getSummonerName() {
+		return summonerName;
+	}
+
+	public void setSummonerName(String summonerName) {
+		this.summonerName = summonerName;
 	}
 	
 }

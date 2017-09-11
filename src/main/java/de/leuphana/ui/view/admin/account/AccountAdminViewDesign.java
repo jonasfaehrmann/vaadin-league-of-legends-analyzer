@@ -29,6 +29,7 @@ public class AccountAdminViewDesign extends VerticalLayout {
 	protected TextField email;
 	protected TextField name;
 	protected TextField password;
+	protected TextField summonerName;
 	protected RoleComboBox role;
 	protected WidgetListSelect widgets;
 	protected Button update;

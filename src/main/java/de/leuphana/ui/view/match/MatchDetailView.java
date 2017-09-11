@@ -43,7 +43,7 @@ public class MatchDetailView extends MatchDetailViewDesign implements View {
 		} else {
 			Match match;
 			try {
-				match = matchHistoryService.findOneBySummonerName(Long.valueOf(matchId), "SkullD3mon");
+				match = matchHistoryService.findOneBySummonerName(Long.valueOf(matchId), "");
 			} catch (Exception e) {
 				view.showNotFound();
 				return;
