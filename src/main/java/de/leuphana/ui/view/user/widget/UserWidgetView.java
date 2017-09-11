@@ -117,6 +117,9 @@ public class UserWidgetView extends UserWidgetViewDesign implements View {
 				button.setCaption("Add");
 				button.setStyleName(ValoTheme.BUTTON_FRIENDLY);
 			}
+			
+//			refresh account after update
+			account = SecurityUtils.getCurrentUser(accountService);
 		});
 	}
 }
