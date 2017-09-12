@@ -3,16 +3,15 @@
 // Defines the plaintext font size, weight and family. Font size affects general component sizing.
 //$v-font-size: 16px;
 //$v-font-weight: 300;
-//$v-font-family: "Open Sans", sans-serif;
+//$v-font-family: "Helvetica Neue", sans-serif;
 
 // Defines the border used by all components.
 //$v-border: 1px solid (v-shade 0.7);
 //$v-border-radius: 4px;
 
 // Affects the color of some component elements, e.g Button, Panel title, etc
-//$v-background-color: hsl(210, 0%, 98%);
+//$v-background-color: hsl(0, 0%, 41%);
 // Affects the color of content areas, e.g  Panel and Window content, TextField input etc
-//$v-app-background-color: $v-background-color;
 
 // Affects the visual appearance of all components
 //$v-gradient: v-linear 8%;
@@ -28,36 +27,82 @@
 // Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
 
 // The "App Shell" template colors are based off v-focus-color
-$v-focus-color: #4b4b65;
+//NavBar color
+$v-app-loading-text: "WELCOME!";
+
+$v-background-color: #383838;
+$v-focus-color: #262626;
+$v-selection-color:#d2d2d2;
+
+//Font
+$v-font-size: 15px;
+$v-font-weight: 600;
+$v-font-family: "Lora", sans-serif;
+$v-font-weight--header: 600;
+
+// Component Features
+$v-border: 1px solid #D3D3D3;
+$v-border-radius: 8px;
+$v-gradient: v-linear(20%);
+$v-layout-margin-top:20px;
+$v-focus-style: 0 0 0 1px (v-tint 10);
+$v-unit-size: 40px;
+$v-bevel:  inset 0 2px 2px 0px (v-tint 2);
+$v-bevel-depth: 60%;
+$v-shadow: 0 2px 2px 0px (v-tint 2);
+$v-overlay-shadow: 0 0 0 2px (v-tint 10);
+
+
 
 // Background gradient and image used for the menu, false disables
-$app-background-gradient: unquote("linear-gradient(145deg, #484962 30%, #d06b41 100%)");
-$app-background-image: url('bg.jpg');
+$app-background-gradient:false;
+$app-background-image:false;
 
+@import "../valo/valo";
 @import '../valo/valo.scss';
-@import 'ordersgrid';
-@import 'ordersview';
 @import 'dashboardview';
 @import 'menu';
+@import 'accountadminview';
+
+
+// remove components from theming
+//$v-include-components: remove($v-included-components, grid);
+
+ // @include font-face('Kingdom-Font', '../../../../apptheme/fonts/rise-of-kingdom', 400, normal)
 
 @mixin apptheme {
   @include valo;
-  @include ordersgrid;
-  @include ordersview;
   @include dashboardview;
   @include menu;
+  @include accountadminview;
+	
+//$v-background-color:#000;
+//@include valo-grid();
 
-  .v-errorindicator {
-    // Only show validation errors using field styles
-    display: none; 
-  }
-  .Vaadin-Icons {
-    // Make Vaadin Icons behave exactly like FontAwesome
-    font-style: normal;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline-block;
-    text-align: center;
-  }
+	.v-grid-tablewrapper{
+	border:none;	
+	}
+	.v-grid-column-default-header-content{
+		font-size:25px;
+		}
+
+	.v-grid-header th.v-grid-cell.sortable{	
+		background: transparentize(#EB433A, 0.2);
+		}
+	.v-errorindicator {
+	    // Only show validation errors using field styles
+	    display: none;
+	  
+	}
+
+    .Vaadin-Icons {
+	    // Make Vaadin Icons behave exactly like FontAwesome
+	    font-style: normal;
+	    font-weight: normal;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    display: inline-block;
+	    text-align: center;
+  	}
 }
+

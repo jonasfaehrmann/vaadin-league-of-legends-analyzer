@@ -1,0 +1,18 @@
+@mixin accountadminview{
+	
+	.crud-template .top-bar{
+	background:lighten(#383838, 55%);	
+	
+	}
+		
+	#search{
+	background:#fff;
+	border-radius: $v-border-radius;	
+	
+	}
+	#add{
+	background:#fff;	
+		
+	}
+	
+}

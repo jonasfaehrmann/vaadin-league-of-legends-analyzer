@@ -6,34 +6,17 @@
 	
 	$first-row-compensation: round(160px / 3);
 	
-	vaadin-board {
-		padding: $padding;
-
-		vaadin-board-row:nth-child(2) > .board-box {
-			height: calc(20vh - $first-row-compensation) !important;
-			min-height: 150px;
-		}
-		vaadin-board-row:nth-child(3) > .board-box {
-			height: calc(40vh - $first-row-compensation) !important;
-			min-height: 200px;
-		}
-		vaadin-board-row:nth-child(4) {
-			height: calc(40vh - $first-row-compensation);
-			min-height: 200px;
-		}
 	
-		vaadin-board-row.medium:nth-child(2) > .board-box {
-			height: calc(20vh - $first-row-compensation * 2) !important;
-		}
-		vaadin-board-row.medium:nth-child(3) > .board-box {
-			height: calc(40vh - $first-row-compensation * 2) !important;
-		}
-		vaadin-board-row.medium:nth-child(4) {
-			height: calc(40vh - $first-row-compensation * 2);
+		#board{
+		margin-top:$v-layout-margin-top;
+		margin-left:$v-layout-margin-top;
+		margin-bottom:$v-layout-margin-top;
 		}
 
-  		.board-box {
-  			padding: $spacing;
+	.vaadin-board {
+		
+		padding: $padding;
+  			
   		}	
 		.board-box-needs-attention {
 			background-color: transparentize($v-error-indicator-color, .96);
@@ -88,12 +71,7 @@
 		}
 	
 		.board-row-panels {
-			.board-box:first-child {
-				padding-left: 0;
-			}
-			.board-box:last-child {
-				padding-right: 0;
-			}
+			
       		.board-box-inner {
 				@include valo-panel-style;
 				position: relative;
@@ -112,6 +90,7 @@
 				}
 				.v-grid > div {
 					border: 0;
+					font-size:20px;
 				}
 			}
 		}
@@ -122,7 +101,7 @@
 	}
 	.dashboard-view[width-range~="-599px"] {
  		/* minimize spacing/padding on small screens */
-		vaadin-board {
+		.vaadin-board {
 			padding: 0;
 			.board-row-group,
 			.board-row-panels .board-box-inner {
