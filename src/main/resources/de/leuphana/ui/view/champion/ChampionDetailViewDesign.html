@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="design-properties" content="{&quot;RULERS_VISIBLE&quot;:true,&quot;GUIDELINES_VISIBLE&quot;:false,&quot;SNAP_TO_OBJECTS&quot;:true,&quot;SNAP_TO_GRID&quot;:true,&quot;SNAPPING_DISTANCE&quot;:10,&quot;GENERATE_GETTERS&quot;:false,&quot;JAVA_SOURCES_ROOT&quot;:&quot;src/main/java&quot;,&quot;THEME&quot;:&quot;valo&quot;}">
+  <meta name="vaadin-version" content="8.0.5">
+  <meta name="package-mapping" content="de_leuphana_ui_view_match:de.leuphana.ui.view.match">
+ </head>
+ <body>
+  <vaadin-vertical-layout size-full>
+   <vaadin-horizontal-layout>
+    <vaadin-image width="243px" _id="championImage"></vaadin-image>
+    <vaadin-css-layout>
+     <vaadin-vertical-layout size-auto>
+      <vaadin-label plain-text _id="championNameLabel">
+        Label 
+      </vaadin-label>
+      <vaadin-label caption="Attack" plain-text _id="attackDamageLabel">
+        Label 
+      </vaadin-label>
+      <vaadin-label caption="Armor" plain-text _id="armorLabel">
+        Label 
+      </vaadin-label>
+      <vaadin-label caption="HP" plain-text _id="hpLabel">
+        Label 
+      </vaadin-label>
+     </vaadin-vertical-layout>
+    </vaadin-css-layout>
+   </vaadin-horizontal-layout>
+   <vaadin-grid id="championDetailGrid" width-full data-item-type="net.rithms.riot.api.endpoints.static_data.dto.Champion" _id="championDetailGrid">
+    <table>
+     <colgroup>
+      <col column-id="image" sortable>
+      <col column-id="name" sortable>
+      <col column-id="blurb" sortable>
+      <col column-id="id" sortable>
+      <col column-id="lore" sortable>
+      <col column-id="partype" sortable>
+     </colgroup>
+     <thead>
+      <tr default>
+       <th plain-text column-ids="image">Image</th>
+       <th plain-text column-ids="name">Name</th>
+       <th plain-text column-ids="blurb">Blurb</th>
+       <th plain-text column-ids="id">Id</th>
+       <th plain-text column-ids="lore">Lore</th>
+       <th plain-text column-ids="partype">Partype</th>
+      </tr>
+     </thead>
+     <tbody></tbody>
+    </table>
+   </vaadin-grid>
+  </vaadin-vertical-layout>
+ </body>
+</html>
