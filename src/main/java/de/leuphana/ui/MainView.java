@@ -18,6 +18,7 @@ import de.leuphana.ui.view.admin.account.AccountAdminView;
 import de.leuphana.ui.view.championMastery.ChampionMasteryView;
 import de.leuphana.ui.view.dashboard.DashboardView;
 import de.leuphana.ui.view.matchHistory.MatchHistoryView;
+import de.leuphana.ui.view.singleMatch.SingleMatchView;
 import de.leuphana.ui.view.storefront.StorefrontView;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
@@ -52,6 +53,7 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 		attachNavigation(matchHistoryGrid, MatchHistoryView.class);
 		//attachNavigation(products, ProductAdminView.class);
 		attachNavigation(championMasteryGrid, ChampionMasteryView.class);
+		attachNavigation(singleMatchComponent, SingleMatchView.class);
 
 		logout.addClickListener(e -> logout());
 	}
