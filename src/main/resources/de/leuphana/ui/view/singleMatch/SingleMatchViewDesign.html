@@ -9,13 +9,20 @@
  <body>
   <vaadin-vertical-layout size-full>
    <vaadin-horizontal-layout width-full>
+    <vaadin-list-select caption="for example:" rows="3" id="optionMatch" data-item-type="java.lang.String" _id="optionMatch" :middle :right>
+     <option item="3177959013">3177959013</option>
+     <option item="3125556923">3125556923</option>
+     <option item="3129658250">3129658250</option>
+    </vaadin-list-select>
     <vaadin-text-field caption="Enter your matchId:" _id="inputMatchId" :middle :right></vaadin-text-field>
-    <vaadin-text-field caption="Enter your summoner:" _id="inputSummoner" :middle></vaadin-text-field>
+    <vaadin-text-field caption="Enter your summoner:" placeholder="SkullD3mon" _id="inputSummoner" :middle></vaadin-text-field>
+    <vaadin-label plain-text :middle>
+      e.g. SkullD3mon 
+    </vaadin-label>
     <vaadin-button plain-text _id="buttonCheck" :bottom>
       Check match 
     </vaadin-button>
    </vaadin-horizontal-layout>
-   <de_leuphana_ui_components-single-match-component id="singleMatchComponent" size-full _id="singleMatchComponent" :expand></de_leuphana_ui_components-single-match-component>
   </vaadin-vertical-layout>
  </body>
 </html>

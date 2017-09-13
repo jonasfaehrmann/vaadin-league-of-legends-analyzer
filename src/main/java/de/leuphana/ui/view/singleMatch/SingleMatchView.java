@@ -1,5 +1,7 @@
 package de.leuphana.ui.view.singleMatch;
 
+import java.util.Set;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import com.vaadin.addon.charts.Chart;
 import com.vaadin.navigator.View;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Notification;
 
 import de.leuphana.backend.service.SingleMatchService;
 import de.leuphana.ui.components.SingleMatchComponent;
@@ -38,6 +41,10 @@ public class SingleMatchView extends SingleMatchViewDesign implements View {
 	@PostConstruct
 	public void init() throws RiotApiException {
 		
+		optionMatch.addValueChangeListener(event -> {
+		    inputMatchId.setValue(String.valueOf(event.getValue()));
+		});
+		
 		buttonCheck.addClickListener(e -> {
 			try {
 				setData();
@@ -61,6 +68,7 @@ public class SingleMatchView extends SingleMatchViewDesign implements View {
 		HorizontalLayout horizontalLayout = (HorizontalLayout) singleMatchComponent.getCharts();
 		horizontalLayout.setSizeFull();
 		addComponent(horizontalLayout);
+		setExpandRatio(horizontalLayout, 1);
 	}
 
 

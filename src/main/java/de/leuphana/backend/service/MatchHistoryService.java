@@ -33,7 +33,7 @@ public class MatchHistoryService extends RiotService<Match> {
 		MatchList matchList = api.getMatchListByAccountId(Platform.EUW, summoner.getAccountId());
 
 //		Limit the amount of rest calls
-		return 3;
+		return 10;
 	}
 
 	@Override
@@ -50,7 +50,7 @@ public class MatchHistoryService extends RiotService<Match> {
 //		100 requests every 2 minutes 
 		int limit = 0;
 		for (MatchReference matchReference : matchReferenceList.getMatches()) {
-			if (limit <= 3) {
+			if (limit <= 10) {
 				Match match = new Match();
 				try {
 					match = api.getMatch(platform, matchReference.getGameId());

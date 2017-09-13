@@ -92,11 +92,6 @@ public class ChampionMasteryGrid extends Grid<ChampionMastery> {
 		conf.setSubTitle("for your top 20 champions");
 
 		XAxis x = new XAxis();
-		for (ChampionMastery championMasteryItem : championMasteryList) {
-			x.addCategory(String
-					.valueOf(championMasterService.findChampionById(championMasteryItem.getChampionId()).getName()));
-		}
-		conf.addxAxis(x);
 
 		YAxis y = new YAxis();
 		y.setMin(0);
@@ -129,8 +124,11 @@ public class ChampionMasteryGrid extends Grid<ChampionMastery> {
 
 		for (ChampionMastery championMasteryItem : championMasteryList) {
 			series.addData(championMasteryItem.getChampionLevel());
+			x.addCategory(String
+					.valueOf(championMasterService.findChampionById(championMasteryItem.getChampionId()).getName()));
 		}
 		conf.addSeries(series);
+		conf.addxAxis(x);
 
 		chart.drawChart(conf);
 
