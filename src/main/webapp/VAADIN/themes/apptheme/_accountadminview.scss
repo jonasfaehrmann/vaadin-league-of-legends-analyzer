@@ -10,8 +10,13 @@
 	border-radius: $v-border-radius;	
 	
 	}
+	
 	#add{
 	background:#fff;	
+	}
+	
+	.v-grid-row.v-grid-row-has-data{
+	max-height: 50px;
 		
 	}
 	

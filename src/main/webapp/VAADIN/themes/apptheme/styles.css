@@ -16011,8 +16011,8 @@ div.v-layout.v-horizontal.v-widget {
 	background: #fff;
 }
 
-.apptheme .accountGrid .v-grid-cell {
-	max-height: 40px;
+.apptheme .v-grid-row.v-grid-row-has-data {
+	max-height: 50px;
 }
 
 .apptheme .v-label-link.v-widget {

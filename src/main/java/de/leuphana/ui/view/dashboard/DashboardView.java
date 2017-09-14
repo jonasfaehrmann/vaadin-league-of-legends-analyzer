@@ -17,6 +17,7 @@ import de.leuphana.app.security.SecurityUtils;
 import de.leuphana.backend.data.entity.Account;
 import de.leuphana.backend.data.entity.Widget;
 import de.leuphana.backend.service.AccountService;
+import de.leuphana.backend.service.SummonerService;
 import de.leuphana.ui.components.widgets.ChampionImagesWidget;
 import de.leuphana.ui.components.widgets.MatchHistoryGridWidget;
 import de.leuphana.ui.components.widgets.WidgetComponent;
@@ -24,6 +25,8 @@ import de.leuphana.ui.components.widgets.WidgetContainer;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.match.MatchDetailView;
 import net.rithms.riot.api.RiotApiException;
+import net.rithms.riot.api.endpoints.league.dto.LeagueItem;
+import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 
 /**
  * The dashboard view showing statistics about sales and deliveries.
@@ -39,24 +42,26 @@ public class DashboardView extends DashboardViewDesign implements View {
 
 	private final NavigationManager navigationManager;
 
-	private final BoardLabel todayLabel = new BoardLabel("Today", "3/7", "today");
-	private final BoardLabel notAvailableLabel = new BoardLabel("N/A", "1", "na");
-	private final BoardBox notAvailableBox = new BoardBox(notAvailableLabel);
-	private final BoardLabel newLabel = new BoardLabel("New", "2", "new");
-	private final BoardLabel tomorrowLabel = new BoardLabel("Tomorrow", "4", "tomorrow");
+	private  BoardLabel summonerLevelLabel;
+	private  BoardLabel summonerLossesLabel;
+	private  BoardBox notAvailableBox;
+	private  BoardLabel summonerWinsLabel;
+	private  BoardLabel summonerRankLabel;
 
-	private final Button button = new Button("Hello");
+	private String summonerName;
 	private WidgetContainer widgets = new WidgetContainer();
 	private Row row;
 
 	private final MatchHistoryGridWidget matchHistoryGridWidget;
 	private final ChampionImagesWidget championImagesWidget;
 	private final AccountService accountService;
+	private final SummonerService summonerService;
 
 	@Autowired
 	public DashboardView(NavigationManager navigationManager, MatchHistoryGridWidget matchHistoryGridWidget,
-			ChampionImagesWidget championImagesWidget, AccountService accountService) {
+			ChampionImagesWidget championImagesWidget, AccountService accountService, SummonerService summonerService, AccountService userService) {
 		this.navigationManager = navigationManager;
+		this.summonerService = summonerService;
 		this.accountService = accountService;
 		this.matchHistoryGridWidget = matchHistoryGridWidget;
 		this.championImagesWidget = championImagesWidget;
@@ -64,22 +69,31 @@ public class DashboardView extends DashboardViewDesign implements View {
 
 	@PostConstruct
 	public void init() throws RiotApiException {
+		summonerName = SecurityUtils.getCurrentUser(accountService).getSummonerName();
 		setResponsive(true);
+		setInfoLabels();
 
+		
 		// manually add all widgets to list
 		widgets.addWidget(matchHistoryGridWidget);
 		widgets.addWidget(championImagesWidget);
 
-		row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
-				new BoardBox(tomorrowLabel));
+		row = board.addRow(new BoardBox(summonerLevelLabel), notAvailableBox, new BoardBox(summonerWinsLabel),
+				new BoardBox(summonerRankLabel));
 		row.addStyleName("board-row-group");
-
-		// link to different view dummy
-		row = board.addRow(new BoardBox(button));
-		button.addClickListener(e -> navigationManager.navigateTo(MatchDetailView.class, 1));
 
 		Account currentAccount = SecurityUtils.getCurrentUser(accountService);
 		initCurrentAccountWidgets(currentAccount.getWidgets());
+	}
+
+	private void setInfoLabels() throws RiotApiException {
+		Summoner summoner = summonerService.findOneBySummonerName(summonerName);
+		LeagueItem league = summonerService.getLeagueItemByName(summonerName);
+		summonerLevelLabel = new BoardLabel("Games", String.valueOf(summoner.getSummonerLevel()), "level");
+		summonerLossesLabel = new BoardLabel("Losses", String.valueOf(league.getLosses()), "losses");
+		notAvailableBox = new BoardBox(summonerLossesLabel);
+		summonerWinsLabel = new BoardLabel("Wins", String.valueOf(league.getWins()), "wins");
+		summonerRankLabel = new BoardLabel("Rank", String.valueOf(league.getRank()), "rank");
 	}
 
 	private void initCurrentAccountWidgets(Set<Widget> accountWidgets) {

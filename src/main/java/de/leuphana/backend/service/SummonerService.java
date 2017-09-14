@@ -29,9 +29,19 @@ public class SummonerService extends RiotService<Summoner> {
 		// return champlistData.size();
 		return 10;
 	}
+	public LeagueItem getLeagueItemByName(String name) throws RiotApiException{
+		logger.info("Accessing SummonerService getLeagueItemBySummonerName with params: " + name);
+		Summoner summoner = api.getSummonerByName(platform, name);
+		LeagueItem leagueItem = null;
+		List<LeagueList> leaguelist = api.getLeagueBySummonerId(platform, summoner.getId());
+		for (LeagueList league : leaguelist) {
+			leagueItem = league.getEntryBySummonerId(summoner.getId());
+		}
+		return leagueItem;
+	}
 
 	public LeagueItem getLeagueItemById(long id) throws RiotApiException {
-		logger.info("Accessing SummonerService getRankBySummonerName with params: " + id);
+		logger.info("Accessing SummonerService getLeagueItemById with params: " + id);
 		LeagueItem leagueItem = null;
 		List<LeagueList> leaguelist = api.getLeagueBySummonerId(platform, id);
 		for (LeagueList league : leaguelist) {
@@ -42,7 +52,7 @@ public class SummonerService extends RiotService<Summoner> {
 
 	// for Name, Lvl and IconId
 	public Summoner findOneBySummonerName(String name) throws RiotApiException {
-		logger.info("Accessing MatchHistory findAllBySummonerName with params: " + name);
+		logger.info("Accessing SummonerService findOneBySummonerName with params: " + name);
 		Summoner summoner = api.getSummonerByName(platform, name);
 
 		return summoner;
