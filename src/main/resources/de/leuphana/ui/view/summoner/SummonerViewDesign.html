@@ -9,31 +9,27 @@
   <vaadin-css-layout size-full>
    <vaadin-panel style-name="borderless" _id="searchPanel">
     <vaadin-horizontal-layout spacing="false" width-full margin-left margin-right margin-top>
-     <vaadin-css-layout style-name="list-filters" width-full :expand>
-      <vaadin-text-field id="searchField" placeholder="Search" _id="searchField"></vaadin-text-field>
-      <vaadin-button icon="fonticon://Vaadin-Icons/e805" id="searchButton" plain-text _id="searchButton"></vaadin-button>
-      <vaadin-check-box caption="Include past" style-name="small" _id="includePast"></vaadin-check-box>
-      <vaadin-label plain-text _id="noteLabel">
-        Label 
-      </vaadin-label>
+     <vaadin-css-layout style-name="list-filters" responsive width-full :expand>
+      <vaadin-text-field style-name="align-center" id="searchField" placeholder="Search" _id="searchField"></vaadin-text-field>
+      <vaadin-button icon="fonticon://Vaadin-Icons/e805" style-name="borderless-colored" responsive id="searchButton" plain-text _id="searchButton"></vaadin-button>
+      <vaadin-link icon="fonticon://Vaadin-Icons/e77e" caption="can't find any summoners ?" primary-style-name="v-link-summoners" style-name="large" responsive width="138px" height="40px" href="https://www.leagueofgraphs.com/de/rankings/summoners/euw"></vaadin-link>
      </vaadin-css-layout>
     </vaadin-horizontal-layout>
    </vaadin-panel>
-   <vaadin-horizontal-layout width="788px">
+   <vaadin-horizontal-layout responsive width="788px" value="" margin _id="label">
     <vaadin-css-layout width="50%">
-     <vaadin-image width="368px" height="292px" _id="summonerImage"></vaadin-image>
+     <vaadin-image responsive width="368px" height="292px" _id="summonerImage"></vaadin-image>
     </vaadin-css-layout>
     <vaadin-css-layout>
-     <vaadin-vertical-layout size-auto>
-      <vaadin-label caption="Name" plain-text _id="nameLabel">
-        Label 
-      </vaadin-label>
-      <vaadin-label caption="Level" plain-text _id="levelLabel">
-        Label 
-      </vaadin-label>
-      <vaadin-label caption="Rank" plain-text _id="rankLabel">
-        Label 
-      </vaadin-label>
+     <vaadin-vertical-layout width-auto height-full>
+      <vaadin-label caption="Name" plain-text _id="nameLabel"></vaadin-label>
+      <vaadin-label caption="Level" plain-text _id="levelLabel"></vaadin-label>
+      <vaadin-label caption="Rank" plain-text _id="rankLabel"></vaadin-label>
+     </vaadin-vertical-layout>
+     <vaadin-vertical-layout width-auto height-full>
+      <vaadin-label caption="Wins" plain-text _id="winsLabel"></vaadin-label>
+      <vaadin-label caption="Losses" plain-text _id="lossesLabel"></vaadin-label>
+      <vaadin-label caption="League Points" plain-text _id="leaguePointsLabel"></vaadin-label>
      </vaadin-vertical-layout>
     </vaadin-css-layout>
    </vaadin-horizontal-layout>

@@ -41,6 +41,7 @@ public class ChampionGrid extends Grid<Champion> {
 				champion ->  new ExternalResource(dDragonUrlFormatter.getUrlByChampionImageName(champion.getImage().getFull())),
 				    new ImageRenderer())
 				.setCaption("Picture")
+				
 				;
 
 		Column<Champion, String> nameColumn = addColumn(Champion::getName, new HtmlRenderer())

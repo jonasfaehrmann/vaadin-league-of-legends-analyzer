@@ -19,9 +19,8 @@ import de.leuphana.backend.service.AccountService;
 import de.leuphana.backend.service.SummonerService;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.util.DDragonUrlFormatter;
-import de.leuphana.ui.view.champion.ChampionDetailView;
 import net.rithms.riot.api.RiotApiException;
-import net.rithms.riot.api.endpoints.static_data.dto.Champion;
+import net.rithms.riot.api.endpoints.league.dto.LeagueItem;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 
 @SpringView
@@ -32,12 +31,12 @@ public class SummonerView extends SummonerViewDesign implements View {
 	private SummonerView view;
 	private final NavigationManager navigationManager;
 	private final DDragonUrlFormatter dDragonUrlFormatter = new DDragonUrlFormatter();
-	
+
+	@Autowired
+	private AccountService userService;
 
 	@Autowired
 	private SummonerService summonerService;
-	@Autowired
-	private AccountService userService;
 
 	public SummonerView(NavigationManager navigationManager) {
 		this.navigationManager = navigationManager;
@@ -48,17 +47,18 @@ public class SummonerView extends SummonerViewDesign implements View {
 		searchPanel.addAction(new ClickShortcut(searchButton, KeyCode.ENTER, null));
 		searchButton.addClickListener(e -> searchedSummoner(searchField.getValue()));
 		searchButton.addClickListener(e -> search(searchField.getValue()));
+
 	}
 
 	private Object searchedSummoner(String value) {
-			navigationManager.navigateTo(SummonerView.class, value);
-			
-			return null;
+		navigationManager.navigateTo(SummonerView.class, value);
+
+		return null;
 	}
 
 	private void search(String searchTerm) {
 		String parameters = PARAMETER_SEARCH + "=" + searchTerm;
-		
+
 		navigationManager.updateViewParameter(parameters);
 	}
 
@@ -66,25 +66,24 @@ public class SummonerView extends SummonerViewDesign implements View {
 	public void enter(ViewChangeEvent event) {
 		logger.info("Accessing enter Method in ChampionDetailView.class");
 		Summoner summoner = null;
-		String summonerName = event.getParameters();
-		
+		String summonerName = String.valueOf(event.getParameters());
+
 		/*
-		 * in case nothings typed into the searchfield -> SummonerName from Account gets displayed 
+		 * in case nothings typed into the searchfield -> SummonerName from
+		 * Account gets displayed
 		 */
-		
+
 		if ("".equals(summonerName)) {
 			summonerName = SecurityUtils.getCurrentUser(userService).getSummonerName();
 			try {
 				summoner = summonerService.findOneBySummonerName(summonerName);
-			} catch (RiotApiException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch (Exception e) {
+				view.showNotFound();
 			}
-			logger.info("Accessing SummonerView with SummonerName from SecurityUtils"+summoner.getName());
+			logger.info("Accessing SummonerView with SummonerName from SecurityUtils" + summoner.getName());
 			try {
 				setSummoner(summoner);
 			} catch (RiotApiException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -108,19 +107,25 @@ public class SummonerView extends SummonerViewDesign implements View {
 		}
 	}
 
-	
-
 	private void setSummoner(Summoner summoner) throws RiotApiException {
+		LeagueItem league = summonerService.getLeagueItemById(summoner.getId());
+
+		// set Labels
 		nameLabel.setValue(summoner.getName());
 		levelLabel.setValue(String.valueOf(summoner.getSummonerLevel()));
-		rankLabel.setValue(summonerService.getLeagueItemById(summoner.getId()).getRank());
-		summonerImage.setSource(new ExternalResource(dDragonUrlFormatter.getUrlForSummonerIconByImageName(String.valueOf(summoner.getProfileIconId()))));
+		rankLabel.setValue(league.getRank());
+		winsLabel.setValue(String.valueOf(league.getWins()));
+		leaguePointsLabel.setValue(String.valueOf(league.getLeaguePoints()));
+		lossesLabel.setValue(String.valueOf(league.getLosses()));
+
+		// set image
+		summonerImage.setSource(new ExternalResource(
+				dDragonUrlFormatter.getUrlForSummonerIconByImageName(String.valueOf(summoner.getProfileIconId()))));
 	}
 
 	private void showNotFound() {
-			removeAllComponents();
-			addComponent(new Label("Summoner not found"));
-		}
-		
+		removeAllComponents();
+		addComponent(new Label("Summoner not found"));
 	}
 
+}
