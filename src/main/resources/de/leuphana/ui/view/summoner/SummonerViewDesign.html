@@ -7,21 +7,23 @@
  </head>
  <body>
   <vaadin-css-layout size-full>
-   <vaadin-panel style-name="borderless" _id="searchPanel">
+   <vaadin-panel style-name="searchBar" height="73px" _id="searchPanel">
     <vaadin-horizontal-layout spacing="false" width-full margin-left margin-right margin-top>
      <vaadin-css-layout style-name="list-filters" responsive width-full :expand>
       <vaadin-text-field style-name="align-center" id="searchField" placeholder="Search" _id="searchField"></vaadin-text-field>
       <vaadin-button icon="fonticon://Vaadin-Icons/e805" style-name="borderless-colored" responsive id="searchButton" plain-text _id="searchButton"></vaadin-button>
-      <vaadin-link icon="fonticon://Vaadin-Icons/e77e" caption="can't find any summoners ?" primary-style-name="v-link-summoners" style-name="large" responsive width="138px" height="40px" href="https://www.leagueofgraphs.com/de/rankings/summoners/euw"></vaadin-link>
+      <vaadin-label primary-style-name="v-label-link" style-name="light" responsive width="661px" height="40px" _id="linkLabel">
+       <a href="https://www.leagueofgraphs.com/de/rankings/summoners/euw"> find Summoner Names to type in</a>
+      </vaadin-label>
      </vaadin-css-layout>
     </vaadin-horizontal-layout>
    </vaadin-panel>
    <vaadin-horizontal-layout responsive width="788px" value="" margin _id="label">
     <vaadin-css-layout width="50%">
-     <vaadin-image responsive width="368px" height="292px" _id="summonerImage"></vaadin-image>
+     <vaadin-image responsive width="241px" height="191px" _id="summonerImage"></vaadin-image>
     </vaadin-css-layout>
     <vaadin-css-layout>
-     <vaadin-vertical-layout width-auto height-full>
+     <vaadin-vertical-layout width="148px" height-full>
       <vaadin-label caption="Name" plain-text _id="nameLabel"></vaadin-label>
       <vaadin-label caption="Level" plain-text _id="levelLabel"></vaadin-label>
       <vaadin-label caption="Rank" plain-text _id="rankLabel"></vaadin-label>

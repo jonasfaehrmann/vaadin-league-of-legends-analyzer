@@ -26,6 +26,7 @@ public class SummonerViewDesign extends CssLayout {
 	protected Panel searchPanel;
 	protected TextField searchField;
 	protected Button searchButton;
+	protected Label linkLabel;
 	protected HorizontalLayout label;
 	protected Image summonerImage;
 	protected Label nameLabel;

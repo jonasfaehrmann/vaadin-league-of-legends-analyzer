@@ -36,11 +36,12 @@ public class ChampionGrid extends Grid<Champion> {
 		addStyleName("championGrid");
 		setSizeFull();
 		setCaption("Champions");
-		
+		getHeaderRow(0).setStyleName("championGridHeader");
 		Column<Champion, ExternalResource> imageColumn = addColumn(
 				champion ->  new ExternalResource(dDragonUrlFormatter.getUrlByChampionImageName(champion.getImage().getFull())),
 				    new ImageRenderer())
 				.setCaption("Picture")
+				.setMinimumWidth(200d);
 				
 				;
 
@@ -48,8 +49,9 @@ public class ChampionGrid extends Grid<Champion> {
 				.setCaption("Name")
 				;
 		
-		Column<Champion, String> loreColumn = addColumn(Champion::getLore, new HtmlRenderer())
-				.setCaption("Lore")
+		Column<Champion, String> titleColumn = addColumn(Champion::getTitle, new HtmlRenderer())
+				.setCaption("Title")
+				
 				;
 		
 		

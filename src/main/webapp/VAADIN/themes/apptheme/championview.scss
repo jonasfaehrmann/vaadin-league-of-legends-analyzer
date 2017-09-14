@@ -1,0 +1,13 @@
+@mixin championview{
+	
+	.v-grid-cell{
+		line-height: 150px;
+		line-width: 200px;
+		font-size: 20px;
+		}
+
+	.championGridHeader .v-grid-cell.sortable{
+		max-height:60px;	
+	}
+
+}

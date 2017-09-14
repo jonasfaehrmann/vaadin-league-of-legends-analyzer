@@ -42,7 +42,7 @@ public class ChampionService extends RiotService<Champion> {
 		Map<String, Champion> champlistData = champList.getData();
 		// limit the amount of rest calls
 		// return champlistData.size();
-		return 10;
+		return 15;
 	}
 
 	public List<Champion> getChampions() throws RiotApiException {

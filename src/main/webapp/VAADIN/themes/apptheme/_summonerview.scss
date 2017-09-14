@@ -1,0 +1,29 @@
+@mixin summonerview{
+	
+	.v-label-link.v-widget{
+		color:#000;	
+		
+	}
+	
+	.v-panel-content-searchBar{
+		background:lighten(#383838, 55%);
+	}
+
+	.v-button-borderless-colored:hover:after{
+		background:#b3b3b3;
+		color:none;
+		
+	}
+
+	.v-image{
+		margin:$v-layout-margin-top;
+		padding:10px;
+		border:	$v-border;
+		border-radius:$v-border-radius;
+	}
+
+	#searchButton{
+		color:#000;	
+		
+	}
+}

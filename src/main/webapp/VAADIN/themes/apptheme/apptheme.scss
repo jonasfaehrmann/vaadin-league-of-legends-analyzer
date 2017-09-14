@@ -1,33 +1,4 @@
-// Global variable overrides. Must be declared before importing Valo.
 
-// Defines the plaintext font size, weight and family. Font size affects general component sizing.
-//$v-font-size: 16px;
-//$v-font-weight: 300;
-//$v-font-family: "Helvetica Neue", sans-serif;
-
-// Defines the border used by all components.
-//$v-border: 1px solid (v-shade 0.7);
-//$v-border-radius: 4px;
-
-// Affects the color of some component elements, e.g Button, Panel title, etc
-//$v-background-color: hsl(0, 0%, 41%);
-// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
-
-// Affects the visual appearance of all components
-//$v-gradient: v-linear 8%;
-//$v-bevel-depth: 30%;
-//$v-shadow-opacity: 5%;
-
-// Defines colors for indicating status (focus, success, failure)
-//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
-//$v-friendly-color: #2c9720;
-//$v-error-indicator-color: #ed473b;
-
-// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
-// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
-
-// The "App Shell" template colors are based off v-focus-color
-//NavBar color
 $v-app-loading-text: "WELCOME!";
 
 $v-background-color: #383838;
@@ -49,7 +20,7 @@ $v-focus-style: 0 0 0 1px (v-tint 10);
 $v-unit-size: 40px;
 $v-bevel:  inset 0 2px 2px 0px (v-tint 2);
 $v-bevel-depth: 60%;
-$v-shadow: 0 2px 2px 0px (v-tint 2);
+$v-shadow: 0 2px 2px 0px lighten(#383838, 55%);
 $v-overlay-shadow: 0 0 0 2px (v-tint 10);
 
 
@@ -63,18 +34,21 @@ $app-background-image:false;
 @import 'dashboardview';
 @import 'menu';
 @import 'accountadminview';
+@import 'summonerview';
+@import 'championview';
 
 
 // remove components from theming
 //$v-include-components: remove($v-included-components, grid);
 
- // @include font-face('Kingdom-Font', '../../../../apptheme/fonts/rise-of-kingdom', 400, normal)
 
 @mixin apptheme {
   @include valo;
   @include dashboardview;
   @include menu;
   @include accountadminview;
+  @include summonerview;
+  @include championview;
 	
 //$v-background-color:#000;
 //@include valo-grid();
@@ -84,11 +58,14 @@ $app-background-image:false;
 	}
 	.v-grid-column-default-header-content{
 		font-size:25px;
+		vertical-align: top;
 		}
 
 	.v-grid-header th.v-grid-cell.sortable{	
 		background: transparentize(#EB433A, 0.2);
 		}
+	
+	
 	.v-errorindicator {
 	    // Only show validation errors using field styles
 	    display: none;
