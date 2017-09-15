@@ -18,7 +18,6 @@ import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.admin.account.AccountAdminView;
 import de.leuphana.ui.view.dashboard.DashboardView;
 import de.leuphana.ui.view.matchHistory.MatchHistoryView;
-import de.leuphana.ui.view.storefront.StorefrontView;
 import de.leuphana.ui.view.user.widget.UserWidgetView;
 
 import com.vaadin.ui.Button;
@@ -48,7 +47,6 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 
 	@PostConstruct
 	public void init() {
-		attachNavigation(storefront, StorefrontView.class);
 		attachNavigation(dashboard, DashboardView.class);
 		attachNavigation(accounts, AccountAdminView.class);
 		attachNavigation(matchHistory, MatchHistoryView.class);

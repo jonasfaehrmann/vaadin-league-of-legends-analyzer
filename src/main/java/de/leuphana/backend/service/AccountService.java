@@ -12,9 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import de.leuphana.backend.AccountRepository;
-import de.leuphana.backend.data.OrderState;
 import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.data.entity.Order;
 import de.leuphana.backend.data.entity.Widget;
 
 /**

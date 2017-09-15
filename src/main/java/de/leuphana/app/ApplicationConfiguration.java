@@ -2,6 +2,8 @@ package de.leuphana.app;
 
 import com.vaadin.spring.access.SecuredViewAccessControl;
 
+import java.util.ResourceBundle;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,5 +24,10 @@ public class ApplicationConfiguration {
 	@Bean
 	SecuredViewAccessControl securedViewAccessControl() {
 		return new SecuredViewAccessControl();
+	}
+	
+	@Bean
+	ResourceBundle resourceBundle(){
+		return ResourceBundle.getBundle("ApplicationRessources");
 	}
 }
