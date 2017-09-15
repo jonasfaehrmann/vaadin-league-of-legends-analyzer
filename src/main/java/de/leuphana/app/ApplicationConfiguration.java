@@ -25,9 +25,4 @@ public class ApplicationConfiguration {
 	SecuredViewAccessControl securedViewAccessControl() {
 		return new SecuredViewAccessControl();
 	}
-	
-	@Bean
-	ResourceBundle resourceBundle(){
-		return ResourceBundle.getBundle("ApplicationRessources");
-	}
 }

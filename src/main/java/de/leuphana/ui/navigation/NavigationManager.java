@@ -53,14 +53,11 @@ public class NavigationManager extends SpringNavigator {
 	}
 
 	public void navigateToDefaultView() {
-		// If the user wants a specific view, it's in the URL.
-		// Otherwise admin goes to DashboardView and everybody else to
-		// OrderListView
 		if (!getState().isEmpty()) {
 			return;
 		}
 		
-		navigateTo(SecurityUtils.isCurrentUserInRole("admin") ? DashboardView.class : AccountAdminView.class);
+		navigateTo(SecurityUtils.isCurrentUserInRole("admin") ? AccountAdminView.class : DashboardView.class);
 	}
 
 	/**
