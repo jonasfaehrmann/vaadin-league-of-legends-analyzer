@@ -17,8 +17,10 @@ import com.vaadin.spring.annotation.UIScope;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.admin.account.AccountAdminView;
 import de.leuphana.ui.view.champion.ChampionView;
+import de.leuphana.ui.view.championMastery.ChampionMasteryView;
 import de.leuphana.ui.view.dashboard.DashboardView;
 import de.leuphana.ui.view.matchHistory.MatchHistoryView;
+import de.leuphana.ui.view.singleMatch.SingleMatchView;
 import de.leuphana.ui.view.summoner.SummonerView;
 import de.leuphana.ui.view.user.widget.UserWidgetView;
 
@@ -55,6 +57,8 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 		attachNavigation(widgets, UserWidgetView.class);
 		attachNavigation(summoner, SummonerView.class);
 		attachNavigation(champion, ChampionView.class);
+		attachNavigation(championMastery, ChampionMasteryView.class);
+		attachNavigation(singleMatch, SingleMatchView.class);
 
 		logout.addClickListener(e -> logout());
 	}

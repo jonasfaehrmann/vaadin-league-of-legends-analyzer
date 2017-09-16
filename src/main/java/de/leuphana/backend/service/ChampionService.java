@@ -4,24 +4,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 
-import com.vaadin.server.ExternalResource;
-import com.vaadin.ui.Image;
-
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
-import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.static_data.constant.ChampionListTags;
 import net.rithms.riot.api.endpoints.static_data.constant.Locale;
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 import net.rithms.riot.api.endpoints.static_data.dto.ChampionList;
-import net.rithms.riot.api.endpoints.static_data.dto.Skin;
 import net.rithms.riot.api.endpoints.static_data.dto.Stats;
 import net.rithms.riot.constant.Platform;
 
@@ -40,18 +34,23 @@ public class ChampionService extends RiotService<Champion> {
 	public int countAll() throws RiotApiException {
 		logger.info("Accessing ChampionService countAll");
 		Map<String, Champion> champlistData = champList.getData();
-		// limit the amount of rest calls
-		// return champlistData.size();
-		return 15;
+		return champlistData.size();
 	}
 
 	public List<Champion> getChampions() throws RiotApiException {
 		logger.info("Accessing ChampionService -> getChampions");
 		List<Champion> championList = new ArrayList<Champion>();
 		Map<String, Champion> champlistData = champList.getData();
+
+		int limit = 0;
+
 		for (Champion champion : champlistData.values()) {
-			championList.add(champion);
+			if (limit <= champlistData.size()) {
+				championList.add(champion);
+				limit++;
+			}
 		}
+
 		return championList;
 	}
 
@@ -82,18 +81,15 @@ public class ChampionService extends RiotService<Champion> {
 		return foundImageName;
 	}
 
-
-	public void getStatsById(int id){
+	public void getStatsById(int id) {
 		logger.info("Accessing StatsById in ChampionService");
 		Map<String, Champion> champImgListData = champList.getData();
 		for (Champion champion : champImgListData.values()) {
 			Stats stats = champion.getStats();
-			
+
 		}
-		
-		
+
 	}
-	
 
 	@Override
 	public List<Champion> findAllBySummonerName(String name) throws RiotApiException {

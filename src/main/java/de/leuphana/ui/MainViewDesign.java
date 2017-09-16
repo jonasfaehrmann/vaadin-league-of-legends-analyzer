@@ -30,6 +30,8 @@ public class MainViewDesign extends HorizontalLayout {
 	protected Button matchHistory;
 	protected Button widgets;
 	protected Button champion;
+	protected Button championMastery;
+	protected Button singleMatch;
 	protected Button summoner;
 	protected Button logout;
 	protected VerticalLayout content;
