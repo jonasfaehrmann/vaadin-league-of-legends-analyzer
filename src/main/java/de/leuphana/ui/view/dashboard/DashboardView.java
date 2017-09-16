@@ -17,10 +17,12 @@ import de.leuphana.app.security.SecurityUtils;
 import de.leuphana.backend.data.entity.Account;
 import de.leuphana.backend.data.entity.Widget;
 import de.leuphana.backend.service.AccountService;
+import de.leuphana.ui.components.widgets.ChampionImagesWidget;
 import de.leuphana.ui.components.widgets.MatchHistoryGridWidget;
 import de.leuphana.ui.components.widgets.WidgetComponent;
 import de.leuphana.ui.components.widgets.WidgetContainer;
 import de.leuphana.ui.navigation.NavigationManager;
+import de.leuphana.ui.view.champion.ChampionDetailView;
 import de.leuphana.ui.view.match.MatchDetailView;
 import net.rithms.riot.api.RiotApiException;
 
@@ -48,14 +50,16 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private WidgetContainer widgets = new WidgetContainer();
 	private Row row;
 	
+	private final ChampionImagesWidget championImagesWidget;
 	private final MatchHistoryGridWidget matchHistoryGridWidget;
 	private final AccountService accountService;
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, MatchHistoryGridWidget matchHistoryGridWidget, AccountService accountService) {
+	public DashboardView(NavigationManager navigationManager, MatchHistoryGridWidget matchHistoryGridWidget, AccountService accountService, ChampionImagesWidget championImagesWidget) {
 		this.navigationManager = navigationManager;
 		this.matchHistoryGridWidget = matchHistoryGridWidget;
 		this.accountService = accountService;
+		this.championImagesWidget = championImagesWidget;
 	}
 
 	@PostConstruct
@@ -63,7 +67,7 @@ public class DashboardView extends DashboardViewDesign implements View {
 		setResponsive(true);
 
 		//manually add all widgets to list
-		widgets.addWidget(matchHistoryGridWidget);
+		widgets.addWidgets(matchHistoryGridWidget, championImagesWidget);
 
 		row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
 				new BoardBox(tomorrowLabel));

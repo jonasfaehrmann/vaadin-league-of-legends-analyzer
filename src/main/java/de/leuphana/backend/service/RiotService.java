@@ -24,7 +24,7 @@ public abstract class RiotService<T> {
 	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-d09a0fb4-d45f-4aa6-9b21-154e95adf0e1");
 	protected final Platform platform = Platform.EUW;
 	
-	public abstract List<Match> findAllBySummonerName(String name) throws RiotApiException;
+	public abstract List<T> findAllBySummonerName(String name) throws RiotApiException;
 
 	public abstract T findOneBySummonerName(Long id, String name) throws RiotApiException;
 }
