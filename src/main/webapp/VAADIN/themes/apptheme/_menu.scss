@@ -1,34 +1,21 @@
 @mixin menu {
   .app-shell {
-  	
-  	.v-image{
-  		margin-left:none;
-  		margin-top:none;
-  		margin-bottom:none;
-  		
-  	}
+    
   
     .navigation-bar {
-      background-color: #000;
-      background-size:cover;
+      color: lighten($v-focus-color,40%);
+      background-size: cover;
       background-position: top;
   
       .v-button {
-        border-radius: 2px;
-        color:#fff;
-      	font-weight:100;
-      	font-size:18px;
+        border-radius: 0;
       }
-      
-      .v-button:hover{
-      	background-color:transparentize(#FDBD97, 0.8);
-      	
-      	}
-      
       .selected {
-        background: transparentize(#EB433A, 0.2);
-        //color: lighten( #F75615,60%);
-        
+        background: rgba(0,0,0,.2);
+        color: lighten($v-focus-color,60%);
+        .v-icon, .v-button-caption {
+            color: lighten($v-focus-color,60%);
+        }
       }
       .activeViewName {
         line-height: $v-unit-size;

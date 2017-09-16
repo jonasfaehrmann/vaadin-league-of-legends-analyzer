@@ -3,9 +3,7 @@
 // App shell
   .app-shell {
 
-    // Navigation bar background color on left side of app
-    //$v-focus-color defined in apptheme.scss
-    
+    // Navigation bar background color
     $navigation-bar-bg-color: $v-focus-color;
 
     .custom-menubar {

@@ -1,5 +1,6 @@
 package de.leuphana.ui;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewDisplay;
 import com.vaadin.navigator.ViewLeaveAction;
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.spring.annotation.SpringViewDisplay;
 import com.vaadin.spring.annotation.UIScope;
 
@@ -59,7 +62,10 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 		attachNavigation(champion, ChampionView.class);
 		attachNavigation(championMastery, ChampionMasteryView.class);
 		attachNavigation(singleMatch, SingleMatchView.class);
-
+		
+		String basePath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+		FileResource resource = new FileResource(new File(basePath + "/LEUPHALYTICS/images/logo.png"));
+		logo.setSource(resource);
 		logout.addClickListener(e -> logout());
 	}
 

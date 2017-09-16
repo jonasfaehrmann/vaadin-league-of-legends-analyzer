@@ -25,27 +25,20 @@ public class ChampionImagesWidget extends ImageViewer implements WidgetComponent
 
 	private long id = 4l;
 	private final DDragonUrlFormatter dDragonUrlFormatter = new DDragonUrlFormatter();
-	
+
 	@Autowired
 	private NavigationManager navigationManager;
 	@Autowired
 	private ChampionService championService;
 
-	@Override
-	public Long getWidgetId() {
-		return id;
-	}
-	
-	
 	public ChampionImagesWidget() {
 		setSizeFull();
 		setAnimationEnabled(true);
 		setSideImageRelativeWidth(0.7f);
 		setAnimationDuration(3000);
-		setHeight("200");
 		setHiLiteEnabled(true);
 		setSideImageCount(3);
-		
+
 	}
 
 	@PostConstruct
@@ -57,14 +50,18 @@ public class ChampionImagesWidget extends ImageViewer implements WidgetComponent
 		Random randomGenerator = new Random();
 		List<Champion> championList = championService.findAll();
 		List<ExternalResource> imgList = new ArrayList<ExternalResource>();
-		
-		for(int i=0; i<=7; i++){
+
+		for (int i = 0; i <= 6; i++) {
 			int index = randomGenerator.nextInt(championList.size());
 			Champion champion = championList.get(index);
 			imgList.add(new ExternalResource(dDragonUrlFormatter.getUrlByChampionImageName(champion.getImage().getFull())));
 		}
-		
+
 		return imgList;
 	}
 
+	@Override
+	public Long getWidgetId() {
+		return id;
+	}
 }

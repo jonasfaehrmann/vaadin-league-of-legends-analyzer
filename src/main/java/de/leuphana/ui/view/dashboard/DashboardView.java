@@ -21,7 +21,7 @@ import de.leuphana.backend.data.entity.Widget;
 import de.leuphana.backend.service.AccountService;
 import de.leuphana.backend.service.SummonerService;
 import de.leuphana.ui.components.widgets.ChampionImagesWidget;
-import de.leuphana.ui.components.widgets.ItemGridWidget;
+import de.leuphana.ui.components.widgets.ItemImagesWidget;
 import de.leuphana.ui.components.widgets.MatchHistoryGridWidget;
 import de.leuphana.ui.components.widgets.SummonerSpellGridWidget;
 import de.leuphana.ui.components.widgets.WidgetComponent;
@@ -61,11 +61,11 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final AccountService accountService;
 	private final SummonerService summonerService;
 	
-	private final ItemGridWidget itemWidget;
+	private final ItemImagesWidget itemWidget;
 	private final SummonerSpellGridWidget summonerSpellWidget;
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, SummonerSpellGridWidget summonerSpellWidget, ItemGridWidget itemWidget ,MatchHistoryGridWidget matchHistoryGridWidget,
+	public DashboardView(NavigationManager navigationManager, SummonerSpellGridWidget summonerSpellWidget, ItemImagesWidget itemWidget ,MatchHistoryGridWidget matchHistoryGridWidget,
 			AccountService accountService, ChampionImagesWidget championImagesWidget, SummonerService summonerService) {
 		this.navigationManager = navigationManager;
 		this.matchHistoryGridWidget = matchHistoryGridWidget;
