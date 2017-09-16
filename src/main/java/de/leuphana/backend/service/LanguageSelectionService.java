@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 import net.rithms.riot.api.RiotApi;
 
 @Service
-public class LanguageSelectService {
+public class LanguageSelectionService {
 	
-	public LanguageSelectService() {
+	public LanguageSelectionService() {
 		
 	}
 	
