@@ -10,4 +10,5 @@ import com.vaadin.ui.Component;
 public interface WidgetComponent extends Component{
 
 	public Long getWidgetId();
+	
 }

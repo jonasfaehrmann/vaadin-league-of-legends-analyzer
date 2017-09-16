@@ -3,6 +3,9 @@ package de.leuphana.ui.components.widgets;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.tepi.imageviewer.ImageViewer;
 import org.vaadin.spring.annotation.PrototypeScope;
 
@@ -24,8 +27,6 @@ public class ChampionImagesWidget extends ImageViewer implements WidgetComponent
 
 	private long id = 4l;
 	private ImageViewer imageViewer;
-	private VerticalLayout vLayout;
-	private HorizontalLayout hLayout;
 	private TextField selectedImage;
 	private final DDragonUrlFormatter dDragonUrlFormatter = new DDragonUrlFormatter();
 	
@@ -36,23 +37,14 @@ public class ChampionImagesWidget extends ImageViewer implements WidgetComponent
 	}
 
 	public ChampionImagesWidget() {
-		vLayout = new VerticalLayout();
-		hLayout = new HorizontalLayout();
-		imageViewer = new ImageViewer();
-		imageViewer.setSizeFull();
-		imageViewer.setImages(createImageList());
-		imageViewer.setAnimationEnabled(false);
-		imageViewer.setSideImageRelativeWidth(0.7f);
-		
-		hLayout.setSizeUndefined();
-		hLayout.setMargin(false);
-		hLayout.setSpacing(false);
-		
-		vLayout.addComponent(hLayout);
-		vLayout.addComponent(imageViewer);
-		Layout ctrls = createControls();
-		vLayout.addComponent(ctrls);
-		vLayout.setComponentAlignment(ctrls, Alignment.BOTTOM_CENTER);
+		setSizeFull();
+		setAnimationEnabled(false);
+		setSideImageRelativeWidth(0.7f);
+	}
+	
+	@PostConstruct
+	protected void init(){
+		setImages(createImageList());
 	}
 
 	private List<ExternalResource> createImageList() {
