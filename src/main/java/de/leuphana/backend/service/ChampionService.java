@@ -34,7 +34,7 @@ public class ChampionService extends RiotServiceStatic<Champion> {
 	public int countAll() throws RiotApiException {
 		logger.info("Accessing ChampionService countAll");
 		Map<String, Champion> champlistData = champList.getData();
-		return champlistData.size();
+		return 10;
 	}
 
 	public List<Champion> findAll() throws RiotApiException {

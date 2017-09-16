@@ -30,7 +30,7 @@ public class ChampionMasteryService extends RiotServiceStatic<ChampionMastery> {
 	public int countAll() throws RiotApiException {
 		Summoner summoner = api.getSummonerByName(Platform.NA, "faker");
 		List<ChampionMastery> championMastery = api.getChampionMasteriesBySummoner(Platform.NA, summoner.getId());
-		return championMastery.size();
+		return 10;
 	}
 
 	public List<ChampionMastery> findAll() throws RiotApiException {

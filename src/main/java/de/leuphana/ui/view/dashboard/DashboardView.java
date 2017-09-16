@@ -80,18 +80,18 @@ public class DashboardView extends DashboardViewDesign implements View {
 	public void init() throws RiotApiException {
 		setResponsive(true);
 
+		currentAccount = SecurityUtils.getCurrentUser(accountService);
+
 		// manually add all widgets to list
 		widgets.addWidgets(matchHistoryGridWidget, championImagesWidget, itemWidget, summonerSpellWidget);
 
 		setInfoLabels();
-
 		
 		row = board.addRow(new BoardBox(button));
 		button.addClickListener(e -> navigationManager.navigateTo(MatchDetailView.class, 1));
 		
 		row.addStyleName("board-row-group");
 
-		currentAccount = SecurityUtils.getCurrentUser(accountService);
 		initCurrentAccountWidgets(currentAccount.getWidgets());
 	}
 
