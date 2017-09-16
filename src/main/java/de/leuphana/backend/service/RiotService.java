@@ -24,9 +24,6 @@ public abstract class RiotService<T> {
 	protected RiotApi api;
 	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-1eda2a7c-add5-416f-8f0c-43fba60eafef");
 	protected final Platform platform = Platform.EUW;
-	protected final Locale locale = Locale.DE_DE;
+	private Locale locale = Locale.DE_DE;
 	
-	public abstract List<T> findAllBySummonerName(String name) throws RiotApiException;
-
-	public abstract T findOneBySummonerName(Long id, String name) throws RiotApiException;
 }
