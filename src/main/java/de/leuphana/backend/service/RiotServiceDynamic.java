@@ -10,7 +10,6 @@ import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.Match;
-import net.rithms.riot.api.endpoints.static_data.constant.Locale;
 import net.rithms.riot.constant.Platform;
 
 /**
@@ -18,13 +17,7 @@ import net.rithms.riot.constant.Platform;
  * @author Jonas Fährmann
  *
  */
-public abstract class RiotService<T> {
-	
-	protected RestTemplate restTemplate;
-	protected RiotApi api;
-	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-1eda2a7c-add5-416f-8f0c-43fba60eafef");
-	protected final Platform platform = Platform.EUW;
-	protected final Locale locale = Locale.DE_DE;
+public abstract class RiotServiceDynamic<T> extends RiotService<T> {
 	
 	public abstract List<T> findAllBySummonerName(String name) throws RiotApiException;
 
