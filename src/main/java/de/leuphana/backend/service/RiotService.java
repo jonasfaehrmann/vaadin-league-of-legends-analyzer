@@ -6,6 +6,8 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 
+import com.vaadin.server.VaadinSession;
+
 import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
@@ -27,9 +29,6 @@ public abstract class RiotService<T> {
 	private static Locale locale;
 
 	public static Locale getLocale() {
-		if (locale == null) {
-			locale = Locale.DE_DE;
-		}
 		return locale;
 	}
 

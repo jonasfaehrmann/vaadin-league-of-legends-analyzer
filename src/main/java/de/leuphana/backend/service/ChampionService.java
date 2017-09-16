@@ -39,13 +39,14 @@ public class ChampionService extends RiotServiceStatic<Champion> {
 
 	public List<Champion> findAll() throws RiotApiException {
 		logger.info("Accessing ChampionService -> getChampions");
+		champList = api.getDataChampionList(Platform.EUW, RiotService.getLocale(), null, false, ChampionListTags.ALL);
 		List<Champion> championList = new ArrayList<Champion>();
 		Map<String, Champion> champlistData = champList.getData();
 
 		int limit = 0;
 
 		for (Champion champion : champlistData.values()) {
-			
+
 			if (limit <= champlistData.size()) {
 				championList.add(champion);
 				limit++;
@@ -60,7 +61,7 @@ public class ChampionService extends RiotServiceStatic<Champion> {
 	public Champion findOne(int id) throws RiotApiException {
 		logger.info("Accessing ChampionService -> getChampionNameById with id: " + id);
 		Champion champion = new Champion();
-		
+
 		Map<String, Champion> champlistData = champList.getData();
 		for (Champion c : champlistData.values()) {
 			if (id == c.getId()) {

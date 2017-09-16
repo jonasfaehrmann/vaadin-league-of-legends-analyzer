@@ -34,6 +34,7 @@ public class ChampionMasteryService extends RiotServiceStatic<ChampionMastery> {
 	}
 
 	public List<ChampionMastery> findAll() throws RiotApiException {
+		championList = api.getDataChampionList(Platform.EUW, RiotService.getLocale(), null, false, ChampionListTags.ALL);
 		Summoner summoner = api.getSummonerByName(Platform.NA, "faker");
 		List<ChampionMastery> championMastery = api.getChampionMasteriesBySummoner(Platform.NA, summoner.getId());
 
