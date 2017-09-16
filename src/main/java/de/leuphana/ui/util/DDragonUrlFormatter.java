@@ -2,6 +2,7 @@ package de.leuphana.ui.util;
 
 public class DDragonUrlFormatter {
 
+	private static final String baseSpellUrl = "http://ddragon.leagueoflegends.com/cdn/6.24.1/img/";
 	private static final String baseUrl = "http://ddragon.leagueoflegends.com/cdn/7.17.2/img/";
 //http://ddragon.leagueoflegends.com/cdn/7.5.1/img/profileicon/1387.png
 	public String getUrlByChampionImageName(String imgName) {
@@ -23,4 +24,12 @@ public class DDragonUrlFormatter {
 		// https://ddragon.leagueoflegends.com/cdn/7.12.1/img/profileicon/1665.png.
 	}
 
+	public String getUrlbyItemImageName(String imgName) {
+		return baseUrl+"item/"+imgName;
+	}
+	
+	public String getUrlbySumSpellImageName(String imgName) {
+		
+		return baseSpellUrl+"spell/"+imgName;
+	}
 }

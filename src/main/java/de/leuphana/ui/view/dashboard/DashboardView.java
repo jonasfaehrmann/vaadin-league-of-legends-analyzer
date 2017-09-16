@@ -18,7 +18,9 @@ import de.leuphana.backend.data.entity.Account;
 import de.leuphana.backend.data.entity.Widget;
 import de.leuphana.backend.service.AccountService;
 import de.leuphana.ui.components.widgets.ChampionImagesWidget;
+import de.leuphana.ui.components.widgets.ItemGridWidget;
 import de.leuphana.ui.components.widgets.MatchHistoryGridWidget;
+import de.leuphana.ui.components.widgets.SummonerSpellGridWidget;
 import de.leuphana.ui.components.widgets.WidgetComponent;
 import de.leuphana.ui.components.widgets.WidgetContainer;
 import de.leuphana.ui.navigation.NavigationManager;
@@ -49,25 +51,30 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final Button button = new Button("Hello");
 	private WidgetContainer widgets = new WidgetContainer();
 	private Row row;
-	
+
 	private final ChampionImagesWidget championImagesWidget;
 	private final MatchHistoryGridWidget matchHistoryGridWidget;
 	private final AccountService accountService;
+	private final ItemGridWidget itemWidget;
+	private final SummonerSpellGridWidget summonerSpellWidget;
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, MatchHistoryGridWidget matchHistoryGridWidget, AccountService accountService, ChampionImagesWidget championImagesWidget) {
+	public DashboardView(NavigationManager navigationManager, SummonerSpellGridWidget summonerSpellWidget, ItemGridWidget itemWidget ,MatchHistoryGridWidget matchHistoryGridWidget,
+			AccountService accountService, ChampionImagesWidget championImagesWidget) {
 		this.navigationManager = navigationManager;
 		this.matchHistoryGridWidget = matchHistoryGridWidget;
 		this.accountService = accountService;
 		this.championImagesWidget = championImagesWidget;
+		this.itemWidget = itemWidget;
+		this.summonerSpellWidget = summonerSpellWidget;
 	}
 
 	@PostConstruct
 	public void init() throws RiotApiException {
 		setResponsive(true);
 
-		//manually add all widgets to list
-		widgets.addWidgets(matchHistoryGridWidget, championImagesWidget);
+		// manually add all widgets to list
+		widgets.addWidgets(matchHistoryGridWidget, championImagesWidget, itemWidget, summonerSpellWidget);
 
 		row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
 				new BoardBox(tomorrowLabel));
@@ -82,12 +89,12 @@ public class DashboardView extends DashboardViewDesign implements View {
 	}
 
 	private void initCurrentAccountWidgets(Set<Widget> accountWidgets) {
-		
+
 		for (WidgetComponent widget : widgets.getWidgets()) {
-				if(accountWidgets.stream().anyMatch(accountWidget -> accountWidget.getId() == widget.getWidgetId())){
-					System.out.println("Added widget with Id " + widget.getWidgetId());
-					row = board.addRow(new BoardBox(widgets.getWidgetByWidgetId(widget.getWidgetId())));
-				}
+			if (accountWidgets.stream().anyMatch(accountWidget -> accountWidget.getId() == widget.getWidgetId())) {
+				System.out.println("Added widget with Id " + widget.getWidgetId());
+				row = board.addRow(new BoardBox(widgets.getWidgetByWidgetId(widget.getWidgetId())));
+			}
 		}
 	}
 

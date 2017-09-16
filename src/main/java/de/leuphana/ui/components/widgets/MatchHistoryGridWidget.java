@@ -28,7 +28,6 @@ public class MatchHistoryGridWidget extends Grid<Match> implements WidgetCompone
 	public MatchHistoryGridWidget() {
 		setId("MatchHistoryGridWidget");
 		setSizeFull();
-		
 		addStyleName("orders-grid");
 		setSizeFull();
 		removeHeaderRow(0);
