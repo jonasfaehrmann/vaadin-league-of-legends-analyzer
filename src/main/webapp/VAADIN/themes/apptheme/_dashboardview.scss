@@ -7,23 +7,10 @@
 	$first-row-compensation: round(160px / 3);
 	
 	
-		#board{
-		margin-top:$v-layout-margin-top;
-		margin-left:$v-layout-margin-top;
-		margin-bottom:$v-layout-margin-top;
-		}
 
-	.vaadin-board {
-		
-		padding: $padding;
-  			
+  		.board-box {
+  			padding: $spacing;
   		}	
-		.board-box-needs-attention {
-			background-color: transparentize($v-error-indicator-color, .96);
-			h1, h4 {
-				color: $v-error-indicator-color;
-			}
-		}
 
   		.board-box-label {
   			text-align: center;
@@ -71,7 +58,12 @@
 		}
 	
 		.board-row-panels {
-			
+			.board-box:first-child {
+				padding-left: 0;
+			}
+			.board-box:last-child {
+				padding-right: 0;
+			}
       		.board-box-inner {
 				@include valo-panel-style;
 				position: relative;
@@ -90,7 +82,6 @@
 				}
 				.v-grid > div {
 					border: 0;
-					font-size:20px;
 				}
 			}
 		}
@@ -101,7 +92,7 @@
 	}
 	.dashboard-view[width-range~="-599px"] {
  		/* minimize spacing/padding on small screens */
-		.vaadin-board {
+		vaadin-board {
 			padding: 0;
 			.board-row-group,
 			.board-row-panels .board-box-inner {

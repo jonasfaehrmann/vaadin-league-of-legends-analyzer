@@ -1,11 +1,8 @@
 package de.leuphana.backend.service;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.web.client.RestTemplate;
 
-import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.server.WrappedSession;
 
@@ -23,7 +20,7 @@ public abstract class RiotService<T> {
 
 	protected RestTemplate restTemplate;
 	protected RiotApi api;
-	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-6bba33b3-e6cd-41c2-87fb-0cf7037f5105");
+	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-1eda2a7c-add5-416f-8f0c-43fba60eafef");
 	protected final Platform platform = Platform.EUW;
 	private static WrappedSession session;
 	private static Locale locale;

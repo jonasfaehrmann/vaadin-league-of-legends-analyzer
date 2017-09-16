@@ -38,7 +38,7 @@ public class ItemDataProvider extends AbstractBackEndDataProvider<Item, Object> 
 		List<Item> itemList = new ArrayList<Item>();
 		try{
 			
-			itemList = itemService.getItems();
+			itemList = itemService.findAll();
 		}
 		catch(RiotApiException e){
 			e.printStackTrace();

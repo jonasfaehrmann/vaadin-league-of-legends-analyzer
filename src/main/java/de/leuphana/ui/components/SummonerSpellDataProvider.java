@@ -33,7 +33,7 @@ public class SummonerSpellDataProvider extends AbstractBackEndDataProvider<Summo
 		
 		List<SummonerSpell> sumSpellList = new ArrayList<SummonerSpell>();
 		try{
-			sumSpellList = sumSpellService.getSumSpell();
+			sumSpellList = sumSpellService.findAll();
 		}
 		catch(RiotApiException e){
 			e.printStackTrace();
