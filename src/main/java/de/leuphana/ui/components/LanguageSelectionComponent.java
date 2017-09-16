@@ -5,13 +5,16 @@ import org.vaadin.spring.annotation.PrototypeScope;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.MenuBar;
 
+import de.leuphana.backend.service.RiotService;
+import net.rithms.riot.api.endpoints.static_data.constant.Locale;
+
 @SpringComponent
 @PrototypeScope
 public class LanguageSelectionComponent extends MenuBar {
 
 	public LanguageSelectionComponent() {
 		setSizeFull();
-
+		
 		final String language1 = "Deutsch";
 		final String language2 = "English";
 
@@ -23,10 +26,10 @@ public class LanguageSelectionComponent extends MenuBar {
 
 				switch (text) {
 				case language1:
-					System.out.println(language1);
+					RiotService.setLocale(Locale.DE_DE, text);
 					break;
 				case language2:
-					System.out.println(language2);
+					RiotService.setLocale(Locale.EN_US, text);
 					break;
 				default:
 					break;

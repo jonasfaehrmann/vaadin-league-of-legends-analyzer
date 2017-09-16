@@ -19,20 +19,23 @@ import net.rithms.riot.constant.Platform;
  *
  */
 public abstract class RiotService<T> {
-	
+
 	protected RestTemplate restTemplate;
 	protected RiotApi api;
 	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-1eda2a7c-add5-416f-8f0c-43fba60eafef");
 	protected final Platform platform = Platform.EUW;
-	private static Locale locale = Locale.DE_DE;
-	
+	private static Locale locale;
+
 	public static Locale getLocale() {
+		if (locale == null) {
+			locale = Locale.DE_DE;
+		}
 		return locale;
 	}
-	public static void setLocale(Locale locale) {
+
+	public static void setLocale(Locale locale, String language) {
 		RiotService.locale = locale;
+		System.out.println("Changed language to " + language);
 	}
-	
-	
-	
+
 }

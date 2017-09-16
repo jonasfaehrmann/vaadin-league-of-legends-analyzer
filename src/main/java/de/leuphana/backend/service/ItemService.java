@@ -34,7 +34,7 @@ public class ItemService extends RiotServiceDynamic<ItemList> {
 	public ItemService(RestTemplateBuilder restTemplateBuilder) throws RiotApiException {
 		this.restTemplate = restTemplateBuilder.build();
 		this.api = new RiotApi(config);
-		itemList = api.getDataItemList(platform.EUW, Locale.DE_DE, null, ItemListTags.ALL);
+		itemList = api.getDataItemList(platform.EUW, RiotService.getLocale(), null, ItemListTags.ALL);
 		
 		
 		

@@ -24,7 +24,7 @@ public class ChampionMasteryService extends RiotServiceStatic<ChampionMastery> {
 	public ChampionMasteryService(RestTemplateBuilder restTemplateBuilder) throws RiotApiException {
 		this.restTemplate = restTemplateBuilder.build();
 		this.api = new RiotApi(config);
-		championList = api.getDataChampionList(Platform.EUW, Locale.DE_DE, null, false, ChampionListTags.ALL);
+		championList = api.getDataChampionList(Platform.EUW, RiotService.getLocale(), null, false, ChampionListTags.ALL);
 	}
 
 	public int countAll() throws RiotApiException {

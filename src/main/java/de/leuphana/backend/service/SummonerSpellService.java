@@ -37,7 +37,7 @@ public class SummonerSpellService extends RiotServiceDynamic<SummonerSpellList> 
 	public SummonerSpellService(RestTemplateBuilder restTemplateBuilder) throws RiotApiException {
 		this.restTemplate = restTemplateBuilder.build();
 		this.api = new RiotApi(config);
-		sumSpellList = api.getDataSummonerSpellList(platform.EUW, Locale.DE_DE, null, false, SpellListTags.ALL);
+		sumSpellList = api.getDataSummonerSpellList(platform.EUW, RiotService.getLocale(), null, false, SpellListTags.ALL);
 		
 		
 		
