@@ -2,7 +2,6 @@ package de.leuphana.backend.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 
 import net.rithms.riot.api.ApiConfig;
@@ -17,8 +16,7 @@ import net.rithms.riot.constant.Platform;
  */
 public abstract class RiotServiceStatic<T> {
 	
-	@Autowired
-	protected ApiConfig config;
+	protected ApiConfig config = new ApiConfig().setKey("RGAPI-1eda2a7c-add5-416f-8f0c-43fba60eafef");
 	
 	protected RestTemplate restTemplate;
 	protected RiotApi api;
