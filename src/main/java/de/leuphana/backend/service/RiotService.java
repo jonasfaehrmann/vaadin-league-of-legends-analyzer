@@ -10,6 +10,7 @@ import net.rithms.riot.api.ApiConfig;
 import net.rithms.riot.api.RiotApi;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.Match;
+import net.rithms.riot.api.endpoints.static_data.constant.Locale;
 import net.rithms.riot.constant.Platform;
 
 /**
@@ -23,5 +24,15 @@ public abstract class RiotService<T> {
 	protected RiotApi api;
 	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-1eda2a7c-add5-416f-8f0c-43fba60eafef");
 	protected final Platform platform = Platform.EUW;
+	private static Locale locale = Locale.DE_DE;
+	
+	public static Locale getLocale() {
+		return locale;
+	}
+	public static void setLocale(Locale locale) {
+		RiotService.locale = locale;
+	}
+	
+	
 	
 }
