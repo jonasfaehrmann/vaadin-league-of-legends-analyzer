@@ -18,7 +18,7 @@ import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.Platform;
 
 @Service
-public class SingleMatchService extends RiotService<Match> {
+public class SingleMatchService extends RiotServiceDynamic<Match> {
 
 	private static final Logger logger = LoggerFactory.getLogger(SingleMatchService.class);
 	static String summonerName;

@@ -12,7 +12,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
 import de.leuphana.backend.service.MatchHistoryService;
-import de.leuphana.backend.service.RiotService;
+import de.leuphana.backend.service.RiotServiceDynamic;
 import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 import net.rithms.riot.api.endpoints.match.dto.Participant;

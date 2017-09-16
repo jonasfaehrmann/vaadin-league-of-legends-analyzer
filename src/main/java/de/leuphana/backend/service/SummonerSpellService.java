@@ -27,7 +27,7 @@ import net.rithms.riot.api.endpoints.static_data.dto.SummonerSpell;
 import net.rithms.riot.constant.Platform;
 
 @Service
-public class SummonerSpellService extends RiotService<SummonerSpellList> {
+public class SummonerSpellService extends RiotServiceDynamic<SummonerSpellList> {
 
 	
 	private static final Logger logger = LoggerFactory.getLogger(SummonerSpellService.class);

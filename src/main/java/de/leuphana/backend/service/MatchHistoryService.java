@@ -25,7 +25,7 @@ import net.rithms.riot.constant.Platform;
  *
  */
 @Service
-public class MatchHistoryService extends RiotService<Match> {
+public class MatchHistoryService extends RiotServiceDynamic<Match> {
 	
 	private static final Logger logger = LoggerFactory.getLogger(MatchHistoryService.class);
 

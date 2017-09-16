@@ -17,11 +17,9 @@ import net.rithms.riot.constant.Platform;
  * @author Jonas Fährmann
  *
  */
-public abstract class RiotService<T> {
+public abstract class RiotServiceDynamic<T> extends RiotService<T>{
 	
-	protected RestTemplate restTemplate;
-	protected RiotApi api;
-	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-1eda2a7c-add5-416f-8f0c-43fba60eafef");
-	protected final Platform platform = Platform.EUW;
-	
+	public abstract List<T> findAllBySummonerName(String name) throws RiotApiException;
+
+	public abstract T findOneBySummonerName(Long id, String name) throws RiotApiException;
 }

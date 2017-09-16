@@ -26,7 +26,7 @@ import net.rithms.riot.constant.Platform;
 
 
 @Service
-public class ItemService extends RiotService<ItemList> {
+public class ItemService extends RiotServiceDynamic<ItemList> {
 
 	private static final Logger logger = LoggerFactory.getLogger(ItemService.class);
 	private ItemList itemList;

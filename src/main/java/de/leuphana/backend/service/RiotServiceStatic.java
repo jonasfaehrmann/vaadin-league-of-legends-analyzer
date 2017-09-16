@@ -14,13 +14,7 @@ import net.rithms.riot.constant.Platform;
  * @author Jonas Fährmann
  *
  */
-public abstract class RiotServiceStatic<T> {
-	
-	protected ApiConfig config = new ApiConfig().setKey("RGAPI-1eda2a7c-add5-416f-8f0c-43fba60eafef");
-	
-	protected RestTemplate restTemplate;
-	protected RiotApi api;
-	protected final Platform platform = Platform.EUW;
+public abstract class RiotServiceStatic<T> extends RiotService<T> {
 	
 	public abstract List<T> findAll() throws RiotApiException;
 

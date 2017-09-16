@@ -14,7 +14,7 @@ import net.rithms.riot.api.endpoints.league.dto.LeagueList;
 import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 
 @Service
-public class SummonerService extends RiotService<Summoner> {
+public class SummonerService extends RiotServiceDynamic<Summoner> {
 
 	private static final Logger logger = LoggerFactory.getLogger(SummonerService.class);
 
