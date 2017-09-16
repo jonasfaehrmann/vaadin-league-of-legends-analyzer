@@ -6,11 +6,9 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.vaadin.addon.charts.Chart;
 import com.vaadin.navigator.View;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Notification;
 
 import de.leuphana.backend.service.SingleMatchService;
 import de.leuphana.ui.components.SingleMatchComponent;
