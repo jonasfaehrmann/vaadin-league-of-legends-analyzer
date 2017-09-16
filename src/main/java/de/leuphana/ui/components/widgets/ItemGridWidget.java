@@ -30,7 +30,7 @@ public class ItemGridWidget extends Grid<Item> implements WidgetComponent {
 	private DDragonUrlFormatter dDragonUrlFormatter;
 
 	public ItemGridWidget() throws IOException {
-		setId("ItemGridWidget");
+		setCaption("ItemGridWidget");
 		setSizeFull();
 		removeHeaderRow(0);
 		addStyleName("ItemGrid");

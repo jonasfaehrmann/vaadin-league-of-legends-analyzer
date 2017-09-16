@@ -12,11 +12,14 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.TextField;
 
 import de.leuphana.app.security.SecurityUtils;
 import de.leuphana.backend.data.entity.Account;
 import de.leuphana.backend.data.entity.Widget;
 import de.leuphana.backend.service.AccountService;
+import de.leuphana.backend.service.SummonerService;
 import de.leuphana.ui.components.widgets.ChampionImagesWidget;
 import de.leuphana.ui.components.widgets.ItemGridWidget;
 import de.leuphana.ui.components.widgets.MatchHistoryGridWidget;
@@ -27,6 +30,8 @@ import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.champion.ChampionDetailView;
 import de.leuphana.ui.view.match.MatchDetailView;
 import net.rithms.riot.api.RiotApiException;
+import net.rithms.riot.api.endpoints.league.dto.LeagueItem;
+import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 
 /**
  * The dashboard view showing statistics about sales and deliveries.
@@ -38,15 +43,14 @@ import net.rithms.riot.api.RiotApiException;
 @SpringView
 public class DashboardView extends DashboardViewDesign implements View {
 
-	private static final String BOARD_ROW_PANELS = "board-row-panels";
-
 	private final NavigationManager navigationManager;
 
-	private final BoardLabel todayLabel = new BoardLabel("Today", "3/7", "today");
-	private final BoardLabel notAvailableLabel = new BoardLabel("N/A", "1", "na");
-	private final BoardBox notAvailableBox = new BoardBox(notAvailableLabel);
-	private final BoardLabel newLabel = new BoardLabel("New", "2", "new");
-	private final BoardLabel tomorrowLabel = new BoardLabel("Tomorrow", "4", "tomorrow");
+	private  BoardLabel summonerLevelLabel;
+	private  BoardLabel summonerLossesLabel;
+	private  BoardBox notAvailableBox;
+	private  BoardLabel summonerWinsLabel;
+	private  BoardLabel summonerRankLabel;
+	private Account currentAccount;
 
 	private final Button button = new Button("Hello");
 	private WidgetContainer widgets = new WidgetContainer();
@@ -55,18 +59,21 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final ChampionImagesWidget championImagesWidget;
 	private final MatchHistoryGridWidget matchHistoryGridWidget;
 	private final AccountService accountService;
+	private final SummonerService summonerService;
+	
 	private final ItemGridWidget itemWidget;
 	private final SummonerSpellGridWidget summonerSpellWidget;
 
 	@Autowired
 	public DashboardView(NavigationManager navigationManager, SummonerSpellGridWidget summonerSpellWidget, ItemGridWidget itemWidget ,MatchHistoryGridWidget matchHistoryGridWidget,
-			AccountService accountService, ChampionImagesWidget championImagesWidget) {
+			AccountService accountService, ChampionImagesWidget championImagesWidget, SummonerService summonerService) {
 		this.navigationManager = navigationManager;
 		this.matchHistoryGridWidget = matchHistoryGridWidget;
 		this.accountService = accountService;
 		this.championImagesWidget = championImagesWidget;
 		this.itemWidget = itemWidget;
 		this.summonerSpellWidget = summonerSpellWidget;
+		this.summonerService = summonerService;
 	}
 
 	@PostConstruct
@@ -76,15 +83,15 @@ public class DashboardView extends DashboardViewDesign implements View {
 		// manually add all widgets to list
 		widgets.addWidgets(matchHistoryGridWidget, championImagesWidget, itemWidget, summonerSpellWidget);
 
-		row = board.addRow(new BoardBox(todayLabel), notAvailableBox, new BoardBox(newLabel),
-				new BoardBox(tomorrowLabel));
-		row.addStyleName("board-row-group");
+		setInfoLabels();
 
-		// link to different view dummy
+		
 		row = board.addRow(new BoardBox(button));
 		button.addClickListener(e -> navigationManager.navigateTo(MatchDetailView.class, 1));
+		
+		row.addStyleName("board-row-group");
 
-		Account currentAccount = SecurityUtils.getCurrentUser(accountService);
+		currentAccount = SecurityUtils.getCurrentUser(accountService);
 		initCurrentAccountWidgets(currentAccount.getWidgets());
 	}
 
@@ -98,10 +105,14 @@ public class DashboardView extends DashboardViewDesign implements View {
 		}
 	}
 
-	@Override
-	public void enter(ViewChangeEvent event) {
-		// updateLabels(data.getDeliveryStats());
-		// updateGraphs(data);
+	private void setInfoLabels() throws RiotApiException {
+		Summoner summoner = summonerService.findOneBySummonerName(currentAccount.getSummonerName());
+		LeagueItem league = summonerService.getLeagueItemByName(currentAccount.getSummonerName());
+		summonerLevelLabel = new BoardLabel("Games", String.valueOf(summoner.getSummonerLevel()), "level");
+		summonerLossesLabel = new BoardLabel("Losses", String.valueOf(league.getLosses()), "losses");
+		notAvailableBox = new BoardBox(summonerLossesLabel);
+		summonerWinsLabel = new BoardLabel("Wins", String.valueOf(league.getWins()), "wins");
+		summonerRankLabel = new BoardLabel("Rank", String.valueOf(league.getRank()), "rank");
 	}
 
 }

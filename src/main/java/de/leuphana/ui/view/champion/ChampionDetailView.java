@@ -49,7 +49,7 @@ public class ChampionDetailView extends ChampionDetailViewDesign implements View
 		} else {
 			Champion champion;
 			try {
-				champion = championService.findOneById(Integer.valueOf(championId));
+				champion = championService.findOne(Integer.valueOf(championId));
 			} catch (Exception e) {
 				view.showNotFound();
 				return;
@@ -66,7 +66,7 @@ public class ChampionDetailView extends ChampionDetailViewDesign implements View
 	private void setChampion(Champion champion) throws RiotApiException {
 		championDetailGrid.setCaption("Champion Details");
 		championDetailGrid.setSizeFull();
-		championDetailGrid.setItems(championService.getChampionById(champion.getId()));
+		championDetailGrid.setItems(championService.findOne(champion.getId()));
 		championNameLabel.setValue(champion.getName());
 
 		attackDamageLabel.setValue(String.valueOf(champion.getStats().getAttackDamage()));

@@ -37,6 +37,7 @@ public class ChampionImagesWidget extends ImageViewer implements WidgetComponent
 	}
 
 	public ChampionImagesWidget() {
+		setCaption("ChampionImageWidget");
 		setSizeFull();
 		setAnimationEnabled(false);
 		setSideImageRelativeWidth(0.7f);

@@ -1,6 +1,7 @@
 package de.leuphana.ui.components;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 import javax.annotation.PostConstruct;
 
@@ -19,7 +20,6 @@ import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Grid;
 
-import de.leuphana.backend.service.ChampionMasteryService;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.champion_mastery.dto.ChampionMastery;
 
@@ -29,9 +29,6 @@ public class ChampionMasteryGrid extends Grid<ChampionMastery> {
 
 	@Autowired
 	private ChampionMasteryDataProvider dataProvider;
-
-	@Autowired
-	private ChampionMasteryService championMasterService;
 
 	public ChampionMasteryGrid() {
 		setSizeFull();
@@ -45,7 +42,7 @@ public class ChampionMasteryGrid extends Grid<ChampionMastery> {
 	public Component getChart() throws RiotApiException {
 
 		// top 50 champions
-		List<ChampionMastery> championMasteryList = championMasterService.findAll().subList(0, 20);
+		Stream<ChampionMastery> championMasteryList = dataProvider.fetchFromBackEnd(null).limit(20);
 
 		Chart chart = new Chart(ChartType.COLUMN);
 		Configuration conf = chart.getConfiguration();
@@ -72,10 +69,11 @@ public class ChampionMasteryGrid extends Grid<ChampionMastery> {
 		ListSeries series = new ListSeries();
 		series.setName("Champion mastery");
 
-		for (ChampionMastery championMasteryItem : championMasteryList) {
+		Iterable<ChampionMastery> iterable = championMasteryList::iterator;
+		for (ChampionMastery championMasteryItem : iterable) {
 			series.addData(championMasteryItem.getChampionLevel());
 			x.addCategory(String
-					.valueOf(championMasterService.findChampionById(championMasteryItem.getChampionId()).getName()));
+					.valueOf(dataProvider.fetchOne(championMasteryItem.getChampionId())));
 		}
 		conf.addSeries(series);
 		conf.addxAxis(x);

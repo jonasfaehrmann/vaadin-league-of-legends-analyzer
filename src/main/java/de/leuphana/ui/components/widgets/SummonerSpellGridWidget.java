@@ -38,7 +38,7 @@ public class SummonerSpellGridWidget extends Grid<SummonerSpell> implements Widg
 	}
 
 	public SummonerSpellGridWidget() throws IOException {
-		setId("SummonerSpellGridWidget");
+		setCaption("SummonerSpellGridWidget");
 		setSizeFull();
 		removeHeaderRow(0);
 		addStyleName("SummonerSpellGrid");

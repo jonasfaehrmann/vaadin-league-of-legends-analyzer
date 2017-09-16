@@ -17,7 +17,7 @@ import net.rithms.riot.api.endpoints.summoner.dto.Summoner;
 import net.rithms.riot.constant.Platform;
 
 @Service
-public class ChampionMasteryService extends RiotService<ChampionMastery> {
+public class ChampionMasteryService extends RiotServiceStatic<ChampionMastery> {
 
 	private ChampionList championList;
 
@@ -40,26 +40,10 @@ public class ChampionMasteryService extends RiotService<ChampionMastery> {
 		return championMastery;
 	}
 
-	public Champion findChampionById(int id) throws RiotApiException {
-		Champion foundChampion = null;
-		Map<String, Champion> championListData = championList.getData();
-		for (Champion champion : championListData.values()) {
-			if (id == champion.getId()) {
-				foundChampion = champion;
-			}
-		}
-		return foundChampion;
-	}
-
 	@Override
-	public List<ChampionMastery> findAllBySummonerName(String name) throws RiotApiException {
+	public ChampionMastery findOne(int id) throws RiotApiException {
+		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public ChampionMastery findOneBySummonerName(Long id, String name) throws RiotApiException {
-		return null;
-	}
-
 
 }

@@ -20,7 +20,7 @@ import net.rithms.riot.api.endpoints.static_data.dto.Stats;
 import net.rithms.riot.constant.Platform;
 
 @Service
-public class ChampionService extends RiotService<Champion> {
+public class ChampionService extends RiotServiceStatic<Champion> {
 
 	private static final Logger logger = LoggerFactory.getLogger(ChampionService.class);
 	private ChampionList champList;
@@ -37,7 +37,7 @@ public class ChampionService extends RiotService<Champion> {
 		return champlistData.size();
 	}
 
-	public List<Champion> getChampions() throws RiotApiException {
+	public List<Champion> findAll() throws RiotApiException {
 		logger.info("Accessing ChampionService -> getChampions");
 		List<Champion> championList = new ArrayList<Champion>();
 		Map<String, Champion> champlistData = champList.getData();
@@ -45,6 +45,7 @@ public class ChampionService extends RiotService<Champion> {
 		int limit = 0;
 
 		for (Champion champion : champlistData.values()) {
+			
 			if (limit <= champlistData.size()) {
 				championList.add(champion);
 				limit++;
@@ -55,17 +56,19 @@ public class ChampionService extends RiotService<Champion> {
 	}
 
 	// Might be used later for searching
-	public List<Champion> getChampionById(int id) throws RiotApiException {
+	@Override
+	public Champion findOne(int id) throws RiotApiException {
 		logger.info("Accessing ChampionService -> getChampionNameById with id: " + id);
-		List<Champion> championListById = new ArrayList<Champion>();
+		Champion champion = new Champion();
+		
 		Map<String, Champion> champlistData = champList.getData();
-		for (Champion champion : champlistData.values()) {
-			if (id == champion.getId()) {
-				championListById.add(champion);
+		for (Champion c : champlistData.values()) {
+			if (id == c.getId()) {
+				champion = c;
+				break;
 			}
-
 		}
-		return championListById;
+		return champion;
 	}
 
 	public String getChampionImgName() throws RiotApiException, IOException {
@@ -89,29 +92,6 @@ public class ChampionService extends RiotService<Champion> {
 
 		}
 
-	}
-
-	@Override
-	public List<Champion> findAllBySummonerName(String name) throws RiotApiException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Champion findOneBySummonerName(Long id, String name) throws RiotApiException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Champion findOneById(int id) {
-		Champion foundChampion = null;
-		Map<String, Champion> championListData = champList.getData();
-		for (Champion champion : championListData.values()) {
-			if (id == champion.getId()) {
-				foundChampion = champion;
-			}
-		}
-		return foundChampion;
 	}
 
 }

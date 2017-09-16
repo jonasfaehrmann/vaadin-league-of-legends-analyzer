@@ -10,18 +10,22 @@ import com.vaadin.data.provider.Query;
 import com.vaadin.spring.annotation.SpringComponent;
 
 import de.leuphana.backend.service.ChampionMasteryService;
+import de.leuphana.backend.service.ChampionService;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.champion_mastery.dto.ChampionMastery;
+import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 
 @SpringComponent
 @PrototypeScope
 public class ChampionMasteryDataProvider extends AbstractBackEndDataProvider<ChampionMastery, Object>{
 
 	private final ChampionMasteryService championMasteryService;
+	private final ChampionService championService;
 
 	@Autowired
-	public ChampionMasteryDataProvider(ChampionMasteryService championMasteryService) {
+	public ChampionMasteryDataProvider(ChampionMasteryService championMasteryService, ChampionService championService) {
 		this.championMasteryService = championMasteryService;
+		this.championService = championService;
 	}
 
 	@Override
@@ -44,13 +48,16 @@ public class ChampionMasteryDataProvider extends AbstractBackEndDataProvider<Cha
 		return 0;
 	}
 	
-	public Stream<ChampionMastery> fetchChampions(){
+	public Champion fetchOne(int id){
+		Champion champion = new Champion();
+		
 		try{
-			return championMasteryService.findAll().stream();
+			champion = championService.findOne(id);
 		}catch(RiotApiException e){
 			e.printStackTrace();
 		}
-		return null;
+		return champion;
+ 
 	}
 	
 	
