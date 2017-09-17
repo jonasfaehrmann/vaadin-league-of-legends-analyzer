@@ -20,7 +20,7 @@ public abstract class RiotService<T> {
 
 	protected RestTemplate restTemplate;
 	protected RiotApi api;
-	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-1eda2a7c-add5-416f-8f0c-43fba60eafef");
+	protected final ApiConfig config = new ApiConfig().setKey("RGAPI-4ad296cb-8714-49e1-9f4d-16bbc2cb3e28");
 	protected final Platform platform = Platform.EUW;
 	private static WrappedSession session;
 	private static Locale locale;

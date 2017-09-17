@@ -31,10 +31,6 @@ public class ChampionImagesWidget extends ImageViewer implements WidgetComponent
 	@Autowired
 	private ChampionService championService;
 
-	@Override
-	public Long getWidgetId() {
-		return id;
-	}
 	
 	
 	public ChampionImagesWidget() {
@@ -67,4 +63,8 @@ public class ChampionImagesWidget extends ImageViewer implements WidgetComponent
 		return imgList;
 	}
 
+	@Override
+	public Long getWidgetId() {
+		return id;
+	}
 }
