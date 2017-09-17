@@ -40,7 +40,12 @@ public class SingleMatchView extends SingleMatchViewDesign implements View {
 	public void init() throws RiotApiException {
 		
 		optionMatch.addValueChangeListener(event -> {
-		    inputMatchId.setValue(String.valueOf(event.getValue()));
+			
+			String matchIdString = String.valueOf(event.getValue());
+			
+			String matchId = matchIdString.substring(1, matchIdString.length()-1);
+			
+		    inputMatchId.setValue(matchId);
 		});
 		
 		buttonCheck.addClickListener(e -> {

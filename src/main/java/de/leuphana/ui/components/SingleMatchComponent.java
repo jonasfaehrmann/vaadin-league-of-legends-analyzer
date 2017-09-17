@@ -127,7 +127,7 @@ public class SingleMatchComponent extends AbsoluteLayout {
 
 		layout.addComponent(chartB);
 
-		System.out.println("layout in component geadded");
+		System.out.println("added layout in component");
 
 		return layout;
 
