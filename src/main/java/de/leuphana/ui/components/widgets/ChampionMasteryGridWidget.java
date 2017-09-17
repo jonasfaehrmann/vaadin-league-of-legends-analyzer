@@ -26,7 +26,6 @@ public class ChampionMasteryGridWidget extends Grid<ChampionMastery> implements 
 		setCaption("ChampionMasteryGridWidget");
 		setId("ChampionMasteryGridWidget");
 		setSizeFull();
-		removeHeaderRow(0);
 		addColumn(ChampionMastery::getChampionId).setCaption("Champion id");
 		addColumn(ChampionMastery::getChampionLevel).setCaption("Mastery Level");
 	}
