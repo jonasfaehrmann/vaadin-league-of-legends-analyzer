@@ -6,7 +6,31 @@
 	
 	$first-row-compensation: round(160px / 3);
 	
+		vaadin-board {
+		padding: $padding;
+
+		vaadin-board-row:nth-child(2) > .board-box {
+			height: calc(20vh - $first-row-compensation) !important;
+			min-height: 200px;
+		}
+		vaadin-board-row:nth-child(3) > .board-box {
+			height: calc(40vh - $first-row-compensation) !important;
+			min-height: 200px;
+		}
+		vaadin-board-row:nth-child(4) > .board-box {
+			height: calc(40vh - $first-row-compensation) !important;
+			min-height: 200px;
+		}
 	
+		vaadin-board-row.medium:nth-child(2) > .board-box {
+			height: calc(40vh - $first-row-compensation * 2) !important;
+		}
+		vaadin-board-row.medium:nth-child(3) > .board-box {
+			height: calc(40vh - $first-row-compensation * 2) !important;
+		}
+		vaadin-board-row.medium:nth-child(4) > .board-box {
+			height: calc(40vh - $first-row-compensation * 2) !important;
+		}
 
   		.board-box {
   			padding: $spacing;

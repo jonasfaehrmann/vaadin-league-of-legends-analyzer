@@ -27,8 +27,7 @@ public class MatchHistoryGridWidget extends Grid<Match> implements WidgetCompone
 
 	public MatchHistoryGridWidget() {
 		setCaption("MatchHistoryGridWidget");
-		setSizeFull();
-		addStyleName("orders-grid");
+		setId("MatchHistoryGridWidget");
 		setSizeFull();
 		removeHeaderRow(0);
 		addColumn(Match::getGameMode);

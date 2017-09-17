@@ -1631,15 +1631,6 @@ div.v-layout.v-horizontal.v-widget {
 	vertical-align: top;
 }
 
-.dashboard-view[width-range~="-599px"] vaadin-board {
-	padding: 0;
-}
-
-.dashboard-view[width-range~="-599px"] vaadin-board .board-row-group, .dashboard-view[width-range~="-599px"] vaadin-board .board-row-panels .board-box-inner {
-	border-radius: 0;
-	border-width: 1px 0px;
-}
-
 .app-shell .custom-menubar .v-menubar-menuitem {
 	position: relative;
 }
@@ -4288,7 +4279,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding-left: 30px;
 }
 
-.apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+.apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
 	left: 30px;
 }
 
@@ -4296,7 +4287,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding-right: 30px;
 }
 
-.apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+.apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
 	right: 30px;
 }
 
@@ -4330,7 +4321,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-weight: 400;
 }
 
-.apptheme .v-formlayout-contentcell  > .v-label-h2, .apptheme .v-formlayout-contentcell  > .v-label-h3, .apptheme .v-formlayout-contentcell  > .v-label-h4, .apptheme .v-formlayout-contentcell  > .apptheme text.highcharts-title {
+.apptheme .v-formlayout-contentcell  > .v-label-h2, .apptheme .v-formlayout-contentcell  > .v-label-h3, .apptheme .v-formlayout-contentcell  > .v-label-h4, .apptheme .v-formlayout-contentcell  >  text.highcharts-title {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -4427,13 +4418,13 @@ div.v-layout.v-horizontal.v-widget {
 	height: auto;
 }
 
-.apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+.apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
 	border-bottom: none;
 	left: 0;
 	right: 0;
 }
 
-.apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+.apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
 	margin-top: 0;
 }
 
@@ -8724,7 +8715,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding-left: 10px;
 }
 
-.apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+.apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
 	left: 10px;
 }
 
@@ -8732,7 +8723,7 @@ div.v-layout.v-horizontal.v-widget {
 	padding-right: 10px;
 }
 
-.apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+.apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
 	right: 10px;
 }
 
@@ -13508,7 +13499,7 @@ div.v-layout.v-horizontal.v-widget {
 	letter-spacing: 0;
 }
 
-.apptheme h4, .apptheme .v-label-h4, .apptheme text.highcharts-title {
+.apptheme h4, .apptheme .v-label-h4, .apptheme vaadin-board text.highcharts-title {
 	line-height: 1.1;
 	font-weight: 500;
 	font-size: 14px;
@@ -13519,19 +13510,19 @@ div.v-layout.v-horizontal.v-widget {
 	margin-bottom: 0.8em;
 }
 
-.apptheme .v-csslayout  > h1:first-child, .apptheme .v-csslayout  > h2:first-child, .apptheme .v-csslayout  > h3:first-child, .apptheme .v-csslayout  > h4 > .v-label-h1:first-child, .apptheme .v-csslayout  > .v-label-h2:first-child, .apptheme .v-csslayout  > .v-label-h3:first-child, .apptheme .v-csslayout  > .v-label-h4:first-child, .apptheme .v-csslayout  > .apptheme text.highcharts-title:first-child {
+.apptheme .v-csslayout  > h1:first-child, .apptheme .v-csslayout  > h2:first-child, .apptheme .v-csslayout  > h3:first-child, .apptheme .v-csslayout  > h4 > .v-label-h1:first-child, .apptheme .v-csslayout  > .v-label-h2:first-child, .apptheme .v-csslayout  > .v-label-h3:first-child, .apptheme .v-csslayout  > .v-label-h4:first-child, .apptheme .v-csslayout  > .apptheme vaadin-board text.highcharts-title:first-child {
 	margin-top: 16px;
 }
 
-.apptheme .v-verticallayout > .v-slot:first-child h1, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h1, .apptheme .v-verticallayout > .v-slot:first-child h2, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h2, .apptheme .v-verticallayout > .v-slot:first-child h3, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h3, .apptheme .v-verticallayout > .v-slot:first-child h4, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h4, .apptheme .v-verticallayout > .v-slot:first-child .apptheme text.highcharts-title, .apptheme .v-verticallayout > div > .v-slot:first-child h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h1, .apptheme .v-verticallayout > div > .v-slot:first-child h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h2, .apptheme .v-verticallayout > div > .v-slot:first-child h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h3, .apptheme .v-verticallayout > div > .v-slot:first-child h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h4, .apptheme .v-verticallayout > div > .v-slot:first-child .apptheme text.highcharts-title {
+.apptheme .v-verticallayout > .v-slot:first-child h1, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h1, .apptheme .v-verticallayout > .v-slot:first-child h2, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h2, .apptheme .v-verticallayout > .v-slot:first-child h3, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h3, .apptheme .v-verticallayout > .v-slot:first-child h4, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h4, .apptheme .v-verticallayout > .v-slot:first-child  text.highcharts-title, .apptheme .v-verticallayout > div > .v-slot:first-child h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h1, .apptheme .v-verticallayout > div > .v-slot:first-child h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h2, .apptheme .v-verticallayout > div > .v-slot:first-child h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h3, .apptheme .v-verticallayout > div > .v-slot:first-child h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h4, .apptheme .v-verticallayout > div > .v-slot:first-child  text.highcharts-title {
 	margin-top: 16px;
 }
 
-.apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h1, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h2, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h3, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h4, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h4, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .apptheme text.highcharts-title, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .apptheme text.highcharts-title {
+.apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h1, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h2, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h3, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h4, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h4, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell  text.highcharts-title, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell  text.highcharts-title {
 	margin-top: -0.5em;
 }
 
-.apptheme h1.no-margin, .apptheme .v-label-h1.no-margin, .apptheme h2.no-margin, .apptheme .v-label-h2.no-margin, .apptheme h3.no-margin, .apptheme .v-label-h3.no-margin, .apptheme h4.no-margin, .apptheme .v-label-h4.no-margin, .apptheme .apptheme text.no-margin.highcharts-title {
+.apptheme h1.no-margin, .apptheme .v-label-h1.no-margin, .apptheme h2.no-margin, .apptheme .v-label-h2.no-margin, .apptheme h3.no-margin, .apptheme .v-label-h3.no-margin, .apptheme h4.no-margin, .apptheme .v-label-h4.no-margin, .apptheme .apptheme vaadin-board text.no-margin.highcharts-title {
 	margin: 0 !important;
 }
 
@@ -13551,7 +13542,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-size: 12px;
 }
 
-.apptheme .v-label-huge, .apptheme .board-box-label h1 {
+.apptheme .v-label-huge, .apptheme vaadin-board .board-box-label h1 {
 	font-size: 26px;
 }
 
@@ -14530,7 +14521,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-color: inherit;
 }
 
-.apptheme .valo-menu-title h1, .apptheme .valo-menu-title .v-label-h1, .apptheme .valo-menu-title h2, .apptheme .valo-menu-title .v-label-h2, .apptheme .valo-menu-title h3, .apptheme .valo-menu-title .v-label-h3, .apptheme .valo-menu-title h4, .apptheme .valo-menu-title .v-label-h4, .apptheme .valo-menu-title .apptheme text.highcharts-title {
+.apptheme .valo-menu-title h1, .apptheme .valo-menu-title .v-label-h1, .apptheme .valo-menu-title h2, .apptheme .valo-menu-title .v-label-h2, .apptheme .valo-menu-title h3, .apptheme .valo-menu-title .v-label-h3, .apptheme .valo-menu-title h4, .apptheme .valo-menu-title .v-label-h4, .apptheme .valo-menu-title  text.highcharts-title {
 	margin-top: 0;
 	margin-bottom: 0;
 	color: inherit;
@@ -15045,21 +15036,52 @@ div.v-layout.v-horizontal.v-widget {
 	overflow: hidden;
 }
 
-.apptheme .board-box {
+.apptheme vaadin-board {
+	padding: 30px;
+}
+
+.apptheme vaadin-board vaadin-board-row:nth-child(2) > .board-box {
+	height: calc(20vh - 53px) !important;
+	min-height: 200px;
+}
+
+.apptheme vaadin-board vaadin-board-row:nth-child(3) > .board-box {
+	height: calc(40vh - 53px) !important;
+	min-height: 200px;
+}
+
+.apptheme vaadin-board vaadin-board-row:nth-child(4) > .board-box {
+	height: calc(40vh - 53px) !important;
+	min-height: 200px;
+}
+
+.apptheme vaadin-board vaadin-board-row.medium:nth-child(2) > .board-box {
+	height: calc(40vh - 53px * 2) !important;
+}
+
+.apptheme vaadin-board vaadin-board-row.medium:nth-child(3) > .board-box {
+	height: calc(40vh - 53px * 2) !important;
+}
+
+.apptheme vaadin-board vaadin-board-row.medium:nth-child(4) > .board-box {
+	height: calc(40vh - 53px * 2) !important;
+}
+
+.apptheme vaadin-board .board-box {
 	padding: 10px;
 }
 
-.apptheme .board-box-label {
+.apptheme vaadin-board .board-box-label {
 	text-align: center;
 }
 
-.apptheme .board-box-label h1, .apptheme .board-box-label h4 {
+.apptheme vaadin-board .board-box-label h1, .apptheme vaadin-board .board-box-label h4 {
 	margin: 10px 10px !important;
 	margin-top: 10px !important;
 	font-weight: 100;
 }
 
-.apptheme .board-row-group {
+.apptheme vaadin-board .board-row-group {
 	background: white;
 	color: #474747;
 	border-radius: 4px;
@@ -15069,43 +15091,43 @@ div.v-layout.v-horizontal.v-widget {
 	margin-bottom: 10px;
 }
 
-.apptheme .board-row-group .new h4 {
+.apptheme vaadin-board .board-row-group .new h4 {
 	color: #2c9720;
 }
 
-.apptheme .board-row-group .na h4 {
+.apptheme vaadin-board .board-row-group .na h4 {
 	color: #ed473b;
 }
 
-.apptheme .board-row-group.large .board-box:not(:first-child) {
+.apptheme vaadin-board .board-row-group.large .board-box:not(:first-child) {
 	border-left: 1px solid #eaeaea;
 }
 
-.apptheme .board-row-group.medium .board-box:nth-child(even) {
+.apptheme vaadin-board .board-row-group.medium .board-box:nth-child(even) {
 	border-left: 1px solid #eaeaea;
 }
 
-.apptheme .board-row-group.medium .board-box:nth-child(1n+3) {
+.apptheme vaadin-board .board-row-group.medium .board-box:nth-child(1n+3) {
 	border-top: 1px solid #eaeaea;
 }
 
-.apptheme .board-row-group.small {
+.apptheme vaadin-board .board-row-group.small {
 	margin-bottom: 5px;
 }
 
-.apptheme .board-row-group.small .board-box:nth-child(1n+2) {
+.apptheme vaadin-board .board-row-group.small .board-box:nth-child(1n+2) {
 	border-top: 1px solid #eaeaea;
 }
 
-.apptheme .board-row-panels .board-box:first-child {
+.apptheme vaadin-board .board-row-panels .board-box:first-child {
 	padding-left: 0;
 }
 
-.apptheme .board-row-panels .board-box:last-child {
+.apptheme vaadin-board .board-row-panels .board-box:last-child {
 	padding-right: 0;
 }
 
-.apptheme .board-row-panels .board-box-inner {
+.apptheme vaadin-board .board-row-panels .board-box-inner {
 	background: white;
 	color: #474747;
 	border-radius: 4px;
@@ -15118,16 +15140,25 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 10px;
 }
 
-.apptheme .board-row-panels.small .board-box {
+.apptheme vaadin-board .board-row-panels.small .board-box {
 	padding: 5px 0;
 }
 
-.apptheme .board-row-panels .due-grid .board-box-inner {
+.apptheme vaadin-board .board-row-panels .due-grid .board-box-inner {
 	padding: 0;
 }
 
-.apptheme .board-row-panels .due-grid .v-grid > div {
+.apptheme vaadin-board .board-row-panels .due-grid .v-grid > div {
 	border: 0;
+}
+
+.apptheme .dashboard-view[width-range~="-599px"] vaadin-board {
+	padding: 0;
+}
+
+.apptheme .dashboard-view[width-range~="-599px"] vaadin-board .board-row-group, .apptheme .dashboard-view[width-range~="-599px"] vaadin-board .board-row-panels .board-box-inner {
+	border-radius: 0;
+	border-width: 1px 0px;
 }
 
 .apptheme .app-shell .navigation-bar {

@@ -17,14 +17,14 @@ import net.rithms.riot.api.endpoints.match.dto.Match;
 @PrototypeScope
 public class ChampionMasteryGridWidget extends Grid<ChampionMastery> implements WidgetComponent {
 
-	private Long id = 6l;
+	private Long id = 7l;
 
 	@Autowired
 	private ChampionMasteryDataProvider dataProvider;
 
 	public ChampionMasteryGridWidget() {
 		setCaption("ChampionMasteryGridWidget");
-		addStyleName("orders-grid");
+		setId("ChampionMasteryGridWidget");
 		setSizeFull();
 		removeHeaderRow(0);
 		addColumn(ChampionMastery::getChampionId).setCaption("Champion id");
