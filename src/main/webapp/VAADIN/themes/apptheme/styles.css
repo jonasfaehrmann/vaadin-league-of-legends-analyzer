@@ -15180,6 +15180,10 @@ div.v-layout.v-horizontal.v-widget {
 	height: 160px;
 }
 
+.apptheme #summonerSpellGrid .v-grid-cell {
+	height: 100px;
+}
+
 .apptheme #summonerImage {
 	margin-top: 30px;
 	border-radius: 10%;
