@@ -1,5 +1,6 @@
 package de.leuphana.ui.components;
 
+import java.util.List;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 
 @SpringComponent
 @PrototypeScope
-public class ChampionMasteryDataProvider extends AbstractBackEndDataProvider<ChampionMastery, Object>{
+public class ChampionMasteryDataProvider extends AbstractBackEndDataProvider<ChampionMastery, Object> {
 
 	private final ChampionMasteryService championMasteryService;
 	private final ChampionService championService;
@@ -30,36 +31,38 @@ public class ChampionMasteryDataProvider extends AbstractBackEndDataProvider<Cha
 
 	@Override
 	protected Stream<ChampionMastery> fetchFromBackEnd(Query<ChampionMastery, Object> query) {
-		try{
-			return championMasteryService.findAll().stream();
-		}catch(RiotApiException e){
+		List<ChampionMastery> championMasteryList = null;
+		try {
+			championMasteryList = championMasteryService.findAll();
+		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return championMasteryList.stream();
 	}
 
 	@Override
 	protected int sizeInBackEnd(Query<ChampionMastery, Object> query) {
-		try{
+		try {
 			return championMasteryService.countAll();
-		}catch(RiotApiException e){
+		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
 		return 0;
 	}
-	
-	public Champion fetchOne(int id){
+
+	public Champion fetchOne(int id) {
 		Champion champion = new Champion();
-		
-		try{
+
+		try {
 			champion = championService.findOne(id);
-		}catch(RiotApiException e){
+		} catch (RiotApiException e) {
 			e.printStackTrace();
 		}
 		return champion;
- 
 	}
 	
-	
+	public Stream<ChampionMastery> getChampionMasteryList() {
+		return fetchFromBackEnd(null);
+	}
 
 }
