@@ -50,7 +50,7 @@ public class SingleMatchComponent extends AbsoluteLayout {
 	public Component getCharts() throws RiotApiException {
 
 		// data configuration
-		Match match = singleMatchService.findOneBySummonerName(Long.parseLong(singleMatchService.getMatchId()),
+		Match match = singleMatchService.findOneBySummonerName((singleMatchService.getMatchId()),
 				singleMatchService.getSummonerName());
 		List<Participant> participants = match.getParticipants();
 		ParticipantStats stats;

@@ -62,7 +62,7 @@ public class SingleMatchView extends SingleMatchViewDesign implements View {
 	
 	private void setData() throws RiotApiException {
 		singleMatchService.setSummonerName(inputSummoner.getValue());
-		singleMatchService.setMatchId(inputMatchId.getValue());
+		singleMatchService.setMatchId(Long.valueOf(inputMatchId.getValue()));
 		createCharts();
 	}
 

@@ -22,7 +22,7 @@ public class SingleMatchService extends RiotServiceDynamic<Match> {
 
 	private static final Logger logger = LoggerFactory.getLogger(SingleMatchService.class);
 	static String summonerName;
-	static String matchId;
+	static long matchId;
 
 	public SingleMatchService(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
@@ -37,11 +37,11 @@ public class SingleMatchService extends RiotServiceDynamic<Match> {
 		SingleMatchService.summonerName = summonerName;
 	}
 
-	public String getMatchId() {
+	public long getMatchId() {
 		return matchId;
 	}
 
-	public void setMatchId(String matchId) {
+	public void setMatchId(long matchId) {
 		SingleMatchService.matchId = matchId;
 	}
 
@@ -53,12 +53,12 @@ public class SingleMatchService extends RiotServiceDynamic<Match> {
 
 	@Override
 	public Match findOneBySummonerName(Long id, String name) throws RiotApiException {
-		id = Long.parseLong(matchId);
+		//id = Long.parseLong(matchId);
 		name = summonerName;
 		
-		logger.info("Accessing FindMatch findOneBySummonerName with params: " + id + " " + name);
+		logger.info("Accessing FindMatch findOneBySummonerName with params: " + matchId + " " + name);
 		Summoner summoner = api.getSummonerByName(platform, name);
-		Match match = api.getMatch(platform, id, summoner.getAccountId());
+		Match match = api.getMatch(platform, matchId, summoner.getAccountId());
 		return match;
 	}
 
