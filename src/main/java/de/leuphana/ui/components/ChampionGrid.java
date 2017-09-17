@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.annotation.PostConstruct;
 
+import org.openqa.grid.internal.SessionTerminationReason;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.vaadin.spring.annotation.PrototypeScope;
 
@@ -35,14 +36,13 @@ public class ChampionGrid extends Grid<Champion> {
 	public ChampionGrid() throws IOException {
 		addStyleName("championGrid");
 		setSizeFull();
+		removeHeaderRow(getDefaultHeaderRow());
 		setCaption("Champions");
-		getHeaderRow(0).setStyleName("championGridHeader");
 		Column<Champion, ExternalResource> imageColumn = addColumn(
 				champion ->  new ExternalResource(dDragonUrlFormatter.getUrlByChampionImageName(champion.getImage().getFull())),
 				    new ImageRenderer())
 				.setCaption("Picture")
-				.setMinimumWidth(200d);
-				
+				.setMinimumWidth(200d)
 				;
 
 		Column<Champion, String> nameColumn = addColumn(Champion::getName, new HtmlRenderer())
@@ -53,7 +53,6 @@ public class ChampionGrid extends Grid<Champion> {
 				.setCaption("Title")
 				
 				;
-		
 		
 	}
 

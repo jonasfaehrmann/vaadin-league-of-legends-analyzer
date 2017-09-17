@@ -43,6 +43,10 @@ $app-background-image: false;
   @include dashboardview;
   @include menu;
 
+	#championGrid .v-grid-cell{
+		height:160px;
+		}
+
 
 	#summonerImage{
 	margin-top:30px;

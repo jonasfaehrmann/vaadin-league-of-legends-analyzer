@@ -54,27 +54,9 @@ public class MatchHistoryView extends MatchHistoryViewDesign implements View {
 	 */
 	@PostConstruct
 	public void init() {
-		matchHistoryGrid.addSelectionListener(e -> selectedMatch(e.getFirstSelectedItem().get()));
-		searchButton.addClickListener(e -> search(searchField.getValue(), includePast.getValue()));
-
-		// We don't want a global shortcut for enter, scope it to the panel
-		searchPanel.addAction(new ClickShortcut(searchButton, KeyCode.ENTER, null));
+		
 	}
 
-	public void selectedMatch(Match match) {
-		navigationManager.navigateTo(MatchDetailView.class, match.getGameId());
-	}
-
-	public void newOrder() {
-		navigationManager.navigateTo(MatchHistoryView.class);
-	}
-
-	public void search(String searchTerm, boolean includePast) {
-		String parameters = PARAMETER_SEARCH + "=" + searchTerm;
-		if (includePast) {
-			parameters += "&" + PARAMETER_INCLUDE_PAST;
-		}
-		navigationManager.updateViewParameter(parameters);
-	}
+	
 
 }

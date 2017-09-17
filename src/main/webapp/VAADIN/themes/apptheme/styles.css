@@ -15176,6 +15176,10 @@ div.v-layout.v-horizontal.v-widget {
 	text-align: center;
 }
 
+.apptheme #championGrid .v-grid-cell {
+	height: 160px;
+}
+
 .apptheme #summonerImage {
 	margin-top: 30px;
 	border-radius: 10%;

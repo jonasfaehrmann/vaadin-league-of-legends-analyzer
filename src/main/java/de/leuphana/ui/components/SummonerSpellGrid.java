@@ -23,14 +23,14 @@ import net.rithms.riot.api.endpoints.static_data.dto.Image;
 public class SummonerSpellGrid extends Grid<SummonerSpell> {
 	@Autowired
 	private SummonerSpellDataProvider sumSpellDataProvider;
-	
+
 	private DDragonUrlFormatter dDragonUrlFormatter;
+
 	@PostConstruct
-	protected void init(){
+	protected void init() {
 		setDataProvider(sumSpellDataProvider);
 	}
-	
-	
+
 	public SummonerSpellGrid() throws IOException {
 		addStyleName("summonerspellGrid");
 		setSizeFull();
@@ -38,8 +38,10 @@ public class SummonerSpellGrid extends Grid<SummonerSpell> {
 		dDragonUrlFormatter = new DDragonUrlFormatter();
 		Column<SummonerSpell, ExternalResource> imageColumn = addColumn(
 				summonerSpell -> new ExternalResource(
-						dDragonUrlFormatter.getUrlbyItemImageName(summonerSpell.getImage().getFull())),
-				new ImageRenderer()).setCaption("Picture");
+						dDragonUrlFormatter.getUrlbySumSpellImageName(summonerSpell.getImage().getFull())),
+				new ImageRenderer())
+				.setCaption("Picture")
+				;
 
 		Column<SummonerSpell, String> nameColumn = addColumn(SummonerSpell::getName, new HtmlRenderer())
 				.setCaption("Name");
@@ -47,7 +49,6 @@ public class SummonerSpellGrid extends Grid<SummonerSpell> {
 		Column<SummonerSpell, String> descriptionColumn = addColumn(SummonerSpell::getDescription, new HtmlRenderer())
 				.setCaption("Description");
 
-		
 	}
 
 }

@@ -64,9 +64,8 @@ public class ChampionDetailView extends ChampionDetailViewDesign implements View
 	}
 
 	private void setChampion(Champion champion) throws RiotApiException {
-		championDetailGrid.setCaption("Champion Details");
-		championDetailGrid.setSizeFull();
-		championDetailGrid.setItems(championService.findOne(champion.getId()));
+		loreText.setSizeFull();
+		loreText.setValue(champion.getLore());
 		championNameLabel.setValue(champion.getName());
 
 		attackDamageLabel.setValue(String.valueOf(champion.getStats().getAttackDamage()));

@@ -12,29 +12,22 @@ import de.leuphana.ui.navigation.NavigationManager;
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 
 @SpringView
-public class ChampionView extends ChampionViewDesign implements View{
+public class ChampionView extends ChampionViewDesign implements View {
 
 	private static final String PARAMETER_SEARCH = "search";
 	private final NavigationManager navigationManager;
-	
-	
+
 	public ChampionView(NavigationManager navigationManager) {
 		this.navigationManager = navigationManager;
 	}
-	
+
 	@PostConstruct
 	public void init() {
 		championGrid.addSelectionListener(e -> selectedChampion(e.getFirstSelectedItem().get()));
-		searchButton.addClickListener(e -> search(searchField.getValue()));
-		searchPanel.addAction(new ClickShortcut(searchButton, KeyCode.ENTER, null));
+		championGrid.setSizeFull();
 	}
 
-	private void search(String searchTerm) {
-		String parameters = PARAMETER_SEARCH + "=" + searchTerm;
-		
-		navigationManager.updateViewParameter(parameters);
-	}
-
+	
 	private Object selectedChampion(Champion champion) {
 		navigationManager.navigateTo(ChampionDetailView.class, String.valueOf(champion.getId()));
 		

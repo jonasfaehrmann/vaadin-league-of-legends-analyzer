@@ -466,45 +466,45 @@
 @-webkit-keyframes v-progress-wait {
 		0% {
 		width: 90%;
-		height: 4px;
+		height: 3px;
 	}
 		3% {
 		width: 91%;
-		height: 7px;
+		height: 5px;
 	}
 		100% {
 		width: 96%;
-		height: 7px;
+		height: 5px;
 	}
 	}
 
 @-moz-keyframes v-progress-wait {
 		0% {
 		width: 90%;
-		height: 4px;
+		height: 3px;
 	}
 		3% {
 		width: 91%;
-		height: 7px;
+		height: 5px;
 	}
 		100% {
 		width: 96%;
-		height: 7px;
+		height: 5px;
 	}
 	}
 
 @keyframes v-progress-wait {
 		0% {
 		width: 90%;
-		height: 4px;
+		height: 3px;
 	}
 		3% {
 		width: 91%;
-		height: 7px;
+		height: 5px;
 	}
 		100% {
 		width: 96%;
-		height: 7px;
+		height: 5px;
 	}
 	}
 
@@ -695,25 +695,25 @@
 
 @-webkit-keyframes valo-grid-editor-footer-animate-in {
 		0% {
-		margin-top: -37px;
+		margin-top: -30px;
 	}
 	}
 
 @-moz-keyframes valo-grid-editor-footer-animate-in {
 		0% {
-		margin-top: -37px;
+		margin-top: -30px;
 	}
 	}
 
 @keyframes valo-grid-editor-footer-animate-in {
 		0% {
-		margin-top: -37px;
+		margin-top: -30px;
 	}
 	}
 
 @-webkit-keyframes valo-grid-editor-footer-animate-in-alt {
 		0% {
-		margin-bottom: -38px;
+		margin-bottom: -31px;
 	}
 		100% {
 		margin-bottom: -1px;
@@ -722,7 +722,7 @@
 
 @-moz-keyframes valo-grid-editor-footer-animate-in-alt {
 		0% {
-		margin-bottom: -38px;
+		margin-bottom: -31px;
 	}
 		100% {
 		margin-bottom: -1px;
@@ -731,7 +731,7 @@
 
 @keyframes valo-grid-editor-footer-animate-in-alt {
 		0% {
-		margin-bottom: -38px;
+		margin-bottom: -31px;
 	}
 		100% {
 		margin-bottom: -1px;
@@ -1454,19 +1454,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .v-tabsheet-content  > div > .v-scrollable  > .v-margin-top {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .v-tabsheet-content  > div > .v-scrollable  > .v-margin-right {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .v-tabsheet-content  > div > .v-scrollable  > .v-margin-bottom {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .v-tabsheet-content  > div > .v-scrollable  > .v-margin-left {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .v-splitpanel-vertical, .v-splitpanel-horizontal {
@@ -1531,6 +1531,15 @@ div.v-layout.v-horizontal.v-widget {
 	vertical-align: top;
 }
 
+.dashboard-view[width-range~="-599px"] vaadin-board {
+	padding: 0;
+}
+
+.dashboard-view[width-range~="-599px"] vaadin-board .board-row-group, .dashboard-view[width-range~="-599px"] vaadin-board .board-row-panels .board-box-inner {
+	border-radius: 0;
+	border-width: 1px 0px;
+}
+
 .app-shell .custom-menubar .v-menubar-menuitem {
 	position: relative;
 }
@@ -1541,47 +1550,47 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 	width: 100%;
 	height: 1px;
-	background: #4b4b65;
+	background: #455A64;
 	bottom: -20px;
 	left: 0;
 }
 
 .app-shell .navigation-bar {
-	background: #4b4b65;
+	background: #455A64;
 	z-index: 10000;
 }
 
-.app-shell .logo, .app-shell  .v-caption-logo {
-	color: #b4b4c8;
+.app-shell .logo {
+	color: #aebfc7;
 	text-align: center;
-	padding: 18.5px 9.25px;
+	padding: 15px 7.5px;
 	font-size: 17.6px;
 }
 
 .app-shell .view-title {
 	font-size: 17.6px;
 	color: #5f5f5f;
-	padding: 18.5px 12.33333px;
+	padding: 15px 10px;
 }
 
 .app-shell .padding {
-	padding: 12.33333px;
+	padding: 10px;
 }
 
 .app-shell .padding-top {
-	padding-top: 12.33333px;
+	padding-top: 10px;
 }
 
 .app-shell .padding-right {
-	padding-right: 12.33333px;
+	padding-right: 10px;
 }
 
 .app-shell .padding-bottom {
-	padding-bottom: 12.33333px;
+	padding-bottom: 10px;
 }
 
 .app-shell .padding-left {
-	padding-left: 12.33333px;
+	padding-left: 10px;
 }
 
 .app-shell .content-section {
@@ -1595,32 +1604,32 @@ div.v-layout.v-horizontal.v-widget {
 .app-shell .menu {
 	float: right;
 	padding: 0 10px;
-	line-height: 37px;
-	color: #b4b4c8;
+	line-height: 30px;
+	color: #aebfc7;
 	display: none;
 }
 
 .app-shell .menu .v-icon {
 	line-height: 1;
-	color: #efeff3;
+	color: #eaeff1;
 	font-size: 16px;
 }
 
 .app-shell .navigation {
-	border-top: 1px solid #5a5a79;
-	border-bottom: 1px solid #5a5a79;
-	background: #424259;
+	border-top: 1px solid #546d79;
+	border-bottom: 1px solid #546d79;
+	background: #3d4f58;
 }
 
 .app-shell .navigation .v-icon {
-	color: #8888a7;
+	color: #819ba8;
 }
 
 .app-shell .navigation .v-button {
 	text-align: left;
 	font-size: 14.4px;
 	text-overflow: ellipsis;
-	color: #b4b4c8;
+	color: #aebfc7;
 }
 
 .app-shell .navigation .v-button.active, .app-shell .navigation .v-button:focus {
@@ -1628,7 +1637,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .app-shell .navigation .v-button.active .v-icon, .app-shell .navigation .v-button:focus .v-icon {
-	color: #c3c3d2;
+	color: #bdcbd1;
 }
 
 .app-shell .navigation .v-button:focus:after {
@@ -1640,14 +1649,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .app-shell .navigation .v-button.borderless:hover {
-	background: #3c3c51;
+	background: #36474f;
 }
 
 .app-shell[width-range~="601px-1000px"] .navigation-bar-container {
 	width: 80px !important;
 }
 
-.app-shell[width-range~="601px-1000px"] .navigation-bar-container .logo, .app-shell[width-range~="601px-1000px"] .navigation-bar-container  .v-caption-logo {
+.app-shell[width-range~="601px-1000px"] .navigation-bar-container .logo {
 	font-size: 12px;
 }
 
@@ -1705,30 +1714,30 @@ div.v-layout.v-horizontal.v-widget {
 .app-shell[width-range~="-600px"] .navigation-bar {
 	position: fixed;
 	width: 100%;
-	height: 37px !important;
+	height: 30px !important;
 }
 
-.app-shell[width-range~="-600px"] .logo, .app-shell[width-range~="-600px"]  .v-caption-logo {
-	line-height: 37px;
+.app-shell[width-range~="-600px"] .logo {
+	line-height: 30px;
 	width: auto !important;
 	float: left;
-	padding: 0 14.8px;
+	padding: 0 12px;
 	font-size: 16px;
 }
 
 .app-shell[width-range~="-600px"] .content-container {
-	padding-top: 37px;
+	padding-top: 30px;
 }
 
 .apptheme .crud-template .top-bar {
 	background: white;
-	color: #4b4b65;
-	padding: 0 18.5px;
+	color: #455A64;
+	padding: 0 15px;
 	border-bottom: 1px solid #c5c5c5;
 }
 
 .apptheme .crud-template .padding {
-	padding: 18.5px;
+	padding: 15px;
 }
 
 .apptheme .crud-template .border {
@@ -1744,7 +1753,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .crud-template .filters {
-	padding: 9.25px;
+	padding: 7.5px;
 }
 
 .apptheme .crud-template .filters .v-slot {
@@ -1769,11 +1778,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .crud-template .section {
-	padding: 9.25px;
+	padding: 7.5px;
 }
 
 .apptheme .crud-template .edit {
-	padding: 9.25px;
+	padding: 7.5px;
 	overflow-x: hidden;
 	overflow-y: auto;
 	border-left: 1px solid #d4d4d4;
@@ -1784,14 +1793,14 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 	border: none;
 	box-shadow: none;
-	border-bottom: 2px solid #4b4b65;
+	border-bottom: 2px solid #455A64;
 	border-radius: 0;
 	max-width: 350px;
 }
 
 .apptheme .crud-template .buttons {
 	background: #fafafa;
-	padding: 9.25px;
+	padding: 7.5px;
 	border-left: 1px solid #d4d4d4;
 }
 
@@ -1809,7 +1818,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .crud-template[width-range~="-850px"] .section, .apptheme .crud-template[width-range~="-850px"] .edit {
-	padding: 4.625px;
+	padding: 3.75px;
 }
 
 .apptheme .crud-template[width-range~="-850px"] .half {
@@ -1842,9 +1851,9 @@ div.v-layout.v-horizontal.v-widget {
 	left: 50%;
 	width: 28px;
 	height: 28px;
-	padding: 9px;
-	margin-top: -24px;
-	margin-left: -24px;
+	padding: 8px;
+	margin-top: -22px;
+	margin-left: -22px;
 	background: #fff url(../valo/shared/img/spinner.gif) no-repeat 50%;
 	border-radius: 4px;
 }
@@ -1857,8 +1866,8 @@ div.v-layout.v-horizontal.v-widget {
 	top: 0;
 	width: 50%;
 	opacity: 1;
-	height: 4px;
-	background-color: #4b4b65;
+	height: 3px;
+	background-color: #455A64;
 	pointer-events: none;
 	-webkit-transition: none;
 	-moz-transition: none;
@@ -1923,7 +1932,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-icon + .v-captiontext, .apptheme .v-icon + span {
-	margin-left: 7px;
+	margin-left: 6px;
 }
 
 .apptheme .v-icon + .v-captiontext:empty, .apptheme .v-icon + span:empty {
@@ -1933,7 +1942,7 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-errorindicator {
 	color: #ed473b;
 	font-weight: 600;
-	width: 19px;
+	width: 15px;
 	text-align: center;
 }
 
@@ -1950,7 +1959,7 @@ div.v-layout.v-horizontal.v-widget {
 	font: inherit;
 	font-weight: 400;
 	line-height: inherit;
-	padding: 5px;
+	padding: 4px;
 	margin: 0;
 	border-radius: 4px;
 	border: 1px solid #c5c5c5;
@@ -1962,8 +1971,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme select:focus {
 	outline: none;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme button {
@@ -1974,7 +1983,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme a {
 	cursor: pointer;
-	color: #4b4b65;
+	color: #455A64;
 	text-decoration: underline;
 	font-weight: inherit;
 	-webkit-transition: color 140ms;
@@ -1983,7 +1992,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme a:hover {
-	color: #616182;
+	color: #5a7582;
 }
 
 .apptheme a.v-disabled {
@@ -2011,7 +2020,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 	color: white;
-	padding: 5px 9px;
+	padding: 4px 8px;
 	border-radius: 3px;
 	max-width: 35em;
 	overflow: hidden !important;
@@ -2026,8 +2035,8 @@ div.v-layout.v-horizontal.v-widget {
 	background-color: white;
 	background-color: #fff;
 	color: #ed473b;
-	margin: -5px -9px;
-	padding: 5px 9px;
+	margin: -4px -8px;
+	padding: 4px 8px;
 	max-height: 10em;
 	overflow: auto;
 	font-weight: 400;
@@ -2041,7 +2050,7 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-tooltip .v-tooltip-text {
 	max-height: 10em;
 	overflow: auto;
-	margin-top: 10px;
+	margin-top: 8px;
 }
 
 .apptheme .v-tooltip .v-tooltip-text pre {
@@ -2057,7 +2066,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-contextmenu {
-	padding: 4px 4px;
+	padding: 3px 3px;
 	border-radius: 4px;
 	background-color: white;
 	color: #474747;
@@ -2067,7 +2076,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 	backface-visibility: hidden;
-	padding: 4px 4px;
+	padding: 3px 3px;
 }
 
 .apptheme .v-contextmenu[class*="animate-in"] {
@@ -2088,8 +2097,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-contextmenu .gwt-MenuItem {
 	cursor: pointer;
-	line-height: 27px;
-	padding: 0 20px 0 10px;
+	line-height: 22px;
+	padding: 0 16px 0 8px;
 	border-radius: 3px;
 	font-weight: 400;
 	white-space: nowrap;
@@ -2104,7 +2113,7 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: #1a1a61;
+	background: #18485e;
 	opacity: 0.15;
 	filter: alpha(opacity=15.0) ;
 	pointer-events: none;
@@ -2112,28 +2121,28 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-contextmenu .gwt-MenuItem .v-icon {
-	max-height: 27px;
-	margin-right: 5px;
+	max-height: 22px;
+	margin-right: 4px;
 	min-width: 1em;
 }
 
 .apptheme .v-contextmenu .gwt-MenuItem-selected {
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
-	color: #ededf0;
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
+	color: #eceff0;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .apptheme .v-reconnect-dialog {
 	color: white;
-	top: 12px;
-	right: 12px;
+	top: 10px;
+	right: 10px;
 	max-width: 100%;
 	border-radius: 0;
 	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
-	padding: 12px 15px;
+	padding: 10px 12px;
 	background-color: #444;
 	background-color: rgba(68, 68, 68, 0.9);
 	line-height: 22px;
@@ -2149,9 +2158,9 @@ div.v-layout.v-horizontal.v-widget {
 	height: 24px !important;
 	width: 24px !important;
 	box-sizing: border-box;
-	border: 2px solid rgba(75, 75, 101, 0.2);
-	border-top-color: #4b4b65;
-	border-right-color: #4b4b65;
+	border: 2px solid rgba(69, 90, 100, 0.2);
+	border-top-color: #455A64;
+	border-right-color: #455A64;
 	border-radius: 100%;
 	-webkit-animation: v-rotate-360 500ms infinite linear;
 	-moz-animation: v-rotate-360 500ms infinite linear;
@@ -2182,24 +2191,24 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-margin-top {
-	padding-top: 37px;
+	padding-top: 30px;
 }
 
 .apptheme .v-margin-right {
-	padding-right: 37px;
+	padding-right: 30px;
 }
 
 .apptheme .v-margin-bottom {
-	padding-bottom: 37px;
+	padding-bottom: 30px;
 }
 
 .apptheme .v-margin-left {
-	padding-left: 37px;
+	padding-left: 30px;
 }
 
 .apptheme .v-spacing {
-	width: 12px;
-	height: 12px;
+	width: 10px;
+	height: 10px;
 }
 
 .apptheme .v-verticallayout-well, .apptheme .v-horizontallayout-well {
@@ -2218,19 +2227,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-verticallayout-well  > .v-margin-top, .apptheme .v-horizontallayout-well  > .v-margin-top {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme .v-verticallayout-well  > .v-margin-right, .apptheme .v-horizontallayout-well  > .v-margin-right {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-verticallayout-well  > .v-margin-bottom, .apptheme .v-horizontallayout-well  > .v-margin-bottom {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .apptheme .v-verticallayout-well  > .v-margin-left, .apptheme .v-horizontallayout-well  > .v-margin-left {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .apptheme .v-verticallayout-card, .apptheme .v-horizontallayout-card {
@@ -2243,19 +2252,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-verticallayout-card  > .v-margin-top, .apptheme .v-horizontallayout-card  > .v-margin-top {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme .v-verticallayout-card  > .v-margin-right, .apptheme .v-horizontallayout-card  > .v-margin-right {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-verticallayout-card  > .v-margin-bottom, .apptheme .v-horizontallayout-card  > .v-margin-bottom {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .apptheme .v-verticallayout-card  > .v-margin-left, .apptheme .v-horizontallayout-card  > .v-margin-left {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .apptheme .v-horizontallayout-wrapping {
@@ -2263,7 +2272,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-horizontallayout-wrapping > .v-spacing + .v-slot, .apptheme .v-horizontallayout-wrapping > .v-slot:first-child {
-	margin-bottom: 12px;
+	margin-bottom: 10px;
 }
 
 .apptheme .v-horizontallayout-wrapping > .v-slot:first-child:last-child {
@@ -2278,8 +2287,8 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 	cursor: pointer;
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -2361,9 +2370,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button:focus:after {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-button:active:after {
@@ -2371,25 +2380,25 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button-primary {
-	height: 37px;
-	padding: 0 16px;
-	color: #ededf0;
+	height: 30px;
+	padding: 0 13px;
+	color: #eceff0;
 	font-weight: 400;
 	
 	
 	border-radius: 4px;
-	border: 1px solid #3b3b4f;
-	border-top-color: #3f3f56;
-	border-bottom-color: #343445;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
-	-webkit-box-shadow: inset 0 1px 0 #72727b, inset 0 -1px 0 #404055, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: inset 0 1px 0 #72727b, inset 0 -1px 0 #404055, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border: 1px solid #36474f;
+	border-top-color: #3a4c55;
+	border-bottom-color: #2f3d45;
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
+	-webkit-box-shadow: inset 0 1px 0 #6a707b, inset 0 -1px 0 #3a4b54, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: inset 0 1px 0 #6a707b, inset 0 -1px 0 #3a4b54, 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
-	padding: 0 19px;
+	padding: 0 15px;
 	font-weight: bold;
-	min-width: 81px;
+	min-width: 66px;
 }
 
 .apptheme .v-button-primary:after {
@@ -2401,22 +2410,22 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button-primary:hover:after {
-	background-color: rgba(108, 108, 145, 0.1);
+	background-color: rgba(100, 131, 145, 0.1);
 }
 
 .apptheme .v-button-primary:focus:after {
 	border: inherit;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-button-primary:active:after {
-	background-color: rgba(32, 32, 56, 0.2);
+	background-color: rgba(28, 47, 56, 0.2);
 }
 
 .apptheme .v-button-friendly {
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #eaf4e9;
 	font-weight: 400;
 	
@@ -2447,8 +2456,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-button-friendly:focus:after {
 	border: inherit;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-button-friendly:active:after {
@@ -2456,8 +2465,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button-danger {
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #f9f0ef;
 	font-weight: 400;
 	
@@ -2488,8 +2497,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-button-danger:focus:after {
 	border: inherit;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-button-danger:active:after {
@@ -2522,11 +2531,11 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	background: transparent;
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-button-borderless-colored:hover {
-	color: #616182;
+	color: #5a7582;
 }
 
 .apptheme .v-button-borderless-colored:hover:after {
@@ -2565,7 +2574,7 @@ div.v-layout.v-horizontal.v-widget {
 	background: transparent;
 	color: inherit;
 	cursor: pointer;
-	color: #4b4b65;
+	color: #455A64;
 	text-decoration: underline;
 	font-weight: inherit;
 	-webkit-transition: color 140ms;
@@ -2587,7 +2596,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button-link:hover {
-	color: #616182;
+	color: #5a7582;
 }
 
 .apptheme .v-button-link.v-disabled {
@@ -2596,8 +2605,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button-tiny {
-	height: 28px;
-	padding: 0 13px;
+	height: 23px;
+	padding: 0 11px;
 	
 	
 	font-size: 12px;
@@ -2614,8 +2623,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button-small {
-	height: 31px;
-	padding: 0 14px;
+	height: 26px;
+	padding: 0 12px;
 	
 	
 	font-size: 14px;
@@ -2632,8 +2641,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button-large {
-	height: 44px;
-	padding: 0 19px;
+	height: 36px;
+	padding: 0 16px;
 	
 	
 	font-size: 20px;
@@ -2650,8 +2659,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button-huge {
-	height: 59px;
-	padding: 0 26px;
+	height: 48px;
+	padding: 0 21px;
 	
 	
 	font-size: 26px;
@@ -2673,7 +2682,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-button-icon-align-right .v-icon {
 	float: right;
-	margin-left: 13px;
+	margin-left: 11px;
 }
 
 .apptheme .v-button-icon-align-right .v-icon  + span:not(:empty) {
@@ -2682,8 +2691,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-button-icon-align-top {
 	height: auto;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 
 .apptheme .v-button-icon-align-top [class*="wrap"] {
@@ -2697,29 +2706,29 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-button-icon-align-top .v-icon  + span:not(:empty) {
-	margin-top: 7px;
+	margin-top: 5px;
 	margin-left: 0;
 }
 
 .apptheme .v-button-icon-only {
-	width: 37px;
+	width: 30px;
 	padding: 0;
 }
 
 .apptheme .v-button-icon-only.v-button-tiny {
-	width: 28px;
+	width: 23px;
 }
 
 .apptheme .v-button-icon-only.v-button-small {
-	width: 31px;
+	width: 26px;
 }
 
 .apptheme .v-button-icon-only.v-button-large {
-	width: 44px;
+	width: 36px;
 }
 
 .apptheme .v-button-icon-only.v-button-huge {
-	width: 59px;
+	width: 48px;
 }
 
 .apptheme .v-button-icon-only .v-button-caption {
@@ -2728,7 +2737,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-checkbox {
 	position: relative;
-	line-height: 19px;
+	line-height: 15px;
 	white-space: nowrap;
 }
 
@@ -2737,7 +2746,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox {
-	padding-left: 25px;
+	padding-left: 20px;
 }
 
 :root .apptheme .v-checkbox label {
@@ -2757,19 +2766,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox > input:focus ~ label:before {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .apptheme .v-checkbox > input ~ label:before, :root .apptheme .v-checkbox > input ~ label:after {
 	content: "";
 	display: inline-block;
 	box-sizing: border-box;
-	width: 19px;
-	height: 19px;
+	width: 15px;
+	height: 15px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -2779,8 +2788,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox > input ~ label:before {
-	height: 18.5px;
-	padding: 0 9px;
+	height: 15px;
+	padding: 0 7px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -2796,7 +2805,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	padding: 0;
-	height: 19px;
+	height: 15px;
 }
 
 :root .apptheme .v-checkbox > input ~ label:after {
@@ -2813,11 +2822,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox > input:checked ~ label:after {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-checkbox > .v-icon, .apptheme .v-checkbox > label .v-icon {
-	margin: 0 6px 0 3px;
+	margin: 0 5px 0 3px;
 	min-width: 1em;
 	cursor: pointer;
 }
@@ -2855,7 +2864,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-checkbox-small {
 	position: relative;
-	line-height: 16px;
+	line-height: 13px;
 	white-space: nowrap;
 	font-size: 14px;
 }
@@ -2865,7 +2874,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox-small {
-	padding-left: 21px;
+	padding-left: 17px;
 }
 
 :root .apptheme .v-checkbox-small label {
@@ -2885,19 +2894,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox-small > input:focus ~ label:before {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .apptheme .v-checkbox-small > input ~ label:before, :root .apptheme .v-checkbox-small > input ~ label:after {
 	content: "";
 	display: inline-block;
 	box-sizing: border-box;
-	width: 16px;
-	height: 16px;
+	width: 13px;
+	height: 13px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -2907,8 +2916,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox-small > input ~ label:before {
-	height: 15.5px;
-	padding: 0 7px;
+	height: 13px;
+	padding: 0 6px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -2924,7 +2933,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	padding: 0;
-	height: 16px;
+	height: 13px;
 }
 
 :root .apptheme .v-checkbox-small > input ~ label:after {
@@ -2941,11 +2950,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox-small > input:checked ~ label:after {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-checkbox-small > .v-icon, .apptheme .v-checkbox-small > label .v-icon {
-	margin: 0 5px 0 3px;
+	margin: 0 4px 0 2px;
 	min-width: 1em;
 	cursor: pointer;
 }
@@ -2983,7 +2992,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-checkbox-large {
 	position: relative;
-	line-height: 22px;
+	line-height: 18px;
 	white-space: nowrap;
 	font-size: 20px;
 }
@@ -2993,7 +3002,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox-large {
-	padding-left: 29px;
+	padding-left: 24px;
 }
 
 :root .apptheme .v-checkbox-large label {
@@ -3013,19 +3022,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox-large > input:focus ~ label:before {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .apptheme .v-checkbox-large > input ~ label:before, :root .apptheme .v-checkbox-large > input ~ label:after {
 	content: "";
 	display: inline-block;
 	box-sizing: border-box;
-	width: 22px;
-	height: 22px;
+	width: 18px;
+	height: 18px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -3035,8 +3044,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox-large > input ~ label:before {
-	height: 22px;
-	padding: 0 10px;
+	height: 18px;
+	padding: 0 8px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -3052,7 +3061,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	padding: 0;
-	height: 22px;
+	height: 18px;
 }
 
 :root .apptheme .v-checkbox-large > input ~ label:after {
@@ -3069,11 +3078,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-checkbox-large > input:checked ~ label:after {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-checkbox-large > .v-icon, .apptheme .v-checkbox-large > label .v-icon {
-	margin: 0 7px 0 4px;
+	margin: 0 6px 0 3px;
 	min-width: 1em;
 	cursor: pointer;
 }
@@ -3111,8 +3120,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-filterselect {
 	position: relative;
-	width: 185px;
-	height: 37px;
+	width: 150px;
+	height: 30px;
 	border-radius: 4px;
 	white-space: nowrap;
 }
@@ -3133,9 +3142,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 37px;
+	height: 30px;
 	border-radius: 4px;
-	padding: 4px 9px;
+	padding: 3px 7px;
 	border: 1px solid #c5c5c5;
 	background: white;
 	color: #474747;
@@ -3146,7 +3155,7 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 38px;
+	padding-right: 31px;
 	border-radius: inherit;
 }
 
@@ -3160,11 +3169,11 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-filterselect [class*="input"][class*="prompt"] {
@@ -3172,17 +3181,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-filterselect .v-icon + [class*="input"] {
-	padding-left: 37px;
+	padding-left: 30px;
 }
 
 .apptheme .v-filterselect img.v-icon {
-	max-height: 37px;
-	margin-left: 9px;
+	max-height: 30px;
+	margin-left: 7px;
 }
 
 .apptheme .v-filterselect span.v-icon {
 	color: #474747;
-	width: 37px;
+	width: 30px;
 	line-height: 1;
 	padding-top: 0.12em;
 }
@@ -3196,7 +3205,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-touch-callout: none;
 	cursor: pointer;
 	position: absolute;
-	width: 37px;
+	width: 30px;
 	top: 1px;
 	right: 1px;
 	bottom: 1px;
@@ -3212,7 +3221,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-transition: color 140ms;
 	transition: color 140ms;
 	position: absolute;
-	width: 37px;
+	width: 30px;
 	text-align: center;
 	top: 50%;
 	line-height: 1;
@@ -3286,7 +3295,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-filterselect-suggestpopup {
-	margin-top: 5px !important;
+	margin-top: 4px !important;
 }
 
 .apptheme .v-filterselect-suggestpopup[class*="animate-in"] {
@@ -3296,7 +3305,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-filterselect-suggestpopup [class$="suggestmenu"] {
-	padding: 4px 4px;
+	padding: 3px 3px;
 	border-radius: 4px;
 	background-color: white;
 	color: #474747;
@@ -3306,7 +3315,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 	backface-visibility: hidden;
-	padding: 4px 4px;
+	padding: 3px 3px;
 	box-sizing: content-box;
 	position: relative;
 	z-index: 1;
@@ -3323,13 +3332,13 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-filterselect-suggestpopup .gwt-MenuItem {
 	cursor: pointer;
-	line-height: 27px;
-	padding: 0 20px 0 10px;
+	line-height: 22px;
+	padding: 0 16px 0 8px;
 	border-radius: 3px;
 	font-weight: 400;
 	white-space: nowrap;
 	position: relative;
-	height: 27px;
+	height: 22px;
 	box-sizing: border-box;
 	text-overflow: ellipsis;
 	overflow-x: hidden;
@@ -3342,7 +3351,7 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: #1a1a61;
+	background: #18485e;
 	opacity: 0.15;
 	filter: alpha(opacity=15.0) ;
 	pointer-events: none;
@@ -3350,16 +3359,16 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-filterselect-suggestpopup .gwt-MenuItem .v-icon {
-	max-height: 27px;
-	margin-right: 5px;
+	max-height: 22px;
+	margin-right: 4px;
 	min-width: 1em;
 }
 
 .apptheme .v-filterselect-suggestpopup .gwt-MenuItem-selected {
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
-	color: #ededf0;
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
+	color: #eceff0;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
@@ -3369,11 +3378,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: rgba(212, 212, 212, 0.9);
 	color: #3b3b3b;
 	border-radius: 0 0 4px 4px;
-	height: 23px;
-	bottom: -23px;
+	height: 18px;
+	bottom: -18px;
 	font-size: 12px;
-	line-height: 23px;
-	padding: 0 6px;
+	line-height: 18px;
+	padding: 0 5px;
 	cursor: default;
 	pointer-events: none;
 	-webkit-animation: valo-animate-in-slide-down 200ms 80ms backwards;
@@ -3396,9 +3405,9 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: all 200ms;
 	-moz-transition: all 200ms;
 	transition: all 200ms;
-	width: 25px;
-	height: 25px;
-	line-height: 25px;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
 	text-align: center;
 	font-family: ThemeIcons;
 	-webkit-transform: scale(0.8);
@@ -3502,11 +3511,11 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-filterselect-no-input [class$="button"] {
@@ -3559,7 +3568,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-filterselect-tiny {
-	height: 28px;
+	height: 23px;
 	
 	font-size: 12px;
 }
@@ -3580,9 +3589,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 28px;
+	height: 23px;
 	
-	padding: 3px 5px;
+	padding: 3px 4px;
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
@@ -3590,22 +3599,22 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 29px;
+	padding-right: 24px;
 	border-radius: inherit;
 }
 
 .apptheme .v-filterselect-tiny .v-icon + [class*="input"] {
-	padding-left: 28px;
+	padding-left: 23px;
 }
 
 .apptheme .v-filterselect-tiny img.v-icon {
-	max-height: 28px;
-	margin-left: 5px;
+	max-height: 23px;
+	margin-left: 4px;
 }
 
 .apptheme .v-filterselect-tiny span.v-icon {
 	
-	width: 28px;
+	width: 23px;
 	line-height: 1;
 	padding-top: 0.12em;
 }
@@ -3615,7 +3624,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-touch-callout: none;
 	cursor: pointer;
 	position: absolute;
-	width: 28px;
+	width: 23px;
 	border-radius: 0 4px 4px 0;
 }
 
@@ -3626,7 +3635,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-transition: color 140ms;
 	transition: color 140ms;
 	position: absolute;
-	width: 28px;
+	width: 23px;
 	text-align: center;
 	top: 50%;
 	line-height: 1;
@@ -3679,7 +3688,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-filterselect-compact, .apptheme .v-filterselect-small {
-	height: 31px;
+	height: 26px;
 	
 }
 
@@ -3699,9 +3708,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 31px;
+	height: 26px;
 	
-	padding: 3px 6px;
+	padding: 3px 5px;
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
@@ -3709,22 +3718,22 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 32px;
+	padding-right: 27px;
 	border-radius: inherit;
 }
 
 .apptheme .v-filterselect-compact .v-icon + [class*="input"], .apptheme .v-filterselect-small .v-icon + [class*="input"] {
-	padding-left: 31px;
+	padding-left: 26px;
 }
 
 .apptheme .v-filterselect-compact img.v-icon, .apptheme .v-filterselect-small img.v-icon {
-	max-height: 31px;
-	margin-left: 6px;
+	max-height: 26px;
+	margin-left: 5px;
 }
 
 .apptheme .v-filterselect-compact span.v-icon, .apptheme .v-filterselect-small span.v-icon {
 	
-	width: 31px;
+	width: 26px;
 	line-height: 1;
 	padding-top: 0.12em;
 }
@@ -3734,7 +3743,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-touch-callout: none;
 	cursor: pointer;
 	position: absolute;
-	width: 31px;
+	width: 26px;
 	border-radius: 0 4px 4px 0;
 }
 
@@ -3745,7 +3754,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-transition: color 140ms;
 	transition: color 140ms;
 	position: absolute;
-	width: 31px;
+	width: 26px;
 	text-align: center;
 	top: 50%;
 	line-height: 1;
@@ -3802,7 +3811,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-filterselect-large {
-	height: 44px;
+	height: 36px;
 	
 	font-size: 20px;
 }
@@ -3823,9 +3832,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 44px;
+	height: 36px;
 	
-	padding: 5px 8px;
+	padding: 4px 6px;
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
@@ -3833,22 +3842,22 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 45px;
+	padding-right: 37px;
 	border-radius: inherit;
 }
 
 .apptheme .v-filterselect-large .v-icon + [class*="input"] {
-	padding-left: 44px;
+	padding-left: 36px;
 }
 
 .apptheme .v-filterselect-large img.v-icon {
-	max-height: 44px;
-	margin-left: 8px;
+	max-height: 36px;
+	margin-left: 6px;
 }
 
 .apptheme .v-filterselect-large span.v-icon {
 	
-	width: 44px;
+	width: 36px;
 	line-height: 1;
 	padding-top: 0.12em;
 }
@@ -3858,7 +3867,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-touch-callout: none;
 	cursor: pointer;
 	position: absolute;
-	width: 44px;
+	width: 36px;
 	border-radius: 0 4px 4px 0;
 }
 
@@ -3869,7 +3878,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-transition: color 140ms;
 	transition: color 140ms;
 	position: absolute;
-	width: 44px;
+	width: 36px;
 	text-align: center;
 	top: 50%;
 	line-height: 1;
@@ -3922,7 +3931,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-filterselect-huge {
-	height: 59px;
+	height: 48px;
 	
 	font-size: 26px;
 }
@@ -3943,9 +3952,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 59px;
+	height: 48px;
 	
-	padding: 7px 10px;
+	padding: 5px 8px;
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
@@ -3953,22 +3962,22 @@ div.v-layout.v-horizontal.v-widget {
 	transition: box-shadow 180ms, border 180ms;
 	width: 100% !important;
 	height: 100%;
-	padding-right: 60px;
+	padding-right: 49px;
 	border-radius: inherit;
 }
 
 .apptheme .v-filterselect-huge .v-icon + [class*="input"] {
-	padding-left: 59px;
+	padding-left: 48px;
 }
 
 .apptheme .v-filterselect-huge img.v-icon {
-	max-height: 59px;
-	margin-left: 10px;
+	max-height: 48px;
+	margin-left: 8px;
 }
 
 .apptheme .v-filterselect-huge span.v-icon {
 	
-	width: 59px;
+	width: 48px;
 	line-height: 1;
 	padding-top: 0.12em;
 }
@@ -3978,7 +3987,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-touch-callout: none;
 	cursor: pointer;
 	position: absolute;
-	width: 59px;
+	width: 48px;
 	border-radius: 0 4px 4px 0;
 }
 
@@ -3989,7 +3998,7 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-transition: color 140ms;
 	transition: color 140ms;
 	position: absolute;
-	width: 59px;
+	width: 48px;
 	text-align: center;
 	top: 50%;
 	line-height: 1;
@@ -4057,19 +4066,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-csslayout-well  > .v-margin-top {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme .v-csslayout-well  > .v-margin-right {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-csslayout-well  > .v-margin-bottom {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .apptheme .v-csslayout-well  > .v-margin-left {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .apptheme .v-csslayout-card {
@@ -4082,19 +4091,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-csslayout-card  > .v-margin-top {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme .v-csslayout-card  > .v-margin-right {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-csslayout-card  > .v-margin-bottom {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .apptheme .v-csslayout-card  > .v-margin-left {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .apptheme .v-csslayout-v-component-group {
@@ -4173,7 +4182,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme [class*="spacing"] > tbody > [class*="row"] > td {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme [class*="spacing"] > tbody > [class*="firstrow"] > td {
@@ -4181,27 +4190,27 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme [class*="margin-top"] > tbody > [class*="firstrow"] > td {
-	padding-top: 37px;
+	padding-top: 30px;
 }
 
 .apptheme [class*="margin-bottom"] > tbody > [class*="lastrow"] > td {
-	padding-bottom: 37px;
+	padding-bottom: 30px;
 }
 
 .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="captioncell"] {
-	padding-left: 37px;
+	padding-left: 30px;
 }
 
-.apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
-	left: 37px;
+.apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+	left: 30px;
 }
 
 .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] {
-	padding-right: 37px;
+	padding-right: 30px;
 }
 
-.apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
-	right: 37px;
+.apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+	right: 30px;
 }
 
 .apptheme .v-formlayout > table {
@@ -4214,12 +4223,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-formlayout-error-indicator {
-	width: 19px;
+	width: 15px;
 }
 
 .apptheme .v-formlayout-captioncell {
 	vertical-align: top;
-	line-height: 36px;
+	line-height: 29px;
 }
 
 .apptheme .v-formlayout-captioncell .v-caption {
@@ -4234,7 +4243,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-weight: 400;
 }
 
-.apptheme .v-formlayout-contentcell  > .v-label-h2, .apptheme .v-formlayout-contentcell  > .v-label-h3, .apptheme .v-formlayout-contentcell  > .v-label-h4, .apptheme .v-formlayout-contentcell  >  text.highcharts-title {
+.apptheme .v-formlayout-contentcell  > .v-label-h2, .apptheme .v-formlayout-contentcell  > .v-label-h3, .apptheme .v-formlayout-contentcell  > .v-label-h4, .apptheme .v-formlayout-contentcell  > .apptheme text.highcharts-title {
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -4250,7 +4259,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-formlayout.light  > table > tbody > tr > td {
 	padding-top: 0;
-	height: 37px;
+	height: 30px;
 	border-bottom: 1px solid #eaeaea;
 }
 
@@ -4261,8 +4270,8 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-formlayout.light  > table > tbody > tr > [class*="captioncell"] {
 	color: #7d7d7d;
 	text-align: right;
-	padding-left: 13px;
-	line-height: 37px;
+	padding-left: 10px;
+	line-height: 30px;
 }
 
 .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"] {
@@ -4288,9 +4297,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 37px;
+	height: 30px;
 	border-radius: 0;
-	padding: 4px 7px;
+	padding: 3px 5px;
 	
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -4312,11 +4321,11 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), none;
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), none;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), none;
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), none;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textfield:focus, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-textarea:focus, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-filterselect input:focus, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-datefield input:focus, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-richtextarea:focus {
@@ -4331,18 +4340,18 @@ div.v-layout.v-horizontal.v-widget {
 	height: auto;
 }
 
-.apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
+.apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
 	border-bottom: none;
 	left: 0;
 	right: 0;
 }
 
-.apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
+.apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-formlayout.light  > table > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
 	margin-top: 0;
 }
 
 .apptheme .v-formlayout.light .v-richtextarea {
-	margin: 5px 0;
+	margin: 4px 0;
 }
 
 .apptheme .v-formlayout.light .v-filterselect-button, .apptheme .v-formlayout.light .v-datefield-button {
@@ -4359,7 +4368,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-formlayout.light .v-checkbox {
-	margin-left: 7px;
+	margin-left: 5px;
 }
 
 .apptheme .v-grid {
@@ -4523,7 +4532,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-grid .header-drag-table .v-grid-header  > .v-grid-drop-marker {
-	background-color: #4b4b65;
+	background-color: #455A64;
 	position: absolute;
 	width: 3px;
 }
@@ -4601,8 +4610,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-grid-cell {
 	background-color: white;
-	padding: 0 18px;
-	line-height: 37px;
+	padding: 0 15px;
+	line-height: 30px;
 	text-overflow: ellipsis;
 }
 
@@ -4646,7 +4655,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-grid-row-selected > td {
-	background: #4b4b65;
+	background: #455A64;
 }
 
 .apptheme .v-grid-row-focused > td {
@@ -4669,14 +4678,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-grid-header .sort-asc, .apptheme .v-grid-header .sort-desc {
-	padding-right: 35px;
+	padding-right: 32px;
 }
 
 .apptheme .v-grid-header .sort-asc:after, .apptheme .v-grid-header .sort-desc:after {
 	font-family: ThemeIcons, sans-serif;
 	content: "\f0de" " " attr(sort-order);
 	position: absolute;
-	right: 18px;
+	right: 15px;
 	font-size: 12px;
 }
 
@@ -4686,8 +4695,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-grid-column-resize-handle {
 	position: absolute;
-	width: 36px;
-	right: -18px;
+	width: 30px;
+	right: -15px;
 	top: 0px;
 	bottom: 0px;
 	cursor: col-resize;
@@ -4703,7 +4712,7 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 	width: 3px;
 	top: 0px;
-	left: 18px;
+	left: 15px;
 	z-index: 9001;
 	background: #fff;
 	box-shadow: 0px 0px 5px #000;
@@ -4736,7 +4745,7 @@ div.v-layout.v-horizontal.v-widget {
 	width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	line-height: 37px;
+	line-height: 30px;
 	vertical-align: baseline;
 }
 
@@ -4769,7 +4778,7 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	border: 2px solid #4b4b65;
+	border: 2px solid #455A64;
 	display: none;
 	pointer-events: none;
 }
@@ -4830,15 +4839,15 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-grid-editor-cells  > div input[type="text"], .apptheme .v-grid-editor-cells  > div input[type="text"].v-filterselect-input, .apptheme .v-grid-editor-cells  > div input[type="password"] {
-	padding-left: 18px;
+	padding-left: 15px;
 }
 
 .apptheme .v-grid-editor-cells  > div input[type="text"]:not(.v-filterselect-input), .apptheme .v-grid-editor-cells  > div input[type="password"] {
-	padding-right: 9px;
+	padding-right: 7.5px;
 }
 
 .apptheme .v-grid-editor-cells  > div input[type="checkbox"] {
-	margin-left: 18px;
+	margin-left: 15px;
 }
 
 .apptheme .v-grid-editor-cells  > div .v-textfield, .apptheme .v-grid-editor-cells  > div .v-datefield, .apptheme .v-grid-editor-cells  > div .v-filterselect {
@@ -4873,7 +4882,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-grid-editor-footer {
 	display: table;
-	height: 37px;
+	height: 30px;
 	border-top: 1px solid #d4d4d4;
 	margin-top: -1px;
 	background: white;
@@ -4908,7 +4917,7 @@ div.v-layout.v-horizontal.v-widget {
 	width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	line-height: 37px;
+	line-height: 30px;
 	top: 0;
 }
 
@@ -4945,7 +4954,7 @@ div.v-layout.v-horizontal.v-widget {
 	top: 0;
 	left: 0;
 	width: 2px;
-	background-color: #4b4b65;
+	background-color: #455A64;
 	position: absolute;
 	height: 100%;
 	pointer-events: none;
@@ -4984,7 +4993,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-grid-header .v-grid-cell.dragged-column-header {
-	margin-top: -19px;
+	margin-top: -15px;
 }
 
 .apptheme .v-grid-footer .v-grid-cell {
@@ -5007,27 +5016,27 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-grid-row-selected  > .v-grid-cell {
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
-	color: #ccccd5;
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
+	color: #cad1d5;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
-	border-color: #3f3f48;
+	border-color: #394247;
 }
 
 .apptheme .v-grid-row-selected  > .v-grid-cell-focused:before {
-	border-color: #7a7a9c;
+	border-color: #728f9d;
 }
 
 .apptheme .v-grid-editor {
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	border-color: #4b4b65;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	border-color: #455A64;
 }
 
 .apptheme .v-grid-editor-footer {
 	font-size: 14px;
-	padding: 0 6px;
+	padding: 0 5px;
 	background: #fafafa;
 	-webkit-animation: valo-grid-editor-footer-animate-in 200ms 120ms backwards;
 	-moz-animation: valo-grid-editor-footer-animate-in 200ms 120ms backwards;
@@ -5056,8 +5065,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-grid-editor-cells > div .error::before {
-	border-top: 9px solid #ed473b;
-	border-right: 9px solid transparent;
+	border-top: 8px solid #ed473b;
+	border-right: 8px solid transparent;
 }
 
 .apptheme .v-grid-editor-cells > div .error, .apptheme .v-grid-editor-cells > div .error > input {
@@ -5073,7 +5082,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-grid-editor-cells > div input[type="text"].v-datefield-textfield {
-	padding-left: 44.4px;
+	padding-left: 36px;
 }
 
 .apptheme .v-grid-editor-cells > div .v-textfield-focus, .apptheme .v-grid-editor-cells > div .v-datefield .v-textfield-focus, .apptheme .v-grid-editor-cells > div .v-filterselect-input:focus {
@@ -5081,12 +5090,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-grid-editor-cells > div .v-select {
-	padding-left: 9px;
-	padding-right: 9px;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 .apptheme .v-grid-editor-cells > div .v-checkbox {
-	margin: 0 9px 0 18px;
+	margin: 0 8px 0 15px;
 }
 
 .apptheme .v-grid-editor-cells > div .v-checkbox  > input[type="checkbox"] {
@@ -5101,14 +5110,14 @@ div.v-layout.v-horizontal.v-widget {
 	display: inline-block;
 	color: #ed473b;
 	font-weight: 600;
-	width: 19px;
+	width: 15px;
 	text-align: center;
 	content: "!";
 }
 
 .apptheme .v-grid-editor-save, .apptheme .v-grid-editor-cancel {
 	cursor: pointer;
-	color: #4b4b65;
+	color: #455A64;
 	text-decoration: underline;
 	font-weight: inherit;
 	-webkit-transition: color 140ms;
@@ -5118,13 +5127,13 @@ div.v-layout.v-horizontal.v-widget {
 	text-decoration: none;
 	border: none;
 	background: transparent;
-	padding: 6px 6px;
+	padding: 5px 5px;
 	margin: 0;
 	outline: none;
 }
 
 .apptheme .v-grid-editor-save:hover, .apptheme .v-grid-editor-cancel:hover {
-	color: #616182;
+	color: #5a7582;
 }
 
 .apptheme .v-grid-editor-save.v-disabled, .apptheme .v-grid-editor-cancel.v-disabled {
@@ -5184,9 +5193,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 37px;
+	height: 30px;
 	border-radius: 4px;
-	padding: 4px 9px;
+	padding: 3px 7px;
 	border: 1px solid #c5c5c5;
 	background: white;
 	color: #474747;
@@ -5195,7 +5204,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: box-shadow 180ms, border 180ms;
 	-moz-transition: box-shadow 180ms, border 180ms;
 	transition: box-shadow 180ms, border 180ms;
-	width: 185px;
+	width: 150px;
 }
 
 .apptheme .v-textfield.v-disabled {
@@ -5208,11 +5217,11 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-textfield[class*="prompt"] {
@@ -5272,9 +5281,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 28px;
+	height: 23px;
 	border-radius: 4px;
-	padding: 3px 7px;
+	padding: 3px 6px;
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
@@ -5298,9 +5307,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 31px;
+	height: 26px;
 	border-radius: 4px;
-	padding: 3px 8px;
+	padding: 3px 7px;
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
@@ -5327,9 +5336,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 44px;
+	height: 36px;
 	border-radius: 4px;
-	padding: 5px 10px;
+	padding: 4px 8px;
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
@@ -5353,9 +5362,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 59px;
+	height: 48px;
 	border-radius: 4px;
-	padding: 7px 12px;
+	padding: 5px 10px;
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
@@ -5388,19 +5397,19 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-caption-inline-icon span.v-icon {
 	left: 1px;
 	bottom: 1px;
-	width: 37px;
-	line-height: 35px;
+	width: 30px;
+	line-height: 28px;
 	text-align: center;
 	font-size: 16px;
 }
 
 .apptheme .v-caption-inline-icon img.v-icon {
-	left: 11px;
-	bottom: 11px;
+	left: 7px;
+	bottom: 7px;
 }
 
 .apptheme .v-textfield-inline-icon  {
-	padding-left: 37px;
+	padding-left: 30px;
 }
 
 .apptheme .v-slot-inline-icon.v-slot-tiny {
@@ -5427,19 +5436,19 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-caption-inline-icon.v-caption-tiny span.v-icon {
 	left: 1px;
 	bottom: 1px;
-	width: 28px;
-	line-height: 26px;
+	width: 23px;
+	line-height: 21px;
 	text-align: center;
 	font-size: 12px;
 }
 
 .apptheme .v-caption-inline-icon.v-caption-tiny img.v-icon {
-	left: 6px;
-	bottom: 6px;
+	left: 4px;
+	bottom: 4px;
 }
 
 .apptheme .v-textfield-inline-icon.v-textfield-tiny  {
-	padding-left: 28px;
+	padding-left: 23px;
 }
 
 .apptheme .v-slot-inline-icon.v-slot-compact {
@@ -5466,19 +5475,19 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-caption-inline-icon.v-caption-compact span.v-icon {
 	left: 1px;
 	bottom: 1px;
-	width: 31px;
-	line-height: 29px;
+	width: 26px;
+	line-height: 24px;
 	text-align: center;
 	font-size: 16px;
 }
 
 .apptheme .v-caption-inline-icon.v-caption-compact img.v-icon {
-	left: 8px;
-	bottom: 8px;
+	left: 5px;
+	bottom: 5px;
 }
 
 .apptheme .v-textfield-inline-icon.v-textfield-compact  {
-	padding-left: 31px;
+	padding-left: 26px;
 }
 
 .apptheme .v-slot-inline-icon.v-slot-small {
@@ -5505,19 +5514,19 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-caption-inline-icon.v-caption-small span.v-icon {
 	left: 1px;
 	bottom: 1px;
-	width: 31px;
-	line-height: 29px;
+	width: 26px;
+	line-height: 24px;
 	text-align: center;
 	font-size: 14px;
 }
 
 .apptheme .v-caption-inline-icon.v-caption-small img.v-icon {
-	left: 8px;
-	bottom: 8px;
+	left: 5px;
+	bottom: 5px;
 }
 
 .apptheme .v-textfield-inline-icon.v-textfield-small  {
-	padding-left: 31px;
+	padding-left: 26px;
 }
 
 .apptheme .v-slot-inline-icon.v-slot-large {
@@ -5544,19 +5553,19 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-caption-inline-icon.v-caption-large span.v-icon {
 	left: 1px;
 	bottom: 1px;
-	width: 44px;
-	line-height: 42px;
+	width: 36px;
+	line-height: 34px;
 	text-align: center;
 	font-size: 20px;
 }
 
 .apptheme .v-caption-inline-icon.v-caption-large img.v-icon {
-	left: 14px;
-	bottom: 14px;
+	left: 10px;
+	bottom: 10px;
 }
 
 .apptheme .v-textfield-inline-icon.v-textfield-large  {
-	padding-left: 44px;
+	padding-left: 36px;
 }
 
 .apptheme .v-slot-inline-icon.v-slot-huge {
@@ -5583,19 +5592,19 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-caption-inline-icon.v-caption-huge span.v-icon {
 	left: 1px;
 	bottom: 1px;
-	width: 59px;
-	line-height: 57px;
+	width: 48px;
+	line-height: 46px;
 	text-align: center;
 	font-size: 26px;
 }
 
 .apptheme .v-caption-inline-icon.v-caption-huge img.v-icon {
-	left: 22px;
-	bottom: 22px;
+	left: 16px;
+	bottom: 16px;
 }
 
 .apptheme .v-textfield-inline-icon.v-textfield-huge  {
-	padding-left: 59px;
+	padding-left: 48px;
 }
 
 .apptheme .v-textfield-align-right {
@@ -5621,9 +5630,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 37px;
+	height: 30px;
 	border-radius: 4px;
-	padding: 6px;
+	padding: 5px;
 	border: 1px solid #c5c5c5;
 	background: white;
 	color: #474747;
@@ -5635,7 +5644,7 @@ div.v-layout.v-horizontal.v-widget {
 	height: auto;
 	resize: none;
 	white-space: pre-wrap;
-	width: 185px;
+	width: 150px;
 }
 
 .apptheme .v-textarea.v-disabled {
@@ -5648,11 +5657,11 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-textarea[class*="prompt"] {
@@ -5712,9 +5721,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 28px;
+	height: 23px;
 	border-radius: 4px;
-	padding: 6px;
+	padding: 5px;
 	
 	
 	
@@ -5742,9 +5751,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 31px;
+	height: 26px;
 	border-radius: 4px;
-	padding: 6px;
+	padding: 5px;
 	
 	
 	
@@ -5772,9 +5781,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 44px;
+	height: 36px;
 	border-radius: 4px;
-	padding: 6px;
+	padding: 5px;
 	
 	
 	
@@ -5802,9 +5811,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 59px;
+	height: 48px;
 	border-radius: 4px;
-	padding: 6px;
+	padding: 5px;
 	
 	
 	
@@ -5827,8 +5836,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-datefield {
 	position: relative;
-	width: 185px;
-	height: 37px;
+	width: 150px;
+	height: 30px;
 	border-radius: 4px;
 }
 
@@ -5848,9 +5857,9 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 37px;
+	height: 30px;
 	border-radius: 4px;
-	padding: 4px 9px;
+	padding: 3px 7px;
 	border: 1px solid #c5c5c5;
 	background: white;
 	color: #474747;
@@ -5859,7 +5868,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: box-shadow 180ms, border 180ms;
 	-moz-transition: box-shadow 180ms, border 180ms;
 	transition: box-shadow 180ms, border 180ms;
-	padding-left: 44.4px;
+	padding-left: 36px;
 	width: 100%;
 	height: 100%;
 	border-radius: inherit;
@@ -5875,11 +5884,11 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 #f7f7f7, 0 1px 0 rgba(255, 255, 255, 0.1);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-datefield [class*="textfield"][class*="prompt"] {
@@ -5899,8 +5908,8 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 0;
 	position: absolute;
 	z-index: 10;
-	width: 37px;
-	line-height: 35px;
+	width: 30px;
+	line-height: 28px;
 	text-align: center;
 	font: inherit;
 	outline: none;
@@ -5988,7 +5997,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-day {
-	width: 185px;
+	width: 150px;
 }
 
 .apptheme .v-datefield-month {
@@ -6000,7 +6009,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-popup {
-	padding: 4px 4px;
+	padding: 3px 3px;
 	border-radius: 4px;
 	background-color: white;
 	color: #474747;
@@ -6010,9 +6019,9 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 	backface-visibility: hidden;
-	margin-top: 5px !important;
-	margin-bottom: 5px !important;
-	margin-right: 5px !important;
+	margin-top: 4px !important;
+	margin-bottom: 4px !important;
+	margin-right: 4px !important;
 	cursor: default;
 	width: auto;
 }
@@ -6050,10 +6059,10 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-datefield-popup .v-datefield-calendarpanel-day {
 	box-sizing: border-box;
-	width: 30px;
-	height: 26px;
+	width: 24px;
+	height: 21px;
 	border: 1px solid transparent;
-	line-height: 26px;
+	line-height: 21px;
 	text-align: center;
 	font-size: 14px;
 	background: #fafafa;
@@ -6067,7 +6076,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-popup .v-datefield-calendarpanel-day:hover {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-datefield-popup .v-datefield-calendarpanel-day-offmonth {
@@ -6082,17 +6091,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected, .apptheme .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected:hover {
-	color: #ccccd5;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	color: #cad1d5;
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	border: none;
 	font-weight: 600;
 }
 
 .apptheme .v-datefield-popup .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-focused {
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 	position: relative;
 }
 
@@ -6102,7 +6111,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-popup .v-datefield-calendarpanel-weekdays {
-	height: 26px;
+	height: 21px;
 	color: rgba(133, 133, 133, 0.85);
 }
 
@@ -6128,8 +6137,8 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 	color: transparent;
 	font-size: 0;
-	width: 19px;
-	height: 25px;
+	width: 15px;
+	height: 20px;
 	outline: none;
 	position: relative;
 	vertical-align: middle;
@@ -6145,7 +6154,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-popup td[class*="year"] button:hover:before, .apptheme .v-datefield-popup td[class*="month"] button:hover:before {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-datefield-popup td[class*="year"] button.outside-range, .apptheme .v-datefield-popup td[class*="month"] button.outside-range {
@@ -6179,16 +6188,16 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-popup td.v-datefield-calendarpanel-month {
-	width: 148px;
-	color: #4b4b65;
+	width: 120px;
+	color: #455A64;
 }
 
 .apptheme .v-datefield-popup .v-datefield-calendarpanel-year td.v-datefield-calendarpanel-month {
-	width: 74px;
+	width: 60px;
 }
 
 .apptheme .v-datefield-popup .v-datefield-calendarpanel-weeknumber, .apptheme .v-datefield-popup .v-datefield-calendarpanel-weekdays.v-datefield-calendarpanel-weeknumbers td:first-child {
-	width: 30px;
+	width: 24px;
 	color: rgba(133, 133, 133, 0.85);
 	font-size: 14px;
 	display: inline-block;
@@ -6202,10 +6211,10 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-datefield-popup .v-datefield-calendarpanel-weeknumbers .v-first:before {
 	content: "";
 	position: absolute;
-	top: 38px;
+	top: 30px;
 	bottom: 0;
 	left: 0;
-	width: 34px;
+	width: 27px;
 	border-top: 1px solid #eaeaea;
 	border-right: 1px solid #eaeaea;
 	border-top-right-radius: 4px;
@@ -6218,7 +6227,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-size: 14px;
 }
 
-.apptheme .v-datefield-popup td.v-datefield-calendarpanel-time .v-label, .apptheme .v-datefield-popup td.v-datefield-calendarpanel-time  .v-caption-logo {
+.apptheme .v-datefield-popup td.v-datefield-calendarpanel-time .v-label {
 	display: inline;
 	margin: 0 0.1em;
 	font-weight: 400;
@@ -6235,10 +6244,10 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-datefield-calendarpanel-day {
 	box-sizing: border-box;
-	width: 30px;
-	height: 26px;
+	width: 24px;
+	height: 21px;
 	border: 1px solid transparent;
-	line-height: 26px;
+	line-height: 21px;
 	text-align: center;
 	font-size: 14px;
 	background: #fafafa;
@@ -6252,7 +6261,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-calendarpanel-day:hover {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-datefield-calendarpanel-day-offmonth {
@@ -6267,17 +6276,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected, .apptheme .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-selected:hover {
-	color: #ccccd5;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	color: #cad1d5;
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	border: none;
 	font-weight: 600;
 }
 
 .apptheme .v-datefield-calendarpanel-day.v-datefield-calendarpanel-day-focused {
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 	position: relative;
 }
 
@@ -6287,7 +6296,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-calendarpanel-weekdays {
-	height: 26px;
+	height: 21px;
 	color: rgba(133, 133, 133, 0.85);
 }
 
@@ -6313,8 +6322,8 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 	color: transparent;
 	font-size: 0;
-	width: 19px;
-	height: 25px;
+	width: 15px;
+	height: 20px;
 	outline: none;
 	position: relative;
 	vertical-align: middle;
@@ -6330,7 +6339,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme td[class*="year"] button:hover:before, .apptheme td[class*="month"] button:hover:before {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme td[class*="year"] button.outside-range, .apptheme td[class*="month"] button.outside-range {
@@ -6364,16 +6373,16 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme td.v-datefield-calendarpanel-month {
-	width: 148px;
-	color: #4b4b65;
+	width: 120px;
+	color: #455A64;
 }
 
 .apptheme .v-datefield-calendarpanel-year td.v-datefield-calendarpanel-month {
-	width: 74px;
+	width: 60px;
 }
 
 .apptheme .v-datefield-calendarpanel-weeknumber, .apptheme .v-datefield-calendarpanel-weekdays.v-datefield-calendarpanel-weeknumbers td:first-child {
-	width: 30px;
+	width: 24px;
 	color: rgba(133, 133, 133, 0.85);
 	font-size: 14px;
 	display: inline-block;
@@ -6387,10 +6396,10 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-datefield-calendarpanel-weeknumbers .v-first:before {
 	content: "";
 	position: absolute;
-	top: 38px;
+	top: 30px;
 	bottom: 0;
 	left: 0;
-	width: 34px;
+	width: 27px;
 	border-top: 1px solid #eaeaea;
 	border-right: 1px solid #eaeaea;
 	border-top-right-radius: 4px;
@@ -6403,7 +6412,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-size: 14px;
 }
 
-.apptheme td.v-datefield-calendarpanel-time .v-label, .apptheme td.v-datefield-calendarpanel-time  .v-caption-logo {
+.apptheme td.v-datefield-calendarpanel-time .v-label {
 	display: inline;
 	margin: 0 0.1em;
 	font-weight: 400;
@@ -6445,7 +6454,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-tiny {
-	height: 28px;
+	height: 23px;
 	border-radius: 4px;
 	font-size: 12px;
 }
@@ -6466,16 +6475,16 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 28px;
+	height: 23px;
 	border-radius: 4px;
-	padding: 3px 7px;
+	padding: 3px 6px;
 	
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
 	-moz-transition: box-shadow 180ms, border 180ms;
 	transition: box-shadow 180ms, border 180ms;
-	padding-left: 33.6px;
+	padding-left: 27.6px;
 	width: 100%;
 	height: 100%;
 	border-radius: inherit;
@@ -6490,8 +6499,8 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 0;
 	position: absolute;
 	z-index: 10;
-	width: 28px;
-	line-height: 28px;
+	width: 23px;
+	line-height: 23px;
 	text-align: center;
 	font: inherit;
 	outline: none;
@@ -6553,7 +6562,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-compact, .apptheme .v-datefield-small {
-	height: 31px;
+	height: 26px;
 	border-radius: 4px;
 }
 
@@ -6573,16 +6582,16 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 31px;
+	height: 26px;
 	border-radius: 4px;
-	padding: 3px 8px;
+	padding: 3px 7px;
 	
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
 	-moz-transition: box-shadow 180ms, border 180ms;
 	transition: box-shadow 180ms, border 180ms;
-	padding-left: 37.2px;
+	padding-left: 31.2px;
 	width: 100%;
 	height: 100%;
 	border-radius: inherit;
@@ -6597,8 +6606,8 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 0;
 	position: absolute;
 	z-index: 10;
-	width: 31px;
-	line-height: 31px;
+	width: 26px;
+	line-height: 26px;
 	text-align: center;
 	font: inherit;
 	outline: none;
@@ -6664,7 +6673,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-large {
-	height: 44px;
+	height: 36px;
 	border-radius: 4px;
 	font-size: 20px;
 }
@@ -6685,16 +6694,16 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 44px;
+	height: 36px;
 	border-radius: 4px;
-	padding: 5px 10px;
+	padding: 4px 8px;
 	
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
 	-moz-transition: box-shadow 180ms, border 180ms;
 	transition: box-shadow 180ms, border 180ms;
-	padding-left: 52.8px;
+	padding-left: 43.2px;
 	width: 100%;
 	height: 100%;
 	border-radius: inherit;
@@ -6709,8 +6718,8 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 0;
 	position: absolute;
 	z-index: 10;
-	width: 44px;
-	line-height: 44px;
+	width: 36px;
+	line-height: 36px;
 	text-align: center;
 	font: inherit;
 	outline: none;
@@ -6772,7 +6781,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-datefield-huge {
-	height: 59px;
+	height: 48px;
 	border-radius: 4px;
 	font-size: 26px;
 }
@@ -6793,16 +6802,16 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 59px;
+	height: 48px;
 	border-radius: 4px;
-	padding: 7px 12px;
+	padding: 5px 10px;
 	
 	
 	
 	-webkit-transition: box-shadow 180ms, border 180ms;
 	-moz-transition: box-shadow 180ms, border 180ms;
 	transition: box-shadow 180ms, border 180ms;
-	padding-left: 70.8px;
+	padding-left: 57.6px;
 	width: 100%;
 	height: 100%;
 	border-radius: inherit;
@@ -6817,8 +6826,8 @@ div.v-layout.v-horizontal.v-widget {
 	padding: 0;
 	position: absolute;
 	z-index: 10;
-	width: 59px;
-	line-height: 59px;
+	width: 48px;
+	line-height: 48px;
 	text-align: center;
 	font: inherit;
 	outline: none;
@@ -6890,10 +6899,10 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-inline-datefield-calendarpanel-day {
 	box-sizing: border-box;
-	width: 30px;
-	height: 26px;
+	width: 24px;
+	height: 21px;
 	border: 1px solid transparent;
-	line-height: 26px;
+	line-height: 21px;
 	text-align: center;
 	font-size: 14px;
 	background: #fafafa;
@@ -6907,7 +6916,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-inline-datefield-calendarpanel-day:hover {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-inline-datefield-calendarpanel-day-offmonth {
@@ -6922,17 +6931,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-selected, .apptheme .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-selected:hover {
-	color: #ccccd5;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	color: #cad1d5;
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	border: none;
 	font-weight: 600;
 }
 
 .apptheme .v-inline-datefield-calendarpanel-day.v-inline-datefield-calendarpanel-day-focused {
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 	position: relative;
 }
 
@@ -6942,7 +6951,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-inline-datefield-calendarpanel-weekdays {
-	height: 26px;
+	height: 21px;
 	color: rgba(133, 133, 133, 0.85);
 }
 
@@ -6968,8 +6977,8 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: pointer;
 	color: transparent;
 	font-size: 0;
-	width: 19px;
-	height: 25px;
+	width: 15px;
+	height: 20px;
 	outline: none;
 	position: relative;
 	vertical-align: middle;
@@ -6985,7 +6994,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme td[class*="year"] button:hover:before, .apptheme td[class*="month"] button:hover:before {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme td[class*="year"] button.outside-range, .apptheme td[class*="month"] button.outside-range {
@@ -7019,16 +7028,16 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme td.v-inline-datefield-calendarpanel-month {
-	width: 148px;
-	color: #4b4b65;
+	width: 120px;
+	color: #455A64;
 }
 
 .apptheme .v-inline-datefield-calendarpanel-year td.v-inline-datefield-calendarpanel-month {
-	width: 74px;
+	width: 60px;
 }
 
 .apptheme .v-inline-datefield-calendarpanel-weeknumber, .apptheme .v-inline-datefield-calendarpanel-weekdays.v-inline-datefield-calendarpanel-weeknumbers td:first-child {
-	width: 30px;
+	width: 24px;
 	color: rgba(133, 133, 133, 0.85);
 	font-size: 14px;
 	display: inline-block;
@@ -7042,10 +7051,10 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-inline-datefield-calendarpanel-weeknumbers .v-first:before {
 	content: "";
 	position: absolute;
-	top: 38px;
+	top: 30px;
 	bottom: 0;
 	left: 0;
-	width: 34px;
+	width: 27px;
 	border-top: 1px solid #eaeaea;
 	border-right: 1px solid #eaeaea;
 	border-top-right-radius: 4px;
@@ -7058,7 +7067,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-size: 14px;
 }
 
-.apptheme td.v-inline-datefield-calendarpanel-time .v-label, .apptheme td.v-inline-datefield-calendarpanel-time  .v-caption-logo {
+.apptheme td.v-inline-datefield-calendarpanel-time .v-label {
 	display: inline;
 	margin: 0 0.1em;
 	font-weight: 400;
@@ -7067,28 +7076,28 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-inline-datefield-calendarpanel {
 	position: relative;
 	background: white;
-	padding: 6px;
+	padding: 5px;
 }
 
 .apptheme .v-gridlayout-margin-top {
-	padding-top: 37px;
+	padding-top: 30px;
 }
 
 .apptheme .v-gridlayout-margin-bottom {
-	padding-bottom: 37px;
+	padding-bottom: 30px;
 }
 
 .apptheme .v-gridlayout-margin-left {
-	padding-left: 37px;
+	padding-left: 30px;
 }
 
 .apptheme .v-gridlayout-margin-right {
-	padding-right: 37px;
+	padding-right: 30px;
 }
 
 .apptheme .v-gridlayout-spacing-on {
-	padding-left: 12px;
-	padding-top: 12px;
+	padding-left: 10px;
+	padding-top: 10px;
 }
 
 .apptheme .v-menubar {
@@ -7099,8 +7108,8 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 	cursor: pointer;
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -7117,7 +7126,7 @@ div.v-layout.v-horizontal.v-widget {
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	padding: 0;
 	text-align: left;
-	line-height: 35px;
+	line-height: 28px;
 }
 
 .apptheme .v-menubar:after {
@@ -7157,17 +7166,17 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar:focus:after {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-menubar  > .v-menubar-menuitem {
-	padding: 0 14px;
+	padding: 0 12px;
 }
 
 .apptheme .v-menubar  > .v-menubar-menuitem[class*="-icon-only"] {
-	width: 37px;
+	width: 30px;
 }
 
 .apptheme .v-menubar:active:after {
@@ -7179,8 +7188,8 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 1;
 	display: inline-block;
 	box-sizing: border-box;
-	height: 37px;
-	padding: 0 15px;
+	height: 30px;
+	padding: 0 12px;
 	color: inherit;
 	font-weight: 400;
 	
@@ -7243,12 +7252,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar > .v-menubar-menuitem .v-icon {
-	margin: 0 4px 0 -4px;
+	margin: 0 3px 0 -3px;
 	cursor: inherit;
 }
 
 .apptheme .v-menubar > .v-menubar-menuitem[class*="-icon-only"] {
-	width: 37px;
+	width: 30px;
 	padding: 0;
 }
 
@@ -7279,19 +7288,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar > .v-menubar-menuitem-selected {
-	color: #ededf0;
+	color: #eceff0;
 	
 	
 	
 	border-radius: 0;
-	border: 1px solid #3b3b4f;
-	border-top-color: #3f3f56;
-	border-bottom-color: #343445;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
-	-webkit-box-shadow: inset 0 1px 0 #72727b, inset 0 -1px 0 #404055;
-	box-shadow: inset 0 1px 0 #72727b, inset 0 -1px 0 #404055;
+	border: 1px solid #36474f;
+	border-top-color: #3a4c55;
+	border-bottom-color: #2f3d45;
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
+	-webkit-box-shadow: inset 0 1px 0 #6a707b, inset 0 -1px 0 #3a4b54;
+	box-shadow: inset 0 1px 0 #6a707b, inset 0 -1px 0 #3a4b54;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 	border-top-width: 0;
 	border-left-width: 0;
@@ -7321,7 +7330,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar-popup {
-	padding: 4px 4px;
+	padding: 3px 3px;
 	border-radius: 4px;
 	background-color: white;
 	color: #474747;
@@ -7331,8 +7340,8 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
 	backface-visibility: hidden;
-	padding: 4px 4px;
-	margin: 5px 0 0 1px !important;
+	padding: 3px 3px;
+	margin: 4px 0 0 1px !important;
 }
 
 .apptheme .v-menubar-popup[class*="animate-in"] {
@@ -7354,14 +7363,14 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-menubar-popup .v-menubar-menuitem {
 	display: block;
 	cursor: pointer;
-	line-height: 27px;
-	padding: 0 20px 0 10px;
+	line-height: 22px;
+	padding: 0 16px 0 8px;
 	border-radius: 3px;
 	font-weight: 400;
 	white-space: nowrap;
 	position: relative;
-	padding-left: 32px;
-	padding-right: 37px;
+	padding-left: 26px;
+	padding-right: 30px;
 	position: relative;
 }
 
@@ -7372,7 +7381,7 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: #1a1a61;
+	background: #18485e;
 	opacity: 0.15;
 	filter: alpha(opacity=15.0) ;
 	pointer-events: none;
@@ -7380,8 +7389,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar-popup .v-menubar-menuitem .v-icon {
-	max-height: 27px;
-	margin-right: 5px;
+	max-height: 22px;
+	margin-right: 4px;
 	min-width: 1em;
 }
 
@@ -7391,23 +7400,23 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-menubar-popup .v-menubar-submenu-indicator  + .v-menubar-menuitem-caption:after {
 	position: absolute;
-	right: 10px;
+	right: 8px;
 	font-family: ThemeIcons;
 	content: "\f054";
-	line-height: 29px;
+	line-height: 24px;
 }
 
 .apptheme .v-menubar-popup .v-menubar-menuitem-selected {
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
-	color: #ededf0;
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
+	color: #eceff0;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .apptheme .v-menubar-popup .v-menubar-separator {
 	display: block;
-	margin: 4px 0;
+	margin: 3px 0;
 	height: 0;
 	overflow: hidden;
 	border-bottom: 1px solid #e4e4e4;
@@ -7417,7 +7426,7 @@ div.v-layout.v-horizontal.v-widget {
 	content: "\f00c";
 	font-family: ThemeIcons;
 	position: absolute;
-	left: 10px;
+	left: 8px;
 }
 
 .apptheme .v-menubar-popup [class*="unchecked"] .v-menubar-menuitem-caption:before {
@@ -7429,8 +7438,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar-small {
-	height: 31px;
-	padding: 0 14px;
+	height: 26px;
+	padding: 0 12px;
 	
 	font-weight: 400;
 	
@@ -7438,7 +7447,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 4px;
 	padding: 0;
 	text-align: left;
-	line-height: 29px;
+	line-height: 24px;
 	font-size: 14px;
 }
 
@@ -7451,11 +7460,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar-small  > .v-menubar-menuitem {
-	padding: 0 12px;
+	padding: 0 10px;
 }
 
 .apptheme .v-menubar-small  > .v-menubar-menuitem[class*="-icon-only"] {
-	width: 31px;
+	width: 26px;
 }
 
 .apptheme .v-menubar-borderless {
@@ -7479,8 +7488,8 @@ div.v-layout.v-horizontal.v-widget {
 	border: none;
 	margin-right: 1px;
 	border-radius: 4px;
-	color: #4b4b65;
-	padding: 0 12px;
+	color: #455A64;
+	padding: 0 10px;
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
 	transition: color 140ms;
@@ -7495,7 +7504,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar-borderless .v-menubar-menuitem:hover {
-	color: #616182;
+	color: #5a7582;
 }
 
 .apptheme .v-menubar-borderless .v-menubar-menuitem:active {
@@ -7504,7 +7513,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-menubar-borderless .v-menubar-menuitem-checked, .apptheme .v-menubar-borderless .v-menubar-menuitem-checked:first-child {
 	border: 1px solid #c5c5c5;
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-menubar-borderless .v-menubar-menuitem-checked .v-menubar-menuitem-caption, .apptheme .v-menubar-borderless .v-menubar-menuitem-checked:first-child .v-menubar-menuitem-caption {
@@ -7513,12 +7522,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar-borderless .v-menubar-menuitem-selected {
-	color: #ededf0;
+	color: #eceff0;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .apptheme .v-menubar-borderless .v-menubar-menuitem-selected:hover {
-	color: #ededf0;
+	color: #eceff0;
 }
 
 .apptheme .v-menubar-borderless .v-menubar-menuitem-disabled, .apptheme .v-menubar-borderless .v-menubar-menuitem-disabled:hover {
@@ -7527,7 +7536,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-radiobutton {
 	position: relative;
-	line-height: 19px;
+	line-height: 15px;
 	white-space: nowrap;
 }
 
@@ -7536,7 +7545,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-radiobutton {
-	padding-left: 25px;
+	padding-left: 20px;
 }
 
 :root .apptheme .v-radiobutton label {
@@ -7556,19 +7565,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-radiobutton > input:focus ~ label:before {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .apptheme .v-radiobutton > input ~ label:before, :root .apptheme .v-radiobutton > input ~ label:after {
 	content: "";
 	display: inline-block;
 	box-sizing: border-box;
-	width: 19px;
-	height: 19px;
+	width: 15px;
+	height: 15px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -7578,8 +7587,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-radiobutton > input ~ label:before {
-	height: 18.5px;
-	padding: 0 9px;
+	height: 15px;
+	padding: 0 7px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -7595,7 +7604,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	padding: 0;
-	height: 19px;
+	height: 15px;
 }
 
 :root .apptheme .v-radiobutton > input ~ label:after {
@@ -7612,11 +7621,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-radiobutton > input:checked ~ label:after {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-radiobutton > .v-icon, .apptheme .v-radiobutton > label .v-icon {
-	margin: 0 6px 0 3px;
+	margin: 0 5px 0 3px;
 	min-width: 1em;
 	cursor: pointer;
 }
@@ -7653,11 +7662,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-radiobutton > input:checked ~ label:after {
-	width: 7px;
-	height: 7px;
-	top: 6px;
-	left: 6px;
-	background: #4b4b65;
+	width: 5px;
+	height: 5px;
+	top: 5px;
+	left: 5px;
+	background: #455A64;
 }
 
 :root .apptheme .v-radiobutton > input ~ label:before, :root .apptheme .v-radiobutton > input ~ label:after {
@@ -7667,15 +7676,15 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-optiongroup .v-radiobutton, .apptheme .v-select-optiongroup .v-checkbox {
 	display: block;
-	margin: 9px 16px 0 0;
+	margin: 8px 16px 0 0;
 }
 
 .apptheme .v-select-optiongroup .v-radiobutton:first-child, .apptheme .v-select-optiongroup .v-checkbox:first-child {
-	margin-top: 6px;
+	margin-top: 5px;
 }
 
 .apptheme .v-select-optiongroup .v-radiobutton:last-child, .apptheme .v-select-optiongroup .v-checkbox:last-child {
-	margin-bottom: 6px;
+	margin-bottom: 5px;
 }
 
 .apptheme .v-select-optiongroup.v-has-width label {
@@ -7688,7 +7697,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-optiongroup-small .v-checkbox {
 	position: relative;
-	line-height: 16px;
+	line-height: 13px;
 	white-space: nowrap;
 }
 
@@ -7697,7 +7706,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-small .v-checkbox {
-	padding-left: 21px;
+	padding-left: 17px;
 }
 
 :root .apptheme .v-select-optiongroup-small .v-checkbox label {
@@ -7717,19 +7726,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-small .v-checkbox > input:focus ~ label:before {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .apptheme .v-select-optiongroup-small .v-checkbox > input ~ label:before, :root .apptheme .v-select-optiongroup-small .v-checkbox > input ~ label:after {
 	content: "";
 	display: inline-block;
 	box-sizing: border-box;
-	width: 16px;
-	height: 16px;
+	width: 13px;
+	height: 13px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -7739,8 +7748,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-small .v-checkbox > input ~ label:before {
-	height: 15.5px;
-	padding: 0 7px;
+	height: 13px;
+	padding: 0 6px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -7756,7 +7765,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	padding: 0;
-	height: 16px;
+	height: 13px;
 }
 
 :root .apptheme .v-select-optiongroup-small .v-checkbox > input ~ label:after {
@@ -7773,11 +7782,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-small .v-checkbox > input:checked ~ label:after {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-select-optiongroup-small .v-checkbox > .v-icon, .apptheme .v-select-optiongroup-small .v-checkbox > label .v-icon {
-	margin: 0 5px 0 3px;
+	margin: 0 4px 0 2px;
 	min-width: 1em;
 	cursor: pointer;
 }
@@ -7815,7 +7824,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-optiongroup-small .v-radiobutton {
 	position: relative;
-	line-height: 16px;
+	line-height: 13px;
 	white-space: nowrap;
 }
 
@@ -7824,7 +7833,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-small .v-radiobutton {
-	padding-left: 21px;
+	padding-left: 17px;
 }
 
 :root .apptheme .v-select-optiongroup-small .v-radiobutton label {
@@ -7844,19 +7853,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-small .v-radiobutton > input:focus ~ label:before {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .apptheme .v-select-optiongroup-small .v-radiobutton > input ~ label:before, :root .apptheme .v-select-optiongroup-small .v-radiobutton > input ~ label:after {
 	content: "";
 	display: inline-block;
 	box-sizing: border-box;
-	width: 16px;
-	height: 16px;
+	width: 13px;
+	height: 13px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -7866,8 +7875,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-small .v-radiobutton > input ~ label:before {
-	height: 15.5px;
-	padding: 0 7px;
+	height: 13px;
+	padding: 0 6px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -7883,7 +7892,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	padding: 0;
-	height: 16px;
+	height: 13px;
 }
 
 :root .apptheme .v-select-optiongroup-small .v-radiobutton > input ~ label:after {
@@ -7900,11 +7909,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-small .v-radiobutton > input:checked ~ label:after {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-select-optiongroup-small .v-radiobutton > .v-icon, .apptheme .v-select-optiongroup-small .v-radiobutton > label .v-icon {
-	margin: 0 5px 0 3px;
+	margin: 0 4px 0 2px;
 	min-width: 1em;
 	cursor: pointer;
 }
@@ -7941,11 +7950,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-small .v-radiobutton > input:checked ~ label:after {
-	width: 6px;
-	height: 6px;
-	top: 5px;
-	left: 5px;
-	background: #4b4b65;
+	width: 5px;
+	height: 5px;
+	top: 4px;
+	left: 4px;
+	background: #455A64;
 }
 
 :root .apptheme .v-select-optiongroup-small .v-radiobutton > input ~ label:before, :root .apptheme .v-select-optiongroup-small .v-radiobutton > input ~ label:after {
@@ -7955,15 +7964,15 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-optiongroup-small .v-radiobutton, .apptheme .v-select-optiongroup-small .v-checkbox {
 	display: block;
-	margin: 8px 16px 0 0;
+	margin: 7px 16px 0 0;
 }
 
 .apptheme .v-select-optiongroup-small .v-radiobutton:first-child, .apptheme .v-select-optiongroup-small .v-checkbox:first-child {
-	margin-top: 5px;
+	margin-top: 4px;
 }
 
 .apptheme .v-select-optiongroup-small .v-radiobutton:last-child, .apptheme .v-select-optiongroup-small .v-checkbox:last-child {
-	margin-bottom: 5px;
+	margin-bottom: 4px;
 }
 
 .apptheme .v-select-optiongroup-small.v-has-width label {
@@ -7976,7 +7985,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-optiongroup-large .v-checkbox {
 	position: relative;
-	line-height: 22px;
+	line-height: 18px;
 	white-space: nowrap;
 }
 
@@ -7985,7 +7994,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-large .v-checkbox {
-	padding-left: 29px;
+	padding-left: 24px;
 }
 
 :root .apptheme .v-select-optiongroup-large .v-checkbox label {
@@ -8005,19 +8014,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-large .v-checkbox > input:focus ~ label:before {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .apptheme .v-select-optiongroup-large .v-checkbox > input ~ label:before, :root .apptheme .v-select-optiongroup-large .v-checkbox > input ~ label:after {
 	content: "";
 	display: inline-block;
 	box-sizing: border-box;
-	width: 22px;
-	height: 22px;
+	width: 18px;
+	height: 18px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -8027,8 +8036,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-large .v-checkbox > input ~ label:before {
-	height: 22px;
-	padding: 0 10px;
+	height: 18px;
+	padding: 0 8px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -8044,7 +8053,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	padding: 0;
-	height: 22px;
+	height: 18px;
 }
 
 :root .apptheme .v-select-optiongroup-large .v-checkbox > input ~ label:after {
@@ -8061,11 +8070,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-large .v-checkbox > input:checked ~ label:after {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-select-optiongroup-large .v-checkbox > .v-icon, .apptheme .v-select-optiongroup-large .v-checkbox > label .v-icon {
-	margin: 0 7px 0 4px;
+	margin: 0 6px 0 3px;
 	min-width: 1em;
 	cursor: pointer;
 }
@@ -8103,7 +8112,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-optiongroup-large .v-radiobutton {
 	position: relative;
-	line-height: 22px;
+	line-height: 18px;
 	white-space: nowrap;
 }
 
@@ -8112,7 +8121,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-large .v-radiobutton {
-	padding-left: 29px;
+	padding-left: 24px;
 }
 
 :root .apptheme .v-select-optiongroup-large .v-radiobutton label {
@@ -8132,19 +8141,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-large .v-radiobutton > input:focus ~ label:before {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5), inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 :root .apptheme .v-select-optiongroup-large .v-radiobutton > input ~ label:before, :root .apptheme .v-select-optiongroup-large .v-radiobutton > input ~ label:after {
 	content: "";
 	display: inline-block;
 	box-sizing: border-box;
-	width: 22px;
-	height: 22px;
+	width: 18px;
+	height: 18px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -8154,8 +8163,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-large .v-radiobutton > input ~ label:before {
-	height: 22px;
-	padding: 0 10px;
+	height: 18px;
+	padding: 0 8px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -8171,7 +8180,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #e7e7e7, 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 	padding: 0;
-	height: 22px;
+	height: 18px;
 }
 
 :root .apptheme .v-select-optiongroup-large .v-radiobutton > input ~ label:after {
@@ -8188,11 +8197,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-large .v-radiobutton > input:checked ~ label:after {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-select-optiongroup-large .v-radiobutton > .v-icon, .apptheme .v-select-optiongroup-large .v-radiobutton > label .v-icon {
-	margin: 0 7px 0 4px;
+	margin: 0 6px 0 3px;
 	min-width: 1em;
 	cursor: pointer;
 }
@@ -8229,11 +8238,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 :root .apptheme .v-select-optiongroup-large .v-radiobutton > input:checked ~ label:after {
-	width: 8px;
-	height: 8px;
-	top: 7px;
-	left: 7px;
-	background: #4b4b65;
+	width: 6px;
+	height: 6px;
+	top: 6px;
+	left: 6px;
+	background: #455A64;
 }
 
 :root .apptheme .v-select-optiongroup-large .v-radiobutton > input ~ label:before, :root .apptheme .v-select-optiongroup-large .v-radiobutton > input ~ label:after {
@@ -8243,15 +8252,15 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-optiongroup-large .v-radiobutton, .apptheme .v-select-optiongroup-large .v-checkbox {
 	display: block;
-	margin: 11px 16px 0 0;
+	margin: 9px 16px 0 0;
 }
 
 .apptheme .v-select-optiongroup-large .v-radiobutton:first-child, .apptheme .v-select-optiongroup-large .v-checkbox:first-child {
-	margin-top: 7px;
+	margin-top: 6px;
 }
 
 .apptheme .v-select-optiongroup-large .v-radiobutton:last-child, .apptheme .v-select-optiongroup-large .v-checkbox:last-child {
-	margin-bottom: 7px;
+	margin-bottom: 6px;
 }
 
 .apptheme .v-select-optiongroup-large.v-has-width label {
@@ -8276,7 +8285,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-link {
 	cursor: pointer;
-	color: #4b4b65;
+	color: #455A64;
 	text-decoration: underline;
 	font-weight: inherit;
 	-webkit-transition: color 140ms;
@@ -8285,7 +8294,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-link:hover {
-	color: #616182;
+	color: #5a7582;
 }
 
 .apptheme .v-link.v-disabled {
@@ -8315,7 +8324,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-window {
-	padding: 4px 4px;
+	padding: 3px 3px;
 	border-radius: 4px;
 	background-color: white;
 	color: #474747;
@@ -8328,8 +8337,8 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 16px 80px -6px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.09098);
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1), 0 16px 80px -6px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.09098);
 	padding: 0;
-	min-width: 148px !important;
-	min-height: 37px !important;
+	min-width: 120px !important;
+	min-height: 30px !important;
 	white-space: nowrap;
 	overflow: hidden !important;
 	-webkit-transition: width 200ms, height 200ms, top 200ms, left 200ms;
@@ -8413,9 +8422,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-window-header {
-	line-height: 36px;
-	padding-left: 12px;
-	margin-right: 74px;
+	line-height: 29px;
+	padding-left: 10px;
+	margin-right: 60px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -8423,11 +8432,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-window-restorebox-disabled  ~ .v-window-closebox ~ .v-window-header, .apptheme .v-window-maximizebox-disabled  ~ .v-window-closebox ~ .v-window-header {
-	margin-right: 37px;
+	margin-right: 30px;
 }
 
 .apptheme .v-window-restorebox-disabled  ~ .v-window-closebox-disabled ~ .v-window-header, .apptheme .v-window-maximizebox-disabled  ~ .v-window-closebox-disabled ~ .v-window-header {
-	margin-right: 12px;
+	margin-right: 10px;
 }
 
 .apptheme .v-window-closebox, .apptheme .v-window-maximizebox, .apptheme .v-window-restorebox {
@@ -8436,10 +8445,10 @@ div.v-layout.v-horizontal.v-widget {
 	top: 0;
 	right: 0;
 	box-sizing: border-box;
-	width: 33px;
-	height: 36px;
+	width: 27px;
+	height: 29px;
 	background-color: white;
-	line-height: 34px;
+	line-height: 27px;
 	text-align: center;
 	cursor: pointer;
 	font-size: 21px;
@@ -8456,7 +8465,7 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-window-closebox:hover, .apptheme .v-window-maximizebox:hover, .apptheme .v-window-restorebox:hover {
 	opacity: 1;
 	filter: none ;
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-window-closebox:active, .apptheme .v-window-maximizebox:active, .apptheme .v-window-restorebox:active {
@@ -8464,7 +8473,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-window-closebox {
-	padding-right: 4px;
+	padding-right: 3px;
 	border-radius: 0 4px 0 4px;
 }
 
@@ -8473,8 +8482,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-window-maximizebox, .apptheme .v-window-restorebox {
-	right: 33px;
-	padding-left: 4px;
+	right: 27px;
+	padding-left: 3px;
 	border-radius: 0 0 0 4px;
 }
 
@@ -8487,7 +8496,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-window-closebox-disabled  + .v-window-closebox, .apptheme .v-window-resizebox-disabled  + .v-window-closebox, .apptheme .v-window-restorebox-disabled  + .v-window-closebox, .apptheme .v-window-maximizebox-disabled  + .v-window-closebox {
-	width: 37px;
+	width: 30px;
 	padding-right: 0;
 	border-bottom-left-radius: 4px;
 }
@@ -8515,43 +8524,43 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-window-contents  > .v-scrollable  > .v-margin-top {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme .v-window-contents  > .v-scrollable  > .v-margin-right {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-window-contents  > .v-scrollable  > .v-margin-bottom {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .apptheme .v-window-contents  > .v-scrollable  > .v-margin-left {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-top"] > tbody > [class*="firstrow"] > td {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-bottom"] > tbody > [class*="lastrow"] > td {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="captioncell"] {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
-.apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
-	left: 12px;
+.apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-left"] > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+	left: 10px;
 }
 
 .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"] {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
-.apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  >  text.highcharts-title {
-	right: 12px;
+.apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h2, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h3, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .v-label-h4, .apptheme .v-window-contents  > .v-scrollable  > .v-formlayout [class*="margin-right"] > tbody > [class*="row"] > [class*="contentcell"]  > .apptheme text.highcharts-title {
+	right: 10px;
 }
 
 .apptheme .v-window-contents  > .v-scrollable:focus {
@@ -8586,8 +8595,8 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 1000;
 	right: 0;
 	bottom: 0;
-	width: 19px;
-	height: 19px;
+	width: 15px;
+	height: 15px;
 	cursor: nwse-resize;
 }
 
@@ -8601,16 +8610,16 @@ div.v-layout.v-horizontal.v-widget {
 	vertical-align: top;
 }
 
-.apptheme .v-window-top-toolbar .v-label, .apptheme .v-window-top-toolbar  .v-caption-logo, .apptheme .v-window-bottom-toolbar .v-label, .apptheme .v-window-bottom-toolbar  .v-caption-logo {
-	line-height: 36px;
+.apptheme .v-window-top-toolbar .v-label, .apptheme .v-window-bottom-toolbar .v-label {
+	line-height: 29px;
 }
 
 .apptheme .v-window-top-toolbar .v-spacing, .apptheme .v-window-bottom-toolbar .v-spacing {
-	width: 6px;
+	width: 5px;
 }
 
 .apptheme .v-window-top-toolbar.v-layout {
-	padding: 7px 12px;
+	padding: 6px 10px;
 	position: relative;
 	z-index: 2;
 	border-top: 1px solid #dfdfdf;
@@ -8619,27 +8628,27 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-window-top-toolbar.v-menubar {
-	margin: 12px 12px 6px;
+	margin: 10px 10px 5px;
 }
 
 .apptheme .v-window-top-toolbar.v-menubar-borderless {
-	padding-left: 6px;
-	padding-right: 6px;
-	margin: 5px 0;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: 4px 0;
 }
 
 .apptheme .v-window-bottom-toolbar.v-layout {
-	padding: 7px 12px;
+	padding: 6px 10px;
 	background-color: #fafafa;
-	background-image: -webkit-linear-gradient(top, #f0f0f0 0, #fafafa 4px);
-	background-image: linear-gradient(to bottom,#f0f0f0 0, #fafafa 4px);
+	background-image: -webkit-linear-gradient(top, #f0f0f0 0, #fafafa 3px);
+	background-image: linear-gradient(to bottom,#f0f0f0 0, #fafafa 3px);
 	border-top: 1px solid #dfdfdf;
 	border-radius: 0 0 4px 4px;
 }
 
 .apptheme .v-margin-left.v-margin-right.v-margin-top .v-window-top-toolbar.v-layout {
 	box-sizing: content-box;
-	margin: -12px -12px 0;
+	margin: -10px -10px 0;
 }
 
 .apptheme .v-margin-left.v-margin-right.v-margin-top .v-window-top-toolbar.v-menubar {
@@ -8647,13 +8656,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-margin-left.v-margin-right.v-margin-top .v-window-top-toolbar.v-menubar-borderless {
-	margin: -6px -6px 0;
+	margin: -5px -5px 0;
 	padding: 0;
 }
 
 .apptheme .v-margin-left.v-margin-right.v-margin-bottom .v-window-bottom-toolbar.v-layout {
 	box-sizing: content-box;
-	margin: 0 -12px -12px;
+	margin: 0 -10px -10px;
 }
 
 .apptheme .v-tree {
@@ -8671,15 +8680,15 @@ div.v-layout.v-horizontal.v-widget {
 	display: inline-block;
 	z-index: 3;
 	width: 1.9em;
-	height: 28px;
+	height: 23px;
 	cursor: pointer;
 	background: red;
 	opacity: 0;
 }
 
 .apptheme .v-tree-node-caption {
-	height: 28px;
-	line-height: 27px;
+	height: 23px;
+	line-height: 22px;
 	overflow: hidden;
 	white-space: nowrap;
 	vertical-align: top;
@@ -8705,7 +8714,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tree-node-caption span {
-	padding-right: 28px;
+	padding-right: 23px;
 	cursor: pointer;
 	display: inline-block;
 	width: 100%;
@@ -8728,9 +8737,9 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 	z-index: 1;
 	left: 0;
-	margin-top: -28px;
+	margin-top: -23px;
 	width: 100%;
-	height: 28px;
+	height: 23px;
 	border-radius: 4px;
 	opacity: 0;
 	-webkit-transition: opacity 120ms;
@@ -8754,24 +8763,24 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-tree-node-focused:after {
 	opacity: 1;
-	border: 1px solid #4b4b65;
+	border: 1px solid #455A64;
 }
 
 .apptheme .v-tree-node-selected {
-	color: #ededf0;
+	color: #eceff0;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .apptheme .v-tree-node-selected:after {
 	opacity: 1;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	border: none;
 }
 
 .apptheme .v-tree-node-children {
-	padding-left: 19px;
+	padding-left: 15px;
 }
 
 .apptheme .v-tree-node-drag-top:before, .apptheme .v-tree-node-drag-bottom:after, .apptheme .v-tree-node-drag-bottom.v-tree-node-dragfolder.v-tree-node-expanded > .v-tree-node-children:before {
@@ -8780,10 +8789,10 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 	height: 2px;
 	width: 100%;
-	background: #4b4b65;
+	background: #455A64;
 	font-size: 32px;
 	line-height: 2px;
-	color: #4b4b65;
+	color: #455A64;
 	text-indent: -4px;
 	text-shadow: 0 0 1px #fafafa, 0 0 1px #fafafa;
 	opacity: 1;
@@ -8795,8 +8804,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tree-node-caption-drag-center {
-	-webkit-box-shadow: 0 0 0 2px #4b4b65;
-	box-shadow: 0 0 0 2px #4b4b65;
+	-webkit-box-shadow: 0 0 0 2px #455A64;
+	box-shadow: 0 0 0 2px #455A64;
 	position: relative;
 	border-radius: 4px;
 }
@@ -8843,12 +8852,12 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-table-footer-container, .apptheme .v-table-caption-container {
 	overflow: hidden;
 	line-height: 1;
-	min-height: 37px;
+	min-height: 30px;
 	box-sizing: border-box;
 }
 
 .apptheme .v-table-footer-container {
-	padding: 11px 12px 12px;
+	padding: 7px 10px 8px;
 	float: right;
 }
 
@@ -8857,29 +8866,29 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-caption-container, .apptheme .v-table-header-drag {
-	padding: 12px 12px 11px;
+	padding: 8px 10px 7px;
 	border-left: 1px solid #d4d4d4;
 }
 
 .apptheme .v-table-caption-container-align-right {
-	padding-right: 4px;
+	padding-right: 3px;
 }
 
 .apptheme .v-table-resizer {
-	height: 37px;
-	width: 8px;
+	height: 30px;
+	width: 7px;
 	cursor: e-resize;
 	cursor: col-resize;
 	position: relative;
 	right: -4px;
 	z-index: 1;
-	margin-left: -8px;
+	margin-left: -7px;
 }
 
 .apptheme .v-table-cell-content {
 	border-left: 1px solid #d4d4d4;
 	overflow: hidden;
-	height: 37px;
+	height: 30px;
 	vertical-align: middle;
 }
 
@@ -8894,16 +8903,16 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-table-cell-wrapper {
 	line-height: 1;
-	padding: 0 12px;
+	padding: 0 10px;
 	box-sizing: border-box;
 	margin-right: 0 !important;
 }
 
 .apptheme .v-table-cell-wrapper  > .v-widget {
-	margin: 3px -6px;
+	margin: 3px -5px;
 }
 
-.apptheme .v-table-cell-wrapper  > .v-widget.v-label, .apptheme .v-table-cell-wrapper  > .apptheme .app-shell .v-widget.v-caption-logo, .apptheme .v-table-cell-wrapper  > .v-widget.v-checkbox, .apptheme .v-table-cell-wrapper  > .v-widget.v-select-optiongroup {
+.apptheme .v-table-cell-wrapper  > .v-widget.v-label, .apptheme .v-table-cell-wrapper  > .v-widget.v-checkbox, .apptheme .v-table-cell-wrapper  > .v-widget.v-select-optiongroup {
 	margin: 0;
 }
 
@@ -8948,25 +8957,25 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table [class*="-row"].v-selected {
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	background-origin: border-box;
-	color: #ededf0;
+	color: #eceff0;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .apptheme .v-table [class*="-row"].v-selected  + .v-selected {
-	background: #424258;
+	background: #3c4e58;
 }
 
 .apptheme .v-table [class*="-row"].v-selected  + .v-selected td {
-	border-top-color: #424258;
+	border-top-color: #3c4e58;
 }
 
 .apptheme .v-table [class*="-row"].v-selected .v-table-cell-content {
 	border-color: transparent;
-	border-left-color: #3f3f48;
+	border-left-color: #394247;
 }
 
 .apptheme .v-table [class*="-row"].v-selected .v-table-cell-content:first-child {
@@ -8975,10 +8984,10 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-table-header-cell-asc .v-table-sort-indicator, .apptheme .v-table-header-cell-desc .v-table-sort-indicator {
 	background: transparent;
-	width: 19px;
-	height: 37px;
-	line-height: 37px;
-	margin-left: -19px;
+	width: 15px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: -15px;
 }
 
 .apptheme .v-table-header-cell-asc .v-table-sort-indicator:before, .apptheme .v-table-header-cell-desc .v-table-sort-indicator:before {
@@ -9002,7 +9011,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-focus {
-	outline: 1px solid #4b4b65;
+	outline: 1px solid #455A64;
 	outline-offset: -1px;
 }
 
@@ -9014,29 +9023,29 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 	opacity: 0.9;
 	filter: alpha(opacity=90) ;
-	margin-top: -19px;
+	margin-top: -15px;
 	z-index: 30000;
 	line-height: 1;
 }
 
 .apptheme .v-table-focus-slot-right {
-	border-right: 3px solid #4b4b65;
+	border-right: 3px solid #455A64;
 	right: -2px;
-	margin-left: -11px !important;
+	margin-left: -10px !important;
 }
 
 .apptheme .v-table-focus-slot-left {
 	float: left;
-	border-left: 3px solid #4b4b65;
+	border-left: 3px solid #455A64;
 	left: -1px;
 	right: auto;
 	margin-left: 0 !important;
-	margin-right: -11px;
+	margin-right: -10px;
 }
 
 .apptheme .v-table-column-selector {
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -9055,9 +9064,9 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: 2;
 	top: 0;
 	right: 0;
-	width: 19px;
-	height: 19px;
-	line-height: 19px;
+	width: 15px;
+	height: 15px;
+	line-height: 15px;
 	padding: 0;
 	border-top-width: 0;
 	border-right-width: 0;
@@ -9084,9 +9093,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-column-selector:focus:after {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-table-column-selector:active:after {
@@ -9124,7 +9133,7 @@ div.v-layout.v-horizontal.v-widget {
 	content: "\f00c";
 	font-family: ThemeIcons;
 	font-size: 0.9em;
-	margin-right: 6px;
+	margin-right: 5px;
 }
 
 .apptheme .v-on div, .apptheme .v-off div {
@@ -9172,9 +9181,9 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 	top: 50%;
 	width: 100%;
-	height: 37px;
-	line-height: 37px;
-	margin: -19px 0 0 !important;
+	height: 30px;
+	line-height: 30px;
+	margin: -15px 0 0 !important;
 	text-align: center;
 }
 
@@ -9183,9 +9192,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-drag .v-table-body {
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	border-color: #4b4b65;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	border-color: #455A64;
 }
 
 .apptheme .v-table-drag .v-table-body .v-table-focus {
@@ -9193,13 +9202,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-row-drag-middle .v-table-cell-content {
-	background-color: #dbdbe0;
-	color: #3b3b41;
+	background-color: #d9dee0;
+	color: #3a3f42;
 }
 
 .apptheme .v-table-row-drag-bottom td.v-table-cell-content {
-	border-bottom: 2px solid #4b4b65;
-	height: 35px;
+	border-bottom: 2px solid #455A64;
+	height: 28px;
 }
 
 .apptheme .v-table-row-drag-bottom .v-table-cell-wrapper {
@@ -9207,8 +9216,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-row-drag-top td.v-table-cell-content {
-	border-top: 2px solid #4b4b65;
-	height: 36px;
+	border-top: 2px solid #455A64;
+	height: 29px;
 }
 
 .apptheme .v-table-row-drag-top .v-table-cell-wrapper {
@@ -9225,7 +9234,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-no-vertical-lines.v-treetable .v-table-cell-content {
-	padding-left: 13px;
+	padding-left: 11px;
 }
 
 .apptheme .v-table-no-horizontal-lines .v-table-cell-content {
@@ -9234,7 +9243,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-no-horizontal-lines .v-table-row-drag-top .v-table-cell-content, .apptheme .v-table-no-horizontal-lines .v-table-row-drag-bottom .v-table-cell-content {
-	height: 36px;
+	height: 29px;
 }
 
 .apptheme .v-table-no-header .v-table-header-wrap {
@@ -9258,14 +9267,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-compact .v-table-footer-container, .apptheme .v-table-small .v-table-footer-container {
-	padding: 8px 7px 9px;
+	padding: 5px 6px 6px;
 }
 
 .apptheme .v-table-compact .v-table-caption-container, .apptheme .v-table-compact .v-table-header-drag, .apptheme .v-table-small .v-table-caption-container, .apptheme .v-table-small .v-table-header-drag {
-	padding-top: 9px;
-	padding-bottom: 8px;
-	padding-left: 6px;
-	padding-right: 6px;
+	padding-top: 6px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .apptheme .v-table-compact .v-table-caption-container-align-right, .apptheme .v-table-small .v-table-caption-container-align-right {
@@ -9273,23 +9282,23 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-compact .v-table-resizer, .apptheme .v-table-small .v-table-resizer {
-	height: 31px;
+	height: 26px;
 }
 
 .apptheme .v-table-compact .v-table-cell-content, .apptheme .v-table-small .v-table-cell-content {
-	height: 31px;
+	height: 26px;
 }
 
 .apptheme .v-table-compact .v-table-cell-wrapper, .apptheme .v-table-small .v-table-cell-wrapper {
-	padding-left: 6px;
-	padding-right: 6px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .apptheme .v-table-compact .v-table-cell-wrapper  > .v-widget, .apptheme .v-table-small .v-table-cell-wrapper  > .v-widget {
-	margin: 2px -3px;
+	margin: 1px -3px;
 }
 
-.apptheme .v-table-compact .v-table-cell-wrapper  > .v-widget.v-label, .apptheme .v-table-compact .v-table-cell-wrapper  > .apptheme .app-shell .v-widget.v-caption-logo, .apptheme .v-table-compact .v-table-cell-wrapper  > .v-widget.v-checkbox, .apptheme .v-table-compact .v-table-cell-wrapper  > .v-widget.v-select-optiongroup, .apptheme .v-table-small .v-table-cell-wrapper  > .v-widget.v-label, .apptheme .v-table-small .v-table-cell-wrapper  > .apptheme .app-shell .v-widget.v-caption-logo, .apptheme .v-table-small .v-table-cell-wrapper  > .v-widget.v-checkbox, .apptheme .v-table-small .v-table-cell-wrapper  > .v-widget.v-select-optiongroup {
+.apptheme .v-table-compact .v-table-cell-wrapper  > .v-widget.v-label, .apptheme .v-table-compact .v-table-cell-wrapper  > .v-widget.v-checkbox, .apptheme .v-table-compact .v-table-cell-wrapper  > .v-widget.v-select-optiongroup, .apptheme .v-table-small .v-table-cell-wrapper  > .v-widget.v-label, .apptheme .v-table-small .v-table-cell-wrapper  > .v-widget.v-checkbox, .apptheme .v-table-small .v-table-cell-wrapper  > .v-widget.v-select-optiongroup {
 	margin: 0;
 }
 
@@ -9299,12 +9308,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-compact .v-table-header-cell-asc .v-table-sort-indicator, .apptheme .v-table-compact .v-table-header-cell-desc .v-table-sort-indicator, .apptheme .v-table-small .v-table-header-cell-asc .v-table-sort-indicator, .apptheme .v-table-small .v-table-header-cell-desc .v-table-sort-indicator {
-	height: 31px;
-	line-height: 31px;
+	height: 26px;
+	line-height: 26px;
 }
 
 .apptheme .v-table-compact .v-table-header-drag, .apptheme .v-table-small .v-table-header-drag {
-	margin-top: -16px;
+	margin-top: -13px;
 }
 
 .apptheme .v-table-compact.v-treetable .v-table-cell-wrapper, .apptheme .v-table-small.v-treetable .v-table-cell-wrapper {
@@ -9314,21 +9323,21 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-table-compact.v-treetable .v-table-cell-content, .apptheme .v-table-small.v-treetable .v-table-cell-content {
-	padding-left: 6px;
-	padding-right: 6px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .apptheme .v-table-compact.v-treetable .v-table-cell-content:first-child, .apptheme .v-table-small.v-treetable .v-table-cell-content:first-child {
-	padding-left: 7px;
+	padding-left: 6px;
 }
 
 .apptheme .v-table-compact.v-treetable .v-table-footer-container, .apptheme .v-table-small.v-treetable .v-table-footer-container {
-	padding-left: 6px;
-	padding-right: 6px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .apptheme .v-table-compact .v-table-row-drag-top .v-table-cell-content, .apptheme .v-table-compact .v-table-row-drag-bottom .v-table-cell-content, .apptheme .v-table-small .v-table-row-drag-top .v-table-cell-content, .apptheme .v-table-small .v-table-row-drag-bottom .v-table-cell-content {
-	height: 30px;
+	height: 25px;
 }
 
 .apptheme .v-table-small {
@@ -9346,7 +9355,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-treetable [class*="caption-container"], .apptheme .v-treetable [class*="footer-container"] {
-	min-height: 14px;
+	min-height: 15px;
 }
 
 .apptheme .v-treetable [class*="cell-wrapper"] {
@@ -9354,31 +9363,31 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-treetable [class*="caption-container"] {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .apptheme .v-treetable [class*="caption-container-align-right"] {
-	padding-left: 20px;
+	padding-left: 17px;
 }
 
 .apptheme .v-treetable [class*="footer-container"] {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-treetable [class*="cell-content"] {
-	padding-left: 12px;
-	padding-right: 12px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .apptheme .v-treetable [class*="cell-content"]:first-child {
-	padding-left: 13px;
+	padding-left: 11px;
 }
 
 .apptheme .v-treetable-treespacer {
 	display: inline-block;
 	position: absolute;
-	width: 19px !important;
-	margin-left: -25px;
+	width: 15px !important;
+	margin-left: -20px;
 	text-align: center;
 	cursor: pointer;
 }
@@ -9398,13 +9407,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter:after {
-	left: -6px;
-	right: -6px;
+	left: -5px;
+	right: -5px;
 }
 
 .apptheme .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before {
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -9440,9 +9449,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:focus:after {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-splitpanel-horizontal  > div > .v-splitpanel-hsplitter div:before:active:after {
@@ -9458,13 +9467,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter:after {
-	top: -6px;
-	bottom: -6px;
+	top: -5px;
+	bottom: -5px;
 }
 
 .apptheme .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before {
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -9497,9 +9506,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:focus:after {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-splitpanel-vertical  > div > .v-splitpanel-vsplitter div:before:active:after {
@@ -9507,7 +9516,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter {
-	width: 12px;
+	width: 10px;
 }
 
 .apptheme .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter:after {
@@ -9516,8 +9525,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before {
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -9553,9 +9562,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:focus:after {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-splitpanel-horizontal.large  > div > .v-splitpanel-hsplitter div:before:active:after {
@@ -9571,17 +9580,17 @@ div.v-layout.v-horizontal.v-widget {
 	top: 50%;
 	left: 50%;
 	width: 0;
-	height: 37px;
+	height: 30px;
 	margin-left: -1px;
-	margin-top: -19px;
+	margin-top: -15px;
 }
 
 .apptheme .v-splitpanel-horizontal.large  > div > .v-splitpanel-second-container {
-	margin-left: 12px;
+	margin-left: 10px;
 }
 
 .apptheme .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter {
-	height: 12px;
+	height: 10px;
 }
 
 .apptheme .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter:after {
@@ -9590,8 +9599,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before {
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -9624,9 +9633,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:focus:after {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-splitpanel-vertical.large  > div > .v-splitpanel-vsplitter div:before:active:after {
@@ -9641,31 +9650,31 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 37px;
+	width: 30px;
 	height: 0;
-	margin-left: -19px;
+	margin-left: -15px;
 	margin-top: -1px;
 }
 
 .apptheme .v-progressbar-wrapper {
 	border-radius: 4px;
-	height: 9px;
+	height: 8px;
 	background-color: #d4d4d4;
 	background-image: -webkit-linear-gradient(bottom, #d7d7d7 2%, #c7c7c7 98%);
 	background-image: linear-gradient(to top,#d7d7d7 2%, #c7c7c7 98%);
 	box-sizing: border-box;
-	min-width: 74px;
+	min-width: 60px;
 }
 
 .apptheme .v-progressbar-indicator {
 	border-radius: 4px;
 	height: inherit;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	
 	
-	border: 1px solid #3b3b4f;
+	border: 1px solid #36474f;
 	box-sizing: border-box;
 	max-width: 100%;
 	min-width: 8px;
@@ -9688,15 +9697,15 @@ div.v-layout.v-horizontal.v-widget {
 	display: inline-block;
 	border-radius: 4px;
 	height: inherit;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	
 	
-	border: 1px solid #3b3b4f;
+	border: 1px solid #36474f;
 	box-sizing: border-box;
 	max-width: 100%;
-	width: 9px;
+	width: 8px;
 	vertical-align: top;
 }
 
@@ -9704,9 +9713,9 @@ div.v-layout.v-horizontal.v-widget {
 	height: 24px !important;
 	width: 24px !important;
 	box-sizing: border-box;
-	border: 2px solid rgba(75, 75, 101, 0.2);
-	border-top-color: #4b4b65;
-	border-right-color: #4b4b65;
+	border: 2px solid rgba(69, 90, 100, 0.2);
+	border-top-color: #455A64;
+	border-right-color: #455A64;
 	border-radius: 100%;
 	-webkit-animation: v-rotate-360 500ms infinite linear;
 	-moz-animation: v-rotate-360 500ms infinite linear;
@@ -9737,14 +9746,14 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-slider-base {
 	border-radius: 4px;
-	height: 9px;
+	height: 8px;
 	background-color: #d4d4d4;
 	background-image: -webkit-linear-gradient(bottom, #d7d7d7 2%, #c7c7c7 98%);
 	background-image: linear-gradient(to top,#d7d7d7 2%, #c7c7c7 98%);
 	box-sizing: border-box;
-	min-width: 74px;
-	height: 6px;
-	margin: 16px 11px;
+	min-width: 60px;
+	height: 4px;
+	margin: 13px 9px;
 	white-space: nowrap;
 	overflow: hidden;
 	
@@ -9753,23 +9762,23 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-slider-base:before {
 	content: "";
 	position: absolute;
-	top: 16px;
-	bottom: 16px;
-	left: 11px;
+	top: 13px;
+	bottom: 13px;
+	left: 9px;
 	width: 8px;
 	border-radius: 4px;
-	border-left: 1px solid #3b3b4f;
+	border-left: 1px solid #36474f;
 }
 
 .apptheme .v-slider-base:after {
 	border-radius: 4px;
 	height: inherit;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	
 	
-	border: 1px solid #3b3b4f;
+	border: 1px solid #36474f;
 	box-sizing: border-box;
 	max-width: 100%;
 	content: "";
@@ -9784,15 +9793,15 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-slider-handle {
-	margin-top: -16px;
+	margin-top: -13px;
 	width: 0.1px;
 	display: inline-block;
 	vertical-align: top;
 }
 
 .apptheme .v-slider-handle:before {
-	height: 37px;
-	padding: 0 16px;
+	height: 30px;
+	padding: 0 13px;
 	color: #191919;
 	font-weight: 400;
 	
@@ -9822,9 +9831,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-slider-handle:before:focus:after {
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-slider-handle:before:active:after {
@@ -9833,9 +9842,9 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-slider-handle:after {
 	border: 1px solid #c5c5c5;
-	border-color: #4b4b65;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	border-color: #455A64;
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 	opacity: 0;
 	-webkit-transition: opacity 200ms;
 	-moz-transition: opacity 200ms;
@@ -9846,13 +9855,13 @@ div.v-layout.v-horizontal.v-widget {
 	content: "";
 	box-sizing: border-box;
 	padding: 0;
-	width: 22px;
-	height: 22px;
-	border-radius: 11px;
+	width: 18px;
+	height: 18px;
+	border-radius: 9px;
 	position: absolute;
 	z-index: 1;
-	margin-top: 8px;
-	margin-left: -11px;
+	margin-top: 6px;
+	margin-left: -9px;
 }
 
 .apptheme .v-slider-feedback {
@@ -9860,7 +9869,7 @@ div.v-layout.v-horizontal.v-widget {
 	-webkit-box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 	color: white;
-	padding: 5px 9px;
+	padding: 4px 8px;
 	border-radius: 3px;
 	max-width: 35em;
 	overflow: hidden !important;
@@ -9868,51 +9877,51 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-slider-vertical {
-	padding: 11px 0;
-	height: 96px;
+	padding: 9px 0;
+	height: 78px;
 }
 
 .apptheme .v-slider-vertical .v-slider-base {
 	background-color: #d4d4d4;
 	background-image: -webkit-linear-gradient(right, #d7d7d7 2%, #c7c7c7 98%);
 	background-image: linear-gradient(to left,#d7d7d7 2%, #c7c7c7 98%);
-	width: 6px;
+	width: 4px;
 	height: 100% !important;
 	min-width: 0;
-	margin: 0 16px;
+	margin: 0 13px;
 }
 
 .apptheme .v-slider-vertical .v-slider-base:before {
 	top: auto;
-	bottom: 11px;
-	left: 16px;
-	right: 16px;
+	bottom: 9px;
+	left: 13px;
+	right: 13px;
 	width: auto;
 	height: 8px;
 	border-left: none;
-	border-bottom: 1px solid #3b3b4f;
+	border-bottom: 1px solid #36474f;
 }
 
 .apptheme .v-slider-vertical .v-slider-base:after {
 	height: 101%;
 	margin-left: 0;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(left, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to right,#51516d 2%, #424258 98%);
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(left, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to right,#4a616c 2%, #3c4e58 98%);
 }
 
 .apptheme .v-slider-vertical .v-slider-handle {
 	width: 0;
 	height: 0.1px;
-	width: 37px;
+	width: 30px;
 	display: block;
 }
 
 .apptheme .v-slider-vertical .v-slider-handle:before, .apptheme .v-slider-vertical .v-slider-handle:after {
-	width: 22px;
-	height: 22px;
-	margin-top: -11px;
-	margin-left: -8px;
+	width: 18px;
+	height: 18px;
+	margin-top: -9px;
+	margin-left: -7px;
 }
 
 .apptheme .v-slider-no-indicator .v-slider-base:before, .apptheme .v-slider-no-indicator .v-slider-base:after {
@@ -9956,12 +9965,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-tabitemcell .v-caption {
-	margin-left: 19px;
-	padding: 0 4px;
+	margin-left: 15px;
+	padding: 0 3px;
 	box-sizing: border-box;
 	cursor: pointer;
 	text-align: center;
-	line-height: 37px;
+	line-height: 30px;
 	font-size: 15px;
 	font-weight: 300;
 	color: #696969;
@@ -9980,11 +9989,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-tabitemcell .v-caption .v-icon + .v-captiontext {
-	margin-left: 9px;
+	margin-left: 8px;
 }
 
 .apptheme .v-tabsheet-tabitemcell .v-caption:hover {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-tabsheet-tabitemcell .v-caption.v-disabled {
@@ -10003,20 +10012,20 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-tabitemcell:focus .v-caption {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-tabsheet-tabitemcell .v-tabsheet-tabitem-selected .v-caption.v-caption {
-	border-bottom-color: #4b4b65;
-	color: #4b4b65;
+	border-bottom-color: #455A64;
+	color: #455A64;
 }
 
 .apptheme .v-tabsheet-tabitemcell .v-caption-closable {
-	padding-right: 22px;
+	padding-right: 21px;
 }
 
 .apptheme .v-tabsheet-tabitemcell.icons-on-top .v-caption-closable {
-	padding-right: 4px;
+	padding-right: 3px;
 }
 
 .apptheme .v-tabsheet-tabitemcell .v-tabsheet-caption-close {
@@ -10034,12 +10043,12 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-tabsheet-tabitemcell .v-tabsheet-caption-close:hover {
 	background: rgba(0, 0, 0, 0.03);
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-tabsheet-tabitemcell .v-tabsheet-caption-close:active {
-	background: #4b4b65;
-	color: #ccccd5;
+	background: #455A64;
+	color: #cad1d5;
 }
 
 .apptheme .v-tabsheet-scroller {
@@ -10047,7 +10056,7 @@ div.v-layout.v-horizontal.v-widget {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	padding-left: 19px;
+	padding-left: 15px;
 	background-color: transparent;
 	background-image: -webkit-linear-gradient(right, #fafafa 70%, rgba(250, 250, 250, 0) 100%);
 	background-image: linear-gradient(to left,#fafafa 70%, rgba(250, 250, 250, 0) 100%);
@@ -10079,7 +10088,7 @@ div.v-layout.v-horizontal.v-widget {
 	color: inherit;
 	height: 100%;
 	margin: 0;
-	padding: 0 9px;
+	padding: 0 8px;
 	outline: none;
 	cursor: pointer;
 	pointer-events: auto;
@@ -10090,13 +10099,13 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-tabsheet-scroller button:hover {
 	opacity: 1;
 	filter: none ;
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-tabsheet-scroller button:active {
 	opacity: 0.7;
 	filter: alpha(opacity=70) ;
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-tabsheet-scroller button::-moz-focus-inner {
@@ -10105,7 +10114,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-scroller [class*="Next"] {
-	padding-left: 5px;
+	padding-left: 4px;
 }
 
 .apptheme .v-tabsheet-scroller [class*="Next"]:before {
@@ -10114,7 +10123,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-scroller [class*="Prev"] {
-	padding-right: 5px;
+	padding-right: 4px;
 }
 
 .apptheme .v-tabsheet-scroller [class*="Prev"]:before {
@@ -10136,12 +10145,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-deco {
-	height: 20px !important;
-	width: 20px !important;
+	height: 16px !important;
+	width: 16px !important;
 	box-sizing: border-box;
-	border: 2px solid rgba(75, 75, 101, 0.2);
-	border-top-color: #4b4b65;
-	border-right-color: #4b4b65;
+	border: 2px solid rgba(69, 90, 100, 0.2);
+	border-top-color: #455A64;
+	border-right-color: #455A64;
 	border-radius: 100%;
 	-webkit-animation: v-rotate-360 500ms infinite linear;
 	-moz-animation: v-rotate-360 500ms infinite linear;
@@ -10151,9 +10160,9 @@ div.v-layout.v-horizontal.v-widget {
 	position: absolute;
 	z-index: 1;
 	bottom: 50%;
-	margin-bottom: -29px;
+	margin-bottom: -23px;
 	left: 50%;
-	margin-left: -10px;
+	margin-left: -8px;
 }
 
 .apptheme .v-tabsheet-loading .v-tabsheet-deco {
@@ -10179,11 +10188,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-caption {
-	margin-left: 4px;
-	padding: 0 12px;
+	margin-left: 3px;
+	padding: 0 10px;
 	background-color: #fafafa;
 	border: 1px solid transparent;
-	line-height: 36px;
+	line-height: 29px;
 	border-radius: 4px 4px 0 0;
 	font-weight: 400;
 	-webkit-transition: background-color 160ms;
@@ -10201,7 +10210,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-caption-closable {
-	padding-right: 30px;
+	padding-right: 28px;
 }
 
 .apptheme .v-tabsheet-framed  > .v-tabsheet-tabcontainer .v-tabsheet-caption-close {
@@ -10238,11 +10247,11 @@ div.v-layout.v-horizontal.v-widget {
 	border: 1px solid #dfdfdf;
 	border-bottom: none;
 	background: #fafafa;
-	padding-top: 6px;
+	padding-top: 5px;
 }
 
 .apptheme .v-tabsheet-framed.icons-on-top  > .v-tabsheet-tabcontainer .v-tabsheet-tabitem-selected .v-caption {
-	padding-bottom: 7px;
+	padding-bottom: 6px;
 }
 
 .apptheme .v-tabsheet-centered-tabs  > .v-tabsheet-tabcontainer {
@@ -10254,12 +10263,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-padded-tabbar  > .v-tabsheet-tabcontainer .v-tabsheet-tabs {
-	padding: 0 9px;
+	padding: 0 8px;
 }
 
 .apptheme .v-tabsheet-icons-on-top  > .v-tabsheet-tabcontainer .v-caption {
-	padding-top: 6px;
-	padding-bottom: 6px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	line-height: 1.2;
 }
 
@@ -10272,7 +10281,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-tabsheet-icons-on-top  > .v-tabsheet-tabcontainer .v-caption-closable {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-tabsheet-icons-on-top  > .v-tabsheet-tabcontainer .v-tabsheet-caption-close {
@@ -10297,11 +10306,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-colorpicker-popup .v-tabsheet-tabs {
-	padding: 0 9px;
+	padding: 0 8px;
 }
 
 .apptheme .v-colorpicker-popup [class$="sliders"] {
-	padding: 12px;
+	padding: 10px;
 }
 
 .apptheme .v-colorpicker-popup [class$="sliders"] .v-widget {
@@ -10372,7 +10381,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-colorpicker-popup .v-horizontallayout {
 	height: auto !important;
-	padding: 9px 0;
+	padding: 8px 0;
 	background-color: #fafafa;
 	border-top: 1px solid #ededed;
 }
@@ -10388,7 +10397,7 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-colorpicker-preview {
 	width: 100% !important;
 	height: auto !important;
-	padding: 9px;
+	padding: 8px;
 }
 
 .apptheme .v-colorpicker-preview-textfield {
@@ -10403,17 +10412,17 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-colorpicker-button-color {
 	position: absolute;
-	top: 6px;
-	right: 6px;
-	bottom: 6px;
-	left: 6px;
+	top: 5px;
+	right: 5px;
+	bottom: 5px;
+	left: 5px;
 	border-radius: 3px;
 	border: 1px solid rgba(0, 0, 0, 0.5);
-	max-width: 23px;
+	max-width: 18px;
 }
 
 .apptheme .v-colorpicker-button-color  + .v-button-caption:not(:empty) {
-	margin-left: 19px;
+	margin-left: 15px;
 }
 
 .apptheme .v-panel {
@@ -10428,8 +10437,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-panel-caption {
 	box-sizing: border-box;
-	padding: 0 12px;
-	line-height: 36px;
+	padding: 0 10px;
+	line-height: 29px;
 	border-bottom: 1px solid #d5d5d5;
 	background-color: #fafafa;
 	background-image: -webkit-linear-gradient(top, #fafafa 2%, #f6f6f6 98%);
@@ -10450,19 +10459,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-panel-content  > .v-margin-top {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme .v-panel-content  > .v-margin-right {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-panel-content  > .v-margin-bottom {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .apptheme .v-panel-content  > .v-margin-left {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .apptheme .v-panel-borderless {
@@ -10480,7 +10489,7 @@ div.v-layout.v-horizontal.v-widget {
 	box-shadow: none;
 	color: inherit;
 	padding: 0;
-	margin: 0 12px;
+	margin: 0 10px;
 	border-bottom: none;
 }
 
@@ -10535,8 +10544,8 @@ div.v-layout.v-horizontal.v-widget {
 	vertical-align: middle;
 }
 
-.apptheme .v-panel-caption.v-horizontallayout .v-label, .apptheme .v-panel-caption.v-horizontallayout  .v-caption-logo {
-	line-height: 37px;
+.apptheme .v-panel-caption.v-horizontallayout .v-label {
+	line-height: 30px;
 }
 
 .apptheme .v-accordion {
@@ -10589,8 +10598,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-accordion-item-caption  > .v-caption {
 	box-sizing: border-box;
-	padding: 0 12px;
-	line-height: 36px;
+	padding: 0 10px;
+	line-height: 29px;
 	border-bottom: 1px solid #d5d5d5;
 	background-color: #fafafa;
 	background-image: -webkit-linear-gradient(top, #fafafa 2%, #f6f6f6 98%);
@@ -10636,19 +10645,19 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-accordion-item-content  > .v-margin-top {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme .v-accordion-item-content  > .v-margin-right {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-accordion-item-content  > .v-margin-bottom {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .apptheme .v-accordion-item-content  > .v-margin-left {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .apptheme .v-accordion-borderless {
@@ -10676,17 +10685,17 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-twincol select:focus {
 	outline: none;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-select-twincol .v-textfield, .apptheme .v-select-twincol .v-nativebutton {
 	width: auto !important;
-	margin-top: 9px;
+	margin-top: 8px;
 }
 
 .apptheme .v-select-twincol .v-nativebutton {
-	margin-left: 9px;
+	margin-left: 8px;
 }
 
 .apptheme .v-select-twincol-caption-left, .apptheme .v-select-twincol-caption-right {
@@ -10711,9 +10720,9 @@ div.v-layout.v-horizontal.v-widget {
 	text-align: left;
 	white-space: normal;
 	position: absolute;
-	left: 9px;
-	right: 9px;
-	top: 36px;
+	left: 8px;
+	right: 8px;
+	top: 29px;
 	padding: 0;
 	text-align: center;
 }
@@ -10764,8 +10773,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select select:focus {
 	outline: none;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-select-select {
@@ -10774,12 +10783,12 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-select  + .v-textfield {
 	width: auto !important;
-	margin-top: 9px;
+	margin-top: 8px;
 }
 
 .apptheme .v-select-select  + .v-textfield  + .v-nativebutton {
-	margin-top: 9px;
-	margin-left: 9px;
+	margin-top: 8px;
+	margin-left: 8px;
 }
 
 .apptheme .v-select-error .v-select-select {
@@ -10791,7 +10800,7 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-calendar-header-day {
 	font-weight: 400;
 	text-align: center;
-	padding: 7px 0;
+	padding: 6px 0;
 }
 
 .apptheme .v-calendar-header-week .v-calendar-back, .apptheme .v-calendar-header-week .v-calendar-next {
@@ -10871,43 +10880,43 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-calendar-bottom-spacer {
 	font-size: 0.8em;
-	padding: 0 5px;
+	padding: 0 4px;
 	cursor: pointer;
 }
 
 .apptheme .v-calendar-bottom-spacer:hover {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-calendar-day-number {
-	line-height: 25px;
+	line-height: 20px;
 	font-size: 16px;
 	text-align: right;
-	margin: 0 5px;
+	margin: 0 4px;
 	white-space: nowrap;
 	border-top: 1px solid #f2f2f2;
 	cursor: pointer;
 }
 
 .apptheme .v-calendar-day-number:hover {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-calendar-month-day-today {
-	background: #f1f1f2;
+	background: #f0f2f2;
 }
 
 .apptheme .v-calendar-month-day-today .v-calendar-day-number {
 	font-weight: 400;
-	color: #4b4b65;
-	border-top: 2px solid #4b4b65;
-	line-height: 24px;
+	color: #455A64;
+	border-top: 2px solid #455A64;
+	line-height: 19px;
 	margin: 0;
-	padding: 0 5px;
+	padding: 0 4px;
 }
 
 .apptheme .v-calendar-month-day-selected {
-	background-color: #e8e8eb;
+	background-color: #e7eaeb;
 }
 
 .apptheme .v-calendar-month-day-dragemphasis {
@@ -10946,7 +10955,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-calendar-time {
 	text-align: right;
-	padding-right: 9px;
+	padding-right: 8px;
 	margin-top: -6px;
 	padding-bottom: 6px;
 }
@@ -10973,11 +10982,11 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-calendar .v-datecellslot, .apptheme .v-calendar .v-datecellslot-even {
-	margin-right: 5px;
+	margin-right: 4px;
 }
 
 .apptheme .v-calendar-current-time {
-	background: #4b4b65;
+	background: #455A64;
 	line-height: 1px;
 	pointer-events: none;
 	opacity: 0.5;
@@ -10986,7 +10995,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-calendar-current-time:before {
 	content: "\2022";
-	color: #4b4b65;
+	color: #455A64;
 	font-size: 22px;
 	margin-left: -0.07em;
 }
@@ -11002,7 +11011,7 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	bottom: -1px;
 	left: 0;
-	background: #4b4b65;
+	background: #455A64;
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 	border-radius: 4px 4px 0 0;
@@ -11029,7 +11038,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-calendar-event-month {
-	padding: 0 5px;
+	padding: 0 4px;
 	box-sizing: border-box;
 	margin-bottom: 3px;
 	white-space: nowrap;
@@ -11052,7 +11061,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-calendar-event-all-day {
-	padding: 0 5px;
+	padding: 0 4px;
 	box-sizing: border-box;
 	height: 19px;
 	line-height: 19px;
@@ -11078,23 +11087,23 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .v-calendar-event-start {
 	border-top-left-radius: 4px;
 	border-bottom-left-radius: 4px;
-	margin-left: 5px;
+	margin-left: 4px;
 }
 
 .apptheme .v-calendar-event-end {
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 4px;
-	margin-right: 5px;
+	margin-right: 4px;
 }
 
 .apptheme .v-calendar-event-caption {
 	font-weight: 500;
 	line-height: 1.2;
-	padding: 5px 0;
+	padding: 4px 0;
 	position: absolute;
 	overflow: hidden;
-	right: 9px;
-	left: 5px;
+	right: 8px;
+	left: 4px;
 	bottom: 0;
 	top: 0;
 }
@@ -11113,7 +11122,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 5px;
 	border: 1px solid #fafafa;
 	padding-top: 3px;
-	margin-right: 5px;
+	margin-right: 4px;
 }
 
 .apptheme .v-calendar-event-month:before {
@@ -11215,14 +11224,14 @@ div.v-layout.v-horizontal.v-widget {
 	cursor: default;
 }
 
-.apptheme .v-label, .apptheme .app-shell .v-caption-logo {
+.apptheme .v-label {
 	-webkit-user-select: text;
 	-moz-user-select: text;
 	-ms-user-select: text;
 	user-select: text;
 }
 
-.apptheme .v-label.v-disabled, .apptheme .apptheme .app-shell .v-disabled.v-caption-logo {
+.apptheme .v-label.v-disabled {
 	opacity: 0.5;
 	filter: alpha(opacity=50) ;
 }
@@ -11261,7 +11270,7 @@ div.v-layout.v-horizontal.v-widget {
 	letter-spacing: 0;
 }
 
-.apptheme h4, .apptheme .v-label-h4, .apptheme vaadin-board text.highcharts-title {
+.apptheme h4, .apptheme .v-label-h4, .apptheme text.highcharts-title {
 	line-height: 1.1;
 	font-weight: 500;
 	font-size: 14px;
@@ -11272,24 +11281,24 @@ div.v-layout.v-horizontal.v-widget {
 	margin-bottom: 0.8em;
 }
 
-.apptheme .v-csslayout  > h1:first-child, .apptheme .v-csslayout  > h2:first-child, .apptheme .v-csslayout  > h3:first-child, .apptheme .v-csslayout  > h4 > .v-label-h1:first-child, .apptheme .v-csslayout  > .v-label-h2:first-child, .apptheme .v-csslayout  > .v-label-h3:first-child, .apptheme .v-csslayout  > .v-label-h4:first-child, .apptheme .v-csslayout  > .apptheme vaadin-board text.highcharts-title:first-child {
+.apptheme .v-csslayout  > h1:first-child, .apptheme .v-csslayout  > h2:first-child, .apptheme .v-csslayout  > h3:first-child, .apptheme .v-csslayout  > h4 > .v-label-h1:first-child, .apptheme .v-csslayout  > .v-label-h2:first-child, .apptheme .v-csslayout  > .v-label-h3:first-child, .apptheme .v-csslayout  > .v-label-h4:first-child, .apptheme .v-csslayout  > .apptheme text.highcharts-title:first-child {
 	margin-top: 16px;
 }
 
-.apptheme .v-verticallayout > .v-slot:first-child h1, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h1, .apptheme .v-verticallayout > .v-slot:first-child h2, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h2, .apptheme .v-verticallayout > .v-slot:first-child h3, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h3, .apptheme .v-verticallayout > .v-slot:first-child h4, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h4, .apptheme .v-verticallayout > .v-slot:first-child  text.highcharts-title, .apptheme .v-verticallayout > div > .v-slot:first-child h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h1, .apptheme .v-verticallayout > div > .v-slot:first-child h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h2, .apptheme .v-verticallayout > div > .v-slot:first-child h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h3, .apptheme .v-verticallayout > div > .v-slot:first-child h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h4, .apptheme .v-verticallayout > div > .v-slot:first-child  text.highcharts-title {
+.apptheme .v-verticallayout > .v-slot:first-child h1, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h1, .apptheme .v-verticallayout > .v-slot:first-child h2, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h2, .apptheme .v-verticallayout > .v-slot:first-child h3, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h3, .apptheme .v-verticallayout > .v-slot:first-child h4, .apptheme .v-verticallayout > .v-slot:first-child .v-label-h4, .apptheme .v-verticallayout > .v-slot:first-child .apptheme text.highcharts-title, .apptheme .v-verticallayout > div > .v-slot:first-child h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h1, .apptheme .v-verticallayout > div > .v-slot:first-child h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h2, .apptheme .v-verticallayout > div > .v-slot:first-child h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h3, .apptheme .v-verticallayout > div > .v-slot:first-child h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-label-h4, .apptheme .v-verticallayout > div > .v-slot:first-child .apptheme text.highcharts-title {
 	margin-top: 16px;
 }
 
-.apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h1, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h2, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h3, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h4, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h4, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell  text.highcharts-title, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell  text.highcharts-title {
+.apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h1, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h2, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h3, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell h4, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .v-label-h4, .apptheme .v-verticallayout > .v-slot:first-child .v-formlayout-contentcell .apptheme text.highcharts-title, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h1, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h2, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h3, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .v-label-h4, .apptheme .v-verticallayout > div > .v-slot:first-child .v-formlayout-contentcell .apptheme text.highcharts-title {
 	margin-top: -0.5em;
 }
 
-.apptheme h1.no-margin, .apptheme .v-label-h1.no-margin, .apptheme h2.no-margin, .apptheme .v-label-h2.no-margin, .apptheme h3.no-margin, .apptheme .v-label-h3.no-margin, .apptheme h4.no-margin, .apptheme .v-label-h4.no-margin, .apptheme .apptheme vaadin-board text.no-margin.highcharts-title {
+.apptheme h1.no-margin, .apptheme .v-label-h1.no-margin, .apptheme h2.no-margin, .apptheme .v-label-h2.no-margin, .apptheme h3.no-margin, .apptheme .v-label-h3.no-margin, .apptheme h4.no-margin, .apptheme .v-label-h4.no-margin, .apptheme .apptheme text.no-margin.highcharts-title {
 	margin: 0 !important;
 }
 
 .apptheme .v-label-colored {
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-label-large {
@@ -11304,7 +11313,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-size: 12px;
 }
 
-.apptheme .v-label-huge, .apptheme vaadin-board .board-box-label h1 {
+.apptheme .v-label-huge, .apptheme .board-box-label h1 {
 	font-size: 26px;
 }
 
@@ -11329,9 +11338,9 @@ div.v-layout.v-horizontal.v-widget {
 	height: 24px !important;
 	width: 24px !important;
 	box-sizing: border-box;
-	border: 2px solid rgba(75, 75, 101, 0.2);
-	border-top-color: #4b4b65;
-	border-right-color: #4b4b65;
+	border: 2px solid rgba(69, 90, 100, 0.2);
+	border-top-color: #455A64;
+	border-right-color: #455A64;
 	border-radius: 100%;
 	-webkit-animation: v-rotate-360 500ms infinite linear;
 	-moz-animation: v-rotate-360 500ms infinite linear;
@@ -11344,7 +11353,7 @@ div.v-layout.v-horizontal.v-widget {
 	color: #474747;
 	border: 2px solid #2c9720;
 	border-radius: 4px;
-	padding: 7px 19px 7px 37px;
+	padding: 6px 15px 6px 30px;
 	font-weight: 400;
 	font-size: 15px;
 }
@@ -11353,7 +11362,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-family: ThemeIcons;
 	content: "\f00c";
 	margin-right: 0.5em;
-	margin-left: -19px;
+	margin-left: -15px;
 	color: #2c9720;
 }
 
@@ -11383,7 +11392,7 @@ div.v-layout.v-horizontal.v-widget {
 	right: -1px;
 	bottom: -1px;
 	left: -1px;
-	border: 0 solid #4b4b65;
+	border: 0 solid #455A64;
 }
 
 .apptheme .v-ddwrapper-over-top:before {
@@ -11411,7 +11420,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 4px;
 	opacity: 0.3;
 	filter: alpha(opacity=30.0) ;
-	background: #9f9fb8;
+	background: #9aafb9;
 }
 
 .apptheme .no-vertical-drag-hints .v-ddwrapper-over-bottom:before, .apptheme .no-vertical-drag-hints.v-ddwrapper-over-bottom:before {
@@ -11423,7 +11432,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 4px;
 	opacity: 0.3;
 	filter: alpha(opacity=30.0) ;
-	background: #9f9fb8;
+	background: #9aafb9;
 }
 
 .apptheme .no-horizontal-drag-hints.v-ddwrapper-over-left:before, .apptheme .no-horizontal-drag-hints .v-ddwrapper-over-left:before {
@@ -11435,7 +11444,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 4px;
 	opacity: 0.3;
 	filter: alpha(opacity=30.0) ;
-	background: #9f9fb8;
+	background: #9aafb9;
 }
 
 .apptheme .no-horizontal-drag-hints.v-ddwrapper-over-right:before, .apptheme .no-horizontal-drag-hints .v-ddwrapper-over-right:before {
@@ -11447,7 +11456,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 4px;
 	opacity: 0.3;
 	filter: alpha(opacity=30.0) ;
-	background: #9f9fb8;
+	background: #9aafb9;
 }
 
 .apptheme .v-ddwrapper-over-middle:after, .apptheme .v-ddwrapper-over-center:after {
@@ -11455,7 +11464,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 4px;
 	opacity: 0.3;
 	filter: alpha(opacity=30.0) ;
-	background: #9f9fb8;
+	background: #9aafb9;
 }
 
 .apptheme .no-box-drag-hints.v-ddwrapper:after, .apptheme .no-box-drag-hints .v-ddwrapper:after {
@@ -11477,8 +11486,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select select:focus {
 	outline: none;
-	-webkit-box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
-	box-shadow: 0 0 0 2px rgba(75, 75, 101, 0.5);
+	-webkit-box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
+	box-shadow: 0 0 0 2px rgba(69, 90, 100, 0.5);
 }
 
 .apptheme .v-select-select {
@@ -11487,12 +11496,12 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-select-select  + .v-textfield {
 	width: auto !important;
-	margin-top: 9px;
+	margin-top: 8px;
 }
 
 .apptheme .v-select-select  + .v-textfield  + .v-nativebutton {
-	margin-top: 9px;
-	margin-left: 9px;
+	margin-top: 8px;
+	margin-left: 8px;
 }
 
 .apptheme .v-select-error .v-select-select {
@@ -11503,7 +11512,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-popupview {
 	cursor: pointer;
-	color: #4b4b65;
+	color: #455A64;
 	text-decoration: underline;
 	font-weight: inherit;
 	-webkit-transition: color 140ms;
@@ -11512,7 +11521,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-popupview:hover {
-	color: #616182;
+	color: #5a7582;
 }
 
 .apptheme .v-popupview.v-disabled {
@@ -11521,7 +11530,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-popupview-popup {
-	padding: 4px 4px;
+	padding: 3px 3px;
 	border-radius: 4px;
 	background-color: white;
 	color: #474747;
@@ -11546,29 +11555,29 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-popupview-popup .popupContent  > .v-margin-top {
-	padding-top: 12px;
+	padding-top: 10px;
 }
 
 .apptheme .v-popupview-popup .popupContent  > .v-margin-right {
-	padding-right: 12px;
+	padding-right: 10px;
 }
 
 .apptheme .v-popupview-popup .popupContent  > .v-margin-bottom {
-	padding-bottom: 12px;
+	padding-bottom: 10px;
 }
 
 .apptheme .v-popupview-popup .popupContent  > .v-margin-left {
-	padding-left: 12px;
+	padding-left: 10px;
 }
 
 .apptheme .v-popupview-loading {
-	margin: 12px 12px;
+	margin: 10px 10px;
 	height: 24px !important;
 	width: 24px !important;
 	box-sizing: border-box;
-	border: 2px solid rgba(75, 75, 101, 0.2);
-	border-top-color: #4b4b65;
-	border-right-color: #4b4b65;
+	border: 2px solid rgba(69, 90, 100, 0.2);
+	border-top-color: #455A64;
+	border-right-color: #455A64;
 	border-radius: 100%;
 	-webkit-animation: v-rotate-360 500ms infinite linear;
 	-moz-animation: v-rotate-360 500ms infinite linear;
@@ -11591,7 +11600,7 @@ div.v-layout.v-horizontal.v-widget {
 	
 	font-weight: 400;
 	line-height: normal;
-	height: 37px;
+	height: 30px;
 	border-radius: 4px;
 	padding: 0;
 	border: 1px solid #c5c5c5;
@@ -11622,8 +11631,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-richtextarea .gwt-ToggleButton, .apptheme .v-richtextarea .gwt-PushButton {
 	display: inline-block;
-	line-height: 37px;
-	width: 37px;
+	line-height: 30px;
+	width: 30px;
 	text-align: center;
 	outline: none;
 }
@@ -11720,11 +11729,11 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-richtextarea .gwt-RichTextToolbar-bottom {
 	font-size: 13px;
-	padding: 0 9px 9px 0;
+	padding: 0 8px 8px 0;
 }
 
 .apptheme .v-richtextarea .gwt-RichTextToolbar-bottom select {
-	margin: 9px 0 0 9px;
+	margin: 8px 0 0 8px;
 }
 
 .apptheme .v-richtextarea .gwt-RichTextArea {
@@ -11734,7 +11743,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-richtextarea-readonly {
-	padding: 5px 7px;
+	padding: 4px 5px;
 	background: transparent;
 }
 
@@ -11756,26 +11765,26 @@ div.v-layout.v-horizontal.v-widget {
 	z-index: -1;
 	position: absolute;
 	right: 0;
-	height: 37px;
+	height: 30px;
 	text-align: right;
 	border: none;
 	background: transparent;
 }
 
 .apptheme .v-Notification.v-position-top {
-	top: 12px;
+	top: 10px;
 }
 
 .apptheme .v-Notification.v-position-right {
-	right: 12px;
+	right: 10px;
 }
 
 .apptheme .v-Notification.v-position-bottom {
-	bottom: 12px;
+	bottom: 10px;
 }
 
 .apptheme .v-Notification.v-position-left {
-	left: 12px;
+	left: 10px;
 }
 
 .apptheme .v-Notification.v-position-assistive {
@@ -11824,11 +11833,11 @@ div.v-layout.v-horizontal.v-widget {
 	background: white;
 	-webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
 	box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
-	padding: 19px 22px;
+	padding: 15px 18px;
 }
 
 .apptheme .v-Notification .v-Notification-caption {
-	color: #4b4b65;
+	color: #455A64;
 	font-size: 19px;
 	line-height: 1;
 }
@@ -11873,7 +11882,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 0;
 	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
-	padding: 12px 15px;
+	padding: 10px 12px;
 	background-color: #444;
 	background-color: rgba(68, 68, 68, 0.9);
 	font-weight: 400;
@@ -11955,7 +11964,7 @@ div.v-layout.v-horizontal.v-widget {
 	font-weight: 400;
 	-webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.25);
-	padding-right: 59px;
+	padding-right: 48px;
 	overflow: hidden !important;
 	cursor: pointer;
 }
@@ -11973,11 +11982,11 @@ div.v-layout.v-horizontal.v-widget {
 	font-size: 1.5em;
 	position: absolute;
 	top: 50%;
-	margin-top: -12px;
-	right: 12px;
-	width: 25px;
-	height: 25px;
-	line-height: 24px;
+	margin-top: -10px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	line-height: 19px;
 	cursor: pointer;
 	color: #000;
 	opacity: 0.5;
@@ -12041,7 +12050,7 @@ div.v-layout.v-horizontal.v-widget {
 	border-radius: 0;
 	-webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
 	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
-	padding: 12px 15px;
+	padding: 10px 12px;
 }
 
 .apptheme .v-Notification.bar .v-Notification-description, .apptheme .v-Notification.bar .v-Notification-details {
@@ -12081,7 +12090,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-Notification.small {
-	padding: 11px 13px;
+	padding: 9px 11px;
 }
 
 .apptheme .v-Notification.small .v-Notification-caption {
@@ -12108,7 +12117,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-Notification.closable {
-	padding-right: 59px;
+	padding-right: 48px;
 	overflow: hidden !important;
 	cursor: pointer;
 }
@@ -12118,11 +12127,11 @@ div.v-layout.v-horizontal.v-widget {
 	font-size: 1.5em;
 	position: absolute;
 	top: 50%;
-	margin-top: -12px;
-	right: 12px;
-	width: 25px;
-	height: 25px;
-	line-height: 24px;
+	margin-top: -10px;
+	right: 10px;
+	width: 20px;
+	height: 20px;
+	line-height: 19px;
 	cursor: pointer;
 	color: #000;
 	opacity: 0.5;
@@ -12163,7 +12172,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-Notification.closable.tray:after {
-	top: 16px;
+	top: 13px;
 	margin-top: 0;
 }
 
@@ -12203,11 +12212,11 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .valo-menu {
 	height: 100%;
 	background-color: #4b4b4b;
-	background-image: -webkit-linear-gradient(right, #414141 0%, #4b4b4b 9px);
-	background-image: linear-gradient(to left,#414141 0%, #4b4b4b 9px);
+	background-image: -webkit-linear-gradient(right, #414141 0%, #4b4b4b 8px);
+	background-image: linear-gradient(to left,#414141 0%, #4b4b4b 8px);
 	color: #a5a5a5;
 	font-size: 14px;
-	line-height: 30px;
+	line-height: 24px;
 	border-right: 1px solid #3b3b3b;
 	white-space: nowrap;
 }
@@ -12224,7 +12233,7 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .valo-menu-part {
 	border-left: 1px solid #414141;
 	height: 100%;
-	padding-bottom: 37px;
+	padding-bottom: 30px;
 	overflow: auto;
 }
 
@@ -12241,19 +12250,19 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .valo-menu-title .valo-menu-badge, .apptheme .valo-menu-subtitle .valo-menu-badge, .apptheme .valo-menu-item .valo-menu-badge {
 	position: absolute;
-	right: 19px;
+	right: 15px;
 }
 
 .apptheme .valo-menu-title {
 	line-height: 1.2;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	color: white;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
-	padding: 12px 19px;
+	padding: 10px 15px;
 	font-size: 14px;
-	border-bottom: 1px solid #3b3b4f;
+	border-bottom: 1px solid #36474f;
 	-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 	text-align: center;
@@ -12261,7 +12270,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .valo-menu-title .v-menubar.v-menubar {
 	background: transparent;
-	border-color: #3b3b4f;
+	border-color: #36474f;
 	color: inherit;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -12270,14 +12279,14 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .valo-menu-title .v-menubar-menuitem {
 	background: transparent;
-	-webkit-box-shadow: inset 0 1px 0 #72727b, inset 0 -1px 0 #404055;
-	box-shadow: inset 0 1px 0 #72727b, inset 0 -1px 0 #404055;
+	-webkit-box-shadow: inset 0 1px 0 #6a707b, inset 0 -1px 0 #3a4b54;
+	box-shadow: inset 0 1px 0 #6a707b, inset 0 -1px 0 #3a4b54;
 	text-shadow: inherit;
 	font-size: 16px;
 	border-color: inherit;
 }
 
-.apptheme .valo-menu-title h1, .apptheme .valo-menu-title .v-label-h1, .apptheme .valo-menu-title h2, .apptheme .valo-menu-title .v-label-h2, .apptheme .valo-menu-title h3, .apptheme .valo-menu-title .v-label-h3, .apptheme .valo-menu-title h4, .apptheme .valo-menu-title .v-label-h4, .apptheme .valo-menu-title  text.highcharts-title {
+.apptheme .valo-menu-title h1, .apptheme .valo-menu-title .v-label-h1, .apptheme .valo-menu-title h2, .apptheme .valo-menu-title .v-label-h2, .apptheme .valo-menu-title h3, .apptheme .valo-menu-title .v-label-h3, .apptheme .valo-menu-title h4, .apptheme .valo-menu-title .v-label-h4, .apptheme .valo-menu-title .apptheme text.highcharts-title {
 	margin-top: 0;
 	margin-bottom: 0;
 	color: inherit;
@@ -12292,7 +12301,7 @@ div.v-layout.v-horizontal.v-widget {
 	text-shadow: none;
 	background: transparent;
 	color: inherit;
-	margin: 19px 7px;
+	margin: 15px 6px;
 	display: block;
 	overflow: hidden;
 	text-align: center;
@@ -12310,8 +12319,8 @@ div.v-layout.v-horizontal.v-widget {
 	border: none;
 	margin-right: 1px;
 	border-radius: 4px;
-	color: #4b4b65;
-	padding: 0 12px;
+	color: #455A64;
+	padding: 0 10px;
 	-webkit-transition: color 140ms;
 	-moz-transition: color 140ms;
 	transition: color 140ms;
@@ -12326,7 +12335,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar-user-menu .v-menubar-menuitem:hover {
-	color: #616182;
+	color: #5a7582;
 }
 
 .apptheme .v-menubar-user-menu .v-menubar-menuitem:active {
@@ -12335,7 +12344,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .v-menubar-user-menu .v-menubar-menuitem-checked, .apptheme .v-menubar-user-menu .v-menubar-menuitem-checked:first-child {
 	border: 1px solid #c5c5c5;
-	color: #4b4b65;
+	color: #455A64;
 }
 
 .apptheme .v-menubar-user-menu .v-menubar-menuitem-checked .v-menubar-menuitem-caption, .apptheme .v-menubar-user-menu .v-menubar-menuitem-checked:first-child .v-menubar-menuitem-caption {
@@ -12344,12 +12353,12 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar-user-menu .v-menubar-menuitem-selected {
-	color: #ededf0;
+	color: #eceff0;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .apptheme .v-menubar-user-menu .v-menubar-menuitem-selected:hover {
-	color: #ededf0;
+	color: #eceff0;
 }
 
 .apptheme .v-menubar-user-menu .v-menubar-menuitem-disabled, .apptheme .v-menubar-user-menu .v-menubar-menuitem-disabled:hover {
@@ -12364,9 +12373,9 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .v-menubar-user-menu  > .v-menubar-menuitem img.v-icon {
-	width: 56px;
-	height: 56px;
-	border-radius: 29px;
+	width: 45px;
+	height: 45px;
+	border-radius: 24px;
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 	display: block;
 	margin: 0 auto 0.3em;
@@ -12386,12 +12395,12 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .valo-menu-subtitle {
 	color: #868686;
-	margin: 7px 0 7px 19px;
+	margin: 6px 0 6px 15px;
 	border-bottom: 1px solid #666666;
 }
 
 .apptheme .valo-menu-subtitle [class*="badge"] {
-	color: #8c8c99;
+	color: #899398;
 }
 
 .apptheme .valo-menuitems {
@@ -12401,7 +12410,7 @@ div.v-layout.v-horizontal.v-widget {
 .apptheme .valo-menu-item {
 	outline: none;
 	font-weight: 400;
-	padding: 0 37px 0 19px;
+	padding: 0 30px 0 15px;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
@@ -12416,13 +12425,13 @@ div.v-layout.v-horizontal.v-widget {
 	display: inline-block;
 	width: 90%;
 	max-width: 15em;
-	padding-right: 19px;
+	padding-right: 15px;
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
 
 .apptheme .valo-menu-item [class*="badge"] {
-	color: #8c8c99;
+	color: #899398;
 }
 
 .apptheme .valo-menu-item.selected {
@@ -12430,14 +12439,14 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .valo-menu-item.selected .v-icon {
-	color: #616182;
+	color: #5a7582;
 }
 
 .apptheme .valo-menu-item.selected [class*="badge"] {
-	background-color: #616182;
-	background-image: -webkit-linear-gradient(top, #68688c 2%, #555573 98%);
-	background-image: linear-gradient(to bottom,#68688c 2%, #555573 98%);
-	color: #d4d4db;
+	background-color: #5a7582;
+	background-image: -webkit-linear-gradient(top, #617e8c 2%, #4e6673 98%);
+	background-image: linear-gradient(to bottom,#617e8c 2%, #4e6673 98%);
+	color: #d2d8db;
 }
 
 .apptheme .valo-menu-item:focus, .apptheme .valo-menu-item:hover, .apptheme .valo-menu-item.selected {
@@ -12446,7 +12455,7 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .valo-menu-item span.v-icon {
 	min-width: 1em;
-	margin-right: 19px;
+	margin-right: 15px;
 	text-align: center;
 	vertical-align: middle;
 	-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(black), to(rgba(0, 0, 0, 0.75)));
@@ -12462,17 +12471,17 @@ div.v-layout.v-horizontal.v-widget {
 	-moz-transition: background-color 300ms;
 	transition: background-color 300ms;
 	line-height: 1;
-	padding: 4px 6px;
+	padding: 3px 5px;
 	min-width: 11px;
 	text-align: center;
-	top: 4px;
+	top: 2px;
 	border-radius: 4px;
 }
 
 .apptheme .valo-menu-part.large-icons {
 	background-color: #4b4b4b;
-	min-width: 74px;
-	max-width: 111px;
+	min-width: 60px;
+	max-width: 90px;
 }
 
 .apptheme .valo-menu-part.large-icons .valo-menu-title {
@@ -12490,13 +12499,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .valo-menu-part.large-icons .v-menubar-user-menu img.v-icon {
-	width: 28px;
-	height: 28px;
+	width: 23px;
+	height: 23px;
 }
 
 .apptheme .valo-menu-part.large-icons [class*="subtitle"] {
-	margin: 9px 0 0;
-	padding: 7px 25px 7px 9px;
+	margin: 8px 0 0;
+	padding: 6px 20px 6px 8px;
 	line-height: 1;
 	border: none;
 	text-overflow: ellipsis;
@@ -12507,7 +12516,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .valo-menu-part.large-icons [class*="subtitle"] [class*="badge"] {
-	right: 9px;
+	right: 8px;
 }
 
 .apptheme .valo-menu-part.large-icons [class*="subtitle"]  + .valo-menu-item {
@@ -12518,7 +12527,7 @@ div.v-layout.v-horizontal.v-widget {
 	display: block;
 	font-size: 26px;
 	line-height: 1;
-	padding: 12px;
+	padding: 10px;
 	text-align: center;
 	border-top: 1px solid #555555;
 }
@@ -12557,27 +12566,27 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .valo-menu-part.large-icons .valo-menu-item [class*="badge"] {
-	padding-left: 4px;
-	padding-right: 4px;
-	top: 7px;
-	right: 7px;
+	padding-left: 3px;
+	padding-right: 3px;
+	top: 6px;
+	right: 6px;
 	border: 2px solid #4b4b4b;
 }
 
 .apptheme .valo-menu-logo {
 	display: block;
 	overflow: hidden;
-	width: 44px !important;
-	height: 44px;
+	width: 36px !important;
+	height: 36px;
 	border-radius: 4px;
 	text-align: center;
-	background-color: #4b4b65;
-	background-image: -webkit-linear-gradient(top, #51516d 2%, #424258 98%);
-	background-image: linear-gradient(to bottom,#51516d 2%, #424258 98%);
+	background-color: #455A64;
+	background-image: -webkit-linear-gradient(top, #4a616c 2%, #3c4e58 98%);
+	background-image: linear-gradient(to bottom,#4a616c 2%, #3c4e58 98%);
 	color: white;
-	font-size: 25px;
-	line-height: 44px;
-	margin: 19px auto;
+	font-size: 20px;
+	line-height: 36px;
+	margin: 15px auto;
 	-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 }
@@ -12588,8 +12597,8 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part {
 	background-color: #4b4b4b;
-	min-width: 74px;
-	max-width: 111px;
+	min-width: 60px;
+	max-width: 90px;
 }
 
 .apptheme .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-title {
@@ -12607,13 +12616,13 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .v-menubar-user-menu img.v-icon {
-	width: 28px;
-	height: 28px;
+	width: 23px;
+	height: 23px;
 }
 
 .apptheme .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"] {
-	margin: 9px 0 0;
-	padding: 7px 25px 7px 9px;
+	margin: 8px 0 0;
+	padding: 6px 20px 6px 8px;
 	line-height: 1;
 	border: none;
 	text-overflow: ellipsis;
@@ -12624,7 +12633,7 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"] [class*="badge"] {
-	right: 9px;
+	right: 8px;
 }
 
 .apptheme .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part [class*="subtitle"]  + .valo-menu-item {
@@ -12635,7 +12644,7 @@ div.v-layout.v-horizontal.v-widget {
 	display: block;
 	font-size: 26px;
 	line-height: 1;
-	padding: 12px;
+	padding: 10px;
 	text-align: center;
 	border-top: 1px solid #555555;
 }
@@ -12674,21 +12683,21 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .apptheme .valo-menu-responsive[width-range~="801px-1100px"] .valo-menu-part .valo-menu-item [class*="badge"] {
-	padding-left: 4px;
-	padding-right: 4px;
-	top: 7px;
-	right: 7px;
+	padding-left: 3px;
+	padding-right: 3px;
+	top: 6px;
+	right: 6px;
 	border: 2px solid #4b4b4b;
 }
 
 .apptheme .valo-menu-responsive[width-range~="0-800px"] {
-	padding-top: 37px;
+	padding-top: 30px;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 .apptheme .valo-menu-responsive[width-range~="0-800px"] .v-loading-indicator {
-	top: 37px;
+	top: 30px;
 }
 
 .apptheme .valo-menu-responsive[width-range~="0-800px"]  > .v-widget {
@@ -12713,7 +12722,7 @@ div.v-layout.v-horizontal.v-widget {
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 37px !important;
+	height: 30px !important;
 	padding-top: 0;
 	padding-bottom: 0;
 	-webkit-backface-visibility: hidden;
@@ -12726,44 +12735,44 @@ div.v-layout.v-horizontal.v-widget {
 	right: 0;
 	margin: 0;
 	padding: 0;
-	height: 37px;
-	color: #a2a2b5;
+	height: 30px;
+	color: #9eaeb5;
 	max-width: 30%;
 	-webkit-backface-visibility: hidden;
 }
 
 .apptheme .valo-menu-responsive[width-range~="0-800px"] .valo-menu .v-menubar-user-menu .v-menubar-menuitem {
-	line-height: 36px;
+	line-height: 29px;
 	white-space: nowrap;
 }
 
 .apptheme .valo-menu-responsive[width-range~="0-800px"] .valo-menu .v-menubar-user-menu img.v-icon {
 	display: inline-block;
-	margin: 0 6px 0 0;
-	width: 19px;
-	height: 19px;
-	border-radius: 10px;
+	margin: 0 5px 0 0;
+	width: 15px;
+	height: 15px;
+	border-radius: 8px;
 	border: none;
 }
 
 .apptheme .valo-menu-responsive[width-range~="0-800px"] .valo-menuitems {
 	height: 100%;
 	background-color: #4b4b4b;
-	background-image: -webkit-linear-gradient(right, #414141 0%, #4b4b4b 9px);
-	background-image: linear-gradient(to left,#414141 0%, #4b4b4b 9px);
+	background-image: -webkit-linear-gradient(right, #414141 0%, #4b4b4b 8px);
+	background-image: linear-gradient(to left,#414141 0%, #4b4b4b 8px);
 	color: #a5a5a5;
 	font-size: 14px;
-	line-height: 30px;
+	line-height: 24px;
 	border-right: 1px solid #3b3b3b;
 	white-space: nowrap;
 	position: fixed;
 	z-index: 9000;
-	top: 37px;
+	top: 30px;
 	bottom: 0;
 	height: auto;
 	max-width: 100%;
 	overflow: auto;
-	padding: 19px 0;
+	padding: 15px 0;
 	-webkit-transform: translatex(-100%);
 	-moz-transform: translatex(-100%);
 	-ms-transform: translatex(-100%);
@@ -12788,331 +12797,71 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .valo-menu-responsive[width-range~="0-500px"] .valo-menu .v-menubar-user-menu .v-menubar-menuitem-caption {
 	display: inline-block;
-	width: 19px;
+	width: 15px;
 	overflow: hidden;
 }
 
-.apptheme .list-filters .v-textfield, .apptheme .list-filters .v-button, .apptheme .list-filters .v-checkbox {
-	margin-bottom: 12px;
-	margin-right: 12px;
-	vertical-align: middle;
+.apptheme .board-box {
+	padding: 10px;
 }
 
-.apptheme .v-grid.orders-grid  > div {
-	border-left: 0;
-	border-bottom: 0;
-}
-
-.apptheme .v-grid.orders-grid .v-grid-cell {
-	height: 100px;
-}
-
-.apptheme .v-grid.orders-grid .summary, .apptheme .v-grid.orders-grid .due {
-	padding: 12px;
-}
-
-.apptheme .v-grid.orders-grid .summary .header, .apptheme .v-grid.orders-grid .summary .content, .apptheme .v-grid.orders-grid .due .header, .apptheme .v-grid.orders-grid .due .content {
-	display: block;
-}
-
-.apptheme .v-grid.orders-grid .due {
-	text-align: center;
-	font-size: 14px;
-}
-
-.apptheme .v-grid.orders-grid .due .header {
-	font-size: 10px;
-	font-weight: 400;
-	padding: 2px 7px;
-	border-radius: 15px;
-	border: 1px solid transparent;
-	margin: 5px 0;
-}
-
-.apptheme .v-grid.orders-grid .today.ready .due .header, .apptheme .v-grid.orders-grid .today.delivered .due .header {
-	background-color: #4b4b65;
-	color: #fff;
-	opacity: 0.7;
-}
-
-.apptheme .v-grid.orders-grid .delivered .due:after {
-	content: "\e7c5";
-	font-family: Vaadin-Icons;
-	line-height: 1.55;
-	display: block;
-	margin-top: 6px;
-	color: #4b4b65;
-	opacity: 0.7;
-}
-
-.apptheme .v-grid.orders-grid .new .due .header {
-	border-color: #2c9720;
-	color: #2c9720;
-}
-
-.apptheme .v-grid.orders-grid .problem .due .header, .apptheme .v-grid.orders-grid .today.new .due .header, .apptheme .v-grid.orders-grid .today.confirmed .due .header {
-	border-color: transparent;
-	background-color: #ed473b;
-	color: #f1d3d1;
-}
-
-.apptheme .v-grid.orders-grid .cancelled .header, .apptheme .v-grid.orders-grid .cancelled .content {
-	text-decoration: line-through;
-	opacity: 0.5;
-}
-
-.apptheme .v-grid.orders-grid .summary .header {
-	font-size: 20px;
-}
-
-.apptheme .v-grid.orders-grid .summary .content {
-	font-size: 14px;
-}
-
-.apptheme .order-form {
-	max-width: 768px;
-}
-
-.apptheme .order-form .add-items {
-	text-align: left;
-	border: 1px dashed rgba(0, 0, 0, 0.2);
-}
-
-.apptheme .order-form .total {
-	text-align: right;
-	border-top: 2px solid black;
-}
-
-.apptheme .order-form .v-widget.header {
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 12px;
-	margin-bottom: 12px;
-	margin-top: 12px;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-}
-
-.apptheme .order-form .buttons {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-}
-
-.apptheme .order-form .buttons .v-button {
-	margin-top: 12px;
-}
-
-.apptheme .order-form .product-container {
-	margin-top: 0;
-}
-
-.apptheme .order-form .product-row {
-	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-	padding-bottom: 12px;
-	margin-bottom: 24px;
-}
-
-.apptheme .order-form .product-row .times {
+.apptheme .board-box-label {
 	text-align: center;
 }
 
-.apptheme .order-form .product-row .quantity, .apptheme .order-form .product-row .price {
-	text-align: right;
-}
-
-.apptheme .order-form .product-row .delete {
-	border-radius: 4px 0 0 4px;
-	border-right: 0;
-}
-
-.apptheme .order-form .product-row .product {
-	border-radius: 0 4px 4px 0;
-}
-
-.apptheme .order-form .product-row .v-label.comment, .apptheme .order-form .product-row .apptheme .app-shell .comment.v-caption-logo {
-	font-size: 14px;
-	white-space: pre-wrap;
-	margin-bottom: 0;
-	margin-top: -12px;
-}
-
-.apptheme .order-form .product-row:last-child {
-	border-bottom: 0;
-	margin-bottom: 0;
-}
-
-.apptheme .order-form .history .v-caption {
-	padding-bottom: 0;
-}
-
-.apptheme .order-form .history .v-caption .v-captiontext, .apptheme .order-form .history .v-caption .v-icon {
-	font-size: 10px;
-	font-weight: bold;
-	line-height: 1;
-}
-
-.apptheme .order-form .v-textfield.v-readonly {
-	padding-left: 0;
-	border: 0;
+.apptheme .board-box-label h1, .apptheme .board-box-label h4 {
+	margin: 10px 10px !important;
+	margin-top: 10px !important;
 	font-weight: 100;
 }
 
-.apptheme .order-form .v-textfield.v-readonly::placeholder {
-	color: transparent;
-}
-
-.apptheme .order-form .v-textfield.v-readonly:-ms-input-placeholder {
-	color: transparent;
-}
-
-.apptheme .order-form .v-textfield.v-readonly::-webkit-input-placeholder {
-	color: transparent;
-}
-
-.apptheme .order-form .v-filterselect.v-readonly input {
-	padding-left: 0;
-	border: 0;
-	font-weight: 100;
-}
-
-.apptheme .order-form .v-filterselect.v-readonly .v-filterselect-button {
-	display: none;
-}
-
-.apptheme .order-form .v-datefield.v-readonly .v-datefield-button {
-	display: none;
-}
-
-.apptheme .responsive {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-
-.apptheme .responsive  > .v-widget {
-	margin: 0 0 12px 0;
-}
-
-.apptheme .responsive .v-caption-half {
-	margin: -1px;
-}
-
-.apptheme .responsive[width-range~="-599px"] {
-	justify-content: flex-end;
-}
-
-.apptheme .responsive[width-range~="600px-"] .half {
-	width: calc(50% - 12px) !important;
-}
-
-.apptheme .responsive[width-range~="600px-"] .long {
-	width: calc(100% - 166px) !important;
-}
-
-.apptheme .responsive[width-range~="600px-"] .short {
-	width: 150px !important;
-}
-
-.apptheme vaadin-board {
-	padding: 37px;
-}
-
-.apptheme vaadin-board vaadin-board-row:nth-child(2) > .board-box {
-	height: calc(20vh - 53px) !important;
-	min-height: 150px;
-}
-
-.apptheme vaadin-board vaadin-board-row:nth-child(3) > .board-box {
-	height: calc(40vh - 53px) !important;
-	min-height: 200px;
-}
-
-.apptheme vaadin-board vaadin-board-row:nth-child(4) {
-	height: calc(40vh - 53px);
-	min-height: 200px;
-}
-
-.apptheme vaadin-board vaadin-board-row.medium:nth-child(2) > .board-box {
-	height: calc(20vh - 53px * 2) !important;
-}
-
-.apptheme vaadin-board vaadin-board-row.medium:nth-child(3) > .board-box {
-	height: calc(40vh - 53px * 2) !important;
-}
-
-.apptheme vaadin-board vaadin-board-row.medium:nth-child(4) {
-	height: calc(40vh - 53px * 2);
-}
-
-.apptheme vaadin-board .board-box {
-	padding: 12px;
-}
-
-.apptheme vaadin-board .board-box-needs-attention {
-	background-color: rgba(237, 71, 59, 0.04);
-}
-
-.apptheme vaadin-board .board-box-needs-attention h1, .apptheme vaadin-board .board-box-needs-attention h4 {
-	color: #ed473b;
-}
-
-.apptheme vaadin-board .board-box-label {
-	text-align: center;
-}
-
-.apptheme vaadin-board .board-box-label h1, .apptheme vaadin-board .board-box-label h4 {
-	margin: 12px 12px !important;
-	margin-top: 12px !important;
-	font-weight: 100;
-}
-
-.apptheme vaadin-board .board-row-group {
+.apptheme .board-row-group {
 	background: white;
 	color: #474747;
 	border-radius: 4px;
 	border: 1px solid #d5d5d5;
 	-webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
-	margin-bottom: 12px;
+	margin-bottom: 10px;
 }
 
-.apptheme vaadin-board .board-row-group .new h4 {
+.apptheme .board-row-group .new h4 {
 	color: #2c9720;
 }
 
-.apptheme vaadin-board .board-row-group .na h4 {
+.apptheme .board-row-group .na h4 {
 	color: #ed473b;
 }
 
-.apptheme vaadin-board .board-row-group.large .board-box:not(:first-child) {
+.apptheme .board-row-group.large .board-box:not(:first-child) {
 	border-left: 1px solid #eaeaea;
 }
 
-.apptheme vaadin-board .board-row-group.medium .board-box:nth-child(even) {
+.apptheme .board-row-group.medium .board-box:nth-child(even) {
 	border-left: 1px solid #eaeaea;
 }
 
-.apptheme vaadin-board .board-row-group.medium .board-box:nth-child(1n+3) {
+.apptheme .board-row-group.medium .board-box:nth-child(1n+3) {
 	border-top: 1px solid #eaeaea;
 }
 
-.apptheme vaadin-board .board-row-group.small {
-	margin-bottom: 6px;
+.apptheme .board-row-group.small {
+	margin-bottom: 5px;
 }
 
-.apptheme vaadin-board .board-row-group.small .board-box:nth-child(1n+2) {
+.apptheme .board-row-group.small .board-box:nth-child(1n+2) {
 	border-top: 1px solid #eaeaea;
 }
 
-.apptheme vaadin-board .board-row-panels .board-box:first-child {
+.apptheme .board-row-panels .board-box:first-child {
 	padding-left: 0;
 }
 
-.apptheme vaadin-board .board-row-panels .board-box:last-child {
+.apptheme .board-row-panels .board-box:last-child {
 	padding-right: 0;
 }
 
-.apptheme vaadin-board .board-row-panels .board-box-inner {
+.apptheme .board-row-panels .board-box-inner {
 	background: white;
 	color: #474747;
 	border-radius: 4px;
@@ -13122,37 +12871,23 @@ div.v-layout.v-horizontal.v-widget {
 	position: relative;
 	z-index: 0;
 	overflow: hidden;
-	padding: 12px;
+	padding: 10px;
 }
 
-.apptheme vaadin-board .board-row-panels.small .board-box {
-	padding: 6px 0;
+.apptheme .board-row-panels.small .board-box {
+	padding: 5px 0;
 }
 
-.apptheme vaadin-board .board-row-panels .due-grid .board-box-inner {
+.apptheme .board-row-panels .due-grid .board-box-inner {
 	padding: 0;
 }
 
-.apptheme vaadin-board .board-row-panels .due-grid .v-grid > div {
+.apptheme .board-row-panels .due-grid .v-grid > div {
 	border: 0;
 }
 
-.apptheme .dashboard-view[width-range~="-599px"] vaadin-board {
-	padding: 0;
-}
-
-.apptheme .dashboard-view[width-range~="-599px"] vaadin-board .board-row-group, .apptheme .dashboard-view[width-range~="-599px"] vaadin-board .board-row-panels .board-box-inner {
-	border-radius: 0;
-	border-width: 1px 0px;
-}
-
-.apptheme .app-shell .logo, .apptheme .app-shell .v-caption-logo {
-	color: #fff;
-	word-wrap: break-word;
-}
-
 .apptheme .app-shell .navigation-bar {
-	color: #b4b4c8;
+	color: #aebfc7;
 	background-size: cover;
 	background-position: top;
 }
@@ -13163,21 +12898,21 @@ div.v-layout.v-horizontal.v-widget {
 
 .apptheme .app-shell .navigation-bar .selected {
 	background: rgba(0, 0, 0, 0.2);
-	color: #efeff3;
+	color: #eaeff1;
 }
 
 .apptheme .app-shell .navigation-bar .selected .v-icon, .apptheme .app-shell .navigation-bar .selected .v-button-caption {
-	color: #efeff3;
+	color: #eaeff1;
 }
 
 .apptheme .app-shell .navigation-bar .activeViewName {
-	line-height: 37px;
+	line-height: 30px;
 	width: auto !important;
-	padding: 0 14.8px;
+	padding: 0 12px;
 	font-size: 16px;
 }
 
-.apptheme .app-shell[width-range~="-600px"] .logo, .apptheme .app-shell[width-range~="-600px"]  .v-caption-logo {
+.apptheme .app-shell[width-range~="-600px"] .logo {
 	max-width: 150px;
 	overflow: hidden;
 	white-space: nowrap;
@@ -13197,21 +12932,14 @@ div.v-layout.v-horizontal.v-widget {
 	text-align: center;
 }
 
-.apptheme .app-shell[width-range~="601px-"] .navigation-bar-container {
-	background-image: linear-gradient(145deg, #484962 30%, #d06b41 100%);
+.apptheme #championGrid .v-grid-cell {
+	height: 160px;
 }
 
-.apptheme .app-shell[width-range~="601px-"] .navigation-bar {
-	background-color: transparent;
-}
-
-.apptheme .app-shell[width-range~="601px-"] .navigation {
-	background-color: transparent;
-	border: none;
-}
-
-.apptheme .app-shell[width-range~="1001px-"] .navigation-bar {
-	background-image: url('bg.jpg');
+.apptheme #summonerImage {
+	margin-top: 30px;
+	border-radius: 10%;
+	border: 1px solid;
 }
 
 .apptheme .v-errorindicator {

@@ -9,15 +9,6 @@
  </head>
  <body>
   <vaadin-vertical-layout style-name="storefront" spacing="false" size-full margin="false">
-   <vaadin-panel style-name="borderless" _id="searchPanel">
-    <vaadin-horizontal-layout spacing="false" width-full margin-left margin-right margin-top>
-     <vaadin-css-layout style-name="list-filters" width-full :expand>
-      <vaadin-text-field id="searchField" placeholder="Search" _id="searchField"></vaadin-text-field>
-      <vaadin-button icon="fonticon://Vaadin-Icons/e805" id="searchButton" plain-text _id="searchButton"></vaadin-button>
-      <vaadin-check-box caption="Include past" style-name="small" _id="includePast"></vaadin-check-box>
-     </vaadin-css-layout>
-    </vaadin-horizontal-layout>
-   </vaadin-panel>
    <orders-match-history-grid id="matchHistoryGrid" size-full _id="matchHistoryGrid" :expand></orders-match-history-grid>
   </vaadin-vertical-layout>
  </body>
