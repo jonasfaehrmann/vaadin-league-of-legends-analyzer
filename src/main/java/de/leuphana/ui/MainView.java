@@ -19,22 +19,16 @@ import de.leuphana.ui.view.admin.account.AccountAdminView;
 import de.leuphana.ui.view.champion.ChampionView;
 import de.leuphana.ui.view.championMastery.ChampionMasteryView;
 import de.leuphana.ui.view.dashboard.DashboardView;
+import de.leuphana.ui.view.item.ItemView;
 import de.leuphana.ui.view.matchHistory.MatchHistoryView;
 import de.leuphana.ui.view.singleMatch.SingleMatchView;
 import de.leuphana.ui.view.summoner.SummonerView;
+import de.leuphana.ui.view.summonerSpell.SpellView;
 import de.leuphana.ui.view.user.widget.UserWidgetView;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.UI;
 
-/**
- * The main view containing the menu and the content area where actual views are
- * shown.
- * <p>
- * Created as a single View class because the logic is so simple that using a
- * pattern like MVP would add much overhead for little gain. If more complexity
- * is added to the class, you should consider splitting out a presenter.
- */
 @SpringViewDisplay
 @UIScope
 public class MainView extends MainViewDesign implements ViewDisplay {
@@ -55,25 +49,16 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 		attachNavigation(accounts, AccountAdminView.class);
 		attachNavigation(matchHistory, MatchHistoryView.class);
 		attachNavigation(widgets, UserWidgetView.class);
-		attachNavigation(summoner, SummonerView.class);
 		attachNavigation(champion, ChampionView.class);
 		attachNavigation(championMastery, ChampionMasteryView.class);
 		attachNavigation(singleMatch, SingleMatchView.class);
+		attachNavigation(summoner, SummonerView.class);
+		attachNavigation(summonerSpell, SpellView.class);
+		attachNavigation(item, ItemView.class);
 
 		logout.addClickListener(e -> logout());
 	}
 
-	/**
-	 * Makes clicking the given button navigate to the given view if the user
-	 * has access to the view.
-	 * <p>
-	 * If the user does not have access to the view, hides the button.
-	 *
-	 * @param navigationButton
-	 *            the button to use for navigation
-	 * @param targetView
-	 *            the view to navigate to when the user clicks the button
-	 */
 	private void attachNavigation(Button navigationButton, Class<? extends View> targetView) {
 		boolean hasAccessToView = viewAccessControl.isAccessGranted(targetView);
 		navigationButton.setVisible(hasAccessToView);
@@ -99,10 +84,6 @@ public class MainView extends MainViewDesign implements ViewDisplay {
 		activeViewName.setValue(viewName);
 	}
 
-	/**
-	 * Logs the user out after ensuring the currently open view has no unsaved
-	 * changes.
-	 */
 	public void logout() {
 		ViewLeaveAction doLogout = () -> {
 			UI ui = getUI();

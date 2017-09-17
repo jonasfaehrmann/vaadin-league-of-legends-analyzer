@@ -29,7 +29,6 @@ public class MainViewDesign extends HorizontalLayout {
 	protected CssLayout menu;
 	protected LanguageSelectionComponent languageSelection;
 	protected Button accounts;
-	protected Button storefront;
 	protected Button dashboard;
 	protected Button matchHistory;
 	protected Button widgets;
@@ -37,6 +36,8 @@ public class MainViewDesign extends HorizontalLayout {
 	protected Button championMastery;
 	protected Button singleMatch;
 	protected Button summoner;
+	protected Button summonerSpell;
+	protected Button item;
 	protected Button logout;
 	protected VerticalLayout content;
 
