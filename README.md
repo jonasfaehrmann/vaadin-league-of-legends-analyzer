@@ -1,3 +1,7 @@
+LEUPHALYTICS
+League of Legends Analyzer
+
+
 # Running the project
 
 `mvn spring-boot:run`
