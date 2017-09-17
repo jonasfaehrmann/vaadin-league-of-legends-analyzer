@@ -11,8 +11,8 @@ import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
-import de.leuphana.backend.service.MatchHistoryService;
-import de.leuphana.backend.service.RiotServiceDynamic;
+import de.leuphana.backend.service.riot.RiotServiceDynamic;
+import de.leuphana.backend.service.riot.dynamicdata.MatchHistoryService;
 import net.rithms.riot.api.endpoints.match.dto.Match;
 import net.rithms.riot.api.endpoints.match.dto.MatchReference;
 import net.rithms.riot.api.endpoints.match.dto.Participant;

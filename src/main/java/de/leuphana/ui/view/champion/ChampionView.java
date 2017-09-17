@@ -7,7 +7,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Button.ClickShortcut;
 
-import de.leuphana.ui.components.ChampionGrid;
+import de.leuphana.ui.component.champion.ChampionGrid;
 import de.leuphana.ui.navigation.NavigationManager;
 import net.rithms.riot.api.endpoints.static_data.dto.Champion;
 

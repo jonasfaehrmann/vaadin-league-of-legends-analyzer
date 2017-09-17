@@ -15,8 +15,8 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.Button.ClickShortcut;
 
 import de.leuphana.app.security.SecurityUtils;
-import de.leuphana.backend.service.AccountService;
-import de.leuphana.backend.service.SummonerService;
+import de.leuphana.backend.service.account.AccountService;
+import de.leuphana.backend.service.riot.dynamicdata.SummonerService;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.util.DDragonUrlFormatter;
 import net.rithms.riot.api.RiotApiException;

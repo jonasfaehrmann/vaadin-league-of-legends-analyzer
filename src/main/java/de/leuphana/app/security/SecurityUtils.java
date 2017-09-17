@@ -9,8 +9,8 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.service.AccountService;
+import de.leuphana.backend.data.account.Account;
+import de.leuphana.backend.service.account.AccountService;
 
 /**
  * SecurityUtils takes care of all such static operations that have to do with

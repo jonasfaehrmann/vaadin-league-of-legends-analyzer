@@ -13,8 +13,8 @@ import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.renderers.HtmlRenderer;
 
-import de.leuphana.backend.service.ChampionService;
-import de.leuphana.backend.service.MatchHistoryService;
+import de.leuphana.backend.service.riot.dynamicdata.MatchHistoryService;
+import de.leuphana.backend.service.riot.staticdata.ChampionService;
 import de.leuphana.ui.util.DDragonUrlFormatter;
 import net.rithms.riot.api.RiotApiException;
 import net.rithms.riot.api.endpoints.match.dto.Match;

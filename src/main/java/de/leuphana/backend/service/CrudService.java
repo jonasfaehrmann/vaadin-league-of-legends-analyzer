@@ -6,7 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
 
-import de.leuphana.backend.data.entity.AbstractEntity;
+import de.leuphana.backend.data.AbstractEntity;
 
 public abstract class CrudService<T extends AbstractEntity> {
 

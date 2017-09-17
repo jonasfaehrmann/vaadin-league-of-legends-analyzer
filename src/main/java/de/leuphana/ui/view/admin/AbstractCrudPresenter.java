@@ -21,10 +21,10 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.Notification.Type;
 
 import de.leuphana.app.HasLogger;
-import de.leuphana.backend.data.entity.AbstractEntity;
+import de.leuphana.backend.data.AbstractEntity;
 import de.leuphana.backend.service.CrudService;
 import de.leuphana.backend.service.UserFriendlyDataException;
-import de.leuphana.ui.components.ConfirmPopup;
+import de.leuphana.ui.component.ConfirmPopup;
 import de.leuphana.ui.navigation.NavigationManager;
 
 public abstract class AbstractCrudPresenter<T extends AbstractEntity, S extends CrudService<T>, V extends AbstractCrudView<T>>

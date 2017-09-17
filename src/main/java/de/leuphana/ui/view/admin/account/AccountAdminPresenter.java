@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.ViewScope;
-import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.service.AccountService;
+
+import de.leuphana.backend.data.account.Account;
+import de.leuphana.backend.service.account.AccountService;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.admin.AbstractCrudPresenter;
 

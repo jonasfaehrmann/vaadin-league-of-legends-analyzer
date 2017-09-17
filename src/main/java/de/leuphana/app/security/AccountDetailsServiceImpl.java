@@ -9,9 +9,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.service.AccountRoleService;
-import de.leuphana.backend.service.AccountService;
+import de.leuphana.backend.data.account.Account;
+import de.leuphana.backend.service.account.AccountRoleService;
+import de.leuphana.backend.service.account.AccountService;
 
 @Service
 public class AccountDetailsServiceImpl implements UserDetailsService {

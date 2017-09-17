@@ -5,7 +5,7 @@ import org.vaadin.spring.annotation.PrototypeScope;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.ComboBox;
 
-import de.leuphana.backend.data.entity.AccountRole;
+import de.leuphana.backend.data.account.AccountRole;
 
 @SpringComponent
 @PrototypeScope

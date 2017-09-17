@@ -12,8 +12,8 @@ import com.vaadin.spring.annotation.SpringComponent;
 
 import de.leuphana.backend.AccountRepository;
 import de.leuphana.backend.AccountRoleRepository;
-import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.data.entity.AccountRole;
+import de.leuphana.backend.data.account.Account;
+import de.leuphana.backend.data.account.AccountRole;
 
 /**
  * 

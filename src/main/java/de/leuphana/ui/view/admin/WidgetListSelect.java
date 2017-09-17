@@ -6,8 +6,8 @@ import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.ListSelect;
 
-import de.leuphana.backend.data.entity.AccountRole;
-import de.leuphana.backend.data.entity.Widget;
+import de.leuphana.backend.data.account.AccountRole;
+import de.leuphana.backend.data.widget.Widget;
 
 @SpringComponent
 @PrototypeScope

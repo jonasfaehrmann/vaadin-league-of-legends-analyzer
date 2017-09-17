@@ -10,8 +10,8 @@ import org.vaadin.spring.events.annotation.EnableEventBus;
 
 import de.leuphana.app.security.SecurityConfig;
 import de.leuphana.backend.AccountRepository;
-import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.service.AccountService;
+import de.leuphana.backend.data.account.Account;
+import de.leuphana.backend.service.account.AccountService;
 import de.leuphana.ui.AppUI;
 
 @SpringBootApplication(scanBasePackageClasses = { AppUI.class, Application.class, AccountService.class,

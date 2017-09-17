@@ -10,7 +10,8 @@ import com.vaadin.data.Validator;
 import com.vaadin.data.ValueContext;
 import com.vaadin.data.validator.BeanValidator;
 import com.vaadin.spring.annotation.SpringView;
-import de.leuphana.backend.data.entity.Account;
+
+import de.leuphana.backend.data.account.Account;
 import de.leuphana.ui.util.WidgetSetToCommaSeparatedStringConverter;
 import de.leuphana.ui.view.admin.AbstractCrudView;
 import com.vaadin.ui.Button;

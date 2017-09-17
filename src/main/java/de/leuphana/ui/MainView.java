@@ -17,10 +17,10 @@ import com.vaadin.spring.annotation.UIScope;
 import de.leuphana.ui.navigation.NavigationManager;
 import de.leuphana.ui.view.admin.account.AccountAdminView;
 import de.leuphana.ui.view.champion.ChampionView;
-import de.leuphana.ui.view.championMastery.ChampionMasteryView;
+import de.leuphana.ui.view.championmastery.ChampionMasteryView;
 import de.leuphana.ui.view.dashboard.DashboardView;
-import de.leuphana.ui.view.matchHistory.MatchHistoryView;
-import de.leuphana.ui.view.singleMatch.SingleMatchView;
+import de.leuphana.ui.view.matchhistory.MatchHistoryView;
+import de.leuphana.ui.view.singlematch.SingleMatchView;
 import de.leuphana.ui.view.summoner.SummonerView;
 import de.leuphana.ui.view.user.widget.UserWidgetView;
 

@@ -13,7 +13,8 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewBeforeLeaveEvent;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import de.leuphana.app.HasLogger;
-import de.leuphana.backend.data.entity.AbstractEntity;
+import de.leuphana.backend.data.AbstractEntity;
+
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Component.Focusable;

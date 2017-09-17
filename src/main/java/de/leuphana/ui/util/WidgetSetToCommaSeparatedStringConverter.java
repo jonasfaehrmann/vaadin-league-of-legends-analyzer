@@ -3,7 +3,8 @@ package de.leuphana.ui.util;
 import java.util.Set;
 
 import com.vaadin.spring.annotation.SpringComponent;
-import de.leuphana.backend.data.entity.Widget;
+
+import de.leuphana.backend.data.widget.Widget;
 
 @SpringComponent
 public class WidgetSetToCommaSeparatedStringConverter {

@@ -24,7 +24,7 @@ import de.leuphana.ui.view.admin.WidgetListSelect;
 public class AccountAdminViewDesign extends VerticalLayout {
 	protected TextField search;
 	protected Button add;
-	protected Grid<de.leuphana.backend.data.entity.Account> accountGrid;
+	protected Grid<de.leuphana.backend.data.account.Account> accountGrid;
 	protected VerticalLayout form;
 	protected TextField email;
 	protected TextField name;

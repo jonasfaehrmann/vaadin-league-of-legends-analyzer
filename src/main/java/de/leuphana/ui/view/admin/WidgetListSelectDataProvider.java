@@ -13,10 +13,10 @@ import com.vaadin.data.provider.QuerySortOrder;
 import com.vaadin.shared.data.sort.SortDirection;
 import com.vaadin.spring.annotation.SpringComponent;
 
-import de.leuphana.backend.data.entity.AccountRole;
-import de.leuphana.backend.data.entity.Widget;
-import de.leuphana.backend.service.AccountRoleService;
+import de.leuphana.backend.data.account.AccountRole;
+import de.leuphana.backend.data.widget.Widget;
 import de.leuphana.backend.service.WidgetService;
+import de.leuphana.backend.service.account.AccountRoleService;
 
 @SpringComponent
 public class WidgetListSelectDataProvider extends PageableDataProvider<Widget, String>{

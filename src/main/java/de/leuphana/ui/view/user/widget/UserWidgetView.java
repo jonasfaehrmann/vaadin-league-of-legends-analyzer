@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 
 import com.vaadin.board.Row;
 import com.vaadin.navigator.View;
@@ -15,13 +16,14 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.themes.ValoTheme;
 
 import de.leuphana.app.security.SecurityUtils;
-import de.leuphana.backend.data.entity.Account;
-import de.leuphana.backend.data.entity.Widget;
-import de.leuphana.backend.service.AccountService;
+import de.leuphana.backend.data.account.Account;
+import de.leuphana.backend.data.widget.Widget;
 import de.leuphana.backend.service.WidgetService;
+import de.leuphana.backend.service.account.AccountService;
 import de.leuphana.ui.navigation.NavigationManager;
 
 @SpringView
+@Secured("user")
 public class UserWidgetView extends UserWidgetViewDesign implements View {
 
 	private final NavigationManager navigationManager;

@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import de.leuphana.backend.data.entity.Account;
+import de.leuphana.backend.data.account.Account;
 
 /**
  * 
