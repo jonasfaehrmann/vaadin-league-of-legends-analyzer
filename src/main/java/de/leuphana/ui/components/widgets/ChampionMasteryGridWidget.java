@@ -17,7 +17,7 @@ import net.rithms.riot.api.endpoints.match.dto.Match;
 @PrototypeScope
 public class ChampionMasteryGridWidget extends Grid<ChampionMastery> implements WidgetComponent {
 
-	private Long id = 1l;
+	private Long id = 6l;
 	
 	@Autowired
 	private ChampionMasteryDataProvider dataProvider;
