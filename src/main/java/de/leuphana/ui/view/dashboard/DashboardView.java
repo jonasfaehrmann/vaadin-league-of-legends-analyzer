@@ -21,6 +21,7 @@ import de.leuphana.backend.data.entity.Widget;
 import de.leuphana.backend.service.AccountService;
 import de.leuphana.backend.service.SummonerService;
 import de.leuphana.ui.components.widgets.ChampionImagesWidget;
+import de.leuphana.ui.components.widgets.ChampionMasteryGridWidget;
 import de.leuphana.ui.components.widgets.ItemImagesWidget;
 import de.leuphana.ui.components.widgets.MatchHistoryGridWidget;
 import de.leuphana.ui.components.widgets.SummonerSpellGridWidget;
@@ -45,11 +46,11 @@ public class DashboardView extends DashboardViewDesign implements View {
 
 	private final NavigationManager navigationManager;
 
-	private  BoardLabel summonerLevelLabel;
-	private  BoardLabel summonerLossesLabel;
-	private  BoardBox notAvailableBox;
-	private  BoardLabel summonerWinsLabel;
-	private  BoardLabel summonerRankLabel;
+	private BoardLabel summonerLevelLabel;
+	private BoardLabel summonerLossesLabel;
+	private BoardBox notAvailableBox;
+	private BoardLabel summonerWinsLabel;
+	private BoardLabel summonerRankLabel;
 	private Account currentAccount;
 
 	private final Button button = new Button("Hello");
@@ -60,13 +61,16 @@ public class DashboardView extends DashboardViewDesign implements View {
 	private final MatchHistoryGridWidget matchHistoryGridWidget;
 	private final AccountService accountService;
 	private final SummonerService summonerService;
-	
+	private final ChampionMasteryGridWidget championMasteryWidget;
+
 	private final ItemImagesWidget itemWidget;
 	private final SummonerSpellGridWidget summonerSpellWidget;
 
 	@Autowired
-	public DashboardView(NavigationManager navigationManager, SummonerSpellGridWidget summonerSpellWidget, ItemImagesWidget itemWidget ,MatchHistoryGridWidget matchHistoryGridWidget,
-			AccountService accountService, ChampionImagesWidget championImagesWidget, SummonerService summonerService) {
+	public DashboardView(NavigationManager navigationManager, SummonerSpellGridWidget summonerSpellWidget,
+			ItemImagesWidget itemWidget, MatchHistoryGridWidget matchHistoryGridWidget, AccountService accountService,
+			ChampionImagesWidget championImagesWidget, SummonerService summonerService,
+			ChampionMasteryGridWidget championMasteryWidget) {
 		this.navigationManager = navigationManager;
 		this.matchHistoryGridWidget = matchHistoryGridWidget;
 		this.accountService = accountService;
@@ -74,6 +78,7 @@ public class DashboardView extends DashboardViewDesign implements View {
 		this.itemWidget = itemWidget;
 		this.summonerSpellWidget = summonerSpellWidget;
 		this.summonerService = summonerService;
+		this.championMasteryWidget = championMasteryWidget;
 	}
 
 	@PostConstruct
@@ -83,13 +88,13 @@ public class DashboardView extends DashboardViewDesign implements View {
 		currentAccount = SecurityUtils.getCurrentUser(accountService);
 
 		// manually add all widgets to list
-		widgets.addWidgets(matchHistoryGridWidget, championImagesWidget, itemWidget, summonerSpellWidget);
+		widgets.addWidgets(matchHistoryGridWidget, championImagesWidget, itemWidget, summonerSpellWidget, championMasteryWidget);
 
 		setInfoLabels();
-		
+
 		row = board.addRow(new BoardBox(button));
 		button.addClickListener(e -> navigationManager.navigateTo(MatchDetailView.class, 1));
-		
+
 		row.addStyleName("board-row-group");
 
 		initCurrentAccountWidgets(currentAccount.getWidgets());

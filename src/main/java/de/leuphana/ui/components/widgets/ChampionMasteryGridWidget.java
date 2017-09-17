@@ -18,13 +18,12 @@ import net.rithms.riot.api.endpoints.match.dto.Match;
 public class ChampionMasteryGridWidget extends Grid<ChampionMastery> implements WidgetComponent {
 
 	private Long id = 6l;
-	
+
 	@Autowired
 	private ChampionMasteryDataProvider dataProvider;
 
 	public ChampionMasteryGridWidget() {
 		setCaption("ChampionMasteryGridWidget");
-		setSizeFull();
 		addStyleName("orders-grid");
 		setSizeFull();
 		removeHeaderRow(0);
@@ -37,9 +36,9 @@ public class ChampionMasteryGridWidget extends Grid<ChampionMastery> implements 
 		setDataProvider(dataProvider);
 		setItems(dataProvider.getChampionMasteryList());
 	}
-	
+
 	@Override
-	public Long getWidgetId(){
+	public Long getWidgetId() {
 		return this.id;
 	}
 
